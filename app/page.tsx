@@ -45,7 +45,7 @@ export default function Home() {
             >
               <div className="relative z-10">
                 <Image 
-                  src="/hero-image.png" 
+                  src="/hero-image.jpg" 
                   alt="Leandro Carone — Psicólogo Clínico" 
                   width={480} 
                   height={600} 
