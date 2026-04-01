@@ -166,11 +166,9 @@ export default function Home() {
             <div>
               <h3 className="mb-2 text-cedro-white">Baixe gratuitamente.</h3>
               <p className="text-cedro-sage mb-8">Coloque seu nome e e-mail abaixo e receba o e-book direto na sua caixa de entrada.</p>
-              <form className="flex flex-col gap-4 max-w-[400px]">
-                <input type="text" placeholder="Nome" required className="p-4 bg-white border border-cedro-navy/20 text-cedro-black font-sans text-[0.95rem] outline-none transition-colors focus:border-cedro-red placeholder:text-cedro-navy/60" />
-                <input type="email" placeholder="E-mail" required className="p-4 bg-white border border-cedro-navy/20 text-cedro-black font-sans text-[0.95rem] outline-none transition-colors focus:border-cedro-red placeholder:text-cedro-navy/60" />
-                <Button type="button" withArrow className="mt-2">Quero o e-book</Button>
-              </form>
+              <Button asChild withArrow>
+                <a href="https://form.respondi.app/VKSO6qpV" target="_blank" rel="noopener noreferrer">Quero o e-book</a>
+              </Button>
             </div>
           </div>
         </div>
