@@ -94,9 +94,13 @@ export default function DesafioPage() {
         <div className="hero-content">
           <div className="hero-left">
             <div className="hero-badge sa from-b" style={{ transitionDelay: '.05s' }}>Desafio · 14 Dias</div>
-            <h1 className="hero-title sa from-b" style={{ transitionDelay: '.15s' }}>
-              Pare de<br /><em>Lutar Contra</em><br />o Porno
-            </h1>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/desafio/logo-hero.png"
+              alt="Pare de Lutar Contra o Porno"
+              className="sa from-b"
+              style={{ transitionDelay: '.15s', maxWidth: 520, width: '100%' }}
+            />
             <p className="hero-sub sa from-b" style={{ transitionDelay: '.25s' }}>
               Você não é escravo. Você é um homem capaz de decidir.<br />
               14 dias para provar isso a si mesmo — com âncora bíblica e exercício prático todo dia.
