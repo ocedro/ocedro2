@@ -11,6 +11,8 @@ export function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  if (pathname?.startsWith('/desafio-14-dias')) return null;
+
   const links = [
     { href: '/', label: 'Home' },
     { href: '/leandro', label: 'Leandro Carone' },

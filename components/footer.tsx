@@ -1,7 +1,13 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Logo } from '@/components/logo';
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith('/desafio-14-dias')) return null;
+
   return (
     <footer className="pt-16 pb-8 border-t border-cedro-sage/10 bg-cedro-black">
       <div className="max-w-[1200px] mx-auto px-8">
