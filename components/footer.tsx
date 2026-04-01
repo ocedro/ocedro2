@@ -21,6 +21,7 @@ export function Footer() {
               <Link href="/leandro" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Leandro Carone</Link>
               <Link href="/agende" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Agende sua Consulta</Link>
               <Link href="/igreja" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Cedro na sua Igreja</Link>
+              <Link href="/newsletter" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Newsletter</Link>
             </div>
           </div>
 

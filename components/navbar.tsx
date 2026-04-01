@@ -18,6 +18,7 @@ export function Navbar() {
     { href: '/igreja', label: 'Cedro na sua Igreja' },
     { href: '/lab', label: 'CedroLAB' },
     { href: '/fineias', label: 'Finéias' },
+    { href: '/newsletter', label: 'Newsletter' },
   ];
 
   return (
