@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap');
+
+@theme {
+  --color-cedro-red: #d13d1d;
+  --color-cedro-red-hover: #b8341a;
+  --color-cedro-sage: #aac2c5;
+  --color-cedro-light: #dedfda;
+  --color-cedro-navy: #252a3a;
+  --color-cedro-black: #141414;
+  --color-cedro-white: #f5f5f0;
+  
+  --font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
+}
+
+body {
+  background-color: var(--color-cedro-black);
+  color: var(--color-cedro-light);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 3rem); }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
+h4 { font-size: 1.2rem; }
+
+p {
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-cedro-black); }
+::-webkit-scrollbar-thumb { background: var(--color-cedro-red); border-radius: 3px; }
+
+::selection { background: var(--color-cedro-red); color: var(--color-cedro-white); }
