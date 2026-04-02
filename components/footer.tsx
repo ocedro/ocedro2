@@ -16,7 +16,7 @@ export function Footer() {
             <div className="mb-4">
               <Logo />
             </div>
-            <p className="text-sm text-cedro-sage">Psicologia cristã para quem leva fé e saúde a sério.</p>
+            <p className="text-sm text-cedro-sage">Psicologia profissional para quem leva fé e saúde mental a sério.</p>
             <p className="mt-4 text-sm text-cedro-sage">ocedro.com.br</p>
           </div>
           

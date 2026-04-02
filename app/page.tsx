@@ -23,10 +23,10 @@ export default function Home() {
             >
               <SectionLabel>Clínica Cedro</SectionLabel>
               <h1 className="mb-6 text-cedro-white">
-                Terapia para quem não quer escolher entre <em className="font-serif italic text-cedro-red">fé</em> e saúde mental.
+                Psicologia de qualidade para quem leva <em className="font-serif italic text-cedro-red">fé</em> e saúde mental a sério.
               </h1>
               <p className="text-lg text-cedro-sage mb-10 max-w-[520px]">
-                Tratamento com rigor técnico e respeito aos seus valores. Seja acompanhado por psicólogos sérios, cristãos, e maduros.
+                Psicologia com rigor técnico, profundidade filosófica e respeito aos seus valores.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button asChild withArrow>
@@ -86,12 +86,12 @@ export default function Home() {
           <Divider />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
             <div>
-              <p className="mb-5 text-cedro-sage">Existe um psicólogo que trata sua fé como obstáculo, ilusão ou repressão. Cosmovisão hedonista e materialista — e, mesmo sem dizer, vai te guiando por um caminho contrário ao que você acredita.</p>
+              <p className="mb-5 text-cedro-sage">Existe um psicólogo que trata sua fé como obstáculo, ilusão ou repressão. Cosmovisão hedonista e materialista, e, mesmo sem dizer, vai te guiando por um caminho contrário ao que você acredita.</p>
               <p className="text-cedro-sage">Existe um &quot;terapeuta&quot; que fez um curso de um ano, leu dois livros de autoajuda cristã e sai atendendo sem o embasamento técnico e teórico coerente. Profissional que usa a fé para vender &quot;conselhos&quot;.</p>
             </div>
             <div>
               <p className="mb-5"><strong className="text-cedro-white font-bold">Os dois causam dano enorme para o cristão verdadeiro, que tem dores reais.</strong></p>
-              <p className="mb-5 text-cedro-sage">Na Cedro, usamos ciência psicológica com rigor técnico — e operamos a partir de uma cosmovisão bíblica que reconhece verdade, pecado, graça, responsabilidade e sentido.</p>
+              <p className="mb-5 text-cedro-sage">Na Cedro, usamos ciência psicológica com rigor técnico e operamos a partir de uma cosmovisão bíblica que reconhece verdade, o pecado, graça, responsabilidade e sentido.</p>
               <p className="text-cedro-sage">Não relativizamos sua moral. Não ignoramos sua dor emocional. Não chamamos sua fé de problema. Tratamos você como o ser humano que você é: Biológico, social, emocional e espiritual.</p>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function Home() {
               <h2><span className="font-serif italic">&quot;O justo crescerá como o cedro no Líbano.&quot;</span></h2>
               <p className="text-cedro-sage mt-2">— Salmo 92</p>
               <Divider />
-              <p>O cedro foca em ser sólido, antes de ser grande.</p>
+              <p>O cedro foca em estrutura, antes da estética.</p>
             </div>
             <div className="flex flex-col gap-4">
               <div className="p-8 border border-cedro-sage/10 transition-all hover:border-cedro-red hover:-translate-y-1 bg-cedro-black/20">
@@ -116,7 +116,7 @@ export default function Home() {
               </div>
               <div className="p-8 border border-cedro-sage/10 transition-all hover:border-cedro-red hover:-translate-y-1 bg-cedro-black/20">
                 <h4 className="mb-3 text-cedro-white">Conectado à fonte</h4>
-                <p className="text-[0.95rem] text-cedro-sage">Suas raízes buscam o lençol freático. Não depende dos fatores externos — está conectado à fonte.</p>
+                <p className="text-[0.95rem] text-cedro-sage">Suas raízes buscam o lençol freático. Não depende dos fatores externos, pois está conectado à fonte.</p>
               </div>
               <div className="p-8 border border-cedro-sage/10 transition-all hover:border-cedro-red hover:-translate-y-1 bg-cedro-black/20">
                 <h4 className="mb-3 text-cedro-white">Abraça ou quebra a rocha</h4>
@@ -127,22 +127,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CICLO CEDRO */}
+      {/* METODOLOGIA CEDRO */}
       <section className="py-24 bg-cedro-black">
         <div className="max-w-[1200px] mx-auto px-8">
           <div className="max-w-[700px] mb-14">
-            <SectionLabel>O que você vai encontrar</SectionLabel>
+            <SectionLabel>Metodologia Cedro</SectionLabel>
             <h2>Terapia que te dá liberdade para pensar.</h2>
             <p className="text-cedro-sage mt-4">O Ciclo Cedro é nosso formato de acompanhamento terapêutico estruturado em ciclos trimestrais. Não acreditamos em terapia infinita. Algo com começo, meio e fim, o objetivo fica claro desde o primeiro dia.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { num: '01', title: 'Congruência', desc: 'Você para de viver dividido entre o que crê e como age.' },
-              { num: '02', title: 'Entrega responsável', desc: 'Reconhecer limites, assumir responsabilidade e viver liberdade sem auto engano.' },
-              { num: '03', title: 'Disciplina estruturante', desc: 'Sua rotina vira estrutura, que coloca ordem na sua vida.' },
-              { num: '04', title: 'Responsabilidade vocacional', desc: 'Descobrir quem você é, o que você tem em mãos e qual seu propósito.' },
-              { num: '05', title: 'Ordem interior e exterior', desc: 'Estabilidade, clareza e paz.' },
-              { num: '06', title: 'O caminho é real', desc: 'Não prometemos cura instantânea. Prometemos um processo comprometido com a Verdade e com o seu crescimento.' },
+              { num: '01', title: 'Autenticidade e Integridade Pessoal', desc: 'Desenvolvimento de congruência entre valores pessoais e bíblicos com a sua biocosmovisão e comportamentos externos.' },
+              { num: '02', title: 'Aceitação e Confissão Humilhante', desc: 'Desenvolvimento de uma perspectiva humilde sobre si, enfatizando a importância da responsabilidade e individualidade.' },
+              { num: '03', title: 'Hábitos Poderosos', desc: 'Estabelecimento de rotinas e hábitos diários que reforcem o bem-estar pessoal e a realização, contribuindo para uma melhor saúde mental, física e espiritual.' },
+              { num: '04', title: 'Compreensão Vocacional e Identitária', desc: 'Alcance de clareza sobre identidade, propósito e missão pessoal.' },
             ].map((item) => (
               <div key={item.num} className="p-8 border border-cedro-sage/10 transition-all hover:border-cedro-red hover:-translate-y-1">
                 <div className="font-serif text-4xl text-cedro-red/50 mb-2">{item.num}</div>
@@ -155,20 +153,30 @@ export default function Home() {
       </section>
 
       {/* E-BOOK */}
-      <section className="py-20 bg-cedro-navy text-cedro-white">
+      <section className="py-20 bg-[#e8450a] text-white">
         <div className="max-w-[1200px] mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="bg-cedro-black/20 p-12 border border-cedro-red/30 text-center">
-              <SectionLabel className="!mb-2">E-book gratuito</SectionLabel>
-              <h3 className="text-[1.8rem] text-cedro-white mb-2">Não faça terapia antes de ler isso.</h3>
-              <p className="font-serif italic text-cedro-sage">Um guia honesto para quem está procurando psicólogo.</p>
+            <div className="flex justify-center">
+              <Image
+                src="/ebook-cover.png"
+                alt="E-book: Não faça terapia antes de ler isso"
+                width={600}
+                height={450}
+                className="w-full max-w-[480px] h-auto rounded shadow-2xl"
+              />
             </div>
             <div>
-              <h3 className="mb-2 text-cedro-white">Baixe gratuitamente.</h3>
-              <p className="text-cedro-sage mb-8">Coloque seu nome e e-mail abaixo e receba o e-book direto na sua caixa de entrada.</p>
-              <Button asChild withArrow>
-                <a href="https://form.respondi.app/VKSO6qpV" target="_blank" rel="noopener noreferrer">Quero o e-book</a>
-              </Button>
+              <p className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-white/70 mb-4">E-book gratuito</p>
+              <h3 className="text-[2rem] text-white mb-3 leading-tight">Não faça terapia antes de ler isso.</h3>
+              <p className="text-white/80 mb-8">Um guia honesto para quem está procurando psicólogo. Coloque seu e-mail e receba gratuitamente.</p>
+              <a
+                href="https://form.respondi.app/VKSO6qpV"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#e8450a] font-bold tracking-wider uppercase text-[0.95rem] transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                Quero o e-book →
+              </a>
             </div>
           </div>
         </div>
@@ -179,27 +187,26 @@ export default function Home() {
         <div className="max-w-[1200px] mx-auto px-8">
           <SectionLabel>O que dizem os pacientes</SectionLabel>
           <h2 className="mb-12">Histórias reais.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            <div className="flex flex-col gap-6">
-              <div className="p-10 border-l-4 border-cedro-red bg-cedro-navy/50">
-                <p className="font-serif text-lg italic text-cedro-light mb-4">&quot;Após 12 anos sofrendo com ansiedade, hoje posso dizer que há 1 ano não tomo mais remédio e não tenho mais crises de pânico. O Leandro uniu psicologia e Cristo para me libertar.&quot;</p>
-                <cite className="font-sans not-italic text-sm text-cedro-sage">— Paciente da Clínica Cedro</cite>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { src: '/dep-1.jpg', source: 'WhatsApp · Paciente' },
+              { src: '/dep-2.jpg', source: 'Instagram · @marinauramertins' },
+              { src: '/dep-3.jpg', source: 'Instagram · @jessicabuegues' },
+              { src: '/dep-4.jpg', source: 'WhatsApp · Paciente' },
+            ].map((dep, i) => (
+              <div key={i} className="rounded-xl overflow-hidden border border-cedro-sage/10 bg-[#1a1a1a]">
+                <Image
+                  src={dep.src}
+                  alt={dep.source}
+                  width={600}
+                  height={500}
+                  className="w-full h-auto object-cover object-top"
+                />
+                <div className="px-4 py-3 border-t border-cedro-sage/10 bg-[#111]">
+                  <p className="text-xs text-cedro-sage">{dep.source}</p>
+                </div>
               </div>
-              <div className="p-10 border-l-4 border-cedro-red bg-cedro-navy/50">
-                <p className="font-serif text-lg italic text-cedro-light mb-4">&quot;Não me senti apenas diante de um profissional competente, mas de alguém que carrega um chamado. Sua postura cristã não é apenas um detalhe — é o que torna sua prática única.&quot;</p>
-                <cite className="font-sans not-italic text-sm text-cedro-sage">— Paciente da Clínica Cedro</cite>
-              </div>
-            </div>
-            <div className="flex flex-col gap-6">
-              <div className="p-10 border-l-4 border-cedro-red bg-cedro-navy/50">
-                <p className="font-serif text-lg italic text-cedro-light mb-4">&quot;Quando cheguei até o Leandro, eu estava em estado de desespero. A cada sessão, eu me sentia mais leve e conseguia compreender melhor aquilo que antes parecia confuso.&quot;</p>
-                <cite className="font-sans not-italic text-sm text-cedro-sage">— Paciente da Clínica Cedro</cite>
-              </div>
-              <div className="p-10 border-l-4 border-cedro-red bg-cedro-navy/50">
-                <p className="font-serif text-lg italic text-cedro-light mb-4">&quot;O Leandro literalmente salvou minha vida. Com ele eu descobri que não tenho culpa, descobri o sentido da vida, que Deus estava comigo.&quot;</p>
-                <cite className="font-sans not-italic text-sm text-cedro-sage">— Paciente da Clínica Cedro</cite>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
