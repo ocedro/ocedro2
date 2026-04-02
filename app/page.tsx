@@ -127,6 +127,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* LEANDRO CARONE POR AÍ */}
+      <section className="py-24 bg-cedro-black text-cedro-white">
+        <div className="max-w-[1200px] mx-auto px-8">
+          <SectionLabel>Leandro Carone por aí</SectionLabel>
+          <h2 className="mb-4 text-cedro-white">Palestras, entrevistas e conteúdo sobre psicologia cristã.</h2>
+          <p className="text-cedro-sage mb-12">Veja o trabalho na prática.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { id: 'bAiZ3Gi6_NU', url: 'https://www.youtube.com/embed/bAiZ3Gi6_NU' },
+              { id: 'RJ5AU_2mtFA', url: 'https://www.youtube.com/embed/RJ5AU_2mtFA' },
+              { id: 'M1mv_XhZ4gs', url: 'https://www.youtube.com/embed/M1mv_XhZ4gs' },
+              { id: 'TE9U7NSiHNM', url: 'https://www.youtube.com/embed/TE9U7NSiHNM' },
+            ].map((v) => (
+              <div key={v.id} className="aspect-video w-full">
+                <iframe
+                  src={v.url}
+                  title="Leandro Carone"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full border border-cedro-sage/10"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* E-BOOK */}
+      <section className="py-20 bg-[#e8450a] text-white">
+        <div className="max-w-[1200px] mx-auto px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div className="flex justify-center">
+              <Image
+                src="/ebook-cover.png"
+                alt="E-book: Não faça terapia antes de ler isso"
+                width={600}
+                height={450}
+                className="w-full max-w-[480px] h-auto rounded shadow-2xl"
+              />
+            </div>
+            <div>
+              <p className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-white/70 mb-4">E-book gratuito</p>
+              <h3 className="text-[2rem] text-white mb-3 leading-tight">Não faça terapia antes de ler isso.</h3>
+              <p className="text-white/80 mb-8">Um guia honesto para quem está procurando psicólogo. Coloque seu e-mail e receba gratuitamente.</p>
+              <a
+                href="https://form.respondi.app/VKSO6qpV"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#e8450a] font-bold tracking-wider uppercase text-[0.95rem] transition-all hover:-translate-y-0.5"
+              >
+                Quero o e-book →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PARA QUEM */}
       <section className="py-24 bg-cedro-navy">
         <div className="max-w-[1200px] mx-auto px-8">
