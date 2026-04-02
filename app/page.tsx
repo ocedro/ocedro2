@@ -246,7 +246,7 @@ export default function Home() {
             <div>
               <p className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-white/70 mb-4">E-book gratuito</p>
               <h3 className="text-[2rem] text-white mb-3 leading-tight">Não faça terapia antes de ler isso.</h3>
-              <p className="text-white/80 mb-8">Um guia honesto para quem está procurando psicólogo. Coloque seu e-mail e receba gratuitamente.</p>
+              <p className="text-white/80 mb-8">Um guia honesto para quem está procurando psicólogo. Preencha o forms e receba gratuitamente.</p>
               <a
                 href="https://form.respondi.app/VKSO6qpV"
                 target="_blank"
