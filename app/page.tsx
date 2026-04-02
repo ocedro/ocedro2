@@ -25,7 +25,9 @@ const INTERVAL = 2800;
 function VideoCarousel() {
   const [current, setCurrent] = useState(0);
   const [progKey, setProgKey] = useState(0);
+  const [paused, setPaused] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const pausedRef = useRef(false);
 
   const goTo = useCallback((idx: number) => {
     setCurrent(idx);
@@ -33,6 +35,7 @@ function VideoCarousel() {
   }, []);
 
   const next = useCallback(() => {
+    if (pausedRef.current) return;
     setCurrent(c => (c + 1) % TOTAL_PAGES);
     setProgKey(k => k + 1);
   }, []);
@@ -41,6 +44,23 @@ function VideoCarousel() {
     timerRef.current = setInterval(next, INTERVAL);
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [next]);
+
+  // Listen for YouTube postMessage events to detect play/pause
+  useEffect(() => {
+    const handler = (e: MessageEvent) => {
+      try {
+        const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (data?.event === 'onStateChange') {
+          const isPlaying = data.info === 1; // 1 = playing, 2 = paused, 0 = ended
+          pausedRef.current = isPlaying;
+          setPaused(isPlaying);
+          if (!isPlaying) setProgKey(k => k + 1); // restart progress bar when paused/ended
+        }
+      } catch {}
+    };
+    window.addEventListener('message', handler);
+    return () => window.removeEventListener('message', handler);
+  }, []);
 
   const resetTimer = (idx: number) => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -63,7 +83,7 @@ function VideoCarousel() {
             {VIDEO_IDS.map((id) => (
               <div key={id} className="flex-none w-[calc(36.666%-11px)] aspect-video border border-cedro-sage/10">
                 <iframe
-                  src={`https://www.youtube.com/embed/${id}?rel=0`}
+                  src={`https://www.youtube.com/embed/${id}?rel=0&enablejsapi=1`}
                   title="Leandro Carone"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -76,11 +96,14 @@ function VideoCarousel() {
 
         {/* Progress bar */}
         <div className="mt-4 h-[2px] bg-cedro-sage/10 rounded overflow-hidden">
-          <div
-            key={progKey}
-            className="h-full bg-cedro-red rounded"
-            style={{ animation: `progress ${INTERVAL}ms linear forwards` }}
-          />
+          {!paused && (
+            <div
+              key={progKey}
+              className="h-full bg-cedro-red rounded"
+              style={{ animation: `progress ${INTERVAL}ms linear forwards` }}
+            />
+          )}
+          {paused && <div className="h-full bg-cedro-red/30 rounded w-full" />}
         </div>
 
         {/* Dots */}
