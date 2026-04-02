@@ -2,10 +2,111 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { SectionLabel } from '@/components/ui/section-label';
 import { Divider } from '@/components/ui/divider';
+
+const VIDEO_IDS = [
+  'bAiZ3Gi6_NU',
+  'RJ5AU_2mtFA',
+  'M1mv_XhZ4gs',
+  'TE9U7NSiHNM',
+  'zfsuZ0Rces4',
+  'p8oFCFIGAdk',
+  '0_KogS-dOTE',
+  'SFLQ9CMO38I',
+];
+const VISIBLE = 3;
+const TOTAL_PAGES = VIDEO_IDS.length - VISIBLE + 1;
+const INTERVAL = 4000;
+
+function VideoCarousel() {
+  const [current, setCurrent] = useState(0);
+  const [progKey, setProgKey] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const goTo = useCallback((idx: number) => {
+    setCurrent(idx);
+    setProgKey(k => k + 1);
+  }, []);
+
+  const next = useCallback(() => {
+    setCurrent(c => (c + 1) % TOTAL_PAGES);
+    setProgKey(k => k + 1);
+  }, []);
+
+  useEffect(() => {
+    timerRef.current = setInterval(next, INTERVAL);
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [next]);
+
+  const resetTimer = (idx: number) => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    goTo(idx);
+    timerRef.current = setInterval(next, INTERVAL);
+  };
+
+  return (
+    <section className="py-24 bg-cedro-black text-cedro-white overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-8">
+        <SectionLabel>Leandro Carone por aí</SectionLabel>
+        <h2 className="mb-2 text-cedro-white">Leandro Carone</h2>
+        <p className="text-cedro-sage mb-10">Podcasts, pregações, lives e conteúdos</p>
+
+        {/* Track */}
+        <div className="overflow-hidden">
+          <div
+            className="flex gap-4 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
+            style={{ transform: `translateX(calc(-${current} * (33.333% + 5.33px)))` }}
+          >
+            {VIDEO_IDS.map((id) => (
+              <div key={id} className="flex-none w-[calc(33.333%-11px)] aspect-video border border-cedro-sage/10">
+                <iframe
+                  src={`https://www.youtube.com/embed/${id}?rel=0`}
+                  title="Leandro Carone"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Progress bar */}
+        <div className="mt-4 h-[2px] bg-cedro-sage/10 rounded overflow-hidden">
+          <div
+            key={progKey}
+            className="h-full bg-cedro-red rounded"
+            style={{ animation: `progress ${INTERVAL}ms linear forwards` }}
+          />
+        </div>
+
+        {/* Dots */}
+        <div className="flex justify-center gap-2 mt-4">
+          {Array.from({ length: TOTAL_PAGES }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => resetTimer(i)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                i === current ? 'bg-cedro-red scale-125' : 'bg-cedro-sage/20 hover:bg-cedro-sage/40'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes progress {
+          from { width: 0% }
+          to   { width: 100% }
+        }
+      `}</style>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
@@ -128,31 +229,7 @@ export default function Home() {
       </section>
 
       {/* LEANDRO CARONE POR AÍ */}
-      <section className="py-24 bg-cedro-black text-cedro-white">
-        <div className="max-w-[1200px] mx-auto px-8">
-          <SectionLabel>Leandro Carone por aí</SectionLabel>
-          <h2 className="mb-4 text-cedro-white">Palestras, entrevistas e conteúdo sobre psicologia cristã.</h2>
-          <p className="text-cedro-sage mb-12">Veja o trabalho na prática.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { id: 'bAiZ3Gi6_NU', url: 'https://www.youtube.com/embed/bAiZ3Gi6_NU' },
-              { id: 'RJ5AU_2mtFA', url: 'https://www.youtube.com/embed/RJ5AU_2mtFA' },
-              { id: 'M1mv_XhZ4gs', url: 'https://www.youtube.com/embed/M1mv_XhZ4gs' },
-              { id: 'TE9U7NSiHNM', url: 'https://www.youtube.com/embed/TE9U7NSiHNM' },
-            ].map((v) => (
-              <div key={v.id} className="aspect-video w-full">
-                <iframe
-                  src={v.url}
-                  title="Leandro Carone"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full border border-cedro-sage/10"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <VideoCarousel />
 
       {/* E-BOOK */}
       <section className="py-20 bg-[#e8450a] text-white">
