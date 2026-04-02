@@ -170,22 +170,28 @@ export default function AgendePage() {
       </section>
 
       {/* EQUIPE */}
-      <section className="py-24 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-8">
+      <section style={{ background: '#222222' }}>
+        <div className="max-w-[1200px] mx-auto px-8 pt-24 pb-4">
           <SectionLabel>Equipe Cedro</SectionLabel>
-          <h2 className="mb-4">7 psicólogos cristãos.</h2>
-          <p className="text-cedro-sage mb-12 max-w-[800px]">Cada profissional foi escolhido por um critério simples: ama os pacientes, respeita a profissão e não para de estudar. Equipe supervisionada semanalmente por Leandro Carone.</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-            {team.map((member, i) => (
-              <div key={i} className="text-center">
-                <div className="w-full aspect-[3/4] bg-cedro-black mb-4 flex items-center justify-center font-serif text-3xl text-cedro-sage/50">
-                  {member.initials}
-                </div>
-                <h4 className="text-base text-cedro-white mb-1">{member.name}</h4>
-                <p className="text-sm text-cedro-sage">{member.role}</p>
-              </div>
-            ))}
-          </div>
+          <h2 className="mb-4">7 psicólogos.</h2>
+          <p className="text-cedro-sage mb-0 max-w-[800px]">Cada profissional foi escolhido por critérios simples: ama os pacientes, respeita a profissão, cristão sólido e não para de estudar. Equipe supervisionada semanalmente por Leandro Carone.</p>
+        </div>
+        <div className="relative w-full">
+          <div className="absolute top-0 left-0 right-0 h-10 pointer-events-none z-10"
+            style={{ background: 'linear-gradient(to bottom, #222222, transparent)' }} />
+          <div className="absolute top-0 left-0 bottom-0 w-20 pointer-events-none z-10"
+            style={{ background: 'linear-gradient(to right, #222222, transparent)' }} />
+          <div className="absolute top-0 right-0 bottom-0 w-20 pointer-events-none z-10"
+            style={{ background: 'linear-gradient(to left, #222222, transparent)' }} />
+          <Image
+            src="/equipe-cedro.png"
+            alt="Psicólogos Cedro"
+            width={1920}
+            height={1080}
+            className="w-full h-auto"
+          />
+          <div className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none z-10"
+            style={{ background: 'linear-gradient(to top, #141414, transparent)' }} />
         </div>
       </section>
 
