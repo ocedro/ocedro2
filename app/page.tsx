@@ -134,9 +134,11 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* HERO */}
-      <section className="min-h-screen flex items-center pt-20 relative overflow-hidden">
+      <section className="min-h-screen flex items-center pt-20 relative overflow-hidden"
+        style={{ backgroundImage: 'url(/hero-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="absolute inset-0 bg-cedro-black/60 pointer-events-none" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-br from-cedro-red/5 to-transparent pointer-events-none" />
-        <div className="max-w-[1200px] mx-auto px-8 w-full">
+        <div className="max-w-[1200px] mx-auto px-8 w-full relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-16 items-center">
             <motion.div 
               className="order-2 md:order-1"
