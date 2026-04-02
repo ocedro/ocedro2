@@ -20,7 +20,7 @@ const VIDEO_IDS = [
 ];
 const VISIBLE = 3;
 const TOTAL_PAGES = VIDEO_IDS.length - VISIBLE + 1;
-const INTERVAL = 4000;
+const INTERVAL = 2800;
 
 function VideoCarousel() {
   const [current, setCurrent] = useState(0);
@@ -52,17 +52,16 @@ function VideoCarousel() {
     <section className="py-24 bg-cedro-black text-cedro-white overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-8">
         <SectionLabel>Leandro Carone por aí</SectionLabel>
-        <h2 className="mb-2 text-cedro-white">Leandro Carone</h2>
         <p className="text-cedro-sage mb-10">Podcasts, pregações, lives e conteúdos</p>
 
         {/* Track */}
         <div className="overflow-hidden">
           <div
             className="flex gap-4 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
-            style={{ transform: `translateX(calc(-${current} * (33.333% + 5.33px)))` }}
+            style={{ transform: `translateX(calc(-${current} * (36.666% + 5.33px)))` }}
           >
             {VIDEO_IDS.map((id) => (
-              <div key={id} className="flex-none w-[calc(33.333%-11px)] aspect-video border border-cedro-sage/10">
+              <div key={id} className="flex-none w-[calc(36.666%-11px)] aspect-video border border-cedro-sage/10">
                 <iframe
                   src={`https://www.youtube.com/embed/${id}?rel=0`}
                   title="Leandro Carone"
