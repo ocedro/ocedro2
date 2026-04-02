@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { SectionLabel } from '@/components/ui/section-label';
@@ -139,20 +140,30 @@ export default function AgendePage() {
       </section>
 
       {/* E-BOOK */}
-      <section className="py-20 bg-cedro-black text-cedro-white">
+      <section className="py-20 bg-[#e8450a] text-white">
         <div className="max-w-[1200px] mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="bg-cedro-navy/50 p-12 border border-cedro-red/30 text-center">
-              <SectionLabel className="!mb-2">E-book gratuito</SectionLabel>
-              <h3 className="text-[1.8rem] text-cedro-white mb-2">Não faça terapia antes de ler isso.</h3>
-              <p className="font-serif italic text-cedro-sage">Um guia honesto para quem está procurando psicólogo.</p>
+            <div className="flex justify-center">
+              <Image
+                src="/ebook-cover.png"
+                alt="E-book: Não faça terapia antes de ler isso"
+                width={600}
+                height={450}
+                className="w-full max-w-[480px] h-auto rounded shadow-2xl"
+              />
             </div>
             <div>
-              <h3 className="mb-2 text-cedro-white">Baixe gratuitamente.</h3>
-              <p className="text-cedro-sage mb-8">Coloque seu nome e e-mail abaixo e receba o e-book direto na sua caixa de entrada.</p>
-              <Button asChild withArrow>
-                <a href="https://form.respondi.app/VKSO6qpV" target="_blank" rel="noopener noreferrer">Quero o e-book</a>
-              </Button>
+              <p className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-white/70 mb-4">E-book gratuito</p>
+              <h3 className="text-[2rem] text-white mb-3 leading-tight">Não faça terapia antes de ler isso.</h3>
+              <p className="text-white/80 mb-8">Um guia honesto para quem está procurando psicólogo. Preencha o forms e receba gratuitamente.</p>
+              <a
+                href="https://form.respondi.app/VKSO6qpV"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#e8450a] font-bold tracking-wider uppercase text-[0.95rem] transition-all hover:-translate-y-0.5"
+              >
+                Quero o e-book →
+              </a>
             </div>
           </div>
         </div>
