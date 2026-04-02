@@ -90,7 +90,7 @@ export default function LeandroPage() {
               '+6.000 horas de atendimento clínico',
               '+500 pacientes acompanhados',
               'Líder de Jovens — Ministério Arca na Igreja Batista Vida Nova, Campinas - SP',
-              'Casado com Paula desde 2021 · Pai da Elisa e',
+              'Casado com Paula desde 2021 · Pai da Elisa',
               'CRP ativo – por enquanto, pelo menos. (Eu não disponibilizo aqui para não ficar sofrendo denúncias de intolerantes religiosos e idiotas úteis).'
             ].map((cred, i) => (
               <div key={i} className="px-5 py-2.5 border border-cedro-navy/20 text-sm text-cedro-navy">
