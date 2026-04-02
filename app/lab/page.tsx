@@ -17,7 +17,7 @@ export default function LabPage() {
                 alt="CedroLAB"
                 width={240}
                 height={60}
-                className="mb-8 w-auto h-10 object-contain"
+                className="mb-8 w-auto h-14 object-contain"
                 priority
               />
               <SectionLabel>CedroLAB · Mentoria</SectionLabel>
@@ -126,25 +126,45 @@ export default function LabPage() {
 
       <section className="py-24 bg-cedro-black text-cedro-white">
         <div className="max-w-[1200px] mx-auto px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <Image 
-                src="/leandro-lab.jpeg" 
-                alt="Leandro Carone" 
-                className="w-full h-auto max-w-[380px] object-cover"
-                width={480}
-                height={600}
-                priority
-                referrerPolicy="no-referrer"
-              />
+          <SectionLabel>Quem conduz</SectionLabel>
+          <h2 className="mb-12 text-cedro-white">A mentoria é conduzida por quem já construiu na prática.</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+
+            {/* Leandro */}
+            <div className="grid grid-cols-[160px_1fr] gap-8 items-start">
+              <div>
+                <Image
+                  src="/leandro-lab.jpeg"
+                  alt="Leandro Carone"
+                  width={320}
+                  height={420}
+                  className="w-full h-auto object-cover"
+                  priority
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div>
+                <h3 className="mb-1 text-cedro-white">Leandro Carone</h3>
+                <p className="text-xs font-bold tracking-widest uppercase text-cedro-red mb-4">Psicólogo Clínico · Fundador</p>
+                <p className="mb-4 text-cedro-sage text-[0.95rem]">Psicólogo clínico com mais de 6.000 horas de atendimento. Pós-graduado em Análise Existencial e Logoterapia Frankliana. Fundador da Clínica Cedro, uma equipe de 7 psicólogos supervisionados semanalmente.</p>
+                <p className="mb-4 text-cedro-sage text-[0.95rem]">Enfrenta o conselho de psicologia por se posicionar como cristão. Construiu tudo do zero, sem curso de marketing, sem agência. Na prática, errando e corrigindo.</p>
+                <p className="text-cedro-white italic text-[0.95rem]">&ldquo;A mentoria CedroLAB é tudo o que eu gostaria de ter tido quando comecei.&rdquo;</p>
+              </div>
             </div>
-            <div>
-              <SectionLabel>Quem conduz</SectionLabel>
-              <h2 className="mb-6 text-cedro-white">Leandro Carone</h2>
-              <p className="mb-5 text-cedro-sage">Psicólogo clínico com mais de 6.000 horas de atendimento. Pós-graduado em Análise Existencial e Logoterapia Frankliana. Fundador da Clínica Cedro, uma equipe de 7 psicólogos supervisionados semanalmente.</p>
-              <p className="mb-5 text-cedro-sage">Enfrenta o conselho de psicologia por se posicionar como cristão. Construiu tudo do zero, sem curso de marketing, sem agência. Na prática, errando e corrigindo.</p>
-              <p className="text-cedro-sage italic">&ldquo;A mentoria CedroLAB é tudo o que eu gostaria de ter tido quando comecei.&rdquo;</p>
+
+            {/* Gabriel */}
+            <div className="grid grid-cols-[160px_1fr] gap-8 items-start">
+              <div className="bg-cedro-navy border border-cedro-sage/10 aspect-[4/5] flex items-center justify-center">
+                <p className="text-cedro-sage/40 text-sm text-center px-4">Foto em breve</p>
+              </div>
+              <div>
+                <h3 className="mb-1 text-cedro-white">Gabriel Ferreira</h3>
+                <p className="text-xs font-bold tracking-widest uppercase text-cedro-red mb-4">Engenheiro · Sócio</p>
+                <p className="mb-4 text-cedro-sage text-[0.95rem]">Engenheiro agrícola formado pela Unicamp. Sócio da Cedro e principal responsável pelas vendas e gestão financeira da clínica.</p>
+                <p className="text-cedro-sage text-[0.95rem]">Atua também como gestor financeiro da clínica de estética da esposa, trazendo para a CedroLAB uma visão prática de gestão, crescimento e sustentabilidade de negócios.</p>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
