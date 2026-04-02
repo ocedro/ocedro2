@@ -7,9 +7,9 @@ export function Logo({ className }: { className?: string }) {
       <Image 
         src="/logo.png"
         alt="Clínica Cedro" 
-        width={180}
-        height={36}
-        className="h-6 w-auto object-contain"
+        width={1001}
+        height={220}
+        className="h-8 w-auto object-contain"
         priority
       />
     </div>
