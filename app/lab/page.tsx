@@ -12,6 +12,14 @@ export default function LabPage() {
         <div className="max-w-[1200px] mx-auto px-8">
           <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
             <div>
+              <Image
+                src="/cedrolab-logo.png"
+                alt="CedroLAB"
+                width={240}
+                height={60}
+                className="mb-8 w-auto h-10 object-contain"
+                priority
+              />
               <SectionLabel>CedroLAB · Mentoria</SectionLabel>
               <h1 className="mb-6 text-cedro-white">
                 Você é psicólogo, mas não sabe dizer quem você é como profissional.
@@ -20,7 +28,7 @@ export default function LabPage() {
                 Sabe atender. Estudou. Tem CRP. Mas na hora de se posicionar, criar conteúdo, cobrar o que vale e construir uma prática que sustenta sua vida trava.
               </p>
               <p className="mb-10 text-cedro-white">
-                O problema é falta de identidade profissional. E é exatamente isso que o CedroLAB resolve.
+                O problema é falta de identidade profissional. E é exatamente isso que a CedroLAB resolve.
               </p>
               <Button asChild withArrow>
                 <a href="https://form.respondi.app/dbn6xbQI" target="_blank" rel="noopener noreferrer">Quero fazer parte</a>
@@ -44,7 +52,7 @@ export default function LabPage() {
       <section className="py-24 bg-cedro-navy text-cedro-white">
         <div className="max-w-[1200px] mx-auto px-8">
           <SectionLabel>Isso te descreve?</SectionLabel>
-          <h2 className="mb-10 max-w-[800px] text-cedro-white">Se você se reconhece aqui, o CedroLAB foi feito para você.</h2>
+          <h2 className="mb-10 max-w-[800px] text-cedro-white">Se você se reconhece aqui, a CedroLAB foi feita para você.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="flex flex-col gap-5">
               <div className="p-8 border border-cedro-sage/10 bg-cedro-black">
@@ -81,11 +89,11 @@ export default function LabPage() {
       <section className="py-24 bg-cedro-black text-cedro-white">
         <div className="max-w-[800px] mx-auto px-8">
           <SectionLabel>A solução</SectionLabel>
-          <h2 className="mb-6 text-cedro-white">O CedroLAB resolve pela raiz: identidade profissional.</h2>
+          <h2 className="mb-6 text-cedro-white">A CedroLAB resolve pela raiz: identidade profissional.</h2>
           <Divider />
           <p className="mb-5 text-cedro-sage">Quando você sabe quem é como profissional, tudo se organiza: o que falar, como cobrar, para quem criar, onde investir tempo e energia.</p>
-          <p className="mb-5 text-cedro-sage">O CedroLAB é uma mentoria com Leandro Carone e Gabriel para psicólogos que querem construir uma prática clínica séria, sustentável e coerente com seus valores.</p>
-          <p className="text-cedro-sage">Não é curso. Não é grupo genérico. É mentoria com acompanhamento real e individualizado.</p>
+          <p className="mb-5 text-cedro-sage">A CedroLAB é uma mentoria com Leandro Carone e Gabriel Ferreira para psicólogos que querem construir uma prática clínica séria, sustentável e coerente com seus valores.</p>
+          <p className="text-cedro-sage">Não é uma plataforma com conteúdos gravados. É mentoria com acompanhamento real e individualizado.</p>
         </div>
       </section>
 
@@ -121,9 +129,9 @@ export default function LabPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <Image 
-                src="/leandro-image.png" 
+                src="/leandro-lab.jpeg" 
                 alt="Leandro Carone" 
-                className="w-full h-auto max-w-[380px] grayscale-[10%] object-cover"
+                className="w-full h-auto max-w-[380px] object-cover"
                 width={480}
                 height={600}
                 priority
@@ -133,9 +141,9 @@ export default function LabPage() {
             <div>
               <SectionLabel>Quem conduz</SectionLabel>
               <h2 className="mb-6 text-cedro-white">Leandro Carone</h2>
-              <p className="mb-5 text-cedro-sage">Psicólogo clínico com mais de 6.000 horas de atendimento. Pós-graduado em Análise Existencial e Logoterapia Frankliana. Fundador da Clínica Cedro — equipe de 7 psicólogos cristãos supervisionados semanalmente.</p>
-              <p className="mb-5 text-cedro-sage">Enfrentou o conselho de psicologia por se posicionar como cristão. Construiu tudo do zero — sem curso de marketing, sem agência. Na prática, errando e corrigindo.</p>
-              <p className="text-cedro-sage">O CedroLAB é tudo o que eu gostaria de ter tido quando comecei.</p>
+              <p className="mb-5 text-cedro-sage">Psicólogo clínico com mais de 6.000 horas de atendimento. Pós-graduado em Análise Existencial e Logoterapia Frankliana. Fundador da Clínica Cedro, uma equipe de 7 psicólogos supervisionados semanalmente.</p>
+              <p className="mb-5 text-cedro-sage">Enfrenta o conselho de psicologia por se posicionar como cristão. Construiu tudo do zero, sem curso de marketing, sem agência. Na prática, errando e corrigindo.</p>
+              <p className="text-cedro-sage italic">&ldquo;A mentoria CedroLAB é tudo o que eu gostaria de ter tido quando comecei.&rdquo;</p>
             </div>
           </div>
         </div>
@@ -143,7 +151,7 @@ export default function LabPage() {
 
       <section className="py-24 bg-cedro-navy text-cedro-white">
         <div className="max-w-[1200px] mx-auto px-8">
-          <h2 className="mb-12 text-cedro-white">O CedroLAB não é para qualquer psicólogo.</h2>
+          <h2 className="mb-12 text-cedro-white">A Mentoria CedroLAB não é para qualquer psicólogo.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-cedro-red mb-4">É para você se:</h3>
@@ -152,7 +160,6 @@ export default function LabPage() {
                   'Quer construir uma prática séria e sustentável, não um hobby',
                   'Está disposto a se posicionar com clareza, mesmo que dê medo',
                   'Quer orientação prática de quem já fez, não teoria de quem só ensina',
-                  'Leva a sério tanto a fé quanto a profissão',
                   'Entende que vai exigir trabalho, constância e humildade'
                 ].map((item, i) => (
                   <li key={i} className="py-3 border-b border-cedro-sage/10 text-[0.95rem] flex items-start gap-3">
