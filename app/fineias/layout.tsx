@@ -1,0 +1,22 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Mentoria Fineias — Sociedade Fineias',
+  description: 'Mentoria em grupo para homens cristãos prontos para quebrar o ciclo do vício em pornografia.',
+};
+
+export default function FineiasLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div style={{
+      '--color-cedro-red':       '#c48f4b',
+      '--color-cedro-red-hover': '#a8773a',
+      '--color-cedro-white':     '#dbd3c0',
+      '--color-cedro-light':     '#ede8de',
+      '--color-cedro-black':     '#1e0c04',
+      '--color-cedro-navy':      '#36170a',
+      '--color-cedro-sage':      'rgba(219,211,192,0.6)',
+    } as React.CSSProperties}>
+      {children}
+    </div>
+  );
+}

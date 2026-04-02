@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { SectionLabel } from '@/components/ui/section-label';
 import { Divider } from '@/components/ui/divider';
@@ -20,7 +21,15 @@ export default function FineiasPage() {
     <div className="flex flex-col">
       <section className="pt-32 pb-20 bg-cedro-black">
         <div className="max-w-[800px] mx-auto px-8">
-          <SectionLabel>Sociedade Finéias</SectionLabel>
+          <Image
+            src="/fineias-logo.png"
+            alt="Mentoria Fineias"
+            width={480}
+            height={120}
+            className="h-14 w-auto mb-10 object-contain"
+            priority
+          />
+          <SectionLabel>Mentoria Fineias</SectionLabel>
           <h1 className="mb-6 text-cedro-white">
             Você prometeu que seria a última vez. Mas caiu de novo.
           </h1>
