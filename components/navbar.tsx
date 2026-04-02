@@ -19,7 +19,7 @@ export function Navbar() {
     { href: '/agende', label: 'Agende sua Consulta' },
     { href: '/igreja', label: 'Cedro na sua Igreja' },
     { href: '/lab', label: 'CedroLAB' },
-    { href: '/fineias', label: 'Finéias' },
+    { href: '/fineias', label: 'Mentoria Finéias' },
     { href: '/newsletter', label: 'Newsletter' },
   ];
 
