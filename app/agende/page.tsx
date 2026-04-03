@@ -22,9 +22,9 @@ export default function AgendePage() {
     <div className="flex flex-col">
 
       {/* HERO */}
-      <section className="pt-32 pb-20 bg-cedro-navy relative overflow-hidden">
-        <div className="absolute top-[-80px] right-[-80px] w-[320px] h-[320px] rounded-full border border-cedro-red/10 pointer-events-none" />
-        <div className="absolute top-[-20px] right-[-20px] w-[180px] h-[180px] rounded-full border border-cedro-red/15 pointer-events-none" />
+      <section className="pt-32 pb-20 relative overflow-hidden" style={{ background: '#f0ede6' }}>
+        <div className="absolute bottom-[-40px] right-[-40px] w-[220px] h-[220px] rounded-full border border-cedro-red/12 pointer-events-none" />
+        <div className="absolute bottom-[-10px] right-[60px] w-[120px] h-[120px] rounded-full border border-cedro-red/18 pointer-events-none" />
         <motion.div
           className="max-w-[1200px] mx-auto px-8"
           initial={{ opacity: 0, y: 20 }}
@@ -32,17 +32,17 @@ export default function AgendePage() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <SectionLabel>Clínica Cedro</SectionLabel>
-          <h1 className="text-cedro-white mb-0 leading-tight">
+          <h1 className="mb-0 leading-tight" style={{ color: '#1a1a1a' }}>
             Agende sua consulta.<br />
-            <em className="font-serif italic text-cedro-white/50">Sem complicação.</em>
+            <em className="font-serif italic" style={{ color: 'rgba(26,26,26,0.35)' }}>Sem complicação.</em>
           </h1>
           <Divider className="my-6" />
-          <p className="text-lg text-cedro-sage max-w-[560px] mb-8">
+          <p className="text-lg max-w-[560px] mb-8" style={{ color: '#555' }}>
             Atendimento por videochamada, com psicólogos sérios. Sessões de 50 minutos, semanais ou quinzenais.
           </p>
           <div className="flex flex-wrap gap-6 mb-10">
             {['Sessão avulsa', 'Avaliação', 'Ciclo Cedro'].map((s, i) => (
-              <div key={i} className="flex items-center gap-3 text-sm text-cedro-sage/80">
+              <div key={i} className="flex items-center gap-3 text-sm" style={{ color: '#666' }}>
                 <span className="w-6 h-6 rounded-full border border-cedro-red text-cedro-red text-xs font-bold flex items-center justify-center shrink-0">
                   {i + 1}
                 </span>
@@ -190,7 +190,7 @@ export default function AgendePage() {
             height={1080}
             className="w-full h-auto"
           />
-          <div className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none z-10"
+          <div className="absolute bottom-0 left-0 right-0 h-[15%] pointer-events-none z-10"
             style={{ background: 'linear-gradient(to top, #141414, transparent)' }} />
         </div>
       </section>
