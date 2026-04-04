@@ -23,18 +23,34 @@ export default function AgendePage() {
 
       {/* HERO */}
       <section className="pt-32 pb-20 relative overflow-hidden" style={{ background: '#f0ede6' }}>
-        <div className="absolute bottom-[-40px] right-[-40px] w-[220px] h-[220px] rounded-full border border-cedro-red/12 pointer-events-none" />
-        <div className="absolute bottom-[-10px] right-[60px] w-[120px] h-[120px] rounded-full border border-cedro-red/18 pointer-events-none" />
+        {/* Linha vertical esquerda */}
+        <div className="absolute left-0 top-0 bottom-0 w-[3px] pointer-events-none"
+          style={{ background: 'linear-gradient(to bottom, transparent, #d13d1d 30%, #d13d1d 70%, transparent)' }} />
+        {/* Círculos concêntricos */}
+        <div className="absolute bottom-[-60px] right-[-60px] w-[280px] h-[280px] rounded-full border border-cedro-red/10 pointer-events-none" />
+        <div className="absolute bottom-[-20px] right-[-20px] w-[160px] h-[160px] rounded-full border border-cedro-red/15 pointer-events-none" />
+        <div className="absolute bottom-[30px] right-[30px] w-[60px] h-[60px] rounded-full pointer-events-none" style={{ background: 'rgba(209,61,29,0.06)' }} />
+        {/* Grid pattern canto superior direito */}
+        <div className="absolute top-0 right-0 w-[200px] h-[200px] pointer-events-none" style={{
+          backgroundImage: 'repeating-linear-gradient(0deg, rgba(209,61,29,0.04) 0px, rgba(209,61,29,0.04) 1px, transparent 1px, transparent 28px), repeating-linear-gradient(90deg, rgba(209,61,29,0.04) 0px, rgba(209,61,29,0.04) 1px, transparent 1px, transparent 28px)',
+          maskImage: 'radial-gradient(ellipse at top right, black 20%, transparent 70%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at top right, black 20%, transparent 70%)',
+        }} />
+        {/* Badge premium */}
+        <div className="absolute top-6 right-8 text-[9px] tracking-widest uppercase pointer-events-none"
+          style={{ color: 'rgba(209,61,29,0.5)', border: '1px solid rgba(209,61,29,0.2)', padding: '4px 12px', borderRadius: '20px' }}>
+          Clínica Cedro
+        </div>
         <motion.div
-          className="max-w-[1200px] mx-auto px-8"
+          className="max-w-[1200px] mx-auto px-8 relative z-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <SectionLabel>Clínica Cedro</SectionLabel>
+          <SectionLabel>Agende sua consulta</SectionLabel>
           <h1 className="mb-0 leading-tight" style={{ color: '#1a1a1a' }}>
-            Agende sua consulta.<br />
-            <em className="font-serif italic" style={{ color: 'rgba(26,26,26,0.35)' }}>Sem complicação.</em>
+            Cuide da sua saúde mental<br />
+            <em className="font-serif italic" style={{ color: 'rgba(26,26,26,0.3)' }}>com quem entende você.</em>
           </h1>
           <Divider className="my-6" />
           <p className="text-lg max-w-[560px] mb-8" style={{ color: '#555' }}>
@@ -62,21 +78,18 @@ export default function AgendePage() {
           <h2 className="mb-4 text-cedro-white">Como funciona</h2>
           <p className="text-cedro-sage mb-12">Simples. Sem complicação.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 border-t-4 border-cedro-red bg-cedro-navy border border-cedro-sage/10">
-              <div className="font-serif text-5xl text-cedro-red/40 mb-4">1</div>
-              <h4 className="text-cedro-white mb-2">Sessão avulsa</h4>
-              <p className="text-sm text-cedro-sage">Você começa com uma sessão avulsa. Conhece o profissional, entende a abordagem, vê se é o que você procurava.</p>
-            </div>
-            <div className="p-8 border-t-4 border-cedro-red bg-cedro-navy border border-cedro-sage/10">
-              <div className="font-serif text-5xl text-cedro-red/40 mb-4">2</div>
-              <h4 className="text-cedro-white mb-2">Avaliação</h4>
-              <p className="text-sm text-cedro-sage">Junto com o psicólogo, vocês definem o objetivo do tratamento e a frequência ideal, semanal ou quinzenal.</p>
-            </div>
-            <div className="p-8 border-t-4 border-cedro-red bg-cedro-navy border border-cedro-sage/10">
-              <div className="font-serif text-5xl text-cedro-red/40 mb-4">3</div>
-              <h4 className="text-cedro-white mb-2">Ciclo Cedro</h4>
-              <p className="text-sm text-cedro-sage">Você inicia um Ciclo Cedro, acompanhamento com objetivo claro, com começo, meio e fim, sempre alinhado com o psicólogo que está te acompanhando.</p>
-            </div>
+            {[
+              { n: '1', title: 'Sessão avulsa', desc: 'Você começa com uma sessão avulsa. Conhece o profissional, entende a abordagem, vê se é o que você procurava.' },
+              { n: '2', title: 'Avaliação', desc: 'Junto com o psicólogo, vocês definem o objetivo do tratamento e a frequência ideal, semanal ou quinzenal.' },
+              { n: '3', title: 'Ciclo Cedro', desc: 'Você inicia um Ciclo Cedro, acompanhamento com objetivo claro, com começo, meio e fim, sempre alinhado com o psicólogo que está te acompanhando.' },
+            ].map((card) => (
+              <div key={card.n} className="p-8 border border-cedro-sage/10 border-t-[3px] border-t-cedro-red bg-cedro-navy">
+                <div className="font-serif text-5xl mb-3 leading-none" style={{ color: '#e8450a' }}>{card.n}</div>
+                <div className="w-6 h-[1px] mb-4" style={{ background: 'rgba(209,61,29,0.3)' }} />
+                <h4 className="text-cedro-white mb-2">{card.title}</h4>
+                <p className="text-sm text-cedro-sage">{card.desc}</p>
+              </div>
+            ))}
           </div>
           <p className="text-[0.95rem] text-cedro-sage mt-12">Indicamos sempre psicólogos homens para atender homens e psicólogas mulheres para atender mulheres. Não é uma regra, mas é um direcionamento.</p>
         </div>
