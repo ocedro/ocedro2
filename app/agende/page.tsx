@@ -23,24 +23,43 @@ export default function AgendePage() {
 
       {/* HERO */}
       <section className="pt-32 pb-20 relative overflow-hidden" style={{ background: '#f0ede6' }}>
-        {/* Linha vertical esquerda */}
-        <div className="absolute left-0 top-0 bottom-0 w-[3px] pointer-events-none"
-          style={{ background: 'linear-gradient(to bottom, transparent, #d13d1d 30%, #d13d1d 70%, transparent)' }} />
-        {/* Círculos concêntricos */}
-        <div className="absolute bottom-[-60px] right-[-60px] w-[280px] h-[280px] rounded-full border border-cedro-red/10 pointer-events-none" />
-        <div className="absolute bottom-[-20px] right-[-20px] w-[160px] h-[160px] rounded-full border border-cedro-red/15 pointer-events-none" />
-        <div className="absolute bottom-[30px] right-[30px] w-[60px] h-[60px] rounded-full pointer-events-none" style={{ background: 'rgba(209,61,29,0.06)' }} />
-        {/* Grid pattern canto superior direito */}
-        <div className="absolute top-0 right-0 w-[200px] h-[200px] pointer-events-none" style={{
-          backgroundImage: 'repeating-linear-gradient(0deg, rgba(209,61,29,0.04) 0px, rgba(209,61,29,0.04) 1px, transparent 1px, transparent 28px), repeating-linear-gradient(90deg, rgba(209,61,29,0.04) 0px, rgba(209,61,29,0.04) 1px, transparent 1px, transparent 28px)',
-          maskImage: 'radial-gradient(ellipse at top right, black 20%, transparent 70%)',
-          WebkitMaskImage: 'radial-gradient(ellipse at top right, black 20%, transparent 70%)',
-        }} />
-        {/* Badge premium */}
-        <div className="absolute top-6 right-8 text-[9px] tracking-widest uppercase pointer-events-none"
-          style={{ color: 'rgba(209,61,29,0.5)', border: '1px solid rgba(209,61,29,0.2)', padding: '4px 12px', borderRadius: '20px' }}>
-          Clínica Cedro
-        </div>
+        {/* Decorações SVG premium */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 800 360" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="vline" x1="0" y1="0" x2="0" y2="360" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="rgba(209,61,29,0)"/>
+              <stop offset="30%" stopColor="rgba(209,61,29,0.7)"/>
+              <stop offset="70%" stopColor="rgba(209,61,29,0.7)"/>
+              <stop offset="100%" stopColor="rgba(209,61,29,0)"/>
+            </linearGradient>
+          </defs>
+          {/* Linha vertical esquerda */}
+          <line x1="0" y1="0" x2="0" y2="360" stroke="url(#vline)" strokeWidth="2.5"/>
+          {/* Círculos concêntricos inferior direito */}
+          <circle cx="800" cy="360" r="180" stroke="rgba(209,61,29,0.08)" strokeWidth="1"/>
+          <circle cx="800" cy="360" r="110" stroke="rgba(209,61,29,0.12)" strokeWidth="1"/>
+          <circle cx="800" cy="360" r="55"  stroke="rgba(209,61,29,0.18)" strokeWidth="1"/>
+          <circle cx="800" cy="360" r="20"  fill="rgba(209,61,29,0.06)"/>
+          {/* Grid fino superior direito */}
+          {[0,28,56,84,112].map((y) => <line key={y} x1="580" y1={y} x2="800" y2={y} stroke="rgba(209,61,29,0.1)" strokeWidth="0.5"/>)}
+          {[580,608,636,664,692,720,748,776].map((x) => <line key={x} x1={x} y1="0" x2={x} y2="120" stroke="rgba(209,61,29,0.08)" strokeWidth="0.5"/>)}
+          {/* Badge pill */}
+          <rect x="640" y="18" width="120" height="22" rx="11" stroke="rgba(209,61,29,0.2)" strokeWidth="1"/>
+          <text x="700" y="33" textAnchor="middle" fontSize="8" fill="rgba(209,61,29,0.45)" fontFamily="sans-serif" letterSpacing="1.5">CLÍNICA CEDRO</text>
+          {/* Linha tracejada decorativa */}
+          <line x1="40" y1="190" x2="320" y2="190" stroke="rgba(209,61,29,0.08)" strokeWidth="0.75" strokeDasharray="4 6"/>
+          {/* Traços diagonais inferior esquerdo */}
+          <line x1="20" y1="310" x2="60" y2="280" stroke="rgba(209,61,29,0.07)" strokeWidth="1"/>
+          <line x1="10" y1="330" x2="70" y2="290" stroke="rgba(209,61,29,0.05)" strokeWidth="1"/>
+          <line x1="0"  y1="350" x2="80" y2="300" stroke="rgba(209,61,29,0.04)" strokeWidth="1"/>
+          {/* Pontos decorativos */}
+          <circle cx="500" cy="50" r="2"   fill="rgba(209,61,29,0.12)"/>
+          <circle cx="520" cy="70" r="1.5" fill="rgba(209,61,29,0.09)"/>
+          <circle cx="540" cy="45" r="1"   fill="rgba(209,61,29,0.07)"/>
+          {/* Linha horizontal sutil */}
+          <line x1="40" y1="280" x2="200" y2="280" stroke="rgba(209,61,29,0.06)" strokeWidth="0.75"/>
+        </svg>
+
         <motion.div
           className="max-w-[1200px] mx-auto px-8 relative z-10"
           initial={{ opacity: 0, y: 20 }}
@@ -50,7 +69,7 @@ export default function AgendePage() {
           <SectionLabel>Agende sua consulta</SectionLabel>
           <h1 className="mb-0 leading-tight" style={{ color: '#1a1a1a' }}>
             Cuide da sua saúde mental<br />
-            <em className="font-serif italic" style={{ color: 'rgba(26,26,26,0.3)' }}>com quem entende você.</em>
+            <em className="font-serif italic" style={{ color: 'rgba(26,26,26,0.28)' }}>com quem entende você.</em>
           </h1>
           <Divider className="my-6" />
           <p className="text-lg max-w-[560px] mb-8" style={{ color: '#555' }}>
@@ -264,7 +283,7 @@ export default function AgendePage() {
           <h2 className="text-cedro-white">O melhor passo agora é simples.</h2>
           <p className="text-cedro-sage my-4 mb-8">Converse agora com alguém da nossa equipe para começar.</p>
           <Button asChild withArrow>
-            <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer">Agendar agora</a>
+            <a href="https://wa.me/5519983133780" target="_blank" rel="noopener noreferrer">Agendar agora</a>
           </Button>
         </div>
       </section>
