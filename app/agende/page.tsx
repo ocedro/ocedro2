@@ -57,28 +57,28 @@ export default function AgendePage() {
       </section>
 
       {/* COMO FUNCIONA */}
-      <section className="py-24 bg-cedro-black text-cedro-white">
+      <section className="py-24 bg-cedro-navy text-cedro-white">
         <div className="max-w-[1200px] mx-auto px-8">
           <h2 className="mb-4 text-cedro-white">Como funciona</h2>
           <p className="text-cedro-sage mb-12">Simples. Sem complicação.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 border-t-4 border-cedro-red bg-cedro-white">
-              <div className="font-serif text-5xl text-cedro-red/30 mb-4">1</div>
-              <h4 className="text-cedro-black mb-2">Sessão avulsa</h4>
-              <p className="text-sm" style={{ color: '#555' }}>Você começa com uma sessão avulsa. Conhece o profissional, entende a abordagem, sente se faz sentido.</p>
+            <div className="p-8 border-t-4 border-cedro-red bg-cedro-navy border border-cedro-sage/10">
+              <div className="font-serif text-5xl text-cedro-red/40 mb-4">1</div>
+              <h4 className="text-cedro-white mb-2">Sessão avulsa</h4>
+              <p className="text-sm text-cedro-sage">Você começa com uma sessão avulsa. Conhece o profissional, entende a abordagem, vê se é o que você procurava.</p>
             </div>
-            <div className="p-8 border-t-4 border-cedro-red bg-cedro-white">
-              <div className="font-serif text-5xl text-cedro-red/30 mb-4">2</div>
-              <h4 className="text-cedro-black mb-2">Avaliação</h4>
-              <p className="text-sm" style={{ color: '#555' }}>Junto com o psicólogo, vocês definem o objetivo do tratamento e a frequência ideal — semanal ou quinzenal.</p>
+            <div className="p-8 border-t-4 border-cedro-red bg-cedro-navy border border-cedro-sage/10">
+              <div className="font-serif text-5xl text-cedro-red/40 mb-4">2</div>
+              <h4 className="text-cedro-white mb-2">Avaliação</h4>
+              <p className="text-sm text-cedro-sage">Junto com o psicólogo, vocês definem o objetivo do tratamento e a frequência ideal, semanal ou quinzenal.</p>
             </div>
-            <div className="p-8 border-t-4 border-cedro-red bg-cedro-white">
-              <div className="font-serif text-5xl text-cedro-red/30 mb-4">3</div>
-              <h4 className="text-cedro-black mb-2">Ciclo Cedro</h4>
-              <p className="text-sm" style={{ color: '#555' }}>Você inicia um Ciclo Cedro — acompanhamento com objetivo claro, começo, meio e fim.</p>
+            <div className="p-8 border-t-4 border-cedro-red bg-cedro-navy border border-cedro-sage/10">
+              <div className="font-serif text-5xl text-cedro-red/40 mb-4">3</div>
+              <h4 className="text-cedro-white mb-2">Ciclo Cedro</h4>
+              <p className="text-sm text-cedro-sage">Você inicia um Ciclo Cedro, acompanhamento com objetivo claro, com começo, meio e fim, sempre alinhado com o psicólogo que está te acompanhando.</p>
             </div>
           </div>
-          <p className="text-[0.95rem] text-cedro-sage mt-12">Aqui psicólogos homens para atender homens. Psicólogas mulheres para atender mulheres. Não é uma regra, mas é um direcionamento.</p>
+          <p className="text-[0.95rem] text-cedro-sage mt-12">Indicamos sempre psicólogos homens para atender homens e psicólogas mulheres para atender mulheres. Não é uma regra, mas é um direcionamento.</p>
         </div>
       </section>
 
@@ -96,7 +96,7 @@ export default function AgendePage() {
                 num: '01', title: 'Autenticidade e Integridade Pessoal',
                 desc: 'Desenvolvimento de congruência entre valores pessoais e bíblicos com a sua biocosmovisão e comportamentos externos.',
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#aac2c5" strokeWidth="1.5" strokeLinejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 28 28" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinejoin="round">
                     <polygon points="14,2 26,10 14,26 2,10"/>
                     <line x1="2" y1="10" x2="26" y2="10"/>
                     <line x1="9" y1="10" x2="14" y2="2"/>
@@ -110,7 +110,7 @@ export default function AgendePage() {
                 num: '02', title: 'Aceitação e Confissão Humilhante',
                 desc: 'Desenvolvimento de uma perspectiva humilde sobre si, enfatizando a importância da responsabilidade e individualidade.',
                 icon: (
-                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#aac2c5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 28 28" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="14" cy="7" r="3"/>
                     <line x1="14" y1="10" x2="14" y2="26"/>
                     <path d="M6,14 C6,20 10,24 14,26 C18,24 22,20 22,14"/>
@@ -122,7 +122,7 @@ export default function AgendePage() {
                 num: '03', title: 'Hábitos Poderosos',
                 desc: 'Estabelecimento de rotinas e hábitos diários que reforcem o bem-estar pessoal e a realização, contribuindo para uma melhor saúde mental, física e espiritual.',
                 icon: (
-                  <svg width="32" height="28" viewBox="0 0 32 28" fill="none" stroke="#aac2c5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="28" height="24" viewBox="0 0 32 28" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="1" y="9" width="4" height="10" rx="1"/>
                     <rect x="5" y="11" width="3" height="6" rx="0.5"/>
                     <line x1="8" y1="14" x2="24" y2="14"/>
@@ -135,7 +135,7 @@ export default function AgendePage() {
                 num: '04', title: 'Compreensão Vocacional e Identitária',
                 desc: 'Alcance de clareza sobre identidade, propósito e missão pessoal.',
                 icon: (
-                  <svg width="30" height="28" viewBox="0 0 30 28" fill="none" stroke="#aac2c5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="26" height="24" viewBox="0 0 30 28" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M15,24 L15,8"/>
                     <path d="M15,8 C15,4 9,2 7,5 C5,3 2,4 2,7 C0,8 0,11 2,12 C1,14 2,17 4,17 C4,20 6,22 9,22 C10,23 12,24 15,24"/>
                     <path d="M15,8 C15,4 21,2 23,5 C25,3 28,4 28,7 C30,8 30,11 28,12 C29,14 28,17 26,17 C26,20 24,22 21,22 C20,23 18,24 15,24"/>
@@ -149,13 +149,18 @@ export default function AgendePage() {
             ].map((item) => (
               <div key={item.num} className="p-8 border border-cedro-sage/10 transition-all hover:border-cedro-red hover:-translate-y-1">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="font-serif text-4xl text-cedro-red/40 leading-none">{item.num}</div>
-                  <div className="opacity-55">{item.icon}</div>
+                  <div className="font-serif text-4xl leading-none" style={{ color: '#e8450a' }}>{item.num}</div>
+                  <div>{item.icon}</div>
                 </div>
                 <h4 className="mb-3 text-cedro-white">{item.title}</h4>
                 <p className="text-[0.95rem] text-cedro-sage">{item.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-12">
+            <Button asChild withArrow>
+              <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer">Marcar minha primeira sessão</a>
+            </Button>
           </div>
         </div>
       </section>
