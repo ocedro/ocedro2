@@ -160,8 +160,8 @@ export default function LabPage() {
               <div>
                 <h3 className="mb-1 text-cedro-white">Gabriel Ferreira</h3>
                 <p className="text-xs font-bold tracking-widest uppercase text-cedro-red mb-4">Engenheiro · Sócio</p>
-                <p className="mb-4 text-cedro-sage text-[0.95rem]">Engenheiro agrícola formado pela Unicamp. Sócio da Cedro e principal responsável pelas vendas e gestão financeira da clínica.</p>
-                <p className="text-cedro-sage text-[0.95rem]">Atua também como gestor financeiro da clínica de estética da esposa, trazendo para a CedroLAB uma visão prática de gestão, crescimento e sustentabilidade de negócios.</p>
+                <p className="mb-4 text-cedro-sage text-[0.95rem]">Engenheiro formado pela Unicamp com MBA em gestão de projetos e mais de 6 anos de experiência na área comercial de instituições financeiras e empresas multinacionais.</p>
+                <p className="text-cedro-sage text-[0.95rem]">Sócio da clínica Cedro, atua como administrador financeiro de empresas construindo a estratégia de vendas, gestão de recursos e traz para a CedroLAB uma visão prática para crescimento e sustentabilidade do negócio.</p>
               </div>
             </div>
 
