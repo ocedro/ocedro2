@@ -8,14 +8,14 @@ import { Divider } from '@/components/ui/divider';
 
 export default function AgendePage() {
   const team = [
-    { initials: 'LC', name: 'Leandro Carone', role: 'Fundador e Responsável Técnico' },
-    { initials: 'DF', name: 'Dhimmy Fraga', role: 'Psicólogo' },
-    { initials: 'NV', name: 'Nattanael Vieira', role: 'Psicólogo' },
-    { initials: 'AM', name: 'Álvaro Martins', role: 'Psicólogo' },
-    { initials: 'JJ', name: 'Joyce Jeremias', role: 'Psicóloga' },
-    { initials: 'BC', name: 'Beatriz Carone', role: 'Psicóloga' },
-    { initials: 'VA', name: 'Valéria Alves', role: 'Psicóloga' },
-    { initials: 'KF', name: 'Karla Franco', role: 'Psicóloga' },
+    { img: '/team/leandro-carone-team.jpg', name: 'Leandro Carone', role: 'Fundador e Responsável Técnico' },
+    { img: '/team/dhimmy-fraga.jpg',        name: 'Dhimmy Fraga',   role: 'Psicólogo' },
+    { img: '/team/nattanael-vieira.jpg',    name: 'Nattanael Vieira', role: 'Psicólogo' },
+    { img: '/team/alvaro-martins.jpg',      name: 'Álvaro Martins', role: 'Psicólogo' },
+    { img: '/team/joyce-jeremias.jpg',      name: 'Joyce Jeremias', role: 'Psicóloga' },
+    { img: '/team/beatriz-carone.jpg',      name: 'Beatriz Carone', role: 'Psicóloga' },
+    { img: '/team/valeria-alves.jpg',       name: 'Valéria Alves',  role: 'Psicóloga' },
+    { img: '/team/karla-franco.jpg',        name: 'Karla Franco',   role: 'Psicóloga' },
   ];
 
   return (
@@ -266,8 +266,14 @@ export default function AgendePage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
             {team.map((member, i) => (
               <div key={i} className="text-center">
-                <div className="w-full aspect-[3/4] bg-cedro-black mb-4 flex items-center justify-center font-serif text-3xl text-cedro-sage/50">
-                  {member.initials}
+                <div className="w-full aspect-[4/5] bg-cedro-black mb-4 overflow-hidden">
+                  <Image
+                    src={member.img}
+                    alt={member.name}
+                    width={600}
+                    height={750}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
                 <h4 className="text-base text-cedro-white mb-1">{member.name}</h4>
                 <p className="text-sm text-cedro-sage">{member.role}</p>
