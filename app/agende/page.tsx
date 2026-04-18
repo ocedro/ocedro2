@@ -96,21 +96,32 @@ export default function AgendePage() {
         <div className="max-w-[1200px] mx-auto px-8">
           <h2 className="mb-4 text-cedro-white">Como funciona</h2>
           <p className="text-cedro-sage mb-12">Simples. Sem complicação.</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-col max-w-[560px]">
             {[
               { n: '1', title: 'Sessão avulsa', desc: 'Você começa com uma sessão avulsa. Conhece o profissional, entende a abordagem, vê se é o que você procurava.' },
               { n: '2', title: 'Avaliação', desc: 'Junto com o psicólogo, vocês definem o objetivo do tratamento e a frequência ideal, semanal ou quinzenal.' },
               { n: '3', title: 'Ciclo Cedro', desc: 'Você inicia um Ciclo Cedro, acompanhamento com objetivo claro, com começo, meio e fim, sempre alinhado com o psicólogo que está te acompanhando.' },
-            ].map((card) => (
-              <div key={card.n} className="p-8 border border-cedro-sage/10 border-t-[3px] border-t-cedro-red bg-cedro-navy">
-                <div className="font-serif text-5xl mb-3 leading-none" style={{ color: '#e8450a' }}>{card.n}</div>
-                <div className="w-6 h-[1px] mb-4" style={{ background: 'rgba(209,61,29,0.3)' }} />
-                <h4 className="text-cedro-white mb-2">{card.title}</h4>
-                <p className="text-sm text-cedro-sage">{card.desc}</p>
+            ].map((step, i, arr) => (
+              <div key={step.n} className="flex gap-6 items-start">
+                <div className="flex flex-col items-center w-10 shrink-0">
+                  <div className="w-10 h-10 rounded-full border-[1.5px] border-cedro-red bg-cedro-red/5 flex items-center justify-center font-serif text-lg text-cedro-red">
+                    {step.n}
+                  </div>
+                  {i < arr.length - 1 && (
+                    <div className="w-px flex-1 min-h-[32px] my-1"
+                      style={{ background: 'linear-gradient(to bottom, rgba(209,61,29,0.35), rgba(209,61,29,0.06))' }} />
+                  )}
+                </div>
+                <div className={i < arr.length - 1 ? 'pt-2 pb-8' : 'pt-2'}>
+                  <h4 className="text-cedro-white mb-2">{step.title}</h4>
+                  <p className="text-sm text-cedro-sage">{step.desc}</p>
+                </div>
               </div>
             ))}
           </div>
-          <p className="text-[0.95rem] text-cedro-sage mt-12">Indicamos sempre psicólogos homens para atender homens e psicólogas mulheres para atender mulheres. Não é uma regra, mas é um direcionamento.</p>
+          <p className="text-[0.95rem] text-cedro-sage mt-10 pt-8 border-t border-cedro-sage/10 max-w-[560px]">
+            Indicamos sempre psicólogos homens para atender homens e psicólogas mulheres para atender mulheres. Não é uma regra, mas é um direcionamento.
+          </p>
         </div>
       </section>
 
