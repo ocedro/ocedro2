@@ -12,7 +12,7 @@ export default function LeandroPage() {
   return (
     <div className="flex flex-col">
       <section className="pt-32 pb-16">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -50,7 +50,7 @@ export default function LeandroPage() {
       </section>
 
       <section className="py-24 bg-cedro-light text-cedro-black">
-        <div className="max-w-[800px] mx-auto px-8">
+        <div className="max-w-[800px] mx-auto px-5 md:px-8">
           <h3 className="text-cedro-black mb-6">O encaixe</h3>
           <p className="mb-5 text-cedro-navy">Foi na psicologia de Viktor Frankl que encontrei o primeiro elo. A Logoterapia opera sobre uma ontologia dimensional: o ser humano é corpo, psiquismo e espírito. Isso abria espaço legítimo para a espiritualidade dentro de um modelo clínico rigoroso, sem misticismo e sem reducionismo.</p>
           <p className="mb-5 text-cedro-navy">O segundo elo foi ter feito terapia com o Jota Borgonhoni, ali encontrei uma pessoa, não só um psicólogo. E ele me mostrou que era possível atender de verdade, sem fingimentos, com técnica, autenticidade e bom senso. O considero como meu padrinho da profissão.</p>

@@ -9,7 +9,7 @@ export default function LabPage() {
   return (
     <div className="flex flex-col">
       <section className="pt-32 pb-20 bg-cedro-black">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
             <div>
               <Image
@@ -50,7 +50,7 @@ export default function LabPage() {
       </section>
 
       <section className="py-24 bg-cedro-navy text-cedro-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>Isso te descreve?</SectionLabel>
           <h2 className="mb-10 max-w-[800px] text-cedro-white">Se você se reconhece aqui, a CedroLAB foi feita para você.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -87,7 +87,7 @@ export default function LabPage() {
       </section>
 
       <section className="py-24 bg-cedro-black text-cedro-white">
-        <div className="max-w-[800px] mx-auto px-8">
+        <div className="max-w-[800px] mx-auto px-5 md:px-8">
           <SectionLabel>A solução</SectionLabel>
           <h2 className="mb-6 text-cedro-white">A CedroLAB resolve pela raiz: identidade profissional.</h2>
           <Divider />
@@ -98,7 +98,7 @@ export default function LabPage() {
       </section>
 
       <section className="py-24 bg-cedro-navy text-cedro-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>Programa Eixo</SectionLabel>
           <h2 className="mb-4 text-cedro-white">Identidade profissional para psicólogos.</h2>
           <p className="text-cedro-sage mb-12">O programa central da mentoria. Encontros + supervisões clínicas + comunidade.</p>
@@ -125,7 +125,7 @@ export default function LabPage() {
       </section>
 
       <section className="py-24 bg-cedro-black text-cedro-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>Quem conduz</SectionLabel>
           <h2 className="mb-12 text-cedro-white">A mentoria é conduzida por quem já construiu na prática.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -170,7 +170,7 @@ export default function LabPage() {
       </section>
 
       <section className="py-24 bg-cedro-navy text-cedro-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <h2 className="mb-12 text-cedro-white">A Mentoria CedroLAB não é para qualquer psicólogo.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
@@ -209,7 +209,7 @@ export default function LabPage() {
       </section>
 
       <section className="py-24 bg-cedro-black text-center text-cedro-white">
-        <div className="max-w-[800px] mx-auto px-8">
+        <div className="max-w-[800px] mx-auto px-5 md:px-8">
           <h2 className="text-cedro-white mb-6">Vagas limitadas. Seleção individual. Não vou ajudar um psicólogo ruim.</h2>
           <p className="text-cedro-sage mb-2 text-lg">A mentoria é restrita para manter qualidade e acompanhamento real.</p>
           <p className="text-cedro-sage mb-10">Preencha o formulário de aplicação. Se houver fit, entramos em contato.</p>

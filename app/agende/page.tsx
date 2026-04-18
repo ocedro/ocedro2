@@ -61,7 +61,7 @@ export default function AgendePage() {
         </svg>
 
         <motion.div
-          className="max-w-[1200px] mx-auto px-8 relative z-10"
+          className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -93,7 +93,7 @@ export default function AgendePage() {
 
       {/* COMO FUNCIONA */}
       <section className="py-24 bg-cedro-navy text-cedro-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <h2 className="mb-4 text-cedro-white">Como funciona</h2>
           <p className="text-cedro-sage mb-12">Simples. Sem complicação.</p>
           <div className="flex flex-col max-w-[560px]">
@@ -127,7 +127,7 @@ export default function AgendePage() {
 
       {/* MÉTODO CEDRO */}
       <section className="py-24 bg-cedro-black">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="max-w-[700px] mb-14">
             <SectionLabel>Método Cedro</SectionLabel>
             <h2 className="text-cedro-white">Em poucos meses, você pode sair da confusão para uma vida com sentido, disciplina e identidade clara.</h2>
@@ -201,7 +201,7 @@ export default function AgendePage() {
             ))}
           </div>
           <div className="mt-12">
-            <Button asChild withArrow>
+            <Button asChild withArrow className="w-full md:w-auto justify-center">
               <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer">Marcar minha primeira sessão</a>
             </Button>
           </div>
@@ -210,7 +210,7 @@ export default function AgendePage() {
 
       {/* DEPOIMENTOS */}
       <section className="py-24 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>O que dizem os pacientes</SectionLabel>
           <h2 className="mb-12">Histórias reais.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
@@ -240,9 +240,9 @@ export default function AgendePage() {
 
       {/* E-BOOK */}
       <section className="py-20 bg-[#e8450a] text-white">
-        <div className="max-w-[1200px] mx-auto px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="flex justify-center">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div className="hidden md:flex justify-center">
               <Image
                 src="/ebook-cover.png"
                 alt="E-book: Não faça terapia antes de ler isso"
@@ -253,13 +253,13 @@ export default function AgendePage() {
             </div>
             <div>
               <p className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-white/70 mb-4">E-book gratuito</p>
-              <h3 className="text-[2rem] text-white mb-3 leading-tight">Não faça terapia antes de ler isso.</h3>
+              <h3 className="text-[1.6rem] md:text-[2rem] text-white mb-3 leading-tight">Não faça terapia antes de ler isso.</h3>
               <p className="text-white/80 mb-8">Um guia honesto para quem está procurando psicólogo. Preencha o forms e receba gratuitamente.</p>
               <a
                 href="https://form.respondi.app/VKSO6qpV"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#e8450a] font-bold tracking-wider uppercase text-[0.95rem] transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#e8450a] font-bold tracking-wider uppercase text-[0.95rem] transition-all hover:-translate-y-0.5 w-full md:w-auto"
               >
                 Quero o e-book →
               </a>
@@ -270,7 +270,7 @@ export default function AgendePage() {
 
       {/* EQUIPE */}
       <section className="py-24 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>Equipe Cedro</SectionLabel>
           <h2 className="mb-4">7 psicólogos.</h2>
           <p className="text-cedro-sage mb-12 max-w-[800px]">Cada profissional foi escolhido por critérios simples: ama os pacientes, respeita a profissão, cristão sólido e não para de estudar. Equipe supervisionada semanalmente por Leandro Carone.</p>
@@ -296,7 +296,7 @@ export default function AgendePage() {
 
       {/* CTA FINAL */}
       <section className="py-24 bg-cedro-black text-center">
-        <div className="max-w-[600px] mx-auto px-8">
+        <div className="max-w-[600px] mx-auto px-5 md:px-8">
           <h2 className="text-cedro-white">O melhor passo agora é simples.</h2>
           <p className="text-cedro-sage my-4 mb-8">Converse agora com alguém da nossa equipe para começar.</p>
           <Button asChild withArrow>

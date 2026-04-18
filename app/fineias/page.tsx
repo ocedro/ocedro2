@@ -30,7 +30,7 @@ export default function FineiasPage() {
         {/* Vignette barroca */}
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse at 30% 50%, transparent 25%, rgba(10,4,1,0.75) 100%)' }} />
-        <div className="max-w-[800px] mx-auto px-8 relative z-10">
+        <div className="max-w-[800px] mx-auto px-5 md:px-8 relative z-10">
           <Image
             src="/fineias-logo.png"
             alt="Mentoria Fineias"
@@ -55,7 +55,7 @@ export default function FineiasPage() {
 
       {/* O CICLO */}
       <section className="py-24 bg-cedro-navy text-cedro-white relative overflow-hidden" style={textureStyle}>
-        <div className="max-w-[1200px] mx-auto px-8 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
           <h2 className="mb-12 text-cedro-white">O ciclo que você conhece bem demais.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
             {[
@@ -77,7 +77,7 @@ export default function FineiasPage() {
 
       {/* PROPOSTA */}
       <section className="py-24 bg-cedro-black text-cedro-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <SectionLabel>A proposta</SectionLabel>
@@ -111,7 +111,7 @@ export default function FineiasPage() {
 
       {/* CTA MEIO */}
       <section className="py-12 bg-cedro-black border-y border-cedro-red/30 text-center">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <p className="text-lg text-cedro-white mb-6">Já sabe que precisa disso? Não precisa ler mais nada.</p>
           <Button asChild withArrow>
             <a href="https://form.respondi.app/Qr9kjWMI" target="_blank" rel="noopener noreferrer">Entrar na lista de espera</a>
@@ -121,7 +121,7 @@ export default function FineiasPage() {
 
       {/* 10 ENCONTROS */}
       <section className="py-24 bg-cedro-navy text-cedro-white relative overflow-hidden" style={textureStyle}>
-        <div className="max-w-[1200px] mx-auto px-8 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
           <SectionLabel>Os 10 encontros</SectionLabel>
           <h2 className="mb-8 text-cedro-white">A jornada completa.</h2>
           <div className="my-12">

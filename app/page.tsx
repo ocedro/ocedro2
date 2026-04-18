@@ -18,8 +18,10 @@ const VIDEO_IDS = [
   '0_KogS-dOTE',
   'SFLQ9CMO38I',
 ];
-const VISIBLE = 3;
-const TOTAL_PAGES = VIDEO_IDS.length - VISIBLE + 1;
+const VISIBLE_MOBILE = 1;
+const VISIBLE_DESKTOP = 3;
+const TOTAL_PAGES = VIDEO_IDS.length - VISIBLE_DESKTOP + 1;
+const TOTAL_PAGES_MOBILE = VIDEO_IDS.length - VISIBLE_MOBILE + 1;
 const INTERVAL = 2800;
 
 function VideoCarousel() {
@@ -70,7 +72,7 @@ function VideoCarousel() {
 
   return (
     <section className="py-24 bg-cedro-black text-cedro-white overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <SectionLabel>Leandro Carone por aí</SectionLabel>
         <p className="text-cedro-sage mb-10">Podcasts, pregações, lives e conteúdos</p>
 
@@ -81,7 +83,7 @@ function VideoCarousel() {
             style={{ transform: `translateX(calc(-${current} * (36.666% + 5.33px)))` }}
           >
             {VIDEO_IDS.map((id) => (
-              <div key={id} className="flex-none w-[calc(36.666%-11px)] aspect-video border border-cedro-sage/10">
+              <div key={id} className="flex-none w-full md:w-[calc(36.666%-11px)] aspect-video border border-cedro-sage/10">
                 <iframe
                   src={`https://www.youtube.com/embed/${id}?rel=0&enablejsapi=1`}
                   title="Leandro Carone"
@@ -138,7 +140,7 @@ export default function Home() {
         style={{ backgroundImage: 'url(/hero-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="absolute inset-0 bg-cedro-black/60 pointer-events-none" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-br from-cedro-red/5 to-transparent pointer-events-none" />
-        <div className="max-w-[1200px] mx-auto px-8 w-full relative z-10">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 w-full relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-16 items-center">
             <motion.div 
               className="order-2 md:order-1"
@@ -174,7 +176,7 @@ export default function Home() {
                   alt="Leandro Carone — Psicólogo Clínico" 
                   width={480} 
                   height={600} 
-                  className="w-full h-auto max-w-[300px] md:max-w-[480px] mx-auto md:ml-auto object-cover"
+                  className="w-full h-auto max-w-[260px] md:max-w-[480px] mx-auto md:ml-auto object-cover"
                   priority
                   referrerPolicy="no-referrer"
                 />
@@ -187,7 +189,7 @@ export default function Home() {
 
       {/* PROBLEMA */}
       <section className="py-24 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <SectionLabel>O problema que nos originou</SectionLabel>
@@ -205,7 +207,7 @@ export default function Home() {
 
       {/* ABORDAGEM */}
       <section className="py-24 bg-cedro-black text-cedro-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>Nossa abordagem</SectionLabel>
           <h2 className="mb-4 text-cedro-white">Nem o <span className="text-cedro-red">psicólogue</span>. Nem o psicrentão.</h2>
           <Divider />
@@ -225,7 +227,7 @@ export default function Home() {
 
       {/* POR QUE CEDRO */}
       <section className="py-24 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <SectionLabel>Por que Cedro</SectionLabel>
@@ -257,9 +259,9 @@ export default function Home() {
 
       {/* E-BOOK */}
       <section className="py-20 bg-[#e8450a] text-white">
-        <div className="max-w-[1200px] mx-auto px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div className="flex justify-center">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div className="hidden md:flex justify-center">
               <Image
                 src="/ebook-cover.png"
                 alt="E-book: Não faça terapia antes de ler isso"
@@ -270,13 +272,13 @@ export default function Home() {
             </div>
             <div>
               <p className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-white/70 mb-4">E-book gratuito</p>
-              <h3 className="text-[2rem] text-white mb-3 leading-tight">Não faça terapia antes de ler isso.</h3>
+              <h3 className="text-[1.6rem] md:text-[2rem] text-white mb-3 leading-tight">Não faça terapia antes de ler isso.</h3>
               <p className="text-white/80 mb-8">Um guia honesto para quem está procurando psicólogo. Preencha o forms e receba gratuitamente.</p>
               <a
                 href="https://form.respondi.app/VKSO6qpV"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#e8450a] font-bold tracking-wider uppercase text-[0.95rem] transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#e8450a] font-bold tracking-wider uppercase text-[0.95rem] transition-all hover:-translate-y-0.5 w-full md:w-auto justify-center"
               >
                 Quero o e-book →
               </a>
@@ -287,7 +289,7 @@ export default function Home() {
 
       {/* PARA QUEM */}
       <section className="py-24 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>Para quem é a Cedro</SectionLabel>
           <h2 className="mb-12 max-w-[800px]">Não somos para todo mundo. Somos para quem realmente quer trabalhar e mudar.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -329,7 +331,7 @@ export default function Home() {
 
       {/* CTA FINAL */}
       <section className="py-24 bg-cedro-black text-center text-cedro-white">
-        <div className="max-w-[700px] mx-auto px-8">
+        <div className="max-w-[700px] mx-auto px-5 md:px-8">
           <h2 className="text-cedro-white">Você não precisa de um psicólogo qualquer.</h2>
           <p className="text-cedro-sage my-6 text-lg">Você precisa de alguém que entenda de onde você veio, no que você crê, e aonde você quer chegar.</p>
           <Button asChild withArrow>
