@@ -137,53 +137,31 @@ export default function Home() {
     <div className="flex flex-col">
       {/* HERO */}
       <section className="min-h-screen flex items-center pt-20 relative overflow-hidden"
-        style={{ backgroundImage: 'url(/hero-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="absolute inset-0 bg-cedro-black/60 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-br from-cedro-red/5 to-transparent pointer-events-none" />
+        style={{ backgroundImage: 'url(/hero-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}>
+        <div className="absolute inset-0 bg-cedro-black/40 pointer-events-none" />
         <div className="max-w-[1200px] mx-auto px-5 md:px-8 w-full relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-8 md:gap-16 items-center">
-            <motion.div 
-              className="order-2 md:order-1"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              <SectionLabel>Clínica Cedro</SectionLabel>
-              <h1 className="mb-6 text-cedro-white">
-                Psicologia de qualidade para quem leva <em className="font-serif italic text-cedro-red">fé</em> e saúde mental a sério.
-              </h1>
-              <p className="text-lg text-cedro-sage mb-10 max-w-[520px]">
-                Psicologia com rigor técnico, profundidade filosófica e respeito aos seus valores.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button asChild withArrow>
-                  <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer">Agendar sessão</a>
-                </Button>
-                <Button variant="outline" asChild>
-                  <Link href="/leandro">Conheça a história</Link>
-                </Button>
-              </div>
-            </motion.div>
-            <motion.div 
-              className="order-1 md:order-2 relative"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            >
-              <div className="relative z-10">
-                <Image 
-                  src="/hero-image.png" 
-                  alt="Leandro Carone — Psicólogo Clínico" 
-                  width={480} 
-                  height={600} 
-                  className="w-full h-auto max-w-[260px] md:max-w-[480px] mx-auto md:ml-auto object-cover"
-                  priority
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="absolute -bottom-5 -right-5 w-[60%] h-[60%] border-2 border-cedro-red opacity-30 z-0 hidden md:block" />
-            </motion.div>
-          </div>
+          <motion.div
+            className="max-w-[560px]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <SectionLabel>Clínica Cedro</SectionLabel>
+            <h1 className="mb-6 text-cedro-white">
+              Psicologia de qualidade para quem leva <em className="font-serif italic text-cedro-red">fé</em> e saúde mental a sério.
+            </h1>
+            <p className="text-lg text-cedro-sage mb-10 max-w-[480px]">
+              Psicologia com rigor técnico, profundidade filosófica e respeito aos seus valores.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button asChild withArrow>
+                <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer">Agendar sessão</a>
+              </Button>
+              <Button variant="outline" asChild>
+                <Link href="/leandro">Conheça a história</Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
