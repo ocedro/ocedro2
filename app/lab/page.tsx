@@ -8,7 +8,8 @@ import { Divider } from '@/components/ui/divider';
 export default function LabPage() {
   return (
     <div className="flex flex-col">
-      <section className="pt-32 pb-20 bg-cedro-black">
+      <section className="pt-32 pb-20 bg-cedro-black relative overflow-hidden"
+        style={{ backgroundImage: 'url(/lab-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
             <div>
