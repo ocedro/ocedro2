@@ -10,42 +10,30 @@ export default function LabPage() {
     <div className="flex flex-col">
       <section className="pt-32 pb-20 bg-cedro-black relative overflow-hidden"
         style={{ backgroundImage: 'url(/lab-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}>
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
-            <div>
-              <Image
-                src="/cedrolab-logo.png"
-                alt="CedroLAB"
-                width={240}
-                height={60}
-                className="mb-8 w-auto h-14 object-contain"
-                priority
-              />
-              <SectionLabel>CedroLAB · Mentoria</SectionLabel>
-              <h1 className="mb-6 text-cedro-white">
-                Você é psicólogo, mas não sabe dizer quem você é como profissional.
-              </h1>
-              <p className="text-lg text-cedro-sage mb-8">
-                Sabe atender. Estudou. Tem CRP. Mas na hora de se posicionar, criar conteúdo, cobrar o que vale e construir uma prática que sustenta sua vida trava.
-              </p>
-              <p className="mb-10 text-cedro-white">
-                O problema é falta de identidade profissional. E é exatamente isso que a CedroLAB resolve.
-              </p>
-              <Button asChild withArrow>
-                <a href="https://form.respondi.app/dbn6xbQI" target="_blank" rel="noopener noreferrer">Quero fazer parte</a>
-              </Button>
-            </div>
-            <div>
-              <Image 
-                src="/lab-image.png" 
-                alt="Leandro Carone — CedroLAB" 
-                className="w-full h-auto max-w-[440px] mx-auto object-cover"
-                width={480}
-                height={600}
-                priority
-                referrerPolicy="no-referrer"
-              />
-            </div>
+        <div className="absolute inset-0 bg-cedro-black/40 pointer-events-none" />
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+          <div className="max-w-[600px]">
+            <Image
+              src="/cedrolab-logo.png"
+              alt="CedroLAB"
+              width={240}
+              height={60}
+              className="mb-8 w-auto h-14 object-contain"
+              priority
+            />
+            <SectionLabel>CedroLAB · Mentoria</SectionLabel>
+            <h1 className="mb-6 text-cedro-white">
+              Você é psicólogo, mas não sabe dizer quem você é como profissional.
+            </h1>
+            <p className="text-lg text-cedro-sage mb-8">
+              Sabe atender. Estudou. Tem CRP. Mas na hora de se posicionar, criar conteúdo, cobrar o que vale e construir uma prática que sustenta sua vida trava.
+            </p>
+            <p className="mb-10 text-cedro-white">
+              O problema é falta de identidade profissional. E é exatamente isso que a CedroLAB resolve.
+            </p>
+            <Button asChild withArrow>
+              <a href="https://form.respondi.app/dbn6xbQI" target="_blank" rel="noopener noreferrer">Quero fazer parte</a>
+            </Button>
           </div>
         </div>
       </section>
