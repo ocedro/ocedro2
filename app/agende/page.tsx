@@ -66,7 +66,7 @@ export default function AgendePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <SectionLabel>Agende sua consulta</SectionLabel>
+          <SectionLabel>Clínica Cedro</SectionLabel>
           <h1 className="mb-0 leading-tight" style={{ color: '#1a1a1a' }}>
             Cuide da sua saúde mental<br />
             <em className="font-serif italic" style={{ color: 'rgba(26,26,26,0.28)' }}>com quem entende você.</em>
@@ -92,7 +92,7 @@ export default function AgendePage() {
       </section>
 
       {/* COMO FUNCIONA */}
-      <section className="py-24 bg-cedro-navy text-cedro-white">
+      <section className="py-24 bg-cedro-black text-cedro-white">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <h2 className="mb-4 text-cedro-white">Como funciona</h2>
           <p className="text-cedro-sage mb-12">Simples. Sem complicação.</p>
@@ -126,12 +126,12 @@ export default function AgendePage() {
       </section>
 
       {/* MÉTODO CEDRO */}
-      <section className="py-24 bg-cedro-black">
+      <section className="py-24" style={{ background: '#aac2c5' }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="max-w-[700px] mb-14">
-            <SectionLabel>Método Cedro</SectionLabel>
-            <h2 className="text-cedro-white">Em poucos meses, você pode sair da confusão para uma vida com sentido, disciplina e identidade clara.</h2>
-            <p className="text-cedro-sage mt-4">É isso que o Método Cedro constrói.</p>
+            <SectionLabel style={{ color: 'rgba(37,42,58,0.7)' }}>Método Cedro</SectionLabel>
+            <h2 style={{ color: '#252a3a' }}>Em poucos meses, você pode sair da confusão para uma vida com sentido, disciplina e identidade clara.</h2>
+            <p className="mt-4" style={{ color: 'rgba(37,42,58,0.75)' }}>É isso que o Método Cedro constrói.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
@@ -190,13 +190,13 @@ export default function AgendePage() {
                 ),
               },
             ].map((item) => (
-              <div key={item.num} className="p-8 border border-cedro-sage/10 transition-all hover:border-cedro-red hover:-translate-y-1">
+              <div key={item.num} className="p-8 transition-all hover:-translate-y-1" style={{ border: '1px solid rgba(37,42,58,0.15)', background: 'rgba(255,255,255,0.25)' }}>
                 <div className="flex items-center gap-4 mb-4">
                   <div className="font-serif text-4xl leading-none" style={{ color: '#e8450a' }}>{item.num}</div>
                   <div>{item.icon}</div>
                 </div>
-                <h4 className="mb-3 text-cedro-white">{item.title}</h4>
-                <p className="text-[0.95rem] text-cedro-sage">{item.desc}</p>
+                <h4 className="mb-3" style={{ color: '#252a3a' }}>{item.title}</h4>
+                <p className="text-[0.95rem]" style={{ color: 'rgba(37,42,58,0.75)' }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -213,27 +213,25 @@ export default function AgendePage() {
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>O que dizem os pacientes</SectionLabel>
           <h2 className="mb-12">Histórias reais.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            <div className="flex flex-col gap-6">
-              <div className="p-10 border-l-4 border-cedro-red bg-cedro-black/50">
-                <p className="font-serif text-lg italic text-cedro-light mb-4">&quot;Após 12 anos sofrendo com ansiedade, hoje posso dizer que há 1 ano não tomo mais remédio e não tenho mais crises de pânico. O Leandro uniu psicologia e Cristo para me libertar.&quot;</p>
-                <cite className="font-sans not-italic text-sm text-cedro-sage">— Paciente da Clínica Cedro</cite>
+          <div className="grid grid-cols-2 gap-3 md:gap-6">
+            {[
+              { src: '/dep-1.jpg', alt: 'Depoimento paciente' },
+              { src: '/dep-2.jpg', alt: 'Depoimento paciente' },
+              { src: '/dep-3.jpg', alt: 'Depoimento paciente' },
+              { src: '/dep-4.jpg', alt: 'Depoimento paciente' },
+            ].map((dep, i) => (
+              <div key={i} className="relative overflow-hidden rounded-sm">
+                <Image
+                  src={dep.src}
+                  alt={dep.alt}
+                  width={700}
+                  height={900}
+                  className="w-full h-auto object-cover object-top"
+                />
+                <div className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
+                  style={{ background: 'linear-gradient(to top, rgba(37,42,58,0.6), transparent)' }} />
               </div>
-              <div className="p-10 border-l-4 border-cedro-red bg-cedro-black/50">
-                <p className="font-serif text-lg italic text-cedro-light mb-4">&quot;Não me senti apenas diante de um profissional competente, mas de alguém que carrega um chamado. Sua postura cristã não é apenas um detalhe — é o que torna sua prática única.&quot;</p>
-                <cite className="font-sans not-italic text-sm text-cedro-sage">— Paciente da Clínica Cedro</cite>
-              </div>
-            </div>
-            <div className="flex flex-col gap-6">
-              <div className="p-10 border-l-4 border-cedro-red bg-cedro-black/50">
-                <p className="font-serif text-lg italic text-cedro-light mb-4">&quot;Quando cheguei até o Leandro, eu estava em estado de desespero. A cada sessão, eu me sentia mais leve e conseguia compreender melhor aquilo que antes parecia confuso.&quot;</p>
-                <cite className="font-sans not-italic text-sm text-cedro-sage">— Paciente da Clínica Cedro</cite>
-              </div>
-              <div className="p-10 border-l-4 border-cedro-red bg-cedro-black/50">
-                <p className="font-serif text-lg italic text-cedro-light mb-4">&quot;O Leandro literalmente salvou minha vida. Com ele eu descobri que não tenho culpa, descobri o sentido da vida, que Deus estava comigo.&quot;</p>
-                <cite className="font-sans not-italic text-sm text-cedro-sage">— Paciente da Clínica Cedro</cite>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
