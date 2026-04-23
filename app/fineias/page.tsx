@@ -26,7 +26,8 @@ export default function FineiasPage() {
     <div className="flex flex-col">
 
       {/* HERO */}
-      <section className="pt-32 pb-20 bg-cedro-black relative overflow-hidden" style={textureStyle}>
+      <section className="pt-32 pb-20 bg-cedro-black relative overflow-hidden"
+        style={{ backgroundImage: 'url(/fineias-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}>
         {/* Vignette barroca */}
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse at 30% 50%, transparent 25%, rgba(10,4,1,0.75) 100%)' }} />
