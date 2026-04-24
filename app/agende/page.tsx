@@ -94,32 +94,73 @@ export default function AgendePage() {
       {/* COMO FUNCIONA */}
       <section className="py-24 bg-cedro-black text-cedro-white">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <h2 className="mb-4 text-cedro-white">Como funciona</h2>
+          <SectionLabel>Como funciona</SectionLabel>
+          <h2 className="mb-2 text-cedro-white">O Ciclo Cedro</h2>
           <p className="text-cedro-sage mb-12">Simples. Sem complicação.</p>
-          <div className="flex flex-col max-w-[560px]">
+
+          <div className="flex flex-col max-w-[640px]">
             {[
-              { n: '1', title: 'Sessão avulsa', desc: 'Você começa com uma sessão avulsa. Conhece o profissional, entende a abordagem, vê se é o que você procurava.' },
-              { n: '2', title: 'Avaliação', desc: 'Junto com o psicólogo, vocês definem o objetivo do tratamento e a frequência ideal, semanal ou quinzenal.' },
-              { n: '3', title: 'Ciclo Cedro', desc: 'Você inicia um Ciclo Cedro, acompanhamento com objetivo claro, com começo, meio e fim, sempre alinhado com o psicólogo que está te acompanhando.' },
-            ].map((step, i, arr) => (
-              <div key={step.n} className="flex gap-6 items-start">
-                <div className="flex flex-col items-center w-10 shrink-0">
-                  <div className="w-10 h-10 rounded-full border-[1.5px] border-cedro-red bg-cedro-red/5 flex items-center justify-center font-serif text-lg text-cedro-red">
-                    {step.n}
+              {
+                title: 'Sessão avulsa',
+                desc: 'Você começa com uma sessão avulsa. Conhece o profissional, entende a abordagem, vê se é o que você procurava.',
+                icon: (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinecap="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 8v4l3 3"/>
+                  </svg>
+                ),
+                last: false,
+              },
+              {
+                title: 'Avaliação',
+                desc: 'Junto com o psicólogo, vocês definem o objetivo do tratamento e a frequência ideal, semanal ou quinzenal.',
+                icon: (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinecap="round">
+                    <path d="M9 11l3 3L22 4"/>
+                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                  </svg>
+                ),
+                last: false,
+              },
+              {
+                title: 'Ciclo Cedro',
+                desc: 'Você inicia um Ciclo Cedro — acompanhamento com objetivo claro, começo, meio e fim, sempre alinhado com o psicólogo que está te acompanhando.',
+                icon: (
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinecap="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                  </svg>
+                ),
+                last: true,
+              },
+            ].map((step, i) => (
+              <div key={i} className="grid items-start" style={{ gridTemplateColumns: '56px 32px 1fr' }}>
+                {/* Ícone */}
+                <div className="flex justify-center pt-2">
+                  <div className="w-11 h-11 rounded-full flex items-center justify-center"
+                    style={{ background: 'rgba(209,61,29,0.08)', border: '1px solid rgba(209,61,29,0.2)' }}>
+                    {step.icon}
                   </div>
-                  {i < arr.length - 1 && (
-                    <div className="w-px flex-1 min-h-[32px] my-1"
-                      style={{ background: 'linear-gradient(to bottom, rgba(209,61,29,0.35), rgba(209,61,29,0.06))' }} />
+                </div>
+                {/* Linha + Dot */}
+                <div className="flex flex-col items-center">
+                  <div className="w-3 h-3 rounded-full mt-3 z-10 shrink-0" style={{ background: '#e8450a' }} />
+                  {!step.last && (
+                    <div className="flex-1 min-h-[60px] w-px mt-1"
+                      style={{ background: 'repeating-linear-gradient(to bottom, rgba(209,61,29,0.45) 0px, rgba(209,61,29,0.45) 4px, transparent 4px, transparent 8px)' }} />
                   )}
                 </div>
-                <div className={i < arr.length - 1 ? 'pt-2 pb-8' : 'pt-2'}>
-                  <h4 className="text-cedro-white mb-2">{step.title}</h4>
+                {/* Texto */}
+                <div className={`pl-3 pt-1 ${!step.last ? 'pb-10' : ''}`}>
+                  <h4 className="text-cedro-white mb-2 uppercase tracking-wide text-sm font-bold">{step.title}</h4>
                   <p className="text-sm text-cedro-sage">{step.desc}</p>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-[0.95rem] text-cedro-sage mt-10 pt-8 border-t border-cedro-sage/10 max-w-[560px]">
+
+          <p className="text-[0.9rem] text-cedro-sage mt-10 pt-8 border-t border-cedro-sage/10 max-w-[640px]">
             Indicamos sempre psicólogos homens para atender homens e psicólogas mulheres para atender mulheres. Não é uma regra, mas é um direcionamento.
           </p>
         </div>
