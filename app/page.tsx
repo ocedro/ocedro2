@@ -26,10 +26,188 @@ function VideoCarousel() {
   const [paused, setPaused] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const pausedRef = useRef(false);
-  const touchStartX = useRef<number>(0);
-  const touchStartY = useRef<number>(0);
-  const isDragging = useRef(false);
+  const resumeRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const playingRef = useRef(false);   // vídeo em play
+  const pausedRef = useRef(false);    // qualquer pausa (play ou manual)
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+  const mouseStartX = useRef(0);
+  const isDraggingMouse = useRef(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  const visible = isMobile ? 1 : 3;
+  const totalPages = VIDEO_IDS.length - visible + 1;
+
+  // Pausar tudo
+  const pauseAll = useCallback(() => {
+    pausedRef.current = true;
+    setPaused(true);
+    if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; }
+    if (resumeRef.current) { clearTimeout(resumeRef.current); resumeRef.current = null; }
+  }, []);
+
+  // Retomar (só se vídeo não estiver em play)
+  const resume = useCallback(() => {
+    if (playingRef.current) return;
+    pausedRef.current = false;
+    setPaused(false);
+    setProgKey(k => k + 1);
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      if (!pausedRef.current) {
+        setCurrent(c => (c + 1) % totalPages);
+        setProgKey(k => k + 1);
+      }
+    }, INTERVAL);
+  }, [totalPages]);
+
+  // Navegar manualmente — pausa e agenda retomada em 6s
+  const navigateTo = useCallback((idx: number) => {
+    const clamped = Math.max(0, Math.min(idx, totalPages - 1));
+    setCurrent(clamped);
+    pauseAll();
+    if (resumeRef.current) clearTimeout(resumeRef.current);
+    resumeRef.current = setTimeout(resume, 6000);
+  }, [totalPages, pauseAll, resume]);
+
+  // Inicia o timer automático
+  useEffect(() => {
+    timerRef.current = setInterval(() => {
+      if (!pausedRef.current) {
+        setCurrent(c => (c + 1) % totalPages);
+        setProgKey(k => k + 1);
+      }
+    }, INTERVAL);
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+      if (resumeRef.current) clearTimeout(resumeRef.current);
+    };
+  }, [totalPages]);
+
+  // YouTube postMessage
+  useEffect(() => {
+    const handler = (e: MessageEvent) => {
+      try {
+        const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (data?.event === 'onStateChange') {
+          const isPlaying = data.info === 1;
+          playingRef.current = isPlaying;
+          if (isPlaying) {
+            pauseAll();
+          } else {
+            if (resumeRef.current) clearTimeout(resumeRef.current);
+            resumeRef.current = setTimeout(resume, 2000);
+          }
+        }
+      } catch {}
+    };
+    window.addEventListener('message', handler);
+    return () => window.removeEventListener('message', handler);
+  }, [pauseAll, resume]);
+
+  // Touch swipe
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dy = e.changedTouches[0].clientY - touchStartY.current;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      navigateTo(dx < 0 ? current + 1 : current - 1);
+    }
+  };
+
+  // Mouse drag
+  const onMouseDown = (e: React.MouseEvent) => {
+    mouseStartX.current = e.clientX;
+    isDraggingMouse.current = true;
+  };
+  const onMouseUp = (e: React.MouseEvent) => {
+    if (!isDraggingMouse.current) return;
+    isDraggingMouse.current = false;
+    const dx = e.clientX - mouseStartX.current;
+    if (Math.abs(dx) > 40) navigateTo(dx < 0 ? current + 1 : current - 1);
+  };
+  const onMouseLeave = () => { isDraggingMouse.current = false; };
+
+  const slotW = isMobile ? 100 : 36.666;
+  const gap = isMobile ? 0 : 5.33;
+
+  return (
+    <section className="py-24 bg-cedro-black text-cedro-white overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+        <SectionLabel>Leandro Carone por aí</SectionLabel>
+        <p className="text-cedro-sage mb-10">Podcasts, pregações, lives e conteúdos</p>
+
+        {/* Track */}
+        <div
+          className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+          onMouseDown={onMouseDown}
+          onMouseUp={onMouseUp}
+          onMouseLeave={onMouseLeave}
+        >
+          <div
+            className="flex gap-4 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
+            style={{ transform: `translateX(calc(-${current} * (${slotW}% + ${gap}px)))` }}
+          >
+            {VIDEO_IDS.map((id) => (
+              <div key={id} className="flex-none w-full md:w-[calc(36.666%-11px)] aspect-video border border-cedro-sage/10">
+                <iframe
+                  src={`https://www.youtube.com/embed/${id}?rel=0&enablejsapi=1`}
+                  title="Leandro Carone"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full pointer-events-auto"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Progress bar */}
+        <div className="mt-4 h-[2px] bg-cedro-sage/10 rounded overflow-hidden">
+          {!paused ? (
+            <div key={progKey} className="h-full bg-cedro-red rounded"
+              style={{ animation: `progress ${INTERVAL}ms linear forwards` }} />
+          ) : (
+            <div className="h-full bg-cedro-red/30 rounded w-full" />
+          )}
+        </div>
+
+        {/* Dots + Prev/Next */}
+        <div className="flex items-center justify-center gap-4 mt-5">
+          <button onClick={() => navigateTo(current - 1)} disabled={current === 0}
+            className="w-8 h-8 rounded-full border border-cedro-sage/20 flex items-center justify-center text-cedro-sage hover:border-cedro-red hover:text-cedro-red transition-colors disabled:opacity-20"
+            aria-label="Anterior">‹</button>
+          <div className="flex gap-2">
+            {Array.from({ length: totalPages }).map((_, i) => (
+              <button key={i} onClick={() => navigateTo(i)}
+                className={`rounded-full transition-all duration-300 ${
+                  i === current ? 'w-5 h-2 bg-cedro-red' : 'w-2 h-2 bg-cedro-sage/20 hover:bg-cedro-sage/40'
+                }`} aria-label={`Vídeo ${i + 1}`} />
+            ))}
+          </div>
+          <button onClick={() => navigateTo(current + 1)} disabled={current === totalPages - 1}
+            className="w-8 h-8 rounded-full border border-cedro-sage/20 flex items-center justify-center text-cedro-sage hover:border-cedro-red hover:text-cedro-red transition-colors disabled:opacity-20"
+            aria-label="Próximo">›</button>
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes progress { from { width: 0% } to { width: 100% } }
+      `}</style>
+    </section>
+  );
+}
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
