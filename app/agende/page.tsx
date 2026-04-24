@@ -170,7 +170,7 @@ export default function AgendePage() {
       <section className="py-24" style={{ background: '#aac2c5' }}>
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="max-w-[700px] mb-14">
-            <SectionLabel style={{ color: 'rgba(37,42,58,0.7)' }}>Método Cedro</SectionLabel>
+            <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: 'rgba(37,42,58,0.7)' }}>Método Cedro</p>
             <h2 style={{ color: '#252a3a' }}>Em poucos meses, você pode sair da confusão para uma vida com sentido, disciplina e identidade clara.</h2>
             <p className="mt-4" style={{ color: 'rgba(37,42,58,0.75)' }}>É isso que o Método Cedro constrói.</p>
           </div>
