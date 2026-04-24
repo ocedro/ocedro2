@@ -22,7 +22,7 @@ export default function AgendePage() {
     <div className="flex flex-col">
 
       {/* HERO */}
-      <section className="pt-32 pb-20 relative overflow-hidden" style={{ background: '#f0ede6' }}>
+      <section className="pt-32 pb-20 relative overflow-hidden" style={{ backgroundImage: 'url(/agende-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}>
         {/* Decorações SVG premium */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 800 360" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
