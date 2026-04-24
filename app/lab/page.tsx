@@ -143,8 +143,14 @@ export default function LabPage() {
 
             {/* Gabriel */}
             <div className="grid grid-cols-[160px_1fr] gap-8 items-start">
-              <div className="bg-cedro-navy border border-cedro-sage/10 aspect-[4/5] flex items-center justify-center">
-                <p className="text-cedro-sage/40 text-sm text-center px-4">Foto em breve</p>
+              <div className="overflow-hidden">
+                <Image
+                  src="/gabriel-ferreira.jpg"
+                  alt="Gabriel Ferreira"
+                  width={480}
+                  height={600}
+                  className="w-full h-auto object-cover"
+                />
               </div>
               <div>
                 <h3 className="mb-1 text-cedro-white">Gabriel Ferreira</h3>
