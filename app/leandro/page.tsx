@@ -19,15 +19,23 @@ export default function LeandroPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <Image 
-                src="/leandro-image.png" 
-                alt="Leandro Carone" 
-                className="w-full h-auto max-w-[400px] object-cover"
-                width={480}
-                height={600}
-                priority
-                referrerPolicy="no-referrer"
-              />
+              <div className="relative inline-block max-w-[400px] w-full">
+                {/* Canto superior esquerdo */}
+                <div className="absolute -top-2 -left-2 w-12 h-12 pointer-events-none"
+                  style={{ borderTop: '2px solid #e8450a', borderLeft: '2px solid #e8450a' }} />
+                {/* Canto inferior direito */}
+                <div className="absolute -bottom-2 -right-2 w-12 h-12 pointer-events-none"
+                  style={{ borderBottom: '2px solid #e8450a', borderRight: '2px solid #e8450a' }} />
+                <Image 
+                  src="/leandro-image.png" 
+                  alt="Leandro Carone" 
+                  className="w-full h-auto object-cover"
+                  width={480}
+                  height={600}
+                  priority
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
