@@ -18,57 +18,103 @@ const VIDEO_IDS = [
   '0_KogS-dOTE',
   'SFLQ9CMO38I',
 ];
-const VISIBLE_MOBILE = 1;
-const VISIBLE_DESKTOP = 3;
-const TOTAL_PAGES = VIDEO_IDS.length - VISIBLE_DESKTOP + 1;
-const TOTAL_PAGES_MOBILE = VIDEO_IDS.length - VISIBLE_MOBILE + 1;
-const INTERVAL = 2800;
+const INTERVAL = 3800;
 
 function VideoCarousel() {
   const [current, setCurrent] = useState(0);
   const [progKey, setProgKey] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const pausedRef = useRef(false);
+  const touchStartX = useRef<number>(0);
+  const touchStartY = useRef<number>(0);
+  const isDragging = useRef(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  const visible = isMobile ? 1 : 3;
+  const totalPages = VIDEO_IDS.length - visible + 1;
 
   const goTo = useCallback((idx: number) => {
-    setCurrent(idx);
+    const clamped = Math.max(0, Math.min(idx, totalPages - 1));
+    setCurrent(clamped);
     setProgKey(k => k + 1);
-  }, []);
+  }, [totalPages]);
 
   const next = useCallback(() => {
     if (pausedRef.current) return;
-    setCurrent(c => (c + 1) % TOTAL_PAGES);
+    setCurrent(c => (c + 1) % totalPages);
     setProgKey(k => k + 1);
-  }, []);
+  }, [totalPages]);
+
+  const prev = useCallback(() => {
+    setCurrent(c => (c - 1 + totalPages) % totalPages);
+    setProgKey(k => k + 1);
+  }, [totalPages]);
+
+  const resetTimer = useCallback((idx: number) => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    goTo(idx);
+    timerRef.current = setInterval(next, INTERVAL);
+  }, [goTo, next]);
 
   useEffect(() => {
     timerRef.current = setInterval(next, INTERVAL);
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [next]);
 
-  // Listen for YouTube postMessage events to detect play/pause
+  // YouTube postMessage — pause carousel when playing
   useEffect(() => {
     const handler = (e: MessageEvent) => {
       try {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (data?.event === 'onStateChange') {
-          const isPlaying = data.info === 1; // 1 = playing, 2 = paused, 0 = ended
+          const isPlaying = data.info === 1;
           pausedRef.current = isPlaying;
           setPaused(isPlaying);
-          if (!isPlaying) setProgKey(k => k + 1); // restart progress bar when paused/ended
+          if (!isPlaying) {
+            setProgKey(k => k + 1);
+            if (timerRef.current) clearInterval(timerRef.current);
+            timerRef.current = setInterval(next, INTERVAL);
+          }
         }
       } catch {}
     };
     window.addEventListener('message', handler);
     return () => window.removeEventListener('message', handler);
-  }, []);
+  }, [next]);
 
-  const resetTimer = (idx: number) => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    goTo(idx);
-    timerRef.current = setInterval(next, INTERVAL);
+  // Touch swipe
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+    isDragging.current = false;
   };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    const dx = Math.abs(e.touches[0].clientX - touchStartX.current);
+    const dy = Math.abs(e.touches[0].clientY - touchStartY.current);
+    if (dx > dy && dx > 8) isDragging.current = true;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (!isDragging.current) return;
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    if (Math.abs(dx) > 40) {
+      if (dx < 0) resetTimer(Math.min(current + 1, totalPages - 1));
+      else resetTimer(Math.max(current - 1, 0));
+    }
+    isDragging.current = false;
+  };
+
+  const slotW = isMobile ? 100 : 36.666;
+  const gap = isMobile ? 0 : 5.33;
 
   return (
     <section className="py-24 bg-cedro-black text-cedro-white overflow-hidden">
@@ -77,10 +123,15 @@ function VideoCarousel() {
         <p className="text-cedro-sage mb-10">Podcasts, pregações, lives e conteúdos</p>
 
         {/* Track */}
-        <div className="overflow-hidden">
+        <div
+          className="overflow-hidden cursor-grab active:cursor-grabbing"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           <div
             className="flex gap-4 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
-            style={{ transform: `translateX(calc(-${current} * (36.666% + 5.33px)))` }}
+            style={{ transform: `translateX(calc(-${current} * (${slotW}% + ${gap}px)))` }}
           >
             {VIDEO_IDS.map((id) => (
               <div key={id} className="flex-none w-full md:w-[calc(36.666%-11px)] aspect-video border border-cedro-sage/10">
@@ -98,27 +149,47 @@ function VideoCarousel() {
 
         {/* Progress bar */}
         <div className="mt-4 h-[2px] bg-cedro-sage/10 rounded overflow-hidden">
-          {!paused && (
+          {!paused ? (
             <div
               key={progKey}
               className="h-full bg-cedro-red rounded"
               style={{ animation: `progress ${INTERVAL}ms linear forwards` }}
             />
+          ) : (
+            <div className="h-full bg-cedro-red/30 rounded w-full" />
           )}
-          {paused && <div className="h-full bg-cedro-red/30 rounded w-full" />}
         </div>
 
-        {/* Dots */}
-        <div className="flex justify-center gap-2 mt-4">
-          {Array.from({ length: TOTAL_PAGES }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => resetTimer(i)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                i === current ? 'bg-cedro-red scale-125' : 'bg-cedro-sage/20 hover:bg-cedro-sage/40'
-              }`}
-            />
-          ))}
+        {/* Dots + Prev/Next */}
+        <div className="flex items-center justify-center gap-4 mt-5">
+          <button
+            onClick={() => resetTimer(current - 1)}
+            disabled={current === 0}
+            className="w-8 h-8 rounded-full border border-cedro-sage/20 flex items-center justify-center text-cedro-sage hover:border-cedro-red hover:text-cedro-red transition-colors disabled:opacity-20"
+            aria-label="Anterior"
+          >
+            ‹
+          </button>
+          <div className="flex gap-2">
+            {Array.from({ length: totalPages }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => resetTimer(i)}
+                className={`rounded-full transition-all duration-300 ${
+                  i === current ? 'w-5 h-2 bg-cedro-red' : 'w-2 h-2 bg-cedro-sage/20 hover:bg-cedro-sage/40'
+                }`}
+                aria-label={`Ir para vídeo ${i + 1}`}
+              />
+            ))}
+          </div>
+          <button
+            onClick={() => resetTimer(current + 1)}
+            disabled={current === totalPages - 1}
+            className="w-8 h-8 rounded-full border border-cedro-sage/20 flex items-center justify-center text-cedro-sage hover:border-cedro-red hover:text-cedro-red transition-colors disabled:opacity-20"
+            aria-label="Próximo"
+          >
+            ›
+          </button>
         </div>
       </div>
 
