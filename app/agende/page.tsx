@@ -66,7 +66,7 @@ export default function AgendePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <SectionLabel>Clínica Cedro</SectionLabel>
+          <SectionLabel>Agende sua consulta</SectionLabel>
           <h1 className="mb-0 leading-tight" style={{ color: '#1a1a1a' }}>
             Cuide da sua saúde mental<br />
             <em className="font-serif italic" style={{ color: 'rgba(26,26,26,0.28)' }}>com quem entende você.</em>
