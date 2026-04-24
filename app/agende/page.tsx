@@ -69,7 +69,7 @@ export default function AgendePage() {
           <SectionLabel>Agende sua consulta</SectionLabel>
           <h1 className="mb-0 leading-tight" style={{ color: '#1a1a1a' }}>
             Cuide da sua saúde mental<br />
-            <em className="font-serif italic" style={{ color: 'rgba(26,26,26,0.28)' }}>com quem entende você.</em>
+            <em className="font-serif italic" style={{ color: 'rgba(209,61,29,0.75)' }}>com quem entende você.</em>
           </h1>
           <Divider className="my-6" />
           <p className="text-lg max-w-[560px] mb-8" style={{ color: '#555' }}>
