@@ -90,7 +90,16 @@ function VideoCarousel() {
     };
   }, [totalPages]);
 
-  // YouTube postMessage
+  // Pause when user clicks inside any iframe (window loses focus)
+  useEffect(() => {
+    const onBlur = () => {
+      if (document.activeElement?.tagName === 'IFRAME') {
+        pauseAll();
+      }
+    };
+    window.addEventListener('blur', onBlur);
+    return () => window.removeEventListener('blur', onBlur);
+  }, [pauseAll]);
   useEffect(() => {
     const handler = (e: MessageEvent) => {
       try {
