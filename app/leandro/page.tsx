@@ -22,10 +22,10 @@ export default function LeandroPage() {
               <div className="relative inline-block max-w-[400px] w-full">
                 {/* Canto superior esquerdo */}
                 <div className="absolute -top-2 -left-2 w-12 h-12 pointer-events-none"
-                  style={{ borderTop: '2px solid #e8450a', borderLeft: '2px solid #e8450a' }} />
+                  style={{ borderTop: '2px solid #d13d1d', borderLeft: '2px solid #d13d1d' }} />
                 {/* Canto inferior direito */}
                 <div className="absolute -bottom-2 -right-2 w-12 h-12 pointer-events-none"
-                  style={{ borderBottom: '2px solid #e8450a', borderRight: '2px solid #e8450a' }} />
+                  style={{ borderBottom: '2px solid #d13d1d', borderRight: '2px solid #d13d1d' }} />
                 <Image 
                   src="/leandro-image.png" 
                   alt="Leandro Carone" 
@@ -110,7 +110,7 @@ export default function LeandroPage() {
       </section>
 
       <section className="py-24 bg-cedro-navy text-center">
-        <div className="max-w-[900px] mx-auto px-8">
+        <div className="max-w-[900px] mx-auto px-5 md:px-8">
           <h2 className="text-cedro-white">Eu não quero chegar ao último dia da minha vida com arrependimento que não me tornei tudo o que eu poderia.</h2>
           <div className="flex flex-wrap gap-4 justify-center mt-8">
             <Button asChild withArrow>

@@ -31,26 +31,28 @@ export default function FineiasPage() {
         {/* Vignette barroca */}
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse at 30% 50%, transparent 25%, rgba(10,4,1,0.75) 100%)' }} />
-        <div className="max-w-[800px] mx-auto px-5 md:px-8 relative z-10">
-          <Image
-            src="/fineias-logo.png"
-            alt="Mentoria Fineias"
-            width={948}
-            height={137}
-            className="w-auto mb-10 object-contain"
-            style={{ height: '70px' }}
-            priority
-          />
-          <SectionLabel>Mentoria Fineias</SectionLabel>
-          <h1 className="mb-6 text-cedro-white">
-            Você prometeu que seria a última vez. Mas caiu de novo.
-          </h1>
-          <p className="text-lg text-cedro-sage mb-10">
-            A Sociedade Finéias é uma mentoria em grupo para homens cristãos que estão prontos para quebrar o ciclo do vício em pornografia. 10 encontros. 12 homens. Sem gravação. Tudo acontece ao vivo.
-          </p>
-          <Button asChild withArrow>
-            <a href="https://form.respondi.app/Qr9kjWMI" target="_blank" rel="noopener noreferrer">Quero sair desse ciclo</a>
-          </Button>
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+          <div className="max-w-[640px]">
+            <Image
+              src="/fineias-logo.png"
+              alt="Mentoria Fineias"
+              width={948}
+              height={137}
+              className="w-auto mb-10 object-contain"
+              style={{ height: '70px' }}
+              priority
+            />
+            <SectionLabel>Mentoria Fineias</SectionLabel>
+            <h1 className="mb-6 text-cedro-white">
+              Você prometeu que seria a última vez. Mas caiu de novo.
+            </h1>
+            <p className="text-lg text-cedro-sage mb-10">
+              A Sociedade Finéias é uma mentoria em grupo para homens cristãos que estão prontos para quebrar o ciclo do vício em pornografia. 10 encontros. 12 homens. Sem gravação. Tudo acontece ao vivo.
+            </p>
+            <Button asChild withArrow>
+              <a href="https://form.respondi.app/Qr9kjWMI" target="_blank" rel="noopener noreferrer">Quero sair desse ciclo</a>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -143,7 +145,7 @@ export default function FineiasPage() {
       <section className="py-24 bg-cedro-black text-center text-cedro-white relative overflow-hidden" style={textureStyle}>
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse at 70% 50%, transparent 30%, rgba(10,4,1,0.6) 100%)' }} />
-        <div className="max-w-[700px] mx-auto px-8 relative z-10">
+        <div className="max-w-[700px] mx-auto px-5 md:px-8 relative z-10">
           <h2 className="text-cedro-white mb-6">Quanto mais tempo no ciclo, mais difícil sair.</h2>
           <p className="text-cedro-sage my-6 text-lg">Cada turma é limitada a 12 homens. O grupo precisa ser pequeno para funcionar de verdade, com confiança, aliança e acompanhamento real.</p>
           <p className="text-cedro-sage mb-4">Você não precisa ter tudo resolvido para entrar. Precisa estar pronto para parar de se esconder.</p>

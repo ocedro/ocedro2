@@ -24,7 +24,7 @@ export default function IgrejaPage() {
   return (
     <div className="flex flex-col">
       <section className="pt-32 pb-16 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>Cedro para Igrejas</SectionLabel>
           <h1 className="text-cedro-white mb-4">Cedro na sua igreja.</h1>
           <Divider className="my-6" />
@@ -35,7 +35,7 @@ export default function IgrejaPage() {
       </section>
 
       <section className="py-24 bg-cedro-black text-cedro-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
               <h2 className="mb-4 text-cedro-white">Não oferecemos respostas superficiais a questões profundas.</h2>
@@ -53,7 +53,7 @@ export default function IgrejaPage() {
       </section>
 
       <section className="py-24 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>Temas de domínio</SectionLabel>
           <h2 className="mb-12 text-cedro-white">O que levamos para sua comunidade.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
@@ -68,7 +68,7 @@ export default function IgrejaPage() {
       </section>
 
       <section className="py-24 bg-cedro-black">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>Como entregamos</SectionLabel>
           <h2 className="mb-8 text-cedro-white">Formatos disponíveis.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -83,7 +83,7 @@ export default function IgrejaPage() {
       </section>
 
       <section className="py-24 bg-cedro-navy text-center text-cedro-white">
-        <div className="max-w-[600px] mx-auto px-8">
+        <div className="max-w-[600px] mx-auto px-5 md:px-8">
           <h2 className="text-cedro-white">Leve a Cedro para sua igreja.</h2>
           <p className="text-cedro-sage my-4 mb-8">Entre em contato para entender como podemos servir sua comunidade.</p>
           <Button asChild withArrow>

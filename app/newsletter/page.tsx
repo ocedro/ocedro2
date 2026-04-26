@@ -12,7 +12,7 @@ export default function NewsletterPage() {
   return (
     <div className="flex flex-col">
       <section className="pt-32 pb-16 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>Clínica Cedro</SectionLabel>
           <h1 className="text-cedro-white mb-4">Newsletter.</h1>
           <Divider className="my-6" />
@@ -23,7 +23,7 @@ export default function NewsletterPage() {
       </section>
 
       <section className="py-24 bg-cedro-black">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           {sorted.length === 0 ? (
             <p className="text-cedro-sage">Nenhuma publicação ainda.</p>
           ) : (

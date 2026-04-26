@@ -104,7 +104,7 @@ export default function AgendePage() {
                 title: 'Sessão avulsa',
                 desc: 'Você começa com uma sessão avulsa. Conhece o profissional, entende a abordagem, vê se é o que você procurava.',
                 icon: (
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinecap="round">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d13d1d" strokeWidth="1.5" strokeLinecap="round">
                     <circle cx="12" cy="12" r="10"/>
                     <path d="M12 8v4l3 3"/>
                   </svg>
@@ -115,7 +115,7 @@ export default function AgendePage() {
                 title: 'Avaliação',
                 desc: 'Junto com o psicólogo, vocês definem o objetivo do tratamento e a frequência ideal, semanal ou quinzenal.',
                 icon: (
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinecap="round">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d13d1d" strokeWidth="1.5" strokeLinecap="round">
                     <path d="M9 11l3 3L22 4"/>
                     <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
                   </svg>
@@ -126,7 +126,7 @@ export default function AgendePage() {
                 title: 'Ciclo Cedro',
                 desc: 'Você inicia um Ciclo Cedro — acompanhamento com objetivo claro, começo, meio e fim, sempre alinhado com o psicólogo que está te acompanhando.',
                 icon: (
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinecap="round">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d13d1d" strokeWidth="1.5" strokeLinecap="round">
                     <path d="M12 2L2 7l10 5 10-5-10-5z"/>
                     <path d="M2 17l10 5 10-5"/>
                     <path d="M2 12l10 5 10-5"/>
@@ -145,7 +145,7 @@ export default function AgendePage() {
                 </div>
                 {/* Linha + Dot */}
                 <div className="flex flex-col items-center">
-                  <div className="w-3 h-3 rounded-full mt-3 z-10 shrink-0" style={{ background: '#e8450a' }} />
+                  <div className="w-3 h-3 rounded-full mt-3 z-10 shrink-0" style={{ background: '#d13d1d' }} />
                   {!step.last && (
                     <div className="flex-1 min-h-[60px] w-px mt-1"
                       style={{ background: 'repeating-linear-gradient(to bottom, rgba(209,61,29,0.45) 0px, rgba(209,61,29,0.45) 4px, transparent 4px, transparent 8px)' }} />
@@ -180,7 +180,7 @@ export default function AgendePage() {
                 num: '01', title: 'Autenticidade e Integridade Pessoal',
                 desc: 'Desenvolvimento de congruência entre valores pessoais e bíblicos com a sua biocosmovisão e comportamentos externos.',
                 icon: (
-                  <svg width="24" height="24" viewBox="0 0 28 28" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 28 28" fill="none" stroke="#d13d1d" strokeWidth="1.5" strokeLinejoin="round">
                     <polygon points="14,2 26,10 14,26 2,10"/>
                     <line x1="2" y1="10" x2="26" y2="10"/>
                     <line x1="9" y1="10" x2="14" y2="2"/>
@@ -194,7 +194,7 @@ export default function AgendePage() {
                 num: '02', title: 'Aceitação e Confissão Humilhante',
                 desc: 'Desenvolvimento de uma perspectiva humilde sobre si, enfatizando a importância da responsabilidade e individualidade.',
                 icon: (
-                  <svg width="24" height="24" viewBox="0 0 28 28" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="24" height="24" viewBox="0 0 28 28" fill="none" stroke="#d13d1d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="14" cy="7" r="3"/>
                     <line x1="14" y1="10" x2="14" y2="26"/>
                     <path d="M6,14 C6,20 10,24 14,26 C18,24 22,20 22,14"/>
@@ -206,7 +206,7 @@ export default function AgendePage() {
                 num: '03', title: 'Hábitos Poderosos',
                 desc: 'Estabelecimento de rotinas e hábitos diários que reforcem o bem-estar pessoal e a realização, contribuindo para uma melhor saúde mental, física e espiritual.',
                 icon: (
-                  <svg width="28" height="24" viewBox="0 0 32 28" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="28" height="24" viewBox="0 0 32 28" fill="none" stroke="#d13d1d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="1" y="9" width="4" height="10" rx="1"/>
                     <rect x="5" y="11" width="3" height="6" rx="0.5"/>
                     <line x1="8" y1="14" x2="24" y2="14"/>
@@ -219,7 +219,7 @@ export default function AgendePage() {
                 num: '04', title: 'Compreensão Vocacional e Identitária',
                 desc: 'Alcance de clareza sobre identidade, propósito e missão pessoal.',
                 icon: (
-                  <svg width="26" height="24" viewBox="0 0 30 28" fill="none" stroke="#e8450a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="26" height="24" viewBox="0 0 30 28" fill="none" stroke="#d13d1d" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M15,24 L15,8"/>
                     <path d="M15,8 C15,4 9,2 7,5 C5,3 2,4 2,7 C0,8 0,11 2,12 C1,14 2,17 4,17 C4,20 6,22 9,22 C10,23 12,24 15,24"/>
                     <path d="M15,8 C15,4 21,2 23,5 C25,3 28,4 28,7 C30,8 30,11 28,12 C29,14 28,17 26,17 C26,20 24,22 21,22 C20,23 18,24 15,24"/>
@@ -233,7 +233,7 @@ export default function AgendePage() {
             ].map((item) => (
               <div key={item.num} className="p-8 transition-all hover:-translate-y-1" style={{ border: '1px solid rgba(37,42,58,0.15)', background: 'rgba(255,255,255,0.25)' }}>
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="font-serif text-4xl leading-none" style={{ color: '#e8450a' }}>{item.num}</div>
+                  <div className="font-serif text-4xl leading-none" style={{ color: '#d13d1d' }}>{item.num}</div>
                   <div>{item.icon}</div>
                 </div>
                 <h4 className="mb-3" style={{ color: '#252a3a' }}>{item.title}</h4>
@@ -278,7 +278,7 @@ export default function AgendePage() {
       </section>
 
       {/* E-BOOK */}
-      <section className="py-20 bg-[#e8450a] text-white">
+      <section className="py-20 bg-[#d13d1d] text-white">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="hidden md:flex justify-center">
@@ -298,7 +298,7 @@ export default function AgendePage() {
                 href="https://form.respondi.app/VKSO6qpV"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#e8450a] font-bold tracking-wider uppercase text-[0.95rem] transition-all hover:-translate-y-0.5 w-full md:w-auto"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#d13d1d] font-bold tracking-wider uppercase text-[0.95rem] transition-all hover:-translate-y-0.5 w-full md:w-auto"
               >
                 Quero o e-book →
               </a>

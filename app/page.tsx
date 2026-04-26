@@ -322,7 +322,7 @@ export default function Home() {
       <VideoCarousel />
 
       {/* E-BOOK */}
-      <section className="py-20 bg-[#e8450a] text-white">
+      <section className="py-20 bg-[#d13d1d] text-white">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="hidden md:flex justify-center">
@@ -342,7 +342,7 @@ export default function Home() {
                 href="https://form.respondi.app/VKSO6qpV"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#e8450a] font-bold tracking-wider uppercase text-[0.95rem] transition-all hover:-translate-y-0.5 w-full md:w-auto justify-center"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#d13d1d] font-bold tracking-wider uppercase text-[0.95rem] transition-all hover:-translate-y-0.5 w-full md:w-auto justify-center"
               >
                 Quero o e-book →
               </a>
