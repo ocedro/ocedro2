@@ -141,6 +141,121 @@ export default function FineiasPage() {
         </div>
       </section>
 
+      {/* DEPOIMENTOS */}
+      <section className="py-24 bg-cedro-black text-cedro-white relative overflow-hidden" style={textureStyle}>
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 30% 40%, transparent 20%, rgba(10,4,1,0.7) 100%)' }} />
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+          <SectionLabel>Quem já passou por aqui</SectionLabel>
+          <h2 className="mb-12 text-cedro-white">Homens que pararam de se esconder.</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Elias */}
+            <div className="p-8 bg-cedro-navy border border-cedro-sage/10 border-l-[3px] border-l-cedro-red flex flex-col">
+              <p className="text-cedro-sage text-[0.95rem] leading-relaxed mb-6 flex-1">
+                &ldquo;Estava num momento muito conturbado do meu relacionamento e da vida espiritual, e o trabalho em grupo com o Leandro me ajudou a ganhar forças na caminhada e enxergar um caminho sólido. Compartilhar essa experiência com outros que estavam vivendo esse mesmo momento foi de grande ajuda nos períodos mais difíceis. Fiz amigos com quem até hoje posso me abrir, trocar experiências e orar junto.&rdquo;
+              </p>
+              <div className="pt-4 border-t border-cedro-sage/10">
+                <p className="text-cedro-white font-bold text-sm">Elias</p>
+                <p className="text-cedro-sage text-xs">36 anos</p>
+              </div>
+            </div>
+
+            {/* Denis */}
+            <div className="p-8 bg-cedro-navy border border-cedro-sage/10 border-l-[3px] border-l-cedro-red flex flex-col">
+              <p className="text-cedro-sage text-[0.95rem] leading-relaxed mb-4 flex-1">
+                &ldquo;Procurei ajuda em alguns lugares onde me sentisse seguro para me abrir e expor minha dificuldade na dependência de pornografia, depois de mais de 20 anos de consumo desse maldito vício. Foi então que descobri pelo Instagram o trabalho que o Leandro conduzia.&rdquo;
+                <br /><br />
+                &ldquo;Hoje tenho consciência, e sei bem como foi sombrio todo esse tempo que passei sem a ajuda de um profissional como o Leandro. Hoje vivo mais tranquilamente com a minha consciência, tenho paz no meu lar, e o meu desempenho profissional tem sido melhor por conta da ajuda que recebi. Recomendo a todos vocês que passam por esta dificuldade. Sua família merece.&rdquo;
+              </p>
+              <div className="pt-4 border-t border-cedro-sage/10">
+                <p className="text-cedro-white font-bold text-sm">Denis</p>
+                <p className="text-cedro-sage text-xs">45 anos, engenheiro mecânico</p>
+              </div>
+            </div>
+
+            {/* Lucas */}
+            <div className="p-8 bg-cedro-navy border border-cedro-sage/10 border-l-[3px] border-l-cedro-red flex flex-col">
+              <p className="text-cedro-sage text-[0.95rem] leading-relaxed mb-4 flex-1">
+                &ldquo;Passei por vários tipos de buscas para encontrar algo que me ajudasse a largar esse vício, e cheguei a pensar que não teria solução. Acabei fazendo parte dessa terapia em grupo com o Leandro, e mesmo sendo encontros EAD, me senti muito à vontade em ter um grupo com quem podia contar a qualquer momento.&rdquo;
+                <br /><br />
+                &ldquo;A forma didática e prática que o Leandro proporciona facilita muito o aprendizado para vencer e romper esse ciclo. Só tenho a agradecer pelas novas amizades, pelo fortalecimento prático, mental e espiritual.&rdquo;
+              </p>
+              <div className="pt-4 border-t border-cedro-sage/10">
+                <p className="text-cedro-white font-bold text-sm">Lucas</p>
+                <p className="text-cedro-sage text-xs">23 anos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* INVESTIMENTO E TURMA */}
+      <section className="py-24 bg-cedro-navy text-cedro-white relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none opacity-40"
+          style={{
+            background: 'radial-gradient(ellipse at 80% 50%, rgba(209,61,29,0.25) 0%, transparent 60%)',
+          }}
+        />
+        <div className="max-w-[1100px] mx-auto px-5 md:px-8 relative z-10">
+          <SectionLabel>Investimento e turma</SectionLabel>
+          <h2 className="mb-12 text-cedro-white">O que está em jogo.</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            {/* Card preço */}
+            <div className="p-10 bg-cedro-black border border-cedro-red/30 relative overflow-hidden">
+              <div className="absolute top-0 right-0 bg-cedro-red text-cedro-white text-xs font-bold tracking-[0.15em] uppercase px-3 py-1.5">
+                Condição especial
+              </div>
+              <p className="text-xs font-bold tracking-[0.3em] uppercase text-cedro-sage mb-4">Investimento</p>
+
+              <p className="text-cedro-sage text-base mb-2">
+                <span className="line-through opacity-70">De R$ 1.497</span>
+              </p>
+              <div className="flex items-baseline gap-2 mb-6">
+                <span className="text-cedro-sage text-lg">por</span>
+                <span className="font-serif font-bold text-cedro-red leading-none" style={{ fontSize: 'clamp(3rem, 6vw, 4.5rem)' }}>
+                  R$ 1.197
+                </span>
+              </div>
+              <p className="text-cedro-sage text-sm leading-relaxed mb-2">à vista</p>
+              <div className="w-12 h-[2px] bg-cedro-red my-6" />
+              <p className="text-cedro-sage text-sm leading-relaxed">
+                Acesso completo aos 10 encontros ao vivo. Sem gravação, sem upsell, sem mensalidade.
+              </p>
+            </div>
+
+            {/* Card turma */}
+            <div className="p-10 bg-cedro-black border border-cedro-sage/15 flex flex-col">
+              <p className="text-xs font-bold tracking-[0.3em] uppercase text-cedro-sage mb-4">Próxima turma</p>
+              <h3 className="text-cedro-white text-2xl font-bold mb-6 leading-tight">
+                Começa quando fechar 12 homens.
+              </h3>
+              <p className="text-cedro-sage text-[0.95rem] leading-relaxed mb-4">
+                Não trabalhamos com data marcada. A turma abre quando completa o grupo certo, porque o trabalho só funciona em grupo pequeno e comprometido.
+              </p>
+              <p className="text-cedro-sage text-[0.95rem] leading-relaxed mb-8">
+                Você entra na lista, recebe o aviso quando fechar, e decide se entra ou não.
+              </p>
+              <div className="mt-auto pt-6 border-t border-cedro-sage/10 grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div className="font-serif text-3xl font-bold text-cedro-red leading-none">12</div>
+                  <p className="text-xs text-cedro-sage mt-2">Homens</p>
+                </div>
+                <div>
+                  <div className="font-serif text-3xl font-bold text-cedro-red leading-none">10</div>
+                  <p className="text-xs text-cedro-sage mt-2">Encontros</p>
+                </div>
+                <div>
+                  <div className="font-serif text-3xl font-bold text-cedro-red leading-none">0</div>
+                  <p className="text-xs text-cedro-sage mt-2">Gravações</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA FINAL */}
       <section className="py-24 bg-cedro-black text-center text-cedro-white relative overflow-hidden" style={textureStyle}>
         <div className="absolute inset-0 pointer-events-none"
