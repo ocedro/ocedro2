@@ -26,12 +26,12 @@ export default function FineiasPage() {
     <div className="flex flex-col">
 
       {/* HERO */}
-      <section className="pt-32 pb-20 bg-cedro-black relative overflow-hidden"
+      <section className="min-h-svh flex items-center pt-32 pb-20 bg-cedro-black relative overflow-hidden"
         style={{ backgroundImage: 'url(/fineias-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}>
         {/* Vignette barroca */}
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse at 30% 50%, transparent 25%, rgba(10,4,1,0.75) 100%)' }} />
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10 w-full">
           <div className="max-w-[640px]">
             <Image
               src="/fineias-logo.png"

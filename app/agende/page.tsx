@@ -22,7 +22,7 @@ export default function AgendePage() {
     <div className="flex flex-col">
 
       {/* HERO */}
-      <section className="pt-32 pb-20 relative overflow-hidden" style={{ backgroundImage: 'url(/agende-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}>
+      <section className="min-h-svh flex items-center pt-32 pb-20 relative overflow-hidden" style={{ backgroundImage: 'url(/agende-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}>
         {/* Decorações SVG premium */}
         <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 800 360" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -61,7 +61,7 @@ export default function AgendePage() {
         </svg>
 
         <motion.div
-          className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10"
+          className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10 w-full"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}

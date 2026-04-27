@@ -23,8 +23,8 @@ export default function IgrejaPage() {
 
   return (
     <div className="flex flex-col">
-      <section className="pt-32 pb-16 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <section className="min-h-svh flex items-center pt-32 pb-16 bg-cedro-navy">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 w-full">
           <SectionLabel>Cedro para Igrejas</SectionLabel>
           <h1 className="text-cedro-white mb-4">Cedro na sua igreja.</h1>
           <Divider className="my-6" />

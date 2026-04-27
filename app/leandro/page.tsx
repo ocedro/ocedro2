@@ -11,8 +11,8 @@ import { Divider } from '@/components/ui/divider';
 export default function LeandroPage() {
   return (
     <div className="flex flex-col">
-      <section className="pt-32 pb-16">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <section className="min-h-svh flex items-center pt-32 pb-16">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 w-full">
           <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, x: -20 }}

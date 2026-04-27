@@ -8,10 +8,10 @@ import { Divider } from '@/components/ui/divider';
 export default function LabPage() {
   return (
     <div className="flex flex-col">
-      <section className="pt-32 pb-20 bg-cedro-black relative overflow-hidden"
+      <section className="min-h-svh flex items-center pt-32 pb-20 bg-cedro-black relative overflow-hidden"
         style={{ backgroundImage: 'url(/lab-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}>
         <div className="absolute inset-0 bg-cedro-black/40 pointer-events-none" />
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10 w-full">
           <div className="max-w-[600px]">
             <Image
               src="/cedrolab-logo.png"

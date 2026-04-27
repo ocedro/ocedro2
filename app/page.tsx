@@ -222,7 +222,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* HERO */}
-      <section className="min-h-screen flex items-center pt-20 relative overflow-hidden"
+      <section className="min-h-svh flex items-center pt-20 relative overflow-hidden"
         style={{ backgroundImage: 'url(/hero-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}>
         <div className="absolute inset-0 bg-cedro-black/40 pointer-events-none" />
         <div className="max-w-[1200px] mx-auto px-5 md:px-8 w-full relative z-10">
