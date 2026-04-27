@@ -24,9 +24,9 @@ export function Footer() {
             <h4 className="font-sans text-sm font-bold text-cedro-white uppercase tracking-widest mb-4">Navegação</h4>
             <div className="flex flex-col gap-2">
               <Link href="/" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Home</Link>
-              <Link href="/leandro" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Leandro Carone</Link>
-              <Link href="/agende" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Agende sua Consulta</Link>
-              <Link href="/igreja" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Cedro na sua Igreja</Link>
+              <Link href="/leandro" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Sobre o Leandro</Link>
+              <Link href="/agende" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Agende sua consulta</Link>
+              <Link href="/igreja" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Para igrejas</Link>
               <Link href="/newsletter" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Newsletter</Link>
             </div>
           </div>
@@ -43,7 +43,7 @@ export function Footer() {
             <h4 className="font-sans text-sm font-bold text-cedro-white uppercase tracking-widest mb-4">Redes</h4>
             <div className="flex flex-col gap-2">
               <a href="https://instagram.com/oleandrocarone" target="_blank" rel="noopener noreferrer" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Instagram</a>
-              <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Agendar sessão</a>
+              <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer" className="text-sm text-cedro-sage hover:text-cedro-red transition-colors">Marcar consulta</a>
             </div>
           </div>
         </div>
