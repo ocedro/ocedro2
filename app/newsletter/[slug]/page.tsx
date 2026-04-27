@@ -1,12 +1,57 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { posts } from '@/lib/newsletter';
 import { SectionLabel } from '@/components/ui/section-label';
 import { Divider } from '@/components/ui/divider';
 
 export async function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = posts.find((p) => p.slug === slug);
+  if (!post) {
+    return {
+      title: 'Post não encontrado',
+    };
+  }
+
+  const description = post.content.split('\n\n')[0]?.slice(0, 160) || `${post.category} — ${post.title}`;
+  const ogImage = post.coverImage || '/og-newsletter.png';
+
+  return {
+    title: post.title,
+    description,
+    alternates: {
+      canonical: `/newsletter/${post.slug}`,
+    },
+    openGraph: {
+      type: 'article',
+      locale: 'pt_BR',
+      url: `https://ocedro.com.br/newsletter/${post.slug}`,
+      siteName: 'Clínica Cedro',
+      title: post.title,
+      description,
+      authors: ['Leandro Carone'],
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description,
+      images: [ogImage],
+    },
+  };
 }
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
