@@ -269,6 +269,40 @@ export default function Home() {
         </div>
       </section>
 
+      {/* E-BOOK SLIM (faixa discreta após o problema) */}
+      <section className="py-8 bg-cedro-red text-white border-y border-white/10">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+            <div className="flex items-start md:items-center gap-4 flex-1">
+              <div className="hidden md:block shrink-0">
+                <Image
+                  src="/ebook-cover.png"
+                  alt=""
+                  width={120}
+                  height={90}
+                  className="w-[72px] h-auto rounded shadow-lg"
+                />
+              </div>
+              <div>
+                <p className="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-white/70 mb-1">E-book gratuito</p>
+                <p className="font-bold text-[1rem] md:text-[1.1rem] text-white leading-tight">
+                  Não faça terapia antes de ler isso.
+                </p>
+                <p className="text-[0.85rem] text-white/80 hidden md:block mt-1">Um guia honesto para quem está procurando psicólogo.</p>
+              </div>
+            </div>
+            <a
+              href="https://form.respondi.app/VKSO6qpV"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-cedro-red font-bold tracking-wider uppercase text-[0.85rem] transition-all hover:-translate-y-0.5 shrink-0 w-full md:w-auto justify-center"
+            >
+              Receber grátis →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ABORDAGEM */}
       <section className="py-24 bg-cedro-black text-cedro-white">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
