@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { SectionLabel } from '@/components/ui/section-label';
 import { Divider } from '@/components/ui/divider';
+import { LiteYouTube } from '@/components/lite-youtube';
 
 const VIDEO_IDS = [
   'bAiZ3Gi6_NU',
@@ -169,14 +170,8 @@ function VideoCarousel() {
             style={{ transform: `translateX(calc(-${current} * (${slotW}% + ${gap}px)))` }}
           >
             {VIDEO_IDS.map((id) => (
-              <div key={id} className="flex-none w-full md:w-[calc(36.666%-11px)] aspect-video border border-cedro-sage/10">
-                <iframe
-                  src={`https://www.youtube.com/embed/${id}?rel=0&enablejsapi=1`}
-                  title="Leandro Carone"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full pointer-events-auto"
-                />
+              <div key={id} className="flex-none w-full md:w-[calc(36.666%-11px)] aspect-video border border-cedro-sage/10 bg-cedro-navy">
+                <LiteYouTube videoId={id} title="Leandro Carone — vídeo" />
               </div>
             ))}
           </div>
