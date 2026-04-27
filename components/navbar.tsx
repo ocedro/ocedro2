@@ -31,7 +31,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [mobileExpandedGroup, setMobileExpandedGroup] = useState<string | null>(null);
-  const desktopGroupRef = useRef<HTMLDivElement>(null);
+  const desktopGroupRef = useRef<HTMLUListElement>(null);
 
   // Fecha dropdown ao clicar fora
   useEffect(() => {
