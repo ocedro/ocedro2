@@ -23,14 +23,42 @@ export default function IgrejaPage() {
 
   return (
     <div className="flex flex-col">
-      <section className="min-h-svh flex items-center pt-32 pb-16 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8 w-full">
-          <SectionLabel>Cedro para Igrejas</SectionLabel>
-          <h1 className="text-cedro-white mb-4">Cedro na sua igreja.</h1>
-          <Divider className="my-6" />
-          <p className="text-lg text-cedro-sage max-w-[600px]">
-            Fortalecer comunidades integrando fé, psicologia, filosofia e neurociência para enfrentar os desafios contemporâneos.
-          </p>
+      <section className="min-h-svh flex items-start md:items-center pt-32 pb-16 relative overflow-hidden bg-white">
+        {/* Imagem desktop (md+): horizontal, texto à esquerda */}
+        <div
+          className="hidden md:block absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'url(/igreja-bg.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center right',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+        {/* Imagem mobile: vertical, texto em cima */}
+        <div
+          className="block md:hidden absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage: 'url(/igreja-bg-mobile.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center bottom',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+
+        {/* Fade desktop: branco da esquerda para direita (texto fica na área clara) */}
+        <div className="hidden md:block absolute inset-0 pointer-events-none bg-gradient-to-r from-white via-white/70 to-transparent" />
+        {/* Fade mobile: branco do topo para baixo (texto fica no topo na área clara) */}
+        <div className="block md:hidden absolute inset-0 pointer-events-none bg-gradient-to-b from-white via-white/85 to-transparent" />
+
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 w-full relative z-10">
+          <div className="max-w-[600px]">
+            <p className="text-xs font-bold tracking-[0.3em] uppercase text-cedro-red mb-6">Cedro para Igrejas</p>
+            <h1 className="mb-4" style={{ color: '#0a0a0a' }}>Cedro na sua igreja.</h1>
+            <div className="w-12 h-[2px] bg-cedro-red my-6" />
+            <p className="text-lg max-w-[600px]" style={{ color: '#3a3a3a' }}>
+              Fortalecer comunidades integrando fé, psicologia, filosofia e neurociência para enfrentar os desafios contemporâneos.
+            </p>
+          </div>
         </div>
       </section>
 
