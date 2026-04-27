@@ -22,9 +22,19 @@ export default function AgendePage() {
     <div className="flex flex-col">
 
       {/* HERO */}
-      <section className="min-h-svh flex items-center pt-32 pb-20 relative overflow-hidden" style={{ backgroundImage: 'url(/agende-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}>
-        {/* Decorações SVG premium */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 800 360" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <section className="min-h-svh flex items-center pt-32 pb-20 relative overflow-hidden">
+        {/* Desktop bg */}
+        <div
+          className="hidden md:block absolute inset-0 pointer-events-none"
+          style={{ backgroundImage: 'url(/agende-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}
+        />
+        {/* Mobile bg */}
+        <div
+          className="block md:hidden absolute inset-0 pointer-events-none"
+          style={{ backgroundImage: 'url(/agende-bg-mobile.png)', backgroundSize: 'cover', backgroundPosition: 'center top' }}
+        />
+        {/* Decorações SVG premium (só desktop, no mobile a árvore SVG da imagem já cumpre o papel) */}
+        <svg className="hidden md:block absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 800 360" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="vline" x1="0" y1="0" x2="0" y2="360" gradientUnits="userSpaceOnUse">
               <stop offset="0%" stopColor="rgba(209,61,29,0)"/>

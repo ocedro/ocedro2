@@ -26,8 +26,19 @@ export default function FineiasPage() {
     <div className="flex flex-col">
 
       {/* HERO */}
-      <section className="min-h-svh flex items-center pt-32 pb-20 bg-cedro-black relative overflow-hidden"
-        style={{ backgroundImage: 'url(/fineias-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}>
+      <section className="min-h-svh flex items-end md:items-center pt-32 pb-12 md:pb-20 bg-cedro-black relative overflow-hidden">
+        {/* Desktop bg */}
+        <div
+          className="hidden md:block absolute inset-0 pointer-events-none"
+          style={{ backgroundImage: 'url(/fineias-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}
+        />
+        {/* Mobile bg */}
+        <div
+          className="block md:hidden absolute inset-0 pointer-events-none"
+          style={{ backgroundImage: 'url(/fineias-bg-mobile.png)', backgroundSize: 'cover', backgroundPosition: 'center top' }}
+        />
+        {/* Mobile gradient (cedro-black com tom quente) para legibilidade */}
+        <div className="md:hidden absolute inset-0 pointer-events-none bg-gradient-to-t from-cedro-black via-cedro-black/85 via-50% to-transparent" />
         {/* Vignette barroca */}
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse at 30% 50%, transparent 25%, rgba(10,4,1,0.75) 100%)' }} />

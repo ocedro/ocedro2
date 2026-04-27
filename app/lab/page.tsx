@@ -8,8 +8,19 @@ import { Divider } from '@/components/ui/divider';
 export default function LabPage() {
   return (
     <div className="flex flex-col">
-      <section className="min-h-svh flex items-center pt-32 pb-20 bg-cedro-black relative overflow-hidden"
-        style={{ backgroundImage: 'url(/lab-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}>
+      <section className="min-h-svh flex items-end md:items-center pt-32 pb-12 md:pb-20 bg-cedro-black relative overflow-hidden">
+        {/* Desktop bg */}
+        <div
+          className="hidden md:block absolute inset-0 pointer-events-none"
+          style={{ backgroundImage: 'url(/lab-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}
+        />
+        {/* Mobile bg */}
+        <div
+          className="block md:hidden absolute inset-0 pointer-events-none"
+          style={{ backgroundImage: 'url(/lab-bg-mobile.png)', backgroundSize: 'cover', backgroundPosition: 'center top' }}
+        />
+        {/* Mobile gradient para legibilidade no rodapé */}
+        <div className="md:hidden absolute inset-0 pointer-events-none bg-gradient-to-t from-cedro-black via-cedro-black/85 via-50% to-transparent" />
         <div className="absolute inset-0 bg-cedro-black/40 pointer-events-none" />
         <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10 w-full">
           <div className="max-w-[600px]">
