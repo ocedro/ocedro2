@@ -6,19 +6,13 @@ export default function IgrejaPage() {
   const topics = [
     'Pare de lutar contra a pornografia e vença de uma vez',
     'Psicologia redentora: Formando conselheiros espirituais',
-    'Identidade inabalável: Quem Deus diz que sou?',
     'Deus me chamou para quê? Vocação e propósito',
-    'Os 4 temperamentos e a personalidade madura',
     'Por que filhos de Deus sofrem com ansiedade?'
   ];
 
   const formats = [
     { title: 'Palestras e seminários', desc: 'Eventos pontuais para a congregação ou liderança sobre temas específicos.' },
     { title: 'Treinamento de liderança', desc: 'Capacitação prática para pastores e líderes lidarem com questões complexas.' },
-    { title: 'Supervisão e acompanhamento', desc: 'Supervisão dos atendimentos e aconselhamentos da equipe pastoral.' },
-    { title: 'Atendimento clínico', desc: 'Psicólogos cristãos treinados para atender membros da comunidade.' },
-    { title: 'Aconselhamento pastoral', desc: 'Atendimento e aconselhamento para pastores e líderes.' },
-    { title: 'Workshops', desc: 'Workshops práticos e interativos para grupos específicos da igreja.' }
   ];
 
   return (
