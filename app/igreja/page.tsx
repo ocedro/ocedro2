@@ -92,7 +92,7 @@ export default function IgrejaPage() {
           <h2 className="text-cedro-white">Me chama para um café.</h2>
           <p className="text-cedro-sage my-4 mb-8">Nenhum comprometimento. Só uma conversa para entender se faz sentido.</p>
           <Button asChild withArrow>
-            <a href="https://wa.me/5519999999999?text=Quero%20conversar%20sobre%20levar%20a%20Cedro%20para%20minha%20igreja" target="_blank" rel="noopener noreferrer">Quero conversar</a>
+            <a href="https://wa.me/5519974010520?text=Quero%20conversar%20sobre%20levar%20a%20Cedro%20para%20minha%20igreja" target="_blank" rel="noopener noreferrer">Quero conversar</a>
           </Button>
         </div>
       </section>
