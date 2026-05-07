@@ -29,7 +29,7 @@ export default function LeandroPage() {
                 <Image 
                   src="/leandro-image.png" 
                   alt="Leandro Carone" 
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover object-[65%_center]"
                   width={480}
                   height={600}
                   priority
