@@ -1,18 +1,12 @@
 import { Button } from '@/components/ui/button';
-import { SectionLabel } from '@/components/ui/section-label';
 import { Divider } from '@/components/ui/divider';
 
 export default function IgrejaPage() {
   const topics = [
-    'Pare de lutar contra a pornografia e vença de uma vez',
-    'Psicologia redentora: Formando conselheiros espirituais',
-    'Deus me chamou para quê? Vocação e propósito',
-    'Por que filhos de Deus sofrem com ansiedade?'
-  ];
-
-  const formats = [
-    { title: 'Palestras e seminários', desc: 'Eventos pontuais para a congregação ou liderança sobre temas específicos.' },
-    { title: 'Treinamento de liderança', desc: 'Capacitação prática para pastores e líderes lidarem com questões complexas.' },
+    'Como orientar um membro que não consegue largar a pornografia',
+    'Preparar seus conselheiros para atender sem causar mais dano',
+    'Quando alguém da congregação perdeu o senso de propósito e vocação',
+    'O que dizer quando um membro fiel está paralisado pela ansiedade',
   ];
 
   return (
@@ -46,11 +40,11 @@ export default function IgrejaPage() {
 
         <div className="max-w-[1200px] mx-auto px-5 md:px-8 w-full relative z-10">
           <div className="max-w-[600px]">
-            <p className="text-xs font-bold tracking-[0.3em] uppercase text-cedro-red mb-6">Cedro para Igrejas</p>
-            <h1 className="mb-4" style={{ color: '#0a0a0a' }}>Cedro na sua igreja.</h1>
+            <p className="text-xs font-bold tracking-[0.3em] uppercase text-cedro-red mb-6">Para pastores e líderes</p>
+            <h1 className="mb-4" style={{ color: '#0a0a0a' }}>Sua congregação tem perguntas que você não sabe exatamente como responder?</h1>
             <div className="w-12 h-[2px] bg-cedro-red my-6" />
             <p className="text-lg max-w-[600px]" style={{ color: '#3a3a3a' }}>
-              Fortalecer comunidades integrando fé, psicologia, filosofia e neurociência para enfrentar os desafios contemporâneos.
+              Pornografia, ansiedade, identidade, vocação. Questões que chegam até você toda semana e que merecem mais profundidade.
             </p>
           </div>
         </div>
@@ -58,26 +52,18 @@ export default function IgrejaPage() {
 
       <section className="py-24 bg-cedro-black text-cedro-white">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="mb-4 text-cedro-white">Não oferecemos respostas superficiais a questões profundas.</h2>
-              <Divider className="my-6" />
-              <p className="mb-4 text-cedro-sage">Reconhecemos o poder da oração, do jejum e da comunidade da Igreja, além da constante atuação do Espírito Santo.</p>
-              <p className="mb-4 text-cedro-sage">No entanto, os desafios contemporâneos nos convocam a um olhar mais atento e reflexivo sobre como Deus já nos forneceu soluções em Sua Palavra.</p>
-              <p className="text-cedro-sage">Nas Escrituras, encontramos os alicerces sólidos para edificar pensamentos verdadeiros e combater fortalezas mentais e argumentos falaciosos.</p>
-            </div>
-            <div>
-              <p className="mb-4 text-cedro-sage">Entendendo as diversas pressões enfrentadas por pastores e líderes, nos empenhamos para estudar e desvendar questões complexas.</p>
-              <p><strong className="text-cedro-white font-bold">Nosso objetivo é oferecer orientação de alta qualidade potencializando seu ministério.</strong></p>
-            </div>
+          <div className="max-w-[700px]">
+            <h2 className="mb-4 text-cedro-white">E quando a fé parece insuficiente?</h2>
+            <Divider className="my-6" />
+            <p className="mb-4 text-cedro-sage">Você reconhece o poder da oração. Sabe que o Espírito Santo age. Mas também sabe que às vezes falta embasamento. Falta robustez técnica. Falta saber como conduzir um atendimento com respostas mais profundas.</p>
           </div>
         </div>
       </section>
 
       <section className="py-24 bg-cedro-navy">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <SectionLabel>Temas de domínio</SectionLabel>
-          <h2 className="mb-12 text-cedro-white">O que levamos para sua comunidade.</h2>
+          <p className="text-xs font-bold tracking-[0.3em] uppercase text-cedro-red mb-4">Sobre o que conversamos</p>
+          <h2 className="mb-12 text-cedro-white">Os temas que chegam toda semana na vida de uma congregação.</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
             {topics.map((topic, i) => (
               <div key={i} className="py-4 border-b border-cedro-sage/10 flex items-start gap-4">
@@ -91,25 +77,22 @@ export default function IgrejaPage() {
 
       <section className="py-24 bg-cedro-black">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <SectionLabel>Como entregamos</SectionLabel>
-          <h2 className="mb-8 text-cedro-white">Formatos disponíveis.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {formats.map((format, i) => (
-              <div key={i} className="p-8 border border-cedro-sage/10 transition-all hover:border-cedro-red hover:-translate-y-1 bg-cedro-navy">
-                <h4 className="text-cedro-white mb-3">{format.title}</h4>
-                <p className="text-[0.95rem] text-cedro-sage">{format.desc}</p>
-              </div>
-            ))}
+          <p className="text-xs font-bold tracking-[0.3em] uppercase text-cedro-red mb-4">Como funciona</p>
+          <h2 className="mb-8 text-cedro-white">Tudo começa com um café.</h2>
+          <div className="max-w-[700px]">
+            <p className="mb-4 text-cedro-sage">Antes de qualquer proposta, quero entender sua comunidade. Seus líderes. Os desafios que você não sabe nem como nomear ainda.</p>
+            <p className="mb-4 text-cedro-sage">A gente marca uma conversa e a partir daí alinhamos o que faz sentido.</p>
+            <p className="text-cedro-sage">Pode ser uma palestra para a congregação. Pode ser uma tarde de formação com sua equipe pastoral. Pode ser um ciclo de encontros ao longo do ano.</p>
           </div>
         </div>
       </section>
 
       <section className="py-24 bg-cedro-navy text-center text-cedro-white">
         <div className="max-w-[600px] mx-auto px-5 md:px-8">
-          <h2 className="text-cedro-white">Leve a Cedro para sua igreja.</h2>
-          <p className="text-cedro-sage my-4 mb-8">Entre em contato para entender como podemos servir sua comunidade.</p>
+          <h2 className="text-cedro-white">Me chama para um café.</h2>
+          <p className="text-cedro-sage my-4 mb-8">Nenhum comprometimento. Só uma conversa para entender se faz sentido.</p>
           <Button asChild withArrow>
-            <a href="https://wa.me/5519999999999?text=Quero%20levar%20a%20Cedro%20para%20minha%20igreja" target="_blank" rel="noopener noreferrer">Fale conosco</a>
+            <a href="https://wa.me/5519999999999?text=Quero%20conversar%20sobre%20levar%20a%20Cedro%20para%20minha%20igreja" target="_blank" rel="noopener noreferrer">Quero conversar</a>
           </Button>
         </div>
       </section>
