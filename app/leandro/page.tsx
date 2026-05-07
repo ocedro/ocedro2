@@ -44,7 +44,7 @@ export default function LeandroPage() {
             >
               <SectionLabel>Quem fundou a Cedro</SectionLabel>
               <h1 className="mb-2 text-cedro-white">Leandro Carone</h1>
-              <p className="font-serif italic text-2xl md:text-3xl text-cedro-sage mb-6">Psicólogo, logoterapeuta, supervisor clínico e fundador da Clínica Cedro.</p>
+              <p className="font-serif italic text-3xl md:text-4xl text-cedro-sage mb-6">Psicólogo, logoterapeuta, supervisor clínico e fundador da Clínica Cedro.</p>
               <a
                 href="https://form.respondi.app/rdiSvqJY"
                 target="_blank"
@@ -73,7 +73,7 @@ export default function LeandroPage() {
           <p className="mb-5 text-cedro-navy">Quando somei a isso a descrição das 12 camadas da personalidade aprendida com Francisco Escorsim e os trabalhos de Eric Johnson, Larry Crabb e Paul Tournier sobre integração entre teologia e psicologia, a síntese se formou. Cada tema que trato passa pelo mesmo filtro: como isso afeta o mundo físico, o comportamento concreto? Como afeta a subjetividade, a emoção, a narrativa, a experiência interna? E como afeta o espiritual, a relação com Deus, com o sentido, responsabilidade, com a identidade? Quando as três dimensões são contempladas entendo que a resposta é completa.</p>
 
           <div className="p-12 border-l-4 border-cedro-red my-12 bg-cedro-red/5">
-            <p className="font-serif text-3xl md:text-4xl italic text-cedro-black">&quot;Encontrei ali um caminho para a minha própria maturidade, para lidar com as minhas falhas de uma maneira coerente com a realidade, não com uma versão editada dela.&quot;</p>
+            <p className="font-serif text-4xl md:text-5xl italic text-cedro-black">&quot;Encontrei ali um caminho para a minha própria maturidade, para lidar com as minhas falhas de uma maneira coerente com a realidade, não com uma versão editada dela.&quot;</p>
           </div>
 
           <h3 className="text-cedro-black mb-6">O início</h3>
@@ -86,7 +86,7 @@ export default function LeandroPage() {
           <p className="mb-5 text-cedro-navy">Cogitei recuar. Estava com menos de 4 mil seguidores, apertado financeiramente, com minha esposa grávida. Mas quando li o Salmo 18, tive clareza. Contratei um advogado com um dinheiro que eu não tinha e montei o caso.</p>
 
           <div className="p-12 border-l-4 border-cedro-red my-12 bg-cedro-red/5">
-            <p className="font-serif text-3xl md:text-4xl italic text-cedro-black">&quot;Bem-aventurados os perseguidos por causa da justiça, porque deles é o Reino dos Céus.&quot;</p>
+            <p className="font-serif text-4xl md:text-5xl italic text-cedro-black">&quot;Bem-aventurados os perseguidos por causa da justiça, porque deles é o Reino dos Céus.&quot;</p>
             <cite className="block mt-4 font-sans not-italic text-sm text-cedro-navy">Mateus 5:10</cite>
           </div>
 
