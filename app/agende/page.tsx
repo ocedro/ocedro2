@@ -134,7 +134,7 @@ export default function AgendePage() {
               },
               {
                 title: 'Ciclo Cedro',
-                desc: 'Você inicia um Ciclo Cedro — acompanhamento com objetivo claro, começo, meio e fim, sempre alinhado com o psicólogo que está te acompanhando.',
+                desc: 'Você inicia um Ciclo Cedro, acompanhamento com objetivo claro, começo, meio e fim, sempre alinhado com o psicólogo que está te acompanhando.',
                 icon: (
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d13d1d" strokeWidth="1.5" strokeLinecap="round">
                     <path d="M12 2L2 7l10 5 10-5-10-5z"/>
@@ -266,10 +266,10 @@ export default function AgendePage() {
           <h2 className="mb-12">Histórias reais.</h2>
           <div className="grid grid-cols-2 gap-3 md:gap-6">
             {[
-              { src: '/dep-1.jpg', alt: 'Depoimento paciente' },
-              { src: '/dep-2.jpg', alt: 'Depoimento paciente' },
-              { src: '/dep-3.jpg', alt: 'Depoimento paciente' },
-              { src: '/dep-4.jpg', alt: 'Depoimento paciente' },
+              { src: '/dep-1.jpg', alt: 'Depoimento 1 de paciente da Clínica Cedro' },
+              { src: '/dep-2.jpg', alt: 'Depoimento 2 de paciente da Clínica Cedro' },
+              { src: '/dep-3.jpg', alt: 'Depoimento 3 de paciente da Clínica Cedro' },
+              { src: '/dep-4.jpg', alt: 'Depoimento 4 de paciente da Clínica Cedro' },
             ].map((dep, i) => (
               <div key={i} className="relative overflow-hidden rounded-sm">
                 <Image
@@ -303,7 +303,7 @@ export default function AgendePage() {
             <div>
               <p className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-white/70 mb-4">E-book gratuito</p>
               <h3 className="text-[1.6rem] md:text-[2rem] text-white mb-3 leading-tight">Não faça terapia antes de ler isso.</h3>
-              <p className="text-white/80 mb-8">Um guia honesto para quem está procurando psicólogo. Preencha o forms e receba gratuitamente.</p>
+              <p className="text-white/80 mb-8">Um guia honesto para quem está procurando psicólogo. Preencha o formulário e receba gratuitamente.</p>
               <a
                 href="https://form.respondi.app/VKSO6qpV"
                 target="_blank"

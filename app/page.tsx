@@ -171,7 +171,7 @@ function VideoCarousel() {
           >
             {VIDEO_IDS.map((id) => (
               <div key={id} className="flex-none w-full md:w-[calc(36.666%-11px)] aspect-video border border-cedro-sage/10 bg-cedro-navy">
-                <LiteYouTube videoId={id} title="Leandro Carone — vídeo" />
+                <LiteYouTube videoId={id} title="Leandro Carone" />
               </div>
             ))}
           </div>
@@ -269,7 +269,7 @@ export default function Home() {
             <div>
               <p className="mb-5">Tem cristão que foi ao psicólogo e ouviu que a fé era o problema. Tem cristão que foi ao pastor e ouviu que bastava orar mais.</p>
               <p className="mb-5">O problema é que os dois estavam com uma verdade pela metade.</p>
-              <p className="mb-5">Fomos criados de forma complexa, e precisamos de especialistas que entendam isso. E tratam cada pessoa de forma integral.</p>
+              <p className="mb-5">Fomos criados de forma complexa, e precisamos de especialistas que entendam isso. E que tratam cada pessoa de forma integral.</p>
               <p><strong className="text-cedro-white font-bold">A Cedro nasceu disso.</strong></p>
             </div>
           </div>
@@ -337,7 +337,7 @@ export default function Home() {
             <div>
               <SectionLabel>Por que Cedro</SectionLabel>
               <h2><span className="font-serif italic">&quot;O justo crescerá como o cedro no Líbano.&quot;</span></h2>
-              <p className="text-cedro-sage mt-2">— Salmo 92</p>
+              <p className="text-cedro-sage mt-2">Salmo 92</p>
               <Divider />
               <p>O cedro foca em estrutura, antes da estética.</p>
             </div>
@@ -378,7 +378,7 @@ export default function Home() {
             <div>
               <p className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-white/70 mb-4">E-book gratuito</p>
               <h3 className="text-[1.6rem] md:text-[2rem] text-white mb-3 leading-tight">Não faça terapia antes de ler isso.</h3>
-              <p className="text-white/80 mb-8">Um guia honesto para quem está procurando psicólogo. Preencha o forms e receba gratuitamente.</p>
+              <p className="text-white/80 mb-8">Um guia honesto para quem está procurando psicólogo. Preencha o formulário e receba gratuitamente.</p>
               <a
                 href="https://form.respondi.app/VKSO6qpV"
                 target="_blank"

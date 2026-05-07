@@ -50,7 +50,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-cedro-sage/10 flex flex-col md:flex-row justify-between text-xs text-cedro-sage/60 gap-4">
           <span>© 2026 Clínica Cedro. Todos os direitos reservados.</span>
-          <span>Campinas — SP</span>
+          <span>Campinas, SP</span>
         </div>
       </div>
     </footer>

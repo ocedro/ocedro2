@@ -58,7 +58,7 @@ export default function LeandroPage() {
                 <p>Nasci na igreja, sou a terceira geração da minha família que é cristã. Desde os 8 anos eu falava que seria pastor. Mesmo assim, carreguei por mais de dez anos um vício em pornografia que ninguém ao meu redor sabia, ou queria saber como tratar de verdade.</p>
                 <p>As respostas que a igreja me dava eram insuficientes: orar mais, jejuar mais, não por maldade, mas por falta de estudos e profundidade técnica e teológica. Não só isso, fiquei muito decepcionado com líderes de igrejas, me senti desamparado e alimentei uma indignação contra os cristãos rasos e descompromissados.</p>
                 <p>Tempos depois, na faculdade, vi que as correntes de psicologia ignoravam, ou não lidavam, dimensões da existência humana que eu sabia serem reais.</p>
-                <p>Nenhum dos dois lados entregava o que prometia – ou o que eu esperava. Mas eu nunca abandonei a convicção de que uma integração séria entre fé, ciência e prática clínica era possível e necessária.</p>
+                <p>Nenhum dos dois lados entregava o que prometia , ou o que eu esperava. Mas eu nunca abandonei a convicção de que uma integração séria entre fé, ciência e prática clínica era possível e necessária.</p>
               </div>
             </motion.div>
           </div>
@@ -102,12 +102,12 @@ export default function LeandroPage() {
               'Graduado em Psicologia',
               'Pós-graduado em Análise Existencial e Logoterapia Frankliana',
               'MBA em liderança e gestão',
-              'Certificado pela Escola de Sexualidade — Andrea Vargas',
+              'Certificado pela Escola de Sexualidade, Andrea Vargas',
               '+6.000 horas de atendimento clínico',
               '+500 pacientes acompanhados',
-              'Líder de Jovens — Ministério Arca na Igreja Batista Vida Nova, Campinas - SP',
+              'Líder de Jovens, Ministério Arca na Igreja Batista Vida Nova, Campinas - SP',
               'Casado com Paula desde 2021 · Pai da Elisa',
-              'CRP ativo – por enquanto, pelo menos. (Eu não disponibilizo aqui para não ficar sofrendo denúncias de intolerantes religiosos e idiotas úteis).'
+              'CRP ativo , por enquanto, pelo menos. (Eu não disponibilizo aqui para não ficar sofrendo denúncias de intolerantes religiosos e idiotas úteis).'
             ].map((cred, i) => (
               <div key={i} className="px-5 py-2.5 border border-cedro-navy/20 text-sm text-cedro-navy">
                 {cred}

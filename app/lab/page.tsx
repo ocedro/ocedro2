@@ -21,7 +21,7 @@ export default function LabPage() {
         />
         {/* Mobile gradient para legibilidade no rodapé */}
         <div className="md:hidden absolute inset-0 pointer-events-none bg-gradient-to-t from-cedro-black via-cedro-black/85 via-50% to-transparent" />
-        <div className="absolute inset-0 bg-cedro-black/40 pointer-events-none" />
+        <div className="hidden md:block absolute inset-0 bg-cedro-black/40 pointer-events-none" />
         <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10 w-full">
           <div className="max-w-[600px]">
             <Image
@@ -225,7 +225,7 @@ export default function LabPage() {
           <p className="mt-8 text-sm text-cedro-sage/60">
             Também oferecemos supervisão clínica para psicólogos.{' '}
             <a href="https://form.respondi.app/rdiSvqJY" target="_blank" rel="noopener noreferrer" className="text-cedro-red underline hover:text-cedro-red-hover">
-              Link supervisão
+              Saiba mais sobre supervisão clínica
             </a>
           </p>
         </div>
