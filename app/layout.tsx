@@ -81,6 +81,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-M7FK5MGK');`}
         </Script>
+        <Script id="whatsapp-tracking-config" strategy="beforeInteractive">
+          {`window.WPP_TRACKING_CONFIG = {
+  DEFAULT_MESSAGE: "Olá! Vim do *Google*, e gostaria de mais informações.",
+  WARNING_TEXT: "(Esse é seu código de atendimento, por favor não apague! PID=",
+  LABEL: 'IDs da nossa conversa (favor não apagar para facilitar sua identificação dentro da nossa base):',
+  EXP_DAYS: 30,
+  WINDOW_DAYS: 30,
+  POST_TIMEOUT: 4000,
+  REDIRECT_DELAY_AFTER_OK: 1000,
+  TRACKING_PATH_RX: /\\/whats-trck/i
+};`}
+        </Script>
+        <Script src="https://static.mindvertising.com/wpp-tracking/v1/wpp.min.js" strategy="afterInteractive" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -123,6 +136,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         <Navbar />
         <main className="flex-grow">{children}</main>
+        <div className="whatsapp-chat whatsapp-chat-mobile">
+          <a className="hide-web" href="/whats-trck#5519983133780" target="_blank" rel="noopener noreferrer">
+            <img
+              title="Contato via Whatsapp"
+              src="https://static.wixstatic.com/media/19ca7c_59945c8db19d43c9ac14f49b10cb5cef~mv2.png"
+              alt="Contato via Whatsapp"
+            />
+          </a>
+        </div>
+        <div className="whatsapp-chat whatsapp-chat-desktop">
+          <a className="hide-mobile" href="/whats-trck#5519983133780" target="_blank" rel="noopener noreferrer">
+            <img
+              title="Contato via Whatsapp"
+              src="https://static.wixstatic.com/media/19ca7c_59945c8db19d43c9ac14f49b10cb5cef~mv2.png"
+              alt="Contato via Whatsapp"
+            />
+          </a>
+        </div>
         <Footer />
       </body>
     </html>

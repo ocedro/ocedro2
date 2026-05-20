@@ -44,3 +44,34 @@ p {
 ::-webkit-scrollbar-thumb { background: var(--color-cedro-red); border-radius: 3px; }
 
 ::selection { background: var(--color-cedro-red); color: var(--color-cedro-white); }
+
+.whatsapp-chat {
+  position: fixed;
+  z-index: 999;
+  bottom: 20px;
+  right: 20px;
+}
+
+.whatsapp-chat img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.whatsapp-chat-desktop {
+  display: block;
+}
+
+.whatsapp-chat-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .whatsapp-chat-desktop {
+    display: none;
+  }
+
+  .whatsapp-chat-mobile {
+    display: block;
+  }
+}
