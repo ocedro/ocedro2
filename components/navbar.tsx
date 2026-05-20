@@ -56,7 +56,7 @@ export function Navbar() {
   const isGroupActive = (items: { href: string }[]) => items.some((i) => pathname === i.href);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 py-4 bg-cedro-black/85 backdrop-blur-xl border-b border-cedro-sage/10 transition-all">
+    <nav className="fixed top-0 left-0 right-0 z-50 py-4 bg-cedro-white/88 backdrop-blur-xl border-b border-cedro-clay/15 transition-all">
       <div className="max-w-[1200px] mx-auto px-5 md:px-8 flex items-center justify-between">
         <Link href="/" className="transition-opacity hover:opacity-90">
           <Logo />
@@ -72,7 +72,7 @@ export function Navbar() {
                     href={item.href}
                     className={cn(
                       'text-sm font-medium transition-colors relative py-1',
-                      isLinkActive(item.href) ? 'text-cedro-white' : 'text-cedro-sage hover:text-cedro-white',
+                      isLinkActive(item.href) ? 'text-cedro-navy' : 'text-cedro-ink/65 hover:text-cedro-navy',
                       isLinkActive(item.href) && 'after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-cedro-red'
                     )}
                   >
@@ -92,7 +92,7 @@ export function Navbar() {
                   onClick={() => setOpenGroup(open ? null : item.label)}
                   className={cn(
                     'text-sm font-medium transition-colors relative py-1 flex items-center gap-1',
-                    active || open ? 'text-cedro-white' : 'text-cedro-sage hover:text-cedro-white',
+                    active || open ? 'text-cedro-navy' : 'text-cedro-ink/65 hover:text-cedro-navy',
                     active && 'after:absolute after:bottom-[-4px] after:left-0 after:right-[18px] after:h-[2px] after:bg-cedro-red'
                   )}
                   aria-expanded={open}
@@ -103,7 +103,7 @@ export function Navbar() {
                 </button>
                 {open && (
                   <div
-                    className="absolute top-[calc(100%+12px)] left-[-8px] min-w-[260px] bg-[#1a1a1a] border border-cedro-sage/15 shadow-xl py-2 animate-in fade-in slide-in-from-top-1 duration-150"
+                    className="absolute top-[calc(100%+12px)] left-[-8px] min-w-[260px] bg-white border border-cedro-clay/15 shadow-xl py-2 rounded-lg animate-in fade-in slide-in-from-top-1 duration-150"
                     role="menu"
                   >
                     {item.items.map((sub) => (
@@ -112,14 +112,14 @@ export function Navbar() {
                         href={sub.href}
                         onClick={() => setOpenGroup(null)}
                         className={cn(
-                          'block px-4 py-3 transition-colors hover:bg-cedro-navy',
-                          isLinkActive(sub.href) && 'bg-cedro-navy'
+                          'block px-4 py-3 transition-colors hover:bg-cedro-cream',
+                          isLinkActive(sub.href) && 'bg-cedro-cream'
                         )}
                         role="menuitem"
                       >
-                        <span className="block text-sm font-medium text-cedro-white">{sub.label}</span>
+                        <span className="block text-sm font-medium text-cedro-navy">{sub.label}</span>
                         {sub.description && (
-                          <span className="block text-xs text-cedro-sage mt-0.5">{sub.description}</span>
+                          <span className="block text-xs text-cedro-ink/60 mt-0.5">{sub.description}</span>
                         )}
                       </Link>
                     ))}
@@ -134,14 +134,14 @@ export function Navbar() {
           href="https://form.respondi.app/tiN0kxRc"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-block text-xs px-5 py-2.5 bg-cedro-red text-cedro-white font-bold tracking-wider uppercase transition-colors hover:bg-cedro-red-hover"
+          className="hidden md:inline-block text-xs px-5 py-2.5 bg-cedro-red text-cedro-white font-bold tracking-wider uppercase transition-colors hover:bg-cedro-red-hover rounded-md"
         >
           Marcar consulta
         </a>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-cedro-white"
+          className="md:hidden text-cedro-navy"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
         >
@@ -152,12 +152,12 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'fixed top-0 right-0 w-[80%] max-w-[360px] h-screen bg-cedro-navy flex flex-col pt-20 px-7 gap-2 transition-transform duration-300 ease-in-out md:hidden overflow-y-auto',
+          'fixed top-0 right-0 w-[80%] max-w-[360px] h-screen bg-cedro-white flex flex-col pt-20 px-7 gap-2 transition-transform duration-300 ease-in-out md:hidden overflow-y-auto shadow-2xl',
           isOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
         <button
-          className="absolute top-5 right-7 text-cedro-white"
+          className="absolute top-5 right-7 text-cedro-navy"
           onClick={() => setIsOpen(false)}
           aria-label="Fechar menu"
         >
@@ -173,7 +173,7 @@ export function Navbar() {
                     onClick={() => setIsOpen(false)}
                     className={cn(
                       'block py-3 text-base font-medium transition-colors',
-                      isLinkActive(item.href) ? 'text-cedro-white' : 'text-cedro-sage'
+                      isLinkActive(item.href) ? 'text-cedro-navy' : 'text-cedro-ink/70'
                     )}
                   >
                     {item.label}
@@ -190,7 +190,7 @@ export function Navbar() {
                   type="button"
                   className={cn(
                     'w-full flex items-center justify-between py-3 text-base font-medium transition-colors text-left',
-                    active ? 'text-cedro-white' : 'text-cedro-sage'
+                    active ? 'text-cedro-navy' : 'text-cedro-ink/70'
                   )}
                   onClick={() => setMobileExpandedGroup(expanded ? null : item.label)}
                   aria-expanded={expanded}
@@ -210,7 +210,7 @@ export function Navbar() {
                         onClick={() => setIsOpen(false)}
                         className={cn(
                           'py-2.5 text-sm transition-colors',
-                          isLinkActive(sub.href) ? 'text-cedro-white' : 'text-cedro-sage/85'
+                          isLinkActive(sub.href) ? 'text-cedro-navy' : 'text-cedro-ink/70'
                         )}
                       >
                         {sub.label}
@@ -226,7 +226,7 @@ export function Navbar() {
           href="https://form.respondi.app/tiN0kxRc"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 text-center text-sm px-5 py-3.5 bg-cedro-red text-cedro-white font-bold tracking-wider uppercase transition-colors hover:bg-cedro-red-hover"
+          className="mt-6 text-center text-sm px-5 py-3.5 bg-cedro-red text-cedro-white font-bold tracking-wider uppercase transition-colors hover:bg-cedro-red-hover rounded-md"
         >
           Marcar consulta
         </a>

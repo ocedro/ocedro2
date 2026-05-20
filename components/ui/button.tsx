@@ -8,8 +8,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-cedro-red text-cedro-white hover:bg-cedro-red-hover hover:-translate-y-0.5",
-        outline: "bg-transparent text-cedro-light border border-cedro-sage hover:border-cedro-red hover:text-cedro-red",
+        primary: "bg-cedro-red text-cedro-white hover:bg-cedro-red-hover hover:-translate-y-0.5 rounded-md",
+        outline: "bg-transparent text-cedro-navy border border-cedro-clay/35 hover:border-cedro-red hover:text-cedro-red rounded-md",
       },
     },
     defaultVariants: {

@@ -6,7 +6,6 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { SectionLabel } from '@/components/ui/section-label';
-import { Divider } from '@/components/ui/divider';
 import { LiteYouTube } from '@/components/lite-youtube';
 
 const VIDEO_IDS = [
@@ -28,8 +27,8 @@ function VideoCarousel() {
   const [isMobile, setIsMobile] = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const resumeRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const playingRef = useRef(false);   // vídeo em play
-  const pausedRef = useRef(false);    // qualquer pausa (play ou manual)
+  const playingRef = useRef(false);
+  const pausedRef = useRef(false);
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
   const mouseStartX = useRef(0);
@@ -45,7 +44,6 @@ function VideoCarousel() {
   const visible = isMobile ? 1 : 3;
   const totalPages = VIDEO_IDS.length - visible + 1;
 
-  // Pausar tudo
   const pauseAll = useCallback(() => {
     pausedRef.current = true;
     setPaused(true);
@@ -53,7 +51,6 @@ function VideoCarousel() {
     if (resumeRef.current) { clearTimeout(resumeRef.current); resumeRef.current = null; }
   }, []);
 
-  // Retomar (só se vídeo não estiver em play)
   const resume = useCallback(() => {
     if (playingRef.current) return;
     pausedRef.current = false;
@@ -68,7 +65,6 @@ function VideoCarousel() {
     }, INTERVAL);
   }, [totalPages]);
 
-  // Navegar manualmente — pausa e agenda retomada em 6s
   const navigateTo = useCallback((idx: number) => {
     const clamped = Math.max(0, Math.min(idx, totalPages - 1));
     setCurrent(clamped);
@@ -77,7 +73,6 @@ function VideoCarousel() {
     resumeRef.current = setTimeout(resume, 6000);
   }, [totalPages, pauseAll, resume]);
 
-  // Inicia o timer automático
   useEffect(() => {
     timerRef.current = setInterval(() => {
       if (!pausedRef.current) {
@@ -91,16 +86,14 @@ function VideoCarousel() {
     };
   }, [totalPages]);
 
-  // Pause when user clicks inside any iframe (window loses focus)
   useEffect(() => {
     const onBlur = () => {
-      if (document.activeElement?.tagName === 'IFRAME') {
-        pauseAll();
-      }
+      if (document.activeElement?.tagName === 'IFRAME') pauseAll();
     };
     window.addEventListener('blur', onBlur);
     return () => window.removeEventListener('blur', onBlur);
   }, [pauseAll]);
+
   useEffect(() => {
     const handler = (e: MessageEvent) => {
       try {
@@ -121,11 +114,11 @@ function VideoCarousel() {
     return () => window.removeEventListener('message', handler);
   }, [pauseAll, resume]);
 
-  // Touch swipe
   const onTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
     touchStartY.current = e.touches[0].clientY;
   };
+
   const onTouchEnd = (e: React.TouchEvent) => {
     const dx = e.changedTouches[0].clientX - touchStartX.current;
     const dy = e.changedTouches[0].clientY - touchStartY.current;
@@ -134,74 +127,72 @@ function VideoCarousel() {
     }
   };
 
-  // Mouse drag
   const onMouseDown = (e: React.MouseEvent) => {
     mouseStartX.current = e.clientX;
     isDraggingMouse.current = true;
   };
+
   const onMouseUp = (e: React.MouseEvent) => {
     if (!isDraggingMouse.current) return;
     isDraggingMouse.current = false;
     const dx = e.clientX - mouseStartX.current;
     if (Math.abs(dx) > 40) navigateTo(dx < 0 ? current + 1 : current - 1);
   };
-  const onMouseLeave = () => { isDraggingMouse.current = false; };
 
   const slotW = isMobile ? 100 : 36.666;
   const gap = isMobile ? 0 : 5.33;
 
   return (
-    <section className="py-24 bg-cedro-black text-cedro-white overflow-hidden">
+    <section className="py-20 md:py-24 bg-[#f6f2ea] overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-        <SectionLabel>Leandro Carone por aí</SectionLabel>
-        <p className="text-cedro-sage mb-10">Podcasts, pregações, lives e conteúdos</p>
+        <div className="max-w-[720px] mb-10">
+          <SectionLabel>Leandro Carone por aí</SectionLabel>
+          <h2 className="text-cedro-navy mb-4">Conversas, aulas e reflexões para pensar a vida com mais profundidade.</h2>
+          <p className="text-cedro-ink/75">Uma seleção de conteúdos para conhecer melhor a voz, a abordagem e a visão clínica do Leandro.</p>
+        </div>
 
-        {/* Track */}
         <div
           className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
           onMouseDown={onMouseDown}
           onMouseUp={onMouseUp}
-          onMouseLeave={onMouseLeave}
+          onMouseLeave={() => { isDraggingMouse.current = false; }}
         >
           <div
             className="flex gap-4 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]"
             style={{ transform: `translateX(calc(-${current} * (${slotW}% + ${gap}px)))` }}
           >
             {VIDEO_IDS.map((id) => (
-              <div key={id} className="flex-none w-full md:w-[calc(36.666%-11px)] aspect-video border border-cedro-sage/10 bg-cedro-navy">
+              <div key={id} className="flex-none w-full md:w-[calc(36.666%-11px)] aspect-video overflow-hidden rounded-lg border border-cedro-clay/15 bg-cedro-white shadow-sm">
                 <LiteYouTube videoId={id} title="Leandro Carone" />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Progress bar */}
-        <div className="mt-4 h-[2px] bg-cedro-sage/10 rounded overflow-hidden">
+        <div className="mt-5 h-[2px] bg-cedro-clay/15 rounded overflow-hidden">
           {!paused ? (
-            <div key={progKey} className="h-full bg-cedro-red rounded"
-              style={{ animation: `progress ${INTERVAL}ms linear forwards` }} />
+            <div key={progKey} className="h-full bg-cedro-red rounded" style={{ animation: `progress ${INTERVAL}ms linear forwards` }} />
           ) : (
             <div className="h-full bg-cedro-red/30 rounded w-full" />
           )}
         </div>
 
-        {/* Dots + Prev/Next */}
-        <div className="flex items-center justify-center gap-4 mt-5">
+        <div className="flex items-center justify-center gap-4 mt-6">
           <button onClick={() => navigateTo(current - 1)} disabled={current === 0}
-            className="w-8 h-8 rounded-full border border-cedro-sage/20 flex items-center justify-center text-cedro-sage hover:border-cedro-red hover:text-cedro-red transition-colors disabled:opacity-20"
+            className="w-9 h-9 rounded-full border border-cedro-clay/25 flex items-center justify-center text-cedro-navy hover:border-cedro-red hover:text-cedro-red transition-colors disabled:opacity-25"
             aria-label="Anterior">‹</button>
           <div className="flex gap-2">
             {Array.from({ length: totalPages }).map((_, i) => (
               <button key={i} onClick={() => navigateTo(i)}
                 className={`rounded-full transition-all duration-300 ${
-                  i === current ? 'w-5 h-2 bg-cedro-red' : 'w-2 h-2 bg-cedro-sage/20 hover:bg-cedro-sage/40'
+                  i === current ? 'w-5 h-2 bg-cedro-red' : 'w-2 h-2 bg-cedro-clay/25 hover:bg-cedro-clay/50'
                 }`} aria-label={`Vídeo ${i + 1}`} />
             ))}
           </div>
           <button onClick={() => navigateTo(current + 1)} disabled={current === totalPages - 1}
-            className="w-8 h-8 rounded-full border border-cedro-sage/20 flex items-center justify-center text-cedro-sage hover:border-cedro-red hover:text-cedro-red transition-colors disabled:opacity-20"
+            className="w-9 h-9 rounded-full border border-cedro-clay/25 flex items-center justify-center text-cedro-navy hover:border-cedro-red hover:text-cedro-red transition-colors disabled:opacity-25"
             aria-label="Próximo">›</button>
         </div>
       </div>
@@ -214,36 +205,45 @@ function VideoCarousel() {
 }
 
 export default function Home() {
+  const rightFit = [
+    'Está cansado de recaídas, culpa e instabilidade emocional e quer mais do que força de vontade.',
+    'Sente que precisa de direção, maturidade e clareza para reconstruir a vida por dentro.',
+    'Já tentou terapia e percebeu que faltava alguém que respeitasse sua fé sem perder rigor clínico.',
+    'Acredita que fé e psicologia não precisam ser inimigas.',
+  ];
+
+  const wrongFit = [
+    'Quer alívio rápido sem compromisso com mudança real.',
+    'Busca alguém que apenas confirme tudo que você já pensa.',
+    'Não está disposto a ser confrontado com cuidado e responsabilidade.',
+  ];
+
   return (
-    <div className="flex flex-col">
-      {/* HERO */}
-      <section className="min-h-svh flex items-end md:items-center pt-20 pb-12 md:pb-0 relative overflow-hidden">
-        {/* Desktop bg */}
+    <div className="flex flex-col bg-cedro-white text-cedro-ink">
+      <section className="min-h-svh flex items-end md:items-center pt-24 pb-12 md:pb-0 relative overflow-hidden bg-[#f8f4ec]">
         <div
           className="hidden md:block absolute inset-0 pointer-events-none"
           style={{ backgroundImage: 'url(/hero-bg.png)', backgroundSize: 'cover', backgroundPosition: 'center right' }}
         />
-        {/* Mobile bg */}
         <div
           className="block md:hidden absolute inset-0 pointer-events-none"
           style={{ backgroundImage: 'url(/home-bg-mobile.png)', backgroundSize: 'cover', backgroundPosition: 'center top' }}
         />
-        {/* Mobile: gradient subindo do preto no rodapé garante legibilidade do texto que fica embaixo */}
-        <div className="md:hidden absolute inset-0 pointer-events-none bg-gradient-to-t from-cedro-black via-cedro-black/85 via-50% to-transparent" />
-        {/* Desktop: overlay leve para legibilidade */}
-        <div className="hidden md:block absolute inset-0 bg-cedro-black/40 pointer-events-none" />
+        <div className="hidden md:block absolute inset-0 pointer-events-none bg-[linear-gradient(90deg,rgba(248,244,236,0.96)_0%,rgba(248,244,236,0.9)_30%,rgba(248,244,236,0.58)_52%,rgba(248,244,236,0.12)_76%,rgba(248,244,236,0)_100%)]" />
+        <div className="md:hidden absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,rgba(248,244,236,0.92)_0%,rgba(248,244,236,0.88)_46%,rgba(248,244,236,0.98)_100%)]" />
+
         <div className="max-w-[1200px] mx-auto px-5 md:px-8 w-full relative z-10">
           <motion.div
             className="max-w-[560px]"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <SectionLabel>Clínica Cedro</SectionLabel>
-            <h1 className="mb-6 text-cedro-white">
+            <h1 className="mb-6 text-cedro-navy">
               Psicologia de qualidade para quem leva <em className="font-serif italic text-cedro-red">fé</em> e saúde mental a sério.
             </h1>
-            <p className="text-lg text-cedro-sage mb-10 max-w-[480px]">
+            <p className="text-lg text-cedro-ink/75 mb-10 max-w-[480px]">
               Psicologia com rigor técnico, profundidade filosófica e respeito aos seus valores.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -258,173 +258,139 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROBLEMA */}
-      <section className="py-24 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <section className="py-18 md:py-24 bg-cedro-white">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 grid grid-cols-1 md:grid-cols-[0.92fr_1fr] gap-10 md:gap-16 items-start">
+          <div>
+            <SectionLabel>O problema que nos originou</SectionLabel>
+            <h2 className="text-cedro-navy">Você sabe que precisa de ajuda, mas não sabe em quem confiar sem colocar seus valores em risco.</h2>
+          </div>
+          <div className="space-y-5 text-cedro-ink/78">
+            <p>Tem cristão que foi ao psicólogo e ouviu que a fé era o problema. Tem cristão que foi ao pastor e ouviu que bastava orar mais.</p>
+            <p>O problema é que os dois estavam com uma verdade pela metade.</p>
+            <p>Fomos criados de forma complexa, e precisamos de especialistas que entendam isso. E que tratam cada pessoa de forma integral.</p>
+            <p className="font-bold text-cedro-navy">A Cedro nasceu disso.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#efe7dc] py-8 border-y border-cedro-clay/15">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+          <div className="flex items-center gap-5">
+            <Image src="/ebook-cover.png" alt="" width={120} height={90} className="hidden md:block w-[72px] h-auto rounded-md shadow-md" />
             <div>
-              <SectionLabel>O problema que nos originou</SectionLabel>
-              <h2>Você sabe que precisa de ajuda, mas não sabe em quem confiar sem colocar seus valores em risco.</h2>
+              <p className="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-cedro-red mb-1">E-book gratuito</p>
+              <p className="font-bold text-[1.05rem] md:text-[1.15rem] text-cedro-navy leading-tight">Não faça terapia antes de ler isso.</p>
+              <p className="text-[0.9rem] text-cedro-ink/70 hidden md:block mt-1">Um guia honesto para quem está procurando psicólogo.</p>
             </div>
-            <div>
-              <p className="mb-5">Tem cristão que foi ao psicólogo e ouviu que a fé era o problema. Tem cristão que foi ao pastor e ouviu que bastava orar mais.</p>
-              <p className="mb-5">O problema é que os dois estavam com uma verdade pela metade.</p>
-              <p className="mb-5">Fomos criados de forma complexa, e precisamos de especialistas que entendam isso. E que tratam cada pessoa de forma integral.</p>
-              <p><strong className="text-cedro-white font-bold">A Cedro nasceu disso.</strong></p>
+          </div>
+          <a
+            href="https://form.respondi.app/VKSO6qpV"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-6 py-3 bg-cedro-red text-white font-bold tracking-wider uppercase text-[0.85rem] transition-all hover:bg-cedro-red-hover hover:-translate-y-0.5 w-full md:w-auto rounded-md"
+          >
+            Receber grátis
+          </a>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-24 bg-[#fbfaf7]">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+          <div className="max-w-[760px] mb-12">
+            <SectionLabel>Nossa abordagem</SectionLabel>
+            <h2 className="text-cedro-navy">Nem o “psicólogue”. Nem o psicrentão.</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="rounded-lg bg-white p-7 border border-cedro-clay/12 shadow-sm">
+              <h3 className="text-cedro-navy mb-4">Técnica sem hostilidade à fé.</h3>
+              <p className="text-[0.98rem] text-cedro-ink/72">Existe um psicólogo que trata sua fé como obstáculo, ilusão ou repressão. A Cedro não parte desse lugar.</p>
+            </div>
+            <div className="rounded-lg bg-white p-7 border border-cedro-clay/12 shadow-sm">
+              <h3 className="text-cedro-navy mb-4">Fé sem improviso clínico.</h3>
+              <p className="text-[0.98rem] text-cedro-ink/72">Também não vendemos conselhos espirituais como se fossem terapia. Dor real exige preparo real.</p>
+            </div>
+            <div className="rounded-lg bg-white p-7 border border-cedro-clay/12 shadow-sm">
+              <h3 className="text-cedro-navy mb-4">Cuidado integral.</h3>
+              <p className="text-[0.98rem] text-cedro-ink/72">Tratamos você como ser humano biológico, social, emocional e espiritual, com responsabilidade e sentido.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* E-BOOK SLIM (faixa discreta após o problema) */}
-      <section className="py-8 bg-cedro-red text-white border-y border-white/10">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
-            <div className="flex items-start md:items-center gap-4 flex-1">
-              <div className="hidden md:block shrink-0">
-                <Image
-                  src="/ebook-cover.png"
-                  alt=""
-                  width={120}
-                  height={90}
-                  className="w-[72px] h-auto rounded shadow-lg"
-                />
+      <section className="py-20 md:py-24 bg-cedro-white">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 grid grid-cols-1 lg:grid-cols-[0.8fr_1fr] gap-12 items-center">
+          <div>
+            <SectionLabel>Por que Cedro</SectionLabel>
+            <h2 className="text-cedro-navy"><span className="font-serif italic">“O justo crescerá como o cedro no Líbano.”</span></h2>
+            <p className="text-cedro-ink/60 mt-3">Salmo 92</p>
+            <p className="mt-8 text-cedro-ink/75">O cedro foca em estrutura antes da estética. Cresce para baixo antes de aparecer para fora. Essa imagem organiza a forma como pensamos cuidado, maturidade e reconstrução.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-4">
+            {[
+              ['Raízes antes de aparência', 'Trabalhamos a raiz dos problemas, não apenas os sintomas mais visíveis.'],
+              ['Conectado à fonte', 'A clínica reconhece a importância de valores, fé e sentido na vida psíquica.'],
+              ['Força com flexibilidade', 'Dores, limites e crises são tratados como parte de um caminho real de amadurecimento.'],
+            ].map(([title, text]) => (
+              <div key={title} className="rounded-lg border border-cedro-clay/15 bg-[#f8f4ec] p-6">
+                <h3 className="text-cedro-navy text-[1.35rem] mb-2">{title}</h3>
+                <p className="text-[0.95rem] text-cedro-ink/70">{text}</p>
               </div>
-              <div>
-                <p className="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-white/70 mb-1">E-book gratuito</p>
-                <p className="font-bold text-[1rem] md:text-[1.1rem] text-white leading-tight">
-                  Não faça terapia antes de ler isso.
-                </p>
-                <p className="text-[0.85rem] text-white/80 hidden md:block mt-1">Um guia honesto para quem está procurando psicólogo.</p>
-              </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <VideoCarousel />
+
+      <section className="py-18 md:py-22 bg-cedro-red text-white">
+        <div className="max-w-[1200px] mx-auto px-5 md:px-8 grid grid-cols-1 md:grid-cols-[0.72fr_1fr] gap-8 md:gap-14 items-center">
+          <Image
+            src="/ebook-cover.png"
+            alt="E-book: Não faça terapia antes de ler isso"
+            width={600}
+            height={450}
+            className="hidden md:block w-full max-w-[360px] h-auto rounded-lg shadow-2xl justify-self-center"
+          />
+          <div>
+            <p className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-white/70 mb-4">E-book gratuito</p>
+            <h2 className="text-white mb-4">Não faça terapia antes de ler isso.</h2>
+            <p className="text-white/82 mb-8 max-w-[560px]">Um guia honesto para quem está procurando psicólogo. Preencha o formulário e receba gratuitamente.</p>
             <a
               href="https://form.respondi.app/VKSO6qpV"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-cedro-red font-bold tracking-wider uppercase text-[0.85rem] transition-all hover:-translate-y-0.5 shrink-0 w-full md:w-auto justify-center"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-cedro-red font-bold tracking-wider uppercase text-[0.95rem] transition-all hover:-translate-y-0.5 w-full md:w-auto rounded-md"
             >
-              Receber grátis →
+              Quero o e-book
             </a>
           </div>
         </div>
       </section>
 
-      {/* ABORDAGEM */}
-      <section className="py-24 bg-cedro-black text-cedro-white">
+      <section className="py-20 md:py-24 bg-[#fbfaf7]">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <SectionLabel>Nossa abordagem</SectionLabel>
-          <h2 className="mb-4 text-cedro-white">Nem o <span className="text-cedro-red">psicólogue</span>. Nem o psicrentão.</h2>
-          <Divider />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
-            <div>
-              <p className="mb-5 text-cedro-sage">Existe um psicólogo que trata sua fé como obstáculo, ilusão ou repressão. Cosmovisão hedonista e materialista, e, mesmo sem dizer, vai te guiando por um caminho contrário ao que você acredita.</p>
-              <p className="text-cedro-sage">Existe um &quot;terapeuta&quot; que fez um curso de um ano, leu dois livros de autoajuda cristã e sai atendendo sem o embasamento técnico e teórico coerente. Profissional que usa a fé para vender &quot;conselhos&quot;.</p>
-            </div>
-            <div>
-              <p className="mb-5"><strong className="text-cedro-white font-bold">Os dois causam dano enorme para o cristão verdadeiro, que tem dores reais.</strong></p>
-              <p className="mb-5 text-cedro-sage">Na Cedro, usamos ciência psicológica com rigor técnico e operamos a partir de uma cosmovisão bíblica que reconhece verdade, o pecado, graça, responsabilidade e sentido.</p>
-              <p className="text-cedro-sage">Não relativizamos sua moral. Não ignoramos sua dor emocional. Não chamamos sua fé de problema. Tratamos você como o ser humano que você é: Biológico, social, emocional e espiritual.</p>
-            </div>
+          <div className="max-w-[850px] mb-12">
+            <SectionLabel>Para quem é a Cedro</SectionLabel>
+            <h2 className="text-cedro-navy">Não somos para todo mundo. Somos para quem realmente quer trabalhar e mudar.</h2>
           </div>
-        </div>
-      </section>
-
-      {/* POR QUE CEDRO */}
-      <section className="py-24 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <SectionLabel>Por que Cedro</SectionLabel>
-              <h2><span className="font-serif italic">&quot;O justo crescerá como o cedro no Líbano.&quot;</span></h2>
-              <p className="text-cedro-sage mt-2">Salmo 92</p>
-              <Divider />
-              <p>O cedro foca em estrutura, antes da estética.</p>
-            </div>
-            <div className="flex flex-col gap-4">
-              <div className="p-8 border border-cedro-sage/10 transition-all hover:border-cedro-red hover:-translate-y-1 bg-cedro-black/20">
-                <h4 className="mb-3 text-cedro-white">Raízes antes de aparência</h4>
-                <p className="text-[0.95rem] text-cedro-sage">O cedro prioriza o crescimento das raízes. Nós queremos trabalhar a raiz dos problemas e crescer com estrutura.</p>
-              </div>
-              <div className="p-8 border border-cedro-sage/10 transition-all hover:border-cedro-red hover:-translate-y-1 bg-cedro-black/20">
-                <h4 className="mb-3 text-cedro-white">Conectado à fonte</h4>
-                <p className="text-[0.95rem] text-cedro-sage">Suas raízes buscam o lençol freático. Não depende dos fatores externos, pois está conectado à fonte.</p>
-              </div>
-              <div className="p-8 border border-cedro-sage/10 transition-all hover:border-cedro-red hover:-translate-y-1 bg-cedro-black/20">
-                <h4 className="mb-3 text-cedro-white">Abraça ou quebra a rocha</h4>
-                <p className="text-[0.95rem] text-cedro-sage">Ao se deparar com uma rocha, as raízes encontram o sentido no sofrimento e melhoram com ele.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* LEANDRO CARONE POR AÍ */}
-      <VideoCarousel />
-
-      {/* E-BOOK */}
-      <section className="py-20 bg-[#d13d1d] text-white">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div className="hidden md:flex justify-center">
-              <Image
-                src="/ebook-cover.png"
-                alt="E-book: Não faça terapia antes de ler isso"
-                width={600}
-                height={450}
-                className="w-full max-w-[480px] h-auto rounded shadow-2xl"
-              />
-            </div>
-            <div>
-              <p className="font-sans text-xs font-bold tracking-[0.2em] uppercase text-white/70 mb-4">E-book gratuito</p>
-              <h3 className="text-[1.6rem] md:text-[2rem] text-white mb-3 leading-tight">Não faça terapia antes de ler isso.</h3>
-              <p className="text-white/80 mb-8">Um guia honesto para quem está procurando psicólogo. Preencha o formulário e receba gratuitamente.</p>
-              <a
-                href="https://form.respondi.app/VKSO6qpV"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#d13d1d] font-bold tracking-wider uppercase text-[0.95rem] transition-all hover:-translate-y-0.5 w-full md:w-auto justify-center"
-              >
-                Quero o e-book →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PARA QUEM */}
-      <section className="py-24 bg-cedro-navy">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-          <SectionLabel>Para quem é a Cedro</SectionLabel>
-          <h2 className="mb-12 max-w-[800px]">Não somos para todo mundo. Somos para quem realmente quer trabalhar e mudar.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-cedro-red mb-4">Você está no lugar certo se:</h3>
-              <ul className="flex flex-col">
-                {[
-                  'Está cansado de recaídas, culpa e instabilidade emocional e quer mais do que força de vontade',
-                  'Sente um vazio no peito, uma sensação de estar no lugar errado, na hora errada, fazendo sempre a coisa errada.',
-                  'Já tentou terapia e sentiu que faltou algo',
-                  'Quer maturidade, direção e clareza, não dependência eterna',
-                  'Acredita que fé e psicologia não precisam ser inimigas'
-                ].map((item, i) => (
-                  <li key={i} className="py-3 border-b border-cedro-sage/10 text-[0.95rem] flex items-start gap-3">
-                    <span className="text-cedro-red font-bold shrink-0">+</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-lg bg-white border border-cedro-clay/12 p-7 shadow-sm">
+              <h3 className="text-cedro-red mb-5">Você está no lugar certo se:</h3>
+              <ul className="space-y-4">
+                {rightFit.map((item) => (
+                  <li key={item} className="flex gap-3 text-[0.98rem] text-cedro-ink/75">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-cedro-red shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div>
-              <h3 className="text-cedro-sage mb-4">Não é para você se:</h3>
-              <ul className="flex flex-col">
-                {[
-                  'Quer alívio rápido sem compromisso com mudança real',
-                  'Está buscando alguém que confirme tudo que você já pensa',
-                  'Não está disposto a ser confrontado'
-                ].map((item, i) => (
-                  <li key={i} className="py-3 border-b border-cedro-sage/10 text-[0.95rem] flex items-start gap-3">
-                    <span className="text-cedro-sage/50 font-bold shrink-0">—</span>
+            <div className="rounded-lg bg-[#f3eee5] border border-cedro-clay/12 p-7">
+              <h3 className="text-cedro-navy mb-5">Talvez não seja para você se:</h3>
+              <ul className="space-y-4">
+                {wrongFit.map((item) => (
+                  <li key={item} className="flex gap-3 text-[0.98rem] text-cedro-ink/70">
+                    <span className="mt-[0.65rem] h-[2px] w-3 rounded-full bg-cedro-clay shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -434,11 +400,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="py-24 bg-cedro-black text-center text-cedro-white">
-        <div className="max-w-[700px] mx-auto px-5 md:px-8">
-          <h2 className="text-cedro-white">Você não precisa de um psicólogo qualquer.</h2>
-          <p className="text-cedro-sage my-6 text-lg">Você precisa de alguém que entenda de onde você veio, no que você crê, e aonde você quer chegar.</p>
+      <section className="py-20 md:py-24 bg-cedro-navy text-center text-white">
+        <div className="max-w-[760px] mx-auto px-5 md:px-8">
+          <SectionLabel className="text-white/60">Próximo passo</SectionLabel>
+          <h2 className="text-white">Você não precisa de um psicólogo qualquer.</h2>
+          <p className="text-white/75 my-6 text-lg">Você precisa de alguém que entenda de onde você veio, no que você crê, e aonde você quer chegar.</p>
           <Button asChild withArrow>
             <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer">Agendar sessão avulsa</a>
           </Button>
