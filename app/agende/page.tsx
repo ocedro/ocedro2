@@ -19,7 +19,7 @@ export default function AgendePage() {
   ];
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-cedro-white text-cedro-ink">
 
       {/* HERO */}
       <section className="min-h-svh flex items-center pt-32 pb-20 relative overflow-hidden">
@@ -102,11 +102,11 @@ export default function AgendePage() {
       </section>
 
       {/* COMO FUNCIONA */}
-      <section className="py-24 bg-cedro-black text-cedro-white">
+      <section className="py-24 bg-cedro-white text-cedro-ink">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>Como funciona</SectionLabel>
-          <h2 className="mb-2 text-cedro-white">O Ciclo Cedro</h2>
-          <p className="text-cedro-sage mb-12">Simples. Sem complicação.</p>
+          <h2 className="mb-2 text-cedro-navy">O Ciclo Cedro</h2>
+          <p className="text-cedro-ink/65 mb-12">Simples. Sem complicação.</p>
 
           <div className="flex flex-col max-w-[640px]">
             {[
@@ -163,26 +163,26 @@ export default function AgendePage() {
                 </div>
                 {/* Texto */}
                 <div className={`pl-3 pt-1 ${!step.last ? 'pb-10' : ''}`}>
-                  <h4 className="text-cedro-white mb-2 uppercase tracking-wide text-sm font-bold">{step.title}</h4>
-                  <p className="text-sm text-cedro-sage">{step.desc}</p>
+                  <h4 className="text-cedro-navy mb-2 uppercase tracking-wide text-sm font-bold">{step.title}</h4>
+                  <p className="text-sm text-cedro-ink/68">{step.desc}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <p className="text-[0.9rem] text-cedro-sage mt-10 pt-8 border-t border-cedro-sage/10 max-w-[640px]">
+          <p className="text-[0.9rem] text-cedro-ink/65 mt-10 pt-8 border-t border-cedro-clay/15 max-w-[640px]">
             Indicamos sempre psicólogos homens para atender homens e psicólogas mulheres para atender mulheres. Não é uma regra, mas é um direcionamento.
           </p>
         </div>
       </section>
 
       {/* MÉTODO CEDRO */}
-      <section className="py-24" style={{ background: '#aac2c5' }}>
+      <section className="py-24 bg-[#f6f2ea]">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <div className="max-w-[700px] mb-14">
-            <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4" style={{ color: 'rgba(37,42,58,0.7)' }}>Método Cedro</p>
-            <h2 style={{ color: '#252a3a' }}>Em poucos meses, você pode sair da confusão para uma vida com sentido, disciplina e identidade clara.</h2>
-            <p className="mt-4" style={{ color: 'rgba(37,42,58,0.75)' }}>É isso que o Método Cedro constrói.</p>
+            <p className="text-xs font-bold tracking-[0.2em] uppercase mb-4 text-cedro-red">Método Cedro</p>
+            <h2 className="text-cedro-navy">Em poucos meses, você pode sair da confusão para uma vida com sentido, disciplina e identidade clara.</h2>
+            <p className="mt-4 text-cedro-ink/70">É isso que o Método Cedro constrói.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
@@ -241,7 +241,7 @@ export default function AgendePage() {
                 ),
               },
             ].map((item) => (
-              <div key={item.num} className="p-8 transition-all hover:-translate-y-1" style={{ border: '1px solid rgba(37,42,58,0.15)', background: 'rgba(255,255,255,0.25)' }}>
+              <div key={item.num} className="p-8 transition-all hover:-translate-y-1 rounded-lg bg-white border border-cedro-clay/12 shadow-sm">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="font-serif text-4xl leading-none" style={{ color: '#d13d1d' }}>{item.num}</div>
                   <div>{item.icon}</div>
@@ -260,10 +260,10 @@ export default function AgendePage() {
       </section>
 
       {/* DEPOIMENTOS */}
-      <section className="py-24 bg-cedro-navy">
+      <section className="py-24 bg-cedro-white">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>O que dizem os pacientes</SectionLabel>
-          <h2 className="mb-12">Histórias reais.</h2>
+          <h2 className="mb-12 text-cedro-navy">Histórias reais.</h2>
           <div className="grid grid-cols-2 gap-3 md:gap-6">
             {[
               { src: '/dep-1.jpg', alt: 'Depoimento 1 de paciente da Clínica Cedro' },
@@ -318,15 +318,15 @@ export default function AgendePage() {
       </section>
 
       {/* EQUIPE */}
-      <section className="py-24 bg-cedro-navy">
+      <section className="py-24 bg-[#fbfaf7]">
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <SectionLabel>Equipe Cedro</SectionLabel>
-          <h2 className="mb-4">7 psicólogos.</h2>
-          <p className="text-cedro-sage mb-12 max-w-[800px]">Cada profissional foi escolhido por critérios simples: ama os pacientes, respeita a profissão, cristão sólido e não para de estudar. Equipe supervisionada semanalmente por Leandro Carone.</p>
+          <h2 className="mb-4 text-cedro-navy">7 psicólogos.</h2>
+          <p className="text-cedro-ink/70 mb-12 max-w-[800px]">Cada profissional foi escolhido por critérios simples: ama os pacientes, respeita a profissão, cristão sólido e não para de estudar. Equipe supervisionada semanalmente por Leandro Carone.</p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
             {team.map((member, i) => (
               <div key={i} className="text-center">
-                <div className="w-full aspect-[4/5] bg-cedro-black mb-4 overflow-hidden">
+                <div className="w-full aspect-[4/5] bg-cedro-cream mb-4 overflow-hidden rounded-lg shadow-sm">
                   <Image
                     src={member.img}
                     alt={member.name}
@@ -335,8 +335,8 @@ export default function AgendePage() {
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-                <h4 className="text-base text-cedro-white mb-1">{member.name}</h4>
-                <p className="text-sm text-cedro-sage">{member.role}</p>
+                <h4 className="text-base text-cedro-navy mb-1">{member.name}</h4>
+                <p className="text-sm text-cedro-ink/60">{member.role}</p>
               </div>
             ))}
           </div>
@@ -344,7 +344,7 @@ export default function AgendePage() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="py-24 bg-cedro-black text-center">
+      <section className="py-24 bg-cedro-navy text-center">
         <div className="max-w-[600px] mx-auto px-5 md:px-8">
           <h2 className="text-cedro-white">O melhor passo agora é simples.</h2>
           <p className="text-cedro-sage my-4 mb-8">Converse agora com alguém da nossa equipe para começar.</p>

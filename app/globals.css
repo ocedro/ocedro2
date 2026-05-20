@@ -9,14 +9,17 @@
   --color-cedro-navy: #252a3a;
   --color-cedro-black: #141414;
   --color-cedro-white: #f5f5f0;
+  --color-cedro-ink: #262824;
+  --color-cedro-cream: #f8f4ec;
+  --color-cedro-clay: #8a765f;
   
   --font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-cormorant), ui-serif, Georgia, serif;
 }
 
 body {
-  background-color: var(--color-cedro-black);
-  color: var(--color-cedro-light);
+  background-color: var(--color-cedro-white);
+  color: var(--color-cedro-ink);
 }
 
 h1, h2, h3, h4 {
@@ -37,7 +40,7 @@ p {
 }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--color-cedro-black); }
+::-webkit-scrollbar-track { background: var(--color-cedro-cream); }
 ::-webkit-scrollbar-thumb { background: var(--color-cedro-red); border-radius: 3px; }
 
 ::selection { background: var(--color-cedro-red); color: var(--color-cedro-white); }
