@@ -62,19 +62,6 @@ a{color:inherit;text-decoration:none}
   position:relative;
   overflow:hidden;
 }
-.hero-bg-img{
-  position:absolute;inset:0;
-  background-size:cover;
-  background-position:center;
-  filter:brightness(0.28) sepia(0.12);
-  z-index:0;
-}
-.hero::before{
-  content:'';
-  position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,rgba(10,10,10,0.35) 0%,rgba(10,10,10,0.72) 100%);
-  pointer-events:none;
-}
 .hero .hero-content-wrap{position:relative;z-index:2;}
 .hero-badge{
   display:inline-flex;align-items:center;gap:8px;
@@ -115,7 +102,6 @@ a{color:inherit;text-decoration:none}
   color:var(--gold);
   margin-bottom:20px;
 }
-
 .hero-sub{
   font-size:clamp(1rem,4vw,1.15rem);
   color:var(--muted);
@@ -124,12 +110,6 @@ a{color:inherit;text-decoration:none}
   line-height:1.7;
 }
 .hero-sub strong{color:var(--text)}
-
-.hero-mockup{
-  margin:0 auto 32px;
-  max-width:520px;
-  filter:drop-shadow(0 20px 60px rgba(0,0,0,0.8));
-}
 
 /* ===== CTA BUTTON ===== */
 .btn-cta{
@@ -179,39 +159,29 @@ a{color:inherit;text-decoration:none}
   text-align:center;
 }
 
-/* ===== STATS STRIP ===== */
-.stats-strip{
-  background:var(--dark3);
+/* ===== VSL ===== */
+.vsl-sec{
+  background:var(--dark2);
+  padding:clamp(40px,8vw,64px) 20px;
   border-top:1px solid var(--bd);
   border-bottom:1px solid var(--bd);
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:0;
-  padding:0;
 }
-.stat{
-  flex:1;
-  min-width:0;
-  text-align:center;
-  padding:22px 16px;
-  border-right:1px solid var(--bd);
-  min-width:80px;
+.vsl-inner{max-width:720px;margin:0 auto}
+.vsl-label{
+  font-size:11px;text-transform:uppercase;letter-spacing:.22em;
+  color:var(--gold);font-weight:600;text-align:center;margin-bottom:16px;
 }
-.stat:last-child{border-right:none}
-.stat-n{
-  font-family:var(--serif);
-  font-size:clamp(2rem,6vw,2.6rem);
-  font-weight:900;
-  color:var(--gold);
-  line-height:1;
+.vsl-wrap{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  overflow:hidden;
+  background:#000;
 }
-.stat-l{
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.14em;
-  color:var(--muted);
-  margin-top:4px;
+.vsl-wrap iframe{
+  position:absolute;top:0;left:0;
+  width:100%;height:100%;
+  border:0;
 }
 
 /* ===== SECTION BASE ===== */
@@ -404,50 +374,8 @@ a{color:inherit;text-decoration:none}
   font-weight:500;
 }
 
-/* ===== METHOD ===== */
-.method-sec{background:var(--dark)}
-.method-cols{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:1px;
-  background:var(--bd);
-  border:1px solid var(--bd);
-  margin-top:clamp(24px,4vw,36px);
-}
-.m-col{
-  background:var(--dark2);
-  padding:clamp(22px,4vw,28px) clamp(18px,3vw,24px);
-  display:flex;gap:16px;align-items:flex-start;
-}
-.m-num{
-  flex-shrink:0;
-  width:44px;height:44px;
-  background:rgba(201,168,76,0.12);
-  border:1px solid rgba(201,168,76,0.25);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--serif);
-  font-size:1.3rem;
-  font-weight:900;
-  color:var(--gold);
-}
-.m-text{}
-.m-name{
-  font-size:clamp(.9rem,3.5vw,1rem);
-  font-weight:700;
-  color:var(--text);
-  margin-bottom:4px;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  font-family:var(--serif);
-}
-.m-desc{
-  font-size:clamp(.82rem,3vw,.9rem);
-  color:var(--muted);
-  line-height:1.65;
-}
-
 /* ===== FOR WHO ===== */
-.forwho-sec{background:var(--dark2)}
+.forwho-sec{background:var(--dark)}
 .forwho-list{list-style:none;display:flex;flex-direction:column;margin-top:28px}
 .forwho-item{
   display:flex;align-items:flex-start;gap:14px;
@@ -468,7 +396,7 @@ a{color:inherit;text-decoration:none}
 
 /* ===== TESTIMONIAL ===== */
 .testimonial-sec{
-  background:var(--dark);
+  background:var(--dark2);
   border-top:1px solid var(--bd);
   border-bottom:1px solid var(--bd);
   padding:clamp(48px,10vw,72px) 20px;
@@ -614,7 +542,7 @@ footer{
 /* ===== PROGRESS ===== */
 #prog{position:fixed;top:0;left:0;height:2px;background:var(--gold);width:0%;z-index:1001}
 
-/* ===== MOBILE ONLY TWEAKS ===== */
+/* ===== MOBILE ===== */
 @media(max-width:480px){
   .ba-grid{grid-template-columns:1fr}
   .includes-grid{grid-template-columns:1fr}
@@ -631,7 +559,7 @@ footer{
 
 <!-- OFFER STRIP -->
 <div class="offer-strip">
-  Cada recaída custa mais do que R$77. &nbsp;|&nbsp; <s>R$197</s> &nbsp;por&nbsp; <strong>R$77,00</strong> &nbsp;|&nbsp; Acesso imediato
+  Cada recaída custa mais do que R$49,90. &nbsp;|&nbsp; <s>R$77,00</s> &nbsp;por&nbsp; <strong>R$49,90</strong> &nbsp;|&nbsp; Acesso imediato
 </div>
 
 <!-- HERO -->
@@ -647,21 +575,23 @@ footer{
       Só força de vontade não resolve. Você já sabe disso.<br>
       Esse desafio existe para mudar sua <strong>mentalidade e sua postura</strong> diante desse vício.
     </p>
-    <a href="https://chk.eduzz.com/bfldrrzr" target="_blank" rel="noopener" class="btn-cta">
+    <a href="https://sun.eduzz.com/1W32YBBD92?cupom=OFERTARELAMPAGO" target="_blank" rel="noopener" class="btn-cta">
       Entrar no desafio
-      <small>Acesso imediato por R$77,00</small>
+      <small>Acesso imediato por R$49,90</small>
     </a>
     <p class="safe-note">🔒 Compra 100% segura</p>
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats-strip">
-  <div class="stat"><div class="stat-n">14</div><div class="stat-l">Dias</div></div>
-  <div class="stat"><div class="stat-n">14</div><div class="stat-l">Exercícios</div></div>
-  <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Acesso</div></div>
-  <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Bíblico</div></div>
-</div>
+<!-- VSL -->
+<section class="vsl-sec">
+  <div class="vsl-inner">
+    <p class="vsl-label">Assista antes de decidir</p>
+    <div class="vsl-wrap">
+      <iframe src="https://www.youtube.com/embed/VzP-9Yjdt8o?rel=0&modestbranding=1" title="Desafio 14 Dias" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
 
 <!-- PAIN -->
 <section class="pain sec">
@@ -714,7 +644,7 @@ footer{
 <section class="includes sec">
   <div class="sec-inner-wide">
     <span class="sec-tag sa">O que você recebe</span>
-    <h2 class="sec-title sa">Tudo por <em>R$77,00</em></h2>
+    <h2 class="sec-title sa">Tudo por <em>R$49,90</em></h2>
     <div class="includes-grid" data-s>
       <div class="inc-card sa">
         <div class="inc-num">01</div>
@@ -748,9 +678,9 @@ footer{
       </div>
     </div>
     <div style="margin-top:32px;text-align:center">
-      <a href="https://chk.eduzz.com/bfldrrzr" target="_blank" rel="noopener" class="btn-cta sa">
+      <a href="https://sun.eduzz.com/1W32YBBD92?cupom=OFERTARELAMPAGO" target="_blank" rel="noopener" class="btn-cta sa">
         Entrar no desafio
-        <small>Acesso imediato por apenas R$77,00</small>
+        <small>Acesso imediato por apenas R$49,90</small>
       </a>
       <p class="safe-note" style="margin-top:10px">🔒 Compra 100% segura</p>
     </div>
@@ -782,37 +712,6 @@ footer{
   </div>
 </section>
 
-<!-- METHOD -->
-<section class="method-sec sec">
-  <div class="sec-inner">
-    <span class="sec-tag sa">Como funciona</span>
-    <h2 class="sec-title sa">Não são truques.<br><em>É reconstrução.</em></h2>
-    <div class="method-cols sa" data-s>
-      <div class="m-col">
-        <div class="m-num">01</div>
-        <div class="m-text">
-          <div class="m-name">Âncora Bíblica</div>
-          <p class="m-desc">Um versículo não como decoração, mas como fundamento real do que será feito naquele dia. A Palavra precede a ação.</p>
-        </div>
-      </div>
-      <div class="m-col">
-        <div class="m-num">02</div>
-        <div class="m-text">
-          <div class="m-name">Reflexão Direta</div>
-          <p class="m-desc">Pontos concisos que desmontam as crenças que mantêm o vício vivo. Sem rodeios. Verdade crua.</p>
-        </div>
-      </div>
-      <div class="m-col">
-        <div class="m-num">03</div>
-        <div class="m-text">
-          <div class="m-name">Do the Work</div>
-          <p class="m-desc">Uma tarefa prática, concreta e incômoda por dia. Não é conteúdo para consumir. É ação para executar.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FOR WHO -->
 <section class="forwho-sec sec">
   <div class="sec-inner">
@@ -820,10 +719,8 @@ footer{
     <h2 class="sec-title sa">Para homens que<br><em>cansaram de cair.</em></h2>
     <ul class="forwho-list sa">
       <li class="forwho-item"><span class="forwho-arr">→</span><span>Você quer parar mas não consegue manter a decisão por mais de alguns dias</span></li>
-      <li class="forwho-item"><span class="forwho-arr">→</span><span>Você já leu sobre o assunto mas falta estrutura prática para avançar de verdade</span></li>
       <li class="forwho-item"><span class="forwho-arr">→</span><span>Você tem fé e quer um caminho que respeite essa base</span></li>
       <li class="forwho-item"><span class="forwho-arr">→</span><span>Você está cansado de se ver como vítima dos seus próprios impulsos</span></li>
-      <li class="forwho-item"><span class="forwho-arr">→</span><span>Você quer recuperar autoridade sobre a própria vida, de uma vez por todas</span></li>
     </ul>
   </div>
 </section>
@@ -852,12 +749,12 @@ footer{
 
     <div class="sa">
       <div class="final-price-row">
-        <span class="final-from">De R$ 197,00</span>
-        <span class="final-price"><sup>R$&nbsp;</sup>77<sup>,00</sup></span>
+        <span class="final-from">De R$ 77,00</span>
+        <span class="final-price"><sup>R$&nbsp;</sup>49<sup>,90</sup></span>
       </div>
       <p class="final-tag">Acesso imediato e vitalício</p>
       <p class="sa" style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1rem,3.5vw,1.15rem);font-weight:600;letter-spacing:.03em;color:rgba(240,237,230,0.6);margin-bottom:20px;text-transform:uppercase">Você já adiou antes. Sabe como terminou.</p>
-      <a href="https://chk.eduzz.com/bfldrrzr" target="_blank" rel="noopener" class="btn-cta">
+      <a href="https://sun.eduzz.com/1W32YBBD92?cupom=OFERTARELAMPAGO" target="_blank" rel="noopener" class="btn-cta">
         Entrar no desafio
         <small>Clique e seja redirecionado ao checkout seguro</small>
       </a>
@@ -885,9 +782,9 @@ footer{
 <div class="sticky" id="sticky">
   <div class="sticky-l">
     <div class="sticky-label">Desafio 14 Dias</div>
-    <div class="sticky-price">R$ 77,00</div>
+    <div class="sticky-price">R$ 49,90</div>
   </div>
-  <a href="https://chk.eduzz.com/bfldrrzr" target="_blank" rel="noopener" class="sticky-btn">Entrar no desafio →</a>
+  <a href="https://sun.eduzz.com/1W32YBBD92?cupom=OFERTARELAMPAGO" target="_blank" rel="noopener" class="sticky-btn">Entrar no desafio →</a>
 </div>
 
 <script>
@@ -911,7 +808,7 @@ footer{
   sas.forEach(function(el){io.observe(el);});
 
   requestAnimationFrame(function(){
-    document.querySelectorAll('.hero .sa,.stats-strip .sa').forEach(function(el){
+    document.querySelectorAll('.hero .sa').forEach(function(el){
       setTimeout(function(){el.classList.add('on');},60);
     });
   });
