@@ -24,9 +24,9 @@ img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 
 :root{
-  --gold:#C9A84C;
-  --gold2:#e8c97a;
-  --red:#c0392b;
+  --gold:#FF9000;
+  --gold2:#FFB347;
+  --red:#FF0000;
   --dark:#0a0a0a;
   --dark2:#111111;
   --dark3:#1a1a1a;
@@ -41,7 +41,7 @@ a{color:inherit;text-decoration:none}
 /* ===== OFFER STRIP ===== */
 .offer-strip{
   background:linear-gradient(90deg,#1a0600,#2d0e00,#1a0600);
-  border-bottom:1px solid rgba(201,168,76,0.3);
+  border-bottom:1px solid rgba(255,144,0,0.3);
   padding:11px 20px;
   text-align:center;
   font-size:clamp(12px,3.5vw,14px);
@@ -65,9 +65,9 @@ a{color:inherit;text-decoration:none}
 .hero .hero-content-wrap{position:relative;z-index:2;}
 .hero-badge{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(192,57,43,0.15);
-  border:1px solid rgba(192,57,43,0.4);
-  color:#e74c3c;
+  background:rgba(255,0,0,0.15);
+  border:1px solid rgba(255,0,0,0.4);
+  color:#FF1A1A;
   font-size:clamp(11px,3vw,13px);
   font-weight:600;
   letter-spacing:.16em;
@@ -75,7 +75,7 @@ a{color:inherit;text-decoration:none}
   padding:7px 16px;
   margin-bottom:24px;
 }
-.hero-badge span{display:block;width:7px;height:7px;border-radius:50%;background:#e74c3c;animation:blink 1.4s infinite}
+.hero-badge span{display:block;width:7px;height:7px;border-radius:50%;background:#FF1A1A;animation:blink 1.4s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 
 .hero h1{
@@ -117,7 +117,7 @@ a{color:inherit;text-decoration:none}
   width:100%;
   max-width:480px;
   margin:0 auto;
-  background:linear-gradient(135deg,var(--gold) 0%,#a8791e 100%);
+  background:linear-gradient(135deg,var(--gold) 0%,#cc7000 100%);
   color:#0a0a0a;
   font-family:var(--serif);
   font-size:clamp(1.1rem,4.5vw,1.4rem);
@@ -130,7 +130,7 @@ a{color:inherit;text-decoration:none}
   cursor:pointer;
   -webkit-tap-highlight-color:transparent;
   transition:filter .18s,transform .12s;
-  box-shadow:0 6px 32px rgba(201,168,76,0.35);
+  box-shadow:0 6px 32px rgba(255,144,0,0.35);
   position:relative;
   overflow:hidden;
 }
@@ -159,30 +159,6 @@ a{color:inherit;text-decoration:none}
   text-align:center;
 }
 
-/* ===== VSL ===== */
-.vsl-sec{
-  background:var(--dark2);
-  padding:clamp(40px,8vw,64px) 20px;
-  border-top:1px solid var(--bd);
-  border-bottom:1px solid var(--bd);
-}
-.vsl-inner{max-width:720px;margin:0 auto}
-.vsl-label{
-  font-size:11px;text-transform:uppercase;letter-spacing:.22em;
-  color:var(--gold);font-weight:600;text-align:center;margin-bottom:16px;
-}
-.vsl-wrap{
-  position:relative;
-  padding-bottom:56.25%;
-  height:0;
-  overflow:hidden;
-  background:#000;
-}
-.vsl-wrap iframe{
-  position:absolute;top:0;left:0;
-  width:100%;height:100%;
-  border:0;
-}
 
 /* ===== SECTION BASE ===== */
 .sec{padding:clamp(48px,10vw,80px) 20px}
@@ -233,9 +209,9 @@ a{color:inherit;text-decoration:none}
 .pain-li-icon{
   flex-shrink:0;
   width:28px;height:28px;
-  background:rgba(192,57,43,0.15);
-  border:1px solid rgba(192,57,43,0.3);
-  color:#e74c3c;
+  background:rgba(255,0,0,0.15);
+  border:1px solid rgba(255,0,0,0.3);
+  color:#FF1A1A;
   font-size:13px;font-weight:700;
   display:flex;align-items:center;justify-content:center;
   margin-top:1px;
@@ -262,7 +238,7 @@ a{color:inherit;text-decoration:none}
   margin-bottom:16px;
   display:flex;align-items:center;gap:8px;
 }
-.ba-head--before{color:#e74c3c}
+.ba-head--before{color:#FF1A1A}
 .ba-head--after{color:#2ecc71}
 .ba-items{list-style:none;display:flex;flex-direction:column;gap:10px}
 .ba-item{
@@ -276,7 +252,7 @@ a{color:inherit;text-decoration:none}
   flex-shrink:0;
   margin-top:1px;
 }
-.ba-col--before .ba-item::before{color:#e74c3c}
+.ba-col--before .ba-item::before{color:#FF1A1A}
 .ba-col--after .ba-item::before{color:#2ecc71}
 
 /* ===== QUOTE ===== */
@@ -325,7 +301,7 @@ a{color:inherit;text-decoration:none}
   font-family:var(--serif);
   font-size:2rem;
   font-weight:900;
-  color:rgba(201,168,76,0.2);
+  color:rgba(255,144,0,0.2);
   line-height:1;
   margin-bottom:8px;
 }
@@ -356,13 +332,13 @@ a{color:inherit;text-decoration:none}
   padding:14px 16px;
   transition:background .2s;
 }
-.day-card:hover{background:rgba(201,168,76,0.06)}
+.day-card:hover{background:rgba(255,144,0,0.06)}
 .day-card:hover .day-n{color:var(--gold)}
 .day-n{
   font-family:var(--serif);
   font-size:1.3rem;
   font-weight:900;
-  color:rgba(201,168,76,0.28);
+  color:rgba(255,144,0,0.28);
   line-height:1;
   margin-bottom:4px;
   transition:color .25s;
@@ -427,13 +403,13 @@ a{color:inherit;text-decoration:none}
 }
 .testimonial-divider{
   width:40px;height:1px;
-  background:rgba(201,168,76,0.3);
+  background:rgba(255,144,0,0.3);
   margin:16px auto;
 }
 
 /* ===== FINAL CTA ===== */
 .final-sec{
-  background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(201,168,76,0.07) 0%,transparent 60%),var(--dark);
+  background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(255,144,0,0.07) 0%,transparent 60%),var(--dark);
   border-top:1px solid var(--bd);
   padding:clamp(52px,10vw,88px) 20px;
   text-align:center;
@@ -497,7 +473,7 @@ footer{
 .sticky{
   position:fixed;bottom:0;left:0;right:0;z-index:800;
   background:rgba(10,10,10,0.97);
-  border-top:1px solid rgba(201,168,76,0.2);
+  border-top:1px solid rgba(255,144,0,0.2);
   backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
   padding:10px 20px calc(10px + env(safe-area-inset-bottom));
   display:flex;align-items:center;justify-content:space-between;gap:12px;
@@ -514,7 +490,7 @@ footer{
 }
 .sticky-btn{
   flex-shrink:0;
-  background:linear-gradient(135deg,var(--gold),#a8791e);
+  background:linear-gradient(135deg,var(--gold),#cc7000);
   color:#0a0a0a;
   font-family:var(--serif);
   font-size:.95rem;font-weight:900;
@@ -559,7 +535,7 @@ footer{
 
 <!-- OFFER STRIP -->
 <div class="offer-strip">
-  Cada recaída custa mais do que R$37,90. &nbsp;|&nbsp; <s>R$49,90</s> &nbsp;por&nbsp; <strong>R$37,90</strong> &nbsp;|&nbsp; Acesso imediato
+  Cada recaída custa mais do que R$47,00. &nbsp;|&nbsp; <s>R$47,00</s> &nbsp;por&nbsp; <strong>R$47,00</strong> &nbsp;|&nbsp; Acesso imediato
 </div>
 
 <!-- HERO -->
@@ -571,21 +547,13 @@ footer{
       <em>A questão é como você se levanta.</em>
     </h1>
     <p class="hero-anchor">14 dias para parar de ser vítima dos próprios impulsos e voltar a acreditar que há saída.</p>
-
-    <!-- VSL dentro do hero -->
-    <div style="max-width:720px;margin:0 auto 28px;">
-      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background:#000;">
-        <iframe src="https://www.youtube.com/embed/VzP-9Yjdt8o?rel=0&modestbranding=1" title="Desafio 14 Dias" allowfullscreen loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"></iframe>
-      </div>
-    </div>
-
     <p class="hero-sub">
       Só força de vontade não resolve. Você já sabe disso.<br>
       Esse desafio existe para mudar sua <strong>mentalidade e sua postura</strong> diante desse vício.
     </p>
     <a href="https://sun.eduzz.com/1W32YBBD92?cupom=OFERTARELAMPAGO" target="_blank" rel="noopener" class="btn-cta">
       Entrar no desafio
-      <small>De R$49,90 por apenas R$37,90 — desconto válido para quem quer resolver isso agora</small>
+      <small>De R$47,00 por apenas R$47,00 — desconto válido para quem quer resolver isso agora</small>
     </a>
     <p class="safe-note">🔒 Compra 100% segura</p>
   </div>
@@ -666,7 +634,7 @@ footer{
 <section class="includes sec">
   <div class="sec-inner-wide">
     <span class="sec-tag sa">O que você recebe</span>
-    <h2 class="sec-title sa">Tudo por <em>R$37,90</em></h2>
+    <h2 class="sec-title sa">Tudo por <em>R$47,00</em></h2>
     <div class="includes-grid" data-s>
       <div class="inc-card sa">
         <div class="inc-num">01</div>
@@ -702,7 +670,7 @@ footer{
     <div style="margin-top:32px;text-align:center">
       <a href="https://sun.eduzz.com/1W32YBBD92?cupom=OFERTARELAMPAGO" target="_blank" rel="noopener" class="btn-cta sa">
         Entrar no desafio
-        <small>Acesso imediato por apenas R$37,90</small>
+        <small>Acesso imediato por apenas R$47,00</small>
       </a>
       <p class="safe-note" style="margin-top:10px">🔒 Compra 100% segura</p>
     </div>
@@ -771,8 +739,8 @@ footer{
 
     <div class="sa">
       <div class="final-price-row">
-        <span class="final-from">De R$ 37,90</span>
-        <span class="final-price"><sup>R$&nbsp;</sup>37<sup>,90</sup></span>
+        <span class="final-from">De R$ 47,00</span>
+        <span class="final-price"><sup>R$&nbsp;</sup>47<sup>,00</sup></span>
       </div>
       <p class="final-tag">Acesso imediato e vitalício</p>
       <p class="sa" style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1rem,3.5vw,1.15rem);font-weight:600;letter-spacing:.03em;color:rgba(240,237,230,0.6);margin-bottom:20px;text-transform:uppercase">Você já adiou antes. Sabe como terminou.</p>
@@ -805,7 +773,7 @@ footer{
 <div class="sticky" id="sticky">
   <div class="sticky-l">
     <div class="sticky-label">Desafio 14 Dias</div>
-    <div class="sticky-price">R$ 37,90</div>
+    <div class="sticky-price">R$ 47,00</div>
   </div>
   <a href="https://sun.eduzz.com/1W32YBBD92?cupom=OFERTARELAMPAGO" target="_blank" rel="noopener" class="sticky-btn">Entrar no desafio →</a>
 </div>
