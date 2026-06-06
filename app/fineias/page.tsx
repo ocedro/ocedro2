@@ -201,7 +201,7 @@ export default function FineiasPage() {
                 />
               </div>
               <div className="pt-5 pl-1">
-                <p className="text-cedro-white font-bold text-sm">Lucas Grabin</p>
+                <p className="text-cedro-white font-bold text-sm">Lucas</p>
                 <p className="text-cedro-sage text-xs mt-0.5">23 anos</p>
               </div>
             </div>
