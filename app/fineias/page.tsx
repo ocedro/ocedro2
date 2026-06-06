@@ -154,41 +154,55 @@ export default function FineiasPage() {
           <SectionLabel>Quem já passou por aqui</SectionLabel>
           <h2 className="mb-12 text-cedro-white">Homens que pararam de se esconder.</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {/* Elias */}
-            <div className="p-8 bg-cedro-navy border border-cedro-sage/10 border-l-[3px] border-l-cedro-red flex flex-col">
-              <p className="text-cedro-sage text-[0.95rem] leading-relaxed mb-6 flex-1">
-                &ldquo;Estava num momento muito conturbado do meu relacionamento e da vida espiritual, e o trabalho em grupo com o Leandro me ajudou a ganhar forças na caminhada e enxergar um caminho sólido. Compartilhar essa experiência com outros que estavam vivendo esse mesmo momento foi de grande ajuda nos períodos mais difíceis. Fiz amigos com quem até hoje posso me abrir, trocar experiências e orar junto.&rdquo;
-              </p>
-              <div className="pt-4 border-t border-cedro-sage/10">
+            <div className="flex flex-col">
+              <div className="overflow-hidden rounded-sm border border-cedro-sage/10">
+                <Image
+                  src="/depoimento-elias.jpg"
+                  alt="Depoimento de Elias"
+                  width={1046}
+                  height={897}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="pt-5 pl-1">
                 <p className="text-cedro-white font-bold text-sm">Elias</p>
-                <p className="text-cedro-sage text-xs">36 anos</p>
+                <p className="text-cedro-sage text-xs mt-0.5">36 anos</p>
               </div>
             </div>
 
             {/* Denis */}
-            <div className="p-8 bg-cedro-navy border border-cedro-sage/10 border-l-[3px] border-l-cedro-red flex flex-col">
-              <p className="text-cedro-sage text-[0.95rem] leading-relaxed mb-4 flex-1">
-                &ldquo;Procurei ajuda em alguns lugares onde me sentisse seguro para me abrir e expor minha dificuldade na dependência de pornografia, depois de mais de 20 anos de consumo desse maldito vício. Foi então que descobri pelo Instagram o trabalho que o Leandro conduzia.&rdquo;
-                <br /><br />
-                &ldquo;Hoje tenho consciência, e sei bem como foi sombrio todo esse tempo que passei sem a ajuda de um profissional como o Leandro. Hoje vivo mais tranquilamente com a minha consciência, tenho paz no meu lar, e o meu desempenho profissional tem sido melhor por conta da ajuda que recebi. Recomendo a todos vocês que passam por esta dificuldade. Sua família merece.&rdquo;
-              </p>
-              <div className="pt-4 border-t border-cedro-sage/10">
+            <div className="flex flex-col">
+              <div className="overflow-hidden rounded-sm border border-cedro-sage/10">
+                <Image
+                  src="/depoimento-denis.jpg"
+                  alt="Depoimento de Denis"
+                  width={990}
+                  height={3012}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="pt-5 pl-1">
                 <p className="text-cedro-white font-bold text-sm">Denis</p>
-                <p className="text-cedro-sage text-xs">45 anos, engenheiro mecânico</p>
+                <p className="text-cedro-sage text-xs mt-0.5">45 anos, engenheiro mecânico</p>
               </div>
             </div>
 
             {/* Lucas */}
-            <div className="p-8 bg-cedro-navy border border-cedro-sage/10 border-l-[3px] border-l-cedro-red flex flex-col">
-              <p className="text-cedro-sage text-[0.95rem] leading-relaxed mb-4 flex-1">
-                &ldquo;Passei por vários tipos de buscas para encontrar algo que me ajudasse a largar esse vício, e cheguei a pensar que não teria solução. Acabei fazendo parte dessa terapia em grupo com o Leandro, e mesmo sendo encontros EAD, me senti muito à vontade em ter um grupo com quem podia contar a qualquer momento.&rdquo;
-                <br /><br />
-                &ldquo;A forma didática e prática que o Leandro proporciona facilita muito o aprendizado para vencer e romper esse ciclo. Só tenho a agradecer pelas novas amizades, pelo fortalecimento prático, mental e espiritual.&rdquo;
-              </p>
-              <div className="pt-4 border-t border-cedro-sage/10">
-                <p className="text-cedro-white font-bold text-sm">Lucas</p>
-                <p className="text-cedro-sage text-xs">23 anos</p>
+            <div className="flex flex-col">
+              <div className="overflow-hidden rounded-sm border border-cedro-sage/10">
+                <Image
+                  src="/depoimento-lucas.jpg"
+                  alt="Depoimento de Lucas"
+                  width={998}
+                  height={3590}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="pt-5 pl-1">
+                <p className="text-cedro-white font-bold text-sm">Lucas Grabin</p>
+                <p className="text-cedro-sage text-xs mt-0.5">23 anos</p>
               </div>
             </div>
           </div>
