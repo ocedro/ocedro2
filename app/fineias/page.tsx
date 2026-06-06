@@ -55,10 +55,10 @@ export default function FineiasPage() {
             />
             <SectionLabel>Mentoria Fineias</SectionLabel>
             <h1 className="mb-6 text-cedro-white">
-              Você prometeu que seria a última vez. Mas caiu de novo.
+              Seu problema não é só pornografia. É que você não tem um plano.
             </h1>
             <p className="text-lg text-cedro-sage mb-10">
-              A Sociedade Finéias é uma mentoria em grupo para homens cristãos que estão prontos para quebrar o ciclo do vício em pornografia. 10 encontros. 12 homens. Sem gravação. Tudo acontece ao vivo.
+              A Sociedade Finéias é uma mentoria em grupo para homens cristãos que estão prontos para parar de improvisar, retomar o controle e construir um plano de uma vida que valha a pena ser vivida. 10 encontros. 12 homens. Sem gravação.
             </p>
             <Button asChild withArrow>
               <a href="https://form.respondi.app/Qr9kjWMI" target="_blank" rel="noopener noreferrer">Quero sair desse ciclo</a>
@@ -69,23 +69,17 @@ export default function FineiasPage() {
 
       {/* O CICLO */}
       <section className="py-24 bg-cedro-navy text-cedro-white relative overflow-hidden" style={textureStyle}>
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8 relative z-10">
-          <h2 className="mb-12 text-cedro-white">O ciclo que você conhece bem demais.</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
-            {[
-              { title: 'Culpa, vergonha e medo', desc: 'Hábito silencioso e solitário que gera incongruência moral, vergonha sexual e medo constante de ser descoberto.' },
-              { title: 'Depressão, ansiedade e autocrítica', desc: 'Sofrimento mental severo. Alta autocrítica, perfeccionismo, medo do fracasso e solidão.' },
-              { title: 'Impactos físicos e sexuais', desc: 'Disfunção erétil, ejaculação precoce, dessensibilização, escalada para conteúdos cada vez mais extremos e insatisfação conjugal.' },
-              { title: 'Alterações neurológicas', desc: 'O cérebro reage como o de um usuário de drogas. Querer cada vez mais. Diminuição do autocontrole, sistema dopaminérgico corrompido. Córtex pré-frontal atrofiado.' },
-              { title: 'Distanciamento relacional', desc: 'Redução da capacidade de conexão afetiva. Distanciamento emocional e físico das pessoas que você ama.' },
-              { title: 'O ciclo se retroalimenta', desc: 'Sentimentos negativos → consumo → alterações cerebrais → mais solidão → mais consumo. Você sabe disso. É hora de quebrar.' }
-            ].map((symptom, i) => (
-              <div key={i} className="p-8 bg-cedro-black border-l-4 border-cedro-red">
-                <h4 className="font-sans text-base font-bold text-cedro-white mb-2">{symptom.title}</h4>
-                <p className="text-sm text-cedro-sage">{symptom.desc}</p>
-              </div>
-            ))}
-          </div>
+        <div className="max-w-[720px] mx-auto px-5 md:px-8 relative z-10">
+          <h2 className="mb-10 text-cedro-white">O ciclo que você conhece bem demais.</h2>
+          <p className="text-cedro-sage mb-5 text-lg">Você não acorda querendo falhar.</p>
+          <p className="text-cedro-sage mb-5">Mas o dia começa sem direção. Sem um plano. Você reage ao que aparece, apaga incêndio, chega à noite exausto e vazio.</p>
+          <p className="text-cedro-sage mb-5">E está assim há anos. Você nem se reconhece mais. Tenta, mas não consegue sair do lugar.</p>
+          <p className="text-cedro-sage mb-5">Quando há vazio, o homem preenche. Com prazer. Com poder. Com conformismo. É quase automático. O vício escolhe homens sem plano.</p>
+          <p className="text-cedro-sage mb-5">A pornografia, por exemplo, é uma das formas mais eficientes de preencher esse espaço. Rápida, acessível, sem custo imediato aparente. Mas ela não resolve o vazio. Ela só engana. É como tentar almoçar batata frita.</p>
+          <p className="text-cedro-sage mb-5">E aí o ciclo recomeça. A vergonha chega. Você promete que é a última vez. Dorme com culpa. Acorda sem plano de novo. E cai de novo.</p>
+          <p className="text-cedro-sage mb-5">Eu vi isso em centenas de homens. Homens sérios, que amam a Deus, que têm família e fé.</p>
+          <p className="text-cedro-sage mb-5">Nenhum deles tinha problema de caráter. Tinham um problema de estrutura. Tinham um vazio sem nome.</p>
+          <p className="text-cedro-sage font-semibold text-cedro-white/90">Sem sentido, qualquer homem cede. É só uma questão de tempo e de pressão.</p>
         </div>
       </section>
 
@@ -95,12 +89,12 @@ export default function FineiasPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <SectionLabel>A proposta</SectionLabel>
-              <h2 className="mb-4 text-cedro-white">
-                A Sociedade Finéias não é um grupo de apoio onde você fica repetindo que é viciado.
+              <h2 className="mb-6 text-cedro-white">
+                A Sociedade Finéias não é grupo de apoio. Não é círculo de confissão. Não é lugar onde você repete toda semana que é viciado e vai embora igual.
               </h2>
-              <Divider />
-              <p className="mb-4 text-cedro-sage">É uma mentoria de transformação onde você muda o eixo narrativo: da culpa para o chamado, do vício para a filiação.</p>
-              <p className="text-cedro-sage"><strong className="text-cedro-white font-bold">Mentalidade Finéias:</strong> não é só resistir ao pecado. É odiar o que destrói a aliança e agir com zelo.</p>
+              <p className="mb-4 text-cedro-sage">É uma mentoria onde você sai com um plano escrito na mão.</p>
+              <p className="mb-4 text-cedro-sage">Um plano de identidade. De masculinidade. De como você vai conduzir sua vida de agora em diante. A pornografia entra nessa conversa, mas ela não é o centro. O centro é você entender quem você é, o que está destruindo isso, e como reconstruir com estrutura.</p>
+              <p className="text-cedro-sage">Dez encontros. Doze homens. Nada gravado. Tudo acontece ao vivo porque esse tipo de trabalho só funciona quando há aliança de verdade.</p>
             </div>
             <div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 my-12">
