@@ -287,10 +287,9 @@ export default function FineiasPage() {
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse at 70% 50%, transparent 30%, rgba(10,4,1,0.6) 100%)' }} />
         <div className="max-w-[700px] mx-auto px-5 md:px-8 relative z-10">
-          <h2 className="text-cedro-white mb-6">Quanto mais tempo no ciclo, mais difícil sair.</h2>
-          <p className="text-cedro-sage my-6 text-lg">Cada turma é limitada a 12 homens. O grupo precisa ser pequeno para funcionar de verdade, com confiança, aliança e acompanhamento real.</p>
-          <p className="text-cedro-sage mb-4">Você não precisa ter tudo resolvido para entrar. Precisa estar pronto para parar de se esconder.</p>
-          <p className="text-[0.95rem] text-cedro-sage mb-10">Mande uma mensagem. A conversa é sigilosa.</p>
+          <h2 className="text-cedro-white mb-6">Quanto mais tempo sem um plano, mais fundo o ciclo fica.</h2>
+          <p className="text-cedro-sage my-6 text-lg">As vagas são 12. O grupo precisa ser pequeno para funcionar, porque aliança de verdade não acontece em multidão.</p>
+          <p className="text-cedro-sage mb-10">Você não precisa ter tudo resolvido para entrar. Precisa estar pronto para parar de improvisar.</p>
           <Button asChild withArrow>
             <a href="https://form.respondi.app/Qr9kjWMI" target="_blank" rel="noopener noreferrer">Quero participar da próxima turma</a>
           </Button>
