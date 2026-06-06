@@ -122,7 +122,7 @@ export default function FineiasPage() {
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <p className="text-lg text-cedro-white mb-6">Já sabe que precisa disso? Não precisa ler mais nada.</p>
           <Button asChild withArrow>
-            <a href="https://form.respondi.app/Qr9kjWMI" target="_blank" rel="noopener noreferrer">Entrar na lista de espera</a>
+            <a href="https://form.respondi.app/Qr9kjWMI" target="_blank" rel="noopener noreferrer">Quero estar na próxima turma</a>
           </Button>
         </div>
       </section>
