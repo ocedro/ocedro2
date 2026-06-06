@@ -223,24 +223,31 @@ export default function FineiasPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             {/* Card preço */}
             <div className="p-10 bg-cedro-black border border-cedro-red/30 relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-cedro-red text-cedro-white text-xs font-bold tracking-[0.15em] uppercase px-3 py-1.5">
-                Condição especial
-              </div>
-              <p className="text-xs font-bold tracking-[0.3em] uppercase text-cedro-sage mb-4">Investimento</p>
+              <p className="text-xs font-bold tracking-[0.3em] uppercase text-cedro-sage mb-8">Investimento</p>
 
-              <p className="text-cedro-sage text-base mb-2">
-                <span className="line-through opacity-70">De R$ 1.497</span>
-              </p>
-              <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-cedro-sage text-lg">por</span>
-                <span className="font-serif font-bold text-cedro-red leading-none" style={{ fontSize: 'clamp(3rem, 6vw, 4.5rem)' }}>
-                  R$ 1.197
-                </span>
+              <div className="mb-6">
+                <p className="text-cedro-sage text-xs uppercase tracking-widest mb-3">Parcelado</p>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-cedro-sage text-base">12x</span>
+                  <span className="font-serif font-bold text-cedro-white leading-none" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)' }}>
+                    R$ 97
+                  </span>
+                </div>
               </div>
-              <p className="text-cedro-sage text-sm leading-relaxed mb-2">à vista</p>
-              <div className="w-12 h-[2px] bg-cedro-red my-6" />
+
+              <div className="w-12 h-[1px] bg-cedro-sage/20 my-6" />
+
+              <div className="mb-8">
+                <p className="text-cedro-sage text-xs uppercase tracking-widest mb-3">À vista</p>
+                <div className="flex items-baseline gap-2">
+                  <span className="font-serif font-bold text-cedro-red leading-none" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)' }}>
+                    R$ 997
+                  </span>
+                </div>
+              </div>
+
               <p className="text-cedro-sage text-sm leading-relaxed">
-                Acesso completo aos 10 encontros ao vivo. Sem gravação, sem upsell, sem mensalidade.
+                10 encontros ao vivo. Sem gravação, sem upsell, sem mensalidade.
               </p>
             </div>
 
@@ -248,13 +255,13 @@ export default function FineiasPage() {
             <div className="p-10 bg-cedro-black border border-cedro-sage/15 flex flex-col">
               <p className="text-xs font-bold tracking-[0.3em] uppercase text-cedro-sage mb-4">Próxima turma</p>
               <h3 className="text-cedro-white text-2xl font-bold mb-6 leading-tight">
-                Começa quando fechar 12 homens.
+                Previsão: terceira semana de julho.
               </h3>
               <p className="text-cedro-sage text-[0.95rem] leading-relaxed mb-4">
-                Não trabalhamos com data marcada. A turma abre quando completa o grupo certo, porque o trabalho só funciona em grupo pequeno e comprometido.
+                As vagas são limitadas a 12 homens. O grupo precisa ser pequeno para funcionar de verdade.
               </p>
               <p className="text-cedro-sage text-[0.95rem] leading-relaxed mb-8">
-                Você entra na lista, recebe o aviso quando fechar, e decide se entra ou não.
+                Você entra na lista agora, recebe a confirmação quando a turma fechar, e decide se entra.
               </p>
               <div className="mt-auto pt-6 border-t border-cedro-sage/10 grid grid-cols-3 gap-4 text-center">
                 <div>
