@@ -384,7 +384,15 @@ a{color:inherit;text-decoration:none}
   border-bottom:1px solid var(--bd);
   padding:clamp(48px,10vw,72px) 20px;
 }
-.testimonial-inner{max-width:620px;margin:0 auto;text-align:center}
+.testimonial-grid{
+  max-width:860px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  align-items:center;
+}
+.testimonial-inner{text-align:center}
 .testimonial-quote{
   font-family:var(--serif);
   font-size:clamp(1.4rem,5vw,2rem);
@@ -412,6 +420,13 @@ a{color:inherit;text-decoration:none}
   width:40px;height:1px;
   background:rgba(255,144,0,0.3);
   margin:16px auto;
+}
+.testimonial-video video{
+  width:100%;
+  display:block;
+}
+@media(max-width:600px){
+  .testimonial-grid{grid-template-columns:1fr}
 }
 
 /* ===== FINAL CTA ===== */
@@ -800,11 +815,18 @@ footer{
 
 <!-- TESTIMONIAL -->
 <section class="testimonial-sec">
-  <div class="testimonial-inner">
-    <div class="testimonial-quote sa">"</div>
-    <p class="testimonial-text sa">Esses 14 dias foram um tempo maravilhoso. O curso me ajudou muito a entender o que está por trás dessa questão, e sinto que estou melhorando a cada dia. Sou cristão, então esse é um dos motivos pelos quais busco parar com essa prática. É um curso excelente e com um preço acessível, recomendo muito.</p>
-    <div class="testimonial-divider sa"></div>
-    <p class="testimonial-author sa">Allef B.G — aluno do desafio</p>
+  <div class="testimonial-grid">
+    <div class="testimonial-video sa">
+      <video controls playsinline preload="metadata" style="border:1px solid var(--bd)">
+        <source src="/testemunho-video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="testimonial-inner sa">
+      <div class="testimonial-quote">"</div>
+      <p class="testimonial-text">Esses 14 dias foram um tempo maravilhoso. O curso me ajudou muito a entender o que está por trás dessa questão, e sinto que estou melhorando a cada dia. Sou cristão, então esse é um dos motivos pelos quais busco parar com essa prática. É um curso excelente e com um preço acessível, recomendo muito.</p>
+      <div class="testimonial-divider"></div>
+      <p class="testimonial-author">Allef B.G — aluno do desafio</p>
+    </div>
   </div>
 </section>
 
