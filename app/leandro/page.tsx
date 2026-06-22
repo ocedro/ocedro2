@@ -122,7 +122,7 @@ export default function LeandroPage() {
           <h2 className="text-cedro-white">Eu não quero chegar ao último dia da minha vida com arrependimento que não me tornei tudo o que eu poderia.</h2>
           <div className="flex flex-wrap gap-4 justify-center mt-8">
             <Button asChild withArrow>
-              <a href="https://wa.me/5519983133780" target="_blank" rel="noopener noreferrer">Agendar sessão</a>
+              <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer">Agendar sessão</a>
             </Button>
             <Button variant="outline" asChild withArrow className="border-white/35 text-white hover:border-white hover:text-white">
               <a href="https://form.respondi.app/rdiSvqJY" target="_blank" rel="noopener noreferrer">Quero fazer supervisão com o Leandro</a>

@@ -131,7 +131,7 @@ export function Navbar() {
         </ul>
 
         <a
-          href="https://wa.me/5519983133780"
+          href="https://form.respondi.app/tiN0kxRc"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:inline-block text-xs px-5 py-2.5 bg-cedro-red text-cedro-white font-bold tracking-wider uppercase transition-colors hover:bg-cedro-red-hover rounded-md"
@@ -223,7 +223,7 @@ export function Navbar() {
           })}
         </ul>
         <a
-          href="https://wa.me/5519983133780"
+          href="https://form.respondi.app/tiN0kxRc"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-6 text-center text-sm px-5 py-3.5 bg-cedro-red text-cedro-white font-bold tracking-wider uppercase transition-colors hover:bg-cedro-red-hover rounded-md"

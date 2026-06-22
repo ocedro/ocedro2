@@ -248,7 +248,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild withArrow>
-                <a href="https://wa.me/5519983133780" target="_blank" rel="noopener noreferrer">Agendar sessão</a>
+                <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer">Agendar sessão</a>
               </Button>
               <Button variant="outline" asChild>
                 <Link href="/leandro">Conheça a história</Link>
@@ -406,7 +406,7 @@ export default function Home() {
           <h2 className="text-white">Você não precisa de um psicólogo qualquer.</h2>
           <p className="text-white/75 my-6 text-lg">Você precisa de alguém que entenda de onde você veio, no que você crê, e aonde você quer chegar.</p>
           <Button asChild withArrow>
-            <a href="https://wa.me/5519983133780" target="_blank" rel="noopener noreferrer">Agendar sessão avulsa</a>
+            <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer">Agendar sessão avulsa</a>
           </Button>
         </div>
       </section>
