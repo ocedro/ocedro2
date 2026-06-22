@@ -42,7 +42,7 @@ export function Footer() {
             <h4 className="font-sans text-sm font-bold text-cedro-navy uppercase tracking-widest mb-4">Redes</h4>
             <div className="flex flex-col gap-2">
               <a href="https://instagram.com/oleandrocarone" target="_blank" rel="noopener noreferrer" className="text-sm text-cedro-ink/65 hover:text-cedro-red transition-colors">Instagram</a>
-              <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer" className="text-sm text-cedro-ink/65 hover:text-cedro-red transition-colors">Marcar consulta</a>
+              <a href="https://wa.me/5519983133780" target="_blank" rel="noopener noreferrer" className="text-sm text-cedro-ink/65 hover:text-cedro-red transition-colors">Marcar consulta</a>
             </div>
           </div>
         </div>

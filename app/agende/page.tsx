@@ -96,7 +96,7 @@ export default function AgendePage() {
             ))}
           </div>
           <Button asChild withArrow>
-            <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer">Agendar sessão avulsa</a>
+            <a href="https://wa.me/5519983133780" target="_blank" rel="noopener noreferrer">Agendar sessão avulsa</a>
           </Button>
         </motion.div>
       </section>
@@ -253,7 +253,7 @@ export default function AgendePage() {
           </div>
           <div className="mt-12">
             <Button asChild withArrow className="w-full md:w-auto justify-center">
-              <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer">Marcar minha primeira sessão</a>
+              <a href="https://wa.me/5519983133780" target="_blank" rel="noopener noreferrer">Marcar minha primeira sessão</a>
             </Button>
           </div>
         </div>
