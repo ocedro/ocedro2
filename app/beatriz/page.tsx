@@ -15,6 +15,7 @@ const team = [
   { img: '/team/joyce-jeremias.jpg', name: 'Joyce Jeremias', role: 'Psicóloga' },
   { img: '/team/valeria-alves.jpg', name: 'Valéria Alves', role: 'Psicóloga' },
   { img: '/team/karla-franco.jpg', name: 'Karla Franco', role: 'Psicóloga' },
+  { img: '/team/dhimmy-fraga.jpg', name: 'Dhimmy Fraga', role: 'Psicólogo' },
 ];
 
 const rightFit = [
@@ -72,7 +73,7 @@ export default function BeatrizHome() {
         </div>
       </section>
 
-      <section className="bg-cedro-white py-18 md:py-24">
+      <section className="border-y border-cedro-clay/10 bg-[#eee7dc] py-18 md:py-24">
         <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-10 px-5 md:grid-cols-[0.92fr_1fr] md:gap-16 md:px-8">
           <div>
             <SectionLabel>O problema que nos originou</SectionLabel>
@@ -87,7 +88,7 @@ export default function BeatrizHome() {
         </div>
       </section>
 
-      <section id="equipe" className="scroll-mt-24 bg-[#fbfaf7] py-20 md:py-24">
+      <section id="equipe" className="scroll-mt-24 bg-[#f8f4ec] py-20 md:py-24">
         <div className="mx-auto max-w-[1200px] px-5 md:px-8">
           <SectionLabel>Conheça nossa equipe</SectionLabel>
           <h2 className="mb-4 text-cedro-navy">Psicólogos preparados para cuidar da sua história.</h2>
@@ -106,7 +107,7 @@ export default function BeatrizHome() {
         </div>
       </section>
 
-      <section className="bg-[#fbfaf7] py-20 md:py-24">
+      <section className="border-y border-cedro-sage/25 bg-[#e9efee] py-20 md:py-24">
         <div className="mx-auto max-w-[1200px] px-5 md:px-8">
           <div className="mb-12 max-w-[760px]">
             <SectionLabel>Nossa abordagem</SectionLabel>
@@ -129,7 +130,7 @@ export default function BeatrizHome() {
         </div>
       </section>
 
-      <section className="bg-cedro-white py-20 md:py-24">
+      <section className="bg-[#f6f0e7] py-20 md:py-24">
         <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 px-5 md:px-8 lg:grid-cols-[0.8fr_1fr]">
           <div>
             <SectionLabel>Por que Cedro</SectionLabel>
@@ -152,7 +153,7 @@ export default function BeatrizHome() {
         </div>
       </section>
 
-      <section className="bg-[#fbfaf7] py-20 md:py-24">
+      <section className="border-t border-cedro-clay/12 bg-[#eae2d7] py-20 md:py-24">
         <div className="mx-auto max-w-[1200px] px-5 md:px-8">
           <div className="mb-12 max-w-[850px]">
             <SectionLabel>Para quem é a Cedro</SectionLabel>
