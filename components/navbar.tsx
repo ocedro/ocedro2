@@ -22,6 +22,7 @@ const menu: MenuItem[] = [
     items: [
       { href: '/lab', label: 'CedroLAB', description: 'Mentoria para psicólogos' },
       { href: '/fineias', label: 'Finéias', description: 'Para homens cristãos' },
+      { href: '/mentoria-neemias', label: 'Neemias', description: 'Mentoria individual' },
     ],
   },
 ];
