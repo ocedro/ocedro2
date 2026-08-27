@@ -74,7 +74,7 @@ export default function NeemiasPage() {
               { num: '0', label: 'outros na sala' },
             ].map((item, i) => (
               <div key={i} className="text-center">
-                <div className="font-serif font-bold mb-1" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', color: gold, lineHeight: 1 }}>
+                <div className="font-serif font-bold mb-1" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', color: '#b8962e', lineHeight: 1 }}>
                   {item.num}
                 </div>
                 <p className="text-xs text-cedro-sage tracking-wide mt-2">{item.label}</p>
@@ -104,7 +104,7 @@ export default function NeemiasPage() {
           </div>
 
           {/* Divider */}
-          <div className="mx-auto my-6 w-16 h-[1px]" style={{ background: goldBorder }} />
+          <div className="mx-auto my-6 w-16 h-[1px]" style={{ background: 'rgba(184,150,46,0.3)' }} />
 
           {/* À vista */}
           <p className="text-cedro-sage text-xs uppercase tracking-widest mb-3">À vista</p>
