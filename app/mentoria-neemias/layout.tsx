@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function NeemiasLayout({ children }: { children: React.ReactNode }) {
   return (
     <div style={{
-      '--color-cedro-red':       '#b8962e',
+      '--color-cedro-red':       '#C8C8C0',
       '--color-cedro-red-hover': '#9a7d25',
       '--color-cedro-white':     '#e8e0cc',
       '--color-cedro-light':     '#f0ebe0',
