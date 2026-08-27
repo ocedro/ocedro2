@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     siteName: 'Clínica Cedro',
     title: 'Mentoria Neemias — Atendimento individual com Leandro Carone',
     description: 'Mentoria individual para homens cristãos. Cinco encontros, atenção total, sem turma, sem grupo.',
-    images: [{ url: '/og-fineias.png', width: 1200, height: 630, alt: 'Mentoria Neemias' }],
+    images: [{ url: '/og-neemias.png', width: 1200, height: 630, alt: 'Mentoria Neemias — Com Leandro Carone' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Mentoria Neemias — Atendimento individual com Leandro Carone',
     description: 'Mentoria individual para homens cristãos. Cinco encontros, atenção total, sem turma.',
-    images: ['/og-fineias.png'],
+    images: ['/og-neemias.png'],
   },
 };
 
