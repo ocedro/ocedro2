@@ -2,10 +2,6 @@ import { Button } from '@/components/ui/button';
 
 const WA_LINK = 'https://wa.me/5519983133780?text=Quero%20saber%20mais%20sobre%20a%20Mentoria%20Neemias';
 
-const gold = '#b8962e';
-const goldFaint = 'rgba(184,150,46,0.15)';
-const goldBorder = 'rgba(184,150,46,0.3)';
-
 export default function NeemiasPage() {
   return (
     <div className="flex flex-col bg-cedro-black text-cedro-white">
@@ -16,11 +12,11 @@ export default function NeemiasPage() {
         <div className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse at 50% 60%, rgba(184,150,46,0.04) 0%, transparent 70%)' }} />
         {/* Linha dourada no topo */}
-        <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: `linear-gradient(90deg, transparent, ${gold}, transparent)` }} />
+        <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent, #b8962e, transparent)' }} />
 
         <div className="max-w-[860px] mx-auto px-5 md:px-8 relative z-10 w-full text-center">
           {/* Label */}
-          <p className="text-xs font-sans tracking-[0.4em] uppercase mb-10" style={{ color: gold }}>
+          <p className="text-xs font-sans tracking-[0.4em] uppercase mb-10" style={{ color: '#b8962e' }}>
             Mentoria Neemias
           </p>
 
@@ -36,33 +32,22 @@ export default function NeemiasPage() {
             href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 text-sm font-sans font-semibold tracking-[0.12em] uppercase transition-all"
-            style={{
-              border: `1px solid ${gold}`,
-              color: gold,
-              background: 'transparent',
-            }}
-            onMouseEnter={e => {
-              (e.currentTarget as HTMLElement).style.background = goldFaint;
-            }}
-            onMouseLeave={e => {
-              (e.currentTarget as HTMLElement).style.background = 'transparent';
-            }}
+            className="neemias-cta inline-flex items-center gap-3 px-8 py-4 text-sm font-sans font-semibold tracking-[0.12em] uppercase transition-all"
           >
             Tenho interesse na Mentoria Neemias
-            <span style={{ color: gold }}>→</span>
+            <span>→</span>
           </a>
         </div>
 
         {/* Linha dourada no rodapé da seção */}
-        <div className="absolute bottom-0 left-0 right-0 h-[1px]" style={{ background: `linear-gradient(90deg, transparent, ${goldBorder}, transparent)` }} />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent, rgba(184,150,46,0.3), transparent)' }} />
       </section>
 
       {/* SEÇÃO DESCRITIVA */}
       <section className="py-24 relative overflow-hidden" style={{ background: '#111111' }}>
         <div className="max-w-[720px] mx-auto px-5 md:px-8">
 
-          <p className="text-xs font-sans tracking-[0.4em] uppercase mb-12" style={{ color: gold }}>
+          <p className="text-xs font-sans tracking-[0.4em] uppercase mb-12" style={{ color: '#b8962e' }}>
             O processo
           </p>
 
@@ -82,7 +67,7 @@ export default function NeemiasPage() {
           </div>
 
           {/* Três pilares */}
-          <div className="grid grid-cols-3 gap-6 mt-16 pt-12" style={{ borderTop: `1px solid ${goldBorder}` }}>
+          <div className="grid grid-cols-3 gap-6 mt-16 pt-12" style={{ borderTop: '1px solid rgba(184,150,46,0.3)' }}>
             {[
               { num: '5', label: 'encontros individuais' },
               { num: '5', label: 'semanas de acompanhamento' },
@@ -105,7 +90,7 @@ export default function NeemiasPage() {
           style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(184,150,46,0.04) 0%, transparent 70%)' }} />
         <div className="max-w-[560px] mx-auto px-5 md:px-8 relative z-10 text-center">
 
-          <p className="text-xs font-sans tracking-[0.4em] uppercase mb-10" style={{ color: gold }}>
+          <p className="text-xs font-sans tracking-[0.4em] uppercase mb-10" style={{ color: '#b8962e' }}>
             Investimento
           </p>
 
@@ -124,7 +109,7 @@ export default function NeemiasPage() {
           {/* À vista */}
           <p className="text-cedro-sage text-xs uppercase tracking-widest mb-3">À vista</p>
           <div className="flex items-baseline justify-center gap-2 mb-4">
-            <span className="font-serif font-bold mb-10" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', lineHeight: 1, color: gold }}>
+            <span className="font-serif font-bold mb-10" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', lineHeight: 1, color: '#b8962e' }}>
               R$ 2.997
             </span>
           </div>
@@ -137,18 +122,7 @@ export default function NeemiasPage() {
             href={WA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 text-sm font-sans font-semibold tracking-[0.12em] uppercase transition-all"
-            style={{
-              border: `1px solid ${gold}`,
-              color: gold,
-              background: 'transparent',
-            }}
-            onMouseEnter={e => {
-              (e.currentTarget as HTMLElement).style.background = goldFaint;
-            }}
-            onMouseLeave={e => {
-              (e.currentTarget as HTMLElement).style.background = 'transparent';
-            }}
+            className="neemias-cta inline-flex items-center gap-3 px-8 py-4 text-sm font-sans font-semibold tracking-[0.12em] uppercase transition-all"
           >
             Tenho interesse na Mentoria Neemias
             <span>→</span>

@@ -75,3 +75,14 @@ p {
     display: block;
   }
 }
+
+
+/* Mentoria Neemias — botão CTA dourado */
+.neemias-cta {
+  border: 1px solid #b8962e;
+  color: #b8962e;
+  background: transparent;
+}
+.neemias-cta:hover {
+  background: rgba(184, 150, 46, 0.12);
+}
