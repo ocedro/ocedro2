@@ -56,8 +56,10 @@ export function Navbar() {
   const isLinkActive = (href: string) => pathname === href;
   const isGroupActive = (items: { href: string }[]) => items.some((i) => pathname === i.href);
 
+  const isDark = pathname?.startsWith('/fineias') || pathname?.startsWith('/mentoria-neemias');
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 py-4 bg-cedro-white/88 backdrop-blur-xl border-b border-cedro-clay/15 transition-all">
+    <nav className={`fixed top-0 left-0 right-0 z-50 py-4 backdrop-blur-xl border-b transition-all ${isDark ? 'bg-black/85 border-white/10' : 'bg-cedro-white/88 border-cedro-clay/15'}`}>
       <div className="max-w-[1200px] mx-auto px-5 md:px-8 flex items-center justify-between">
         <Link href="/" className="transition-opacity hover:opacity-90">
           <Logo />
@@ -73,7 +75,7 @@ export function Navbar() {
                     href={item.href}
                     className={cn(
                       'text-sm font-medium transition-colors relative py-1',
-                      isLinkActive(item.href) ? 'text-cedro-navy' : 'text-cedro-ink/65 hover:text-cedro-navy',
+                      isLinkActive(item.href) ? (isDark ? 'text-white' : 'text-cedro-navy') : (isDark ? 'text-white/60 hover:text-white' : 'text-cedro-ink/65 hover:text-cedro-navy'),
                       isLinkActive(item.href) && 'after:absolute after:bottom-[-4px] after:left-0 after:right-0 after:h-[2px] after:bg-cedro-red'
                     )}
                   >
@@ -93,7 +95,7 @@ export function Navbar() {
                   onClick={() => setOpenGroup(open ? null : item.label)}
                   className={cn(
                     'text-sm font-medium transition-colors relative py-1 flex items-center gap-1',
-                    active || open ? 'text-cedro-navy' : 'text-cedro-ink/65 hover:text-cedro-navy',
+                    active || open ? (isDark ? 'text-white' : 'text-cedro-navy') : (isDark ? 'text-white/60 hover:text-white' : 'text-cedro-ink/65 hover:text-cedro-navy'),
                     active && 'after:absolute after:bottom-[-4px] after:left-0 after:right-[18px] after:h-[2px] after:bg-cedro-red'
                   )}
                   aria-expanded={open}
@@ -142,7 +144,7 @@ export function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-cedro-navy"
+          className={`md:hidden ${isDark ? "text-white" : "text-cedro-navy"}`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
         >
@@ -158,7 +160,7 @@ export function Navbar() {
         )}
       >
         <button
-          className="absolute top-5 right-7 text-cedro-navy"
+          className={`absolute top-5 right-7 ${isDark ? "text-white" : "text-cedro-navy"}`}
           onClick={() => setIsOpen(false)}
           aria-label="Fechar menu"
         >
