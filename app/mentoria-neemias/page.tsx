@@ -1,133 +1,251 @@
-import { Button } from '@/components/ui/button';
+import type { CSSProperties } from 'react';
 
 const WA_LINK = 'https://wa.me/5519983133780?text=Quero%20saber%20mais%20sobre%20a%20Mentoria%20Neemias';
 
-export default function NeemiasPage() {
+const s = {
+  silver:      '#C8C8C0',
+  silverFaint: 'rgba(200,200,192,0.08)',
+  silverLine:  'rgba(200,200,192,0.18)',
+  white:       '#FFFFFF',
+  bg:          '#080808',
+  bgAlt:       '#0e0e0e',
+} as const;
+
+function WallDivider() {
+  // Blocos irregulares que remetem a alvenaria/muro
+  const blocks = [
+    { w: 72, h: 3 }, { w: 28, h: 3 }, { w: 52, h: 3 }, { w: 40, h: 3 },
+    { w: 60, h: 3 }, { w: 34, h: 3 }, { w: 48, h: 3 }, { w: 80, h: 3 },
+    { w: 36, h: 3 }, { w: 55, h: 3 }, { w: 42, h: 3 }, { w: 30, h: 3 },
+  ];
   return (
-    <div className="flex flex-col bg-cedro-black text-cedro-white">
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2px', maxWidth: '480px', opacity: 0.35 }}>
+      {blocks.map((b, i) => (
+        <div key={i} style={{ width: b.w, height: b.h, background: s.silver }} />
+      ))}
+    </div>
+  );
+}
 
-      {/* HERO */}
-      <section className="min-h-svh flex items-center pt-32 pb-20 relative overflow-hidden">
-        {/* Vignette sutil */}
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at 50% 60%, rgba(200,200,192,0.04) 0%, transparent 70%)' }} />
-        {/* Linha dourada no topo */}
-        <div className="absolute top-0 left-0 right-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent, #C8C8C0, transparent)' }} />
+export default function NeemiasPage() {
+  const label: CSSProperties = {
+    fontFamily: 'var(--font-inter, Inter, sans-serif)',
+    fontSize: '10px',
+    letterSpacing: '0.42em',
+    textTransform: 'uppercase',
+    color: s.silver,
+    display: 'block',
+    marginBottom: '0',
+  };
 
-        <div className="max-w-[860px] mx-auto px-5 md:px-8 relative z-10 w-full text-center">
-          {/* Label */}
-          <p className="text-xs font-sans tracking-[0.4em] uppercase mb-10" style={{ color: '#C8C8C0' }}>
-            Mentoria Neemias
-          </p>
+  return (
+    <div style={{ background: s.bg, color: s.white, fontFamily: 'var(--font-inter, Inter, sans-serif)' }}>
 
-          <h1 className="mb-8 text-cedro-white font-serif" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.15, fontWeight: 700 }}>
-            Você sabe que tem um problema.<br />O que você não tem é um plano.
+      {/* ── HERO ── */}
+      <section style={{
+        minHeight: '100svh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        padding: 'clamp(120px, 14vh, 180px) clamp(24px, 6vw, 96px) clamp(56px, 8vh, 96px)',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        {/* Número de fundo decorativo */}
+        <div style={{
+          position: 'absolute', top: '50%', right: 'clamp(24px, 5vw, 80px)',
+          transform: 'translateY(-50%)',
+          fontFamily: 'Georgia, serif',
+          fontSize: 'clamp(160px, 22vw, 340px)',
+          fontWeight: 700,
+          color: 'rgba(200,200,192,0.03)',
+          lineHeight: 1,
+          userSelect: 'none',
+          pointerEvents: 'none',
+          letterSpacing: '-0.05em',
+        }}>N</div>
+
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: '780px' }}>
+          <span style={{ ...label, marginBottom: '28px', display: 'block' }}>Mentoria Neemias</span>
+
+          <h1 style={{
+            fontFamily: 'Georgia, "Times New Roman", serif',
+            fontSize: 'clamp(2.6rem, 6.5vw, 5.2rem)',
+            fontWeight: 700,
+            lineHeight: 1.08,
+            letterSpacing: '-0.02em',
+            color: s.white,
+            margin: '0 0 32px',
+          }}>
+            Você sabe que tem<br />um problema.<br />
+            <span style={{ color: s.silver }}>O que falta é um plano.</span>
           </h1>
 
-          <p className="text-lg text-cedro-sage mb-12 max-w-[620px] mx-auto leading-relaxed">
-            A Mentoria Neemias é um processo individual, direto comigo. Cinco encontros para entender quem você é, resolver o que está te prendendo e sair com um plano concreto para a sua vida.
+          <p style={{
+            fontSize: 'clamp(0.95rem, 1.6vw, 1.1rem)',
+            color: 'rgba(200,200,192,0.6)',
+            lineHeight: 1.75,
+            maxWidth: '520px',
+            margin: '0 0 48px',
+          }}>
+            Atendimento individual, direto comigo. Cinco encontros para entender quem você é, resolver o que está te prendendo, e sair com um plano concreto para a sua vida.
           </p>
 
-          <a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="neemias-cta inline-flex items-center gap-3 px-8 py-4 text-sm font-sans font-semibold tracking-[0.12em] uppercase transition-all"
-          >
-            Tenho interesse na Mentoria Neemias
-            <span>→</span>
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="neemias-cta"
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: '12px',
+              padding: '14px 32px',
+              border: `1px solid ${s.silver}`,
+              color: s.silver,
+              fontSize: '11px',
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              textDecoration: 'none',
+              fontFamily: 'var(--font-inter, Inter, sans-serif)',
+              fontWeight: 600,
+              transition: 'background 0.2s',
+            }}>
+            Tenho interesse na Mentoria Neemias <span style={{ letterSpacing: 0 }}>→</span>
           </a>
         </div>
-
-        {/* Linha dourada no rodapé da seção */}
-        <div className="absolute bottom-0 left-0 right-0 h-[1px]" style={{ background: 'linear-gradient(90deg, transparent, rgba(200,200,192,0.25), transparent)' }} />
       </section>
 
-      {/* SEÇÃO DESCRITIVA */}
-      <section className="py-24 relative overflow-hidden" style={{ background: '#111111' }}>
-        <div className="max-w-[720px] mx-auto px-5 md:px-8">
+      {/* ── DIVISOR MURO ── */}
+      <div style={{
+        padding: '0 clamp(24px, 6vw, 96px)',
+        borderTop: `1px solid ${s.silverLine}`,
+        borderBottom: `1px solid ${s.silverLine}`,
+        paddingTop: '32px',
+        paddingBottom: '32px',
+      }}>
+        <WallDivider />
+      </div>
 
-          <p className="text-xs font-sans tracking-[0.4em] uppercase mb-12" style={{ color: '#C8C8C0' }}>
-            O processo
-          </p>
-
-          <div className="space-y-6 text-cedro-sage leading-relaxed" style={{ fontSize: '1.05rem' }}>
-            <p>
-              Cinco encontros individuais, uma hora cada. Ninguém mais na sala. Sem turma, sem grupo, sem data compartilhada com outros homens.
-            </p>
-            <p>
-              Entre os encontros, acompanhamento direto comigo durante cinco semanas.
-            </p>
-            <p>
-              Você sai com mais do que um plano escrito. Sai sabendo quem você é, para onde aponta a sua vida, e com as principais questões que estavam te prendendo enfrentadas de frente. Vício, identidade, estrutura. O que precisar.
-            </p>
-            <p className="font-semibold" style={{ color: '#e8e0cc' }}>
-              Não só teoria. Vou te ajudar a executar o que concluímos juntos nos encontros.
-            </p>
-          </div>
-
-          {/* Três pilares */}
-          <div className="grid grid-cols-3 gap-6 mt-16 pt-12" style={{ borderTop: '1px solid rgba(200,200,192,0.25)' }}>
+      {/* ── DESCRIÇÃO ── */}
+      <section style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gap: 'clamp(48px, 6vw, 96px)',
+        padding: 'clamp(64px, 10vh, 120px) clamp(24px, 6vw, 96px)',
+        background: s.bgAlt,
+      }}>
+        {/* Texto */}
+        <div>
+          <span style={{ ...label, marginBottom: '40px', display: 'block' }}>O processo</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {[
-              { num: '5', label: 'encontros individuais' },
-              { num: '5', label: 'semanas de acompanhamento' },
-              { num: '0', label: 'outros na sala' },
-            ].map((item, i) => (
-              <div key={i} className="text-center">
-                <div className="font-serif font-bold mb-1" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', color: '#C8C8C0', lineHeight: 1 }}>
-                  {item.num}
-                </div>
-                <p className="text-xs text-cedro-sage tracking-wide mt-2">{item.label}</p>
-              </div>
+              'Cinco encontros individuais, uma hora cada. Ninguém mais na sala.',
+              'Entre os encontros, acompanhamento direto comigo durante cinco semanas.',
+              'Vício, identidade, estrutura. O que precisar. Saímos com um plano escrito, revisado e pronto para executar.',
+              'Não só teoria. Vou te ajudar a executar o que concluímos juntos nos encontros.',
+            ].map((p, i) => (
+              <p key={i} style={{
+                fontSize: 'clamp(0.9rem, 1.4vw, 1rem)',
+                color: i === 3 ? s.white : 'rgba(200,200,192,0.58)',
+                lineHeight: 1.78,
+                margin: 0,
+                fontWeight: i === 3 ? 500 : 400,
+              }}>{p}</p>
             ))}
           </div>
         </div>
+
+        {/* Números */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0', borderLeft: `1px solid ${s.silverLine}`, paddingLeft: 'clamp(32px, 4vw, 64px)' }}>
+          {[
+            { num: '5', label: 'encontros individuais' },
+            { num: '5', label: 'semanas de acompanhamento' },
+            { num: '0', label: 'outros na sala' },
+          ].map((item, i) => (
+            <div key={i} style={{
+              padding: '28px 0',
+              borderBottom: i < 2 ? `1px solid ${s.silverLine}` : 'none',
+            }}>
+              <div style={{
+                fontFamily: 'Georgia, serif',
+                fontSize: 'clamp(3rem, 6vw, 5rem)',
+                fontWeight: 700,
+                color: s.silver,
+                lineHeight: 1,
+                letterSpacing: '-0.02em',
+              }}>{item.num}</div>
+              <p style={{ fontSize: '11px', color: 'rgba(200,200,192,0.45)', letterSpacing: '0.2em', textTransform: 'uppercase', margin: '8px 0 0' }}>{item.label}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* INVESTIMENTO + CTA */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none"
-          style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(200,200,192,0.04) 0%, transparent 70%)' }} />
-        <div className="max-w-[560px] mx-auto px-5 md:px-8 relative z-10 text-center">
+      {/* ── DIVISOR MURO 2 ── */}
+      <div style={{
+        padding: '28px clamp(24px, 6vw, 96px)',
+        borderTop: `1px solid ${s.silverLine}`,
+        borderBottom: `1px solid ${s.silverLine}`,
+        display: 'flex', justifyContent: 'flex-end',
+      }}>
+        <WallDivider />
+      </div>
 
-          <p className="text-xs font-sans tracking-[0.4em] uppercase mb-10" style={{ color: '#C8C8C0' }}>
-            Investimento
-          </p>
+      {/* ── PREÇO + CTA ── */}
+      <section style={{
+        padding: 'clamp(80px, 12vh, 140px) clamp(24px, 6vw, 96px)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        textAlign: 'center',
+        gap: '0',
+      }}>
+        <span style={{ ...label, marginBottom: '48px' }}>Investimento</span>
 
-          {/* Parcelado */}
-          <p className="text-cedro-sage text-xs uppercase tracking-widest mb-3">Parcelado</p>
-          <div className="flex items-baseline justify-center gap-2 mb-6">
-            <span className="text-cedro-sage text-base">12x</span>
-            <span className="font-serif font-bold text-cedro-white" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', lineHeight: 1 }}>
-              R$ 295
-            </span>
-          </div>
-
-          {/* Divider */}
-          <div className="mx-auto my-6 w-16 h-[1px]" style={{ background: 'rgba(200,200,192,0.25)' }} />
-
-          {/* À vista */}
-          <p className="text-cedro-sage text-xs uppercase tracking-widest mb-3">À vista</p>
-          <div className="flex items-baseline justify-center gap-2 mb-4">
-            <span className="font-serif font-bold mb-10" style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', lineHeight: 1, color: '#C8C8C0' }}>
-              R$ 2.997
-            </span>
-          </div>
-
-          <p className="text-cedro-sage text-sm mb-12">
-            5 encontros individuais + acompanhamento por WhatsApp durante todo o processo.
-          </p>
-
-          <a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="neemias-cta inline-flex items-center gap-3 px-8 py-4 text-sm font-sans font-semibold tracking-[0.12em] uppercase transition-all"
-          >
-            Tenho interesse na Mentoria Neemias
-            <span>→</span>
-          </a>
+        {/* Parcelado */}
+        <p style={{ fontSize: '11px', color: 'rgba(200,200,192,0.4)', letterSpacing: '0.25em', textTransform: 'uppercase', margin: '0 0 8px' }}>Parcelado</p>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '32px' }}>
+          <span style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)', color: 'rgba(200,200,192,0.5)' }}>12x</span>
+          <span style={{
+            fontFamily: 'Georgia, serif',
+            fontSize: 'clamp(3rem, 7vw, 5.5rem)',
+            fontWeight: 700,
+            color: s.white,
+            lineHeight: 1,
+            letterSpacing: '-0.02em',
+          }}>R$ 295</span>
         </div>
+
+        {/* Divider */}
+        <div style={{ width: '48px', height: '1px', background: s.silverLine, margin: '0 0 32px' }} />
+
+        {/* À vista */}
+        <p style={{ fontSize: '11px', color: 'rgba(200,200,192,0.4)', letterSpacing: '0.25em', textTransform: 'uppercase', margin: '0 0 8px' }}>À vista</p>
+        <div style={{ marginBottom: '16px' }}>
+          <span style={{
+            fontFamily: 'Georgia, serif',
+            fontSize: 'clamp(3rem, 7vw, 5.5rem)',
+            fontWeight: 700,
+            color: s.silver,
+            lineHeight: 1,
+            letterSpacing: '-0.02em',
+          }}>R$ 2.997</span>
+        </div>
+
+        <p style={{ fontSize: '13px', color: 'rgba(200,200,192,0.4)', margin: '0 0 56px', lineHeight: 1.6 }}>
+          5 encontros individuais + acompanhamento por WhatsApp durante todo o processo.
+        </p>
+
+        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="neemias-cta"
+          style={{
+            display: 'inline-flex', alignItems: 'center', gap: '12px',
+            padding: '16px 40px',
+            border: `1px solid ${s.silver}`,
+            color: s.silver,
+            fontSize: '11px',
+            letterSpacing: '0.22em',
+            textTransform: 'uppercase',
+            textDecoration: 'none',
+            fontFamily: 'var(--font-inter, Inter, sans-serif)',
+            fontWeight: 600,
+            transition: 'background 0.2s',
+          }}>
+          Tenho interesse na Mentoria Neemias <span style={{ letterSpacing: 0 }}>→</span>
+        </a>
       </section>
 
     </div>
