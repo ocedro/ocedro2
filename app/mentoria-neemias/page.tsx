@@ -165,7 +165,7 @@ export default function NeemiasPage() {
             maxWidth: '520px',
             margin: '0 0 48px',
           }}>
-            Atendimento individual, direto comigo. Cinco encontros para entender quem você é, resolver o que está te prendendo, e sair com um plano concreto para a sua vida.
+            Mentoria individual, diretamente comigo. Cinco encontros para entender quem você é, resolver o que está te prendendo, e sair com um plano concreto para a sua vida.
           </p>
 
           <CtaButton href={WA_LINK}>
@@ -265,11 +265,11 @@ export default function NeemiasPage() {
         <div style={{ marginBottom: '16px' }}>
           <span style={{
             fontFamily: 'Georgia, serif',
-            fontSize: 'clamp(3rem, 7vw, 5.5rem)',
-            fontWeight: 700,
+            fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
+            fontWeight: 600,
             color: s.silver,
             lineHeight: 1,
-            letterSpacing: '-0.02em',
+            letterSpacing: '-0.01em',
           }}>R$ 2.997</span>
         </div>
 
