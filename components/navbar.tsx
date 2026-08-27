@@ -56,7 +56,7 @@ export function Navbar() {
   const isLinkActive = (href: string) => pathname === href;
   const isGroupActive = (items: { href: string }[]) => items.some((i) => pathname === i.href);
 
-  const isDark = pathname?.startsWith('/fineias') || pathname?.startsWith('/mentoria-neemias');
+  const isDark = pathname?.startsWith('/fineias') || pathname?.startsWith('/mentoria-neemias') || pathname?.startsWith('/lab');
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 py-4 backdrop-blur-xl border-b transition-all ${isDark ? 'bg-black/85 border-white/10' : 'bg-cedro-white/88 border-cedro-clay/15'}`}>
