@@ -64,7 +64,7 @@ export function Navbar() {
   const navBg =
     isLab     ? 'bg-[#006ede]/90 border-[#006ede]/40' :
     isFineias ? 'bg-[#1e0c04]/90 border-[#c48f4b]/20' :
-    isNeemias ? 'bg-black/90 border-white/10' :
+    isNeemias ? 'bg-[#1a1a1a]/95 border-[#C8C8C0]/20' :
     'bg-cedro-white/88 border-cedro-clay/15';
 
   return (

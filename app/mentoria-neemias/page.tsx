@@ -9,21 +9,100 @@ const s = {
   white:       '#FFFFFF',
   bg:          '#080808',
   bgAlt:       '#0e0e0e',
+  orange:      '#E8612A',
+  orangeText:  '#FFFFFF',
 } as const;
 
-function WallDivider() {
-  // Blocos irregulares que remetem a alvenaria/muro
-  const blocks = [
-    { w: 72, h: 3 }, { w: 28, h: 3 }, { w: 52, h: 3 }, { w: 40, h: 3 },
-    { w: 60, h: 3 }, { w: 34, h: 3 }, { w: 48, h: 3 }, { w: 80, h: 3 },
-    { w: 36, h: 3 }, { w: 55, h: 3 }, { w: 42, h: 3 }, { w: 30, h: 3 },
-  ];
+// Silhueta SVG de muro de pedras irregulares
+function StoneWall({ flip = false }: { flip?: boolean }) {
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2px', maxWidth: '480px', opacity: 0.35 }}>
-      {blocks.map((b, i) => (
-        <div key={i} style={{ width: b.w, height: b.h, background: s.silver }} />
-      ))}
+    <div style={{
+      width: '100%',
+      opacity: 0.55,
+      transform: flip ? 'scaleX(-1)' : 'none',
+      lineHeight: 0,
+    }}>
+      <svg
+        viewBox="0 0 900 64"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ width: '100%', height: 'auto', display: 'block' }}
+        aria-hidden="true"
+      >
+        {/* Linha de pedras de baixo */}
+        <polygon points="0,64 0,42 18,38 18,64" fill="#C8C8C0" opacity="0.6"/>
+        <polygon points="18,64 18,38 52,34 60,64" fill="#C8C8C0" opacity="0.5"/>
+        <polygon points="60,64 52,34 98,36 104,64" fill="#C8C8C0" opacity="0.65"/>
+        <polygon points="104,64 98,36 130,32 148,64" fill="#C8C8C0" opacity="0.45"/>
+        <polygon points="148,64 130,32 178,30 190,64" fill="#C8C8C0" opacity="0.6"/>
+        <polygon points="190,64 178,30 224,34 238,64" fill="#C8C8C0" opacity="0.5"/>
+        <polygon points="238,64 224,34 264,32 280,64" fill="#C8C8C0" opacity="0.55"/>
+        <polygon points="280,64 264,32 316,36 330,64" fill="#C8C8C0" opacity="0.65"/>
+        <polygon points="330,64 316,36 358,30 372,64" fill="#C8C8C0" opacity="0.5"/>
+        <polygon points="372,64 358,30 404,34 420,64" fill="#C8C8C0" opacity="0.6"/>
+        <polygon points="420,64 404,34 448,32 465,64" fill="#C8C8C0" opacity="0.45"/>
+        <polygon points="465,64 448,32 495,36 512,64" fill="#C8C8C0" opacity="0.6"/>
+        <polygon points="512,64 495,36 540,30 556,64" fill="#C8C8C0" opacity="0.5"/>
+        <polygon points="556,64 540,30 588,34 604,64" fill="#C8C8C0" opacity="0.65"/>
+        <polygon points="604,64 588,34 634,32 650,64" fill="#C8C8C0" opacity="0.55"/>
+        <polygon points="650,64 634,32 682,36 698,64" fill="#C8C8C0" opacity="0.5"/>
+        <polygon points="698,64 682,36 726,30 744,64" fill="#C8C8C0" opacity="0.6"/>
+        <polygon points="744,64 726,30 772,34 790,64" fill="#C8C8C0" opacity="0.5"/>
+        <polygon points="790,64 772,34 820,32 836,64" fill="#C8C8C0" opacity="0.65"/>
+        <polygon points="836,64 820,32 868,36 884,64" fill="#C8C8C0" opacity="0.45"/>
+        <polygon points="884,64 868,36 900,38 900,64" fill="#C8C8C0" opacity="0.6"/>
+
+        {/* Linha de pedras de cima (escalonada) */}
+        <polygon points="10,42 10,22 40,18 55,38" fill="#C8C8C0" opacity="0.35"/>
+        <polygon points="40,38 40,18 82,14 95,36" fill="#C8C8C0" opacity="0.4"/>
+        <polygon points="82,36 82,14 124,16 136,34" fill="#C8C8C0" opacity="0.3"/>
+        <polygon points="124,34 124,16 164,12 178,32" fill="#C8C8C0" opacity="0.38"/>
+        <polygon points="164,32 164,12 210,16 222,30" fill="#C8C8C0" opacity="0.32"/>
+        <polygon points="210,30 210,16 252,12 264,30" fill="#C8C8C0" opacity="0.4"/>
+        <polygon points="252,30 252,12 296,14 308,32" fill="#C8C8C0" opacity="0.35"/>
+        <polygon points="296,32 296,14 340,10 354,30" fill="#C8C8C0" opacity="0.42"/>
+        <polygon points="340,30 340,10 382,14 396,30" fill="#C8C8C0" opacity="0.33"/>
+        <polygon points="382,30 382,14 426,10 440,28" fill="#C8C8C0" opacity="0.38"/>
+        <polygon points="426,28 426,10 468,14 482,30" fill="#C8C8C0" opacity="0.4"/>
+        <polygon points="468,30 468,14 512,10 524,28" fill="#C8C8C0" opacity="0.32"/>
+        <polygon points="512,28 512,10 554,14 568,30" fill="#C8C8C0" opacity="0.38"/>
+        <polygon points="554,30 554,14 598,10 612,28" fill="#C8C8C0" opacity="0.42"/>
+        <polygon points="598,28 598,10 640,14 654,30" fill="#C8C8C0" opacity="0.35"/>
+        <polygon points="640,30 640,14 684,10 698,28" fill="#C8C8C0" opacity="0.4"/>
+        <polygon points="684,28 684,10 726,14 740,30" fill="#C8C8C0" opacity="0.33"/>
+        <polygon points="726,30 726,14 770,10 784,30" fill="#C8C8C0" opacity="0.38"/>
+        <polygon points="770,30 770,10 814,14 828,28" fill="#C8C8C0" opacity="0.4"/>
+        <polygon points="814,28 814,10 856,12 870,28" fill="#C8C8C0" opacity="0.35"/>
+        <polygon points="856,28 856,12 900,16 900,30" fill="#C8C8C0" opacity="0.38"/>
+      </svg>
     </div>
+  );
+}
+
+function CtaButton({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="neemias-cta-orange"
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '12px',
+        padding: '16px 36px',
+        background: s.orange,
+        color: s.orangeText,
+        fontSize: '11px',
+        letterSpacing: '0.22em',
+        textTransform: 'uppercase',
+        textDecoration: 'none',
+        fontFamily: 'var(--font-inter, Inter, sans-serif)',
+        fontWeight: 700,
+        transition: 'opacity 0.2s',
+      }}
+    >
+      {children}
+    </a>
   );
 }
 
@@ -35,7 +114,6 @@ export default function NeemiasPage() {
     textTransform: 'uppercase',
     color: s.silver,
     display: 'block',
-    marginBottom: '0',
   };
 
   return (
@@ -51,14 +129,13 @@ export default function NeemiasPage() {
         position: 'relative',
         overflow: 'hidden',
       }}>
-        {/* Número de fundo decorativo */}
         <div style={{
           position: 'absolute', top: '50%', right: 'clamp(24px, 5vw, 80px)',
           transform: 'translateY(-50%)',
           fontFamily: 'Georgia, serif',
           fontSize: 'clamp(160px, 22vw, 340px)',
           fontWeight: 700,
-          color: 'rgba(200,200,192,0.03)',
+          color: 'rgba(200,200,192,0.025)',
           lineHeight: 1,
           userSelect: 'none',
           pointerEvents: 'none',
@@ -66,7 +143,7 @@ export default function NeemiasPage() {
         }}>N</div>
 
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '780px' }}>
-          <span style={{ ...label, marginBottom: '28px', display: 'block' }}>Mentoria Neemias</span>
+          <span style={{ ...label, marginBottom: '28px' }}>Mentoria Neemias</span>
 
           <h1 style={{
             fontFamily: 'Georgia, "Times New Roman", serif',
@@ -91,34 +168,15 @@ export default function NeemiasPage() {
             Atendimento individual, direto comigo. Cinco encontros para entender quem você é, resolver o que está te prendendo, e sair com um plano concreto para a sua vida.
           </p>
 
-          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="neemias-cta"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '12px',
-              padding: '14px 32px',
-              border: `1px solid ${s.silver}`,
-              color: s.silver,
-              fontSize: '11px',
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-              textDecoration: 'none',
-              fontFamily: 'var(--font-inter, Inter, sans-serif)',
-              fontWeight: 600,
-              transition: 'background 0.2s',
-            }}>
+          <CtaButton href={WA_LINK}>
             Tenho interesse na Mentoria Neemias <span style={{ letterSpacing: 0 }}>→</span>
-          </a>
+          </CtaButton>
         </div>
       </section>
 
-      {/* ── DIVISOR MURO ── */}
-      <div style={{
-        padding: '0 clamp(24px, 6vw, 96px)',
-        borderTop: `1px solid ${s.silverLine}`,
-        borderBottom: `1px solid ${s.silverLine}`,
-        paddingTop: '32px',
-        paddingBottom: '32px',
-      }}>
-        <WallDivider />
+      {/* ── MURO 1 ── */}
+      <div style={{ borderTop: `1px solid ${s.silverLine}`, paddingTop: '24px', overflow: 'hidden' }}>
+        <StoneWall />
       </div>
 
       {/* ── DESCRIÇÃO ── */}
@@ -129,9 +187,8 @@ export default function NeemiasPage() {
         padding: 'clamp(64px, 10vh, 120px) clamp(24px, 6vw, 96px)',
         background: s.bgAlt,
       }}>
-        {/* Texto */}
         <div>
-          <span style={{ ...label, marginBottom: '40px', display: 'block' }}>O processo</span>
+          <span style={{ ...label, marginBottom: '40px' }}>O processo</span>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {[
               'Cinco encontros individuais, uma hora cada. Ninguém mais na sala.',
@@ -141,7 +198,7 @@ export default function NeemiasPage() {
             ].map((p, i) => (
               <p key={i} style={{
                 fontSize: 'clamp(0.9rem, 1.4vw, 1rem)',
-                color: i === 3 ? s.white : 'rgba(200,200,192,0.58)',
+                color: i === 3 ? s.white : 'rgba(200,200,192,0.55)',
                 lineHeight: 1.78,
                 margin: 0,
                 fontWeight: i === 3 ? 500 : 400,
@@ -150,8 +207,7 @@ export default function NeemiasPage() {
           </div>
         </div>
 
-        {/* Números */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0', borderLeft: `1px solid ${s.silverLine}`, paddingLeft: 'clamp(32px, 4vw, 64px)' }}>
+        <div style={{ borderLeft: `1px solid ${s.silverLine}`, paddingLeft: 'clamp(32px, 4vw, 64px)' }}>
           {[
             { num: '5', label: 'encontros individuais' },
             { num: '5', label: 'semanas de acompanhamento' },
@@ -169,20 +225,15 @@ export default function NeemiasPage() {
                 lineHeight: 1,
                 letterSpacing: '-0.02em',
               }}>{item.num}</div>
-              <p style={{ fontSize: '11px', color: 'rgba(200,200,192,0.45)', letterSpacing: '0.2em', textTransform: 'uppercase', margin: '8px 0 0' }}>{item.label}</p>
+              <p style={{ fontSize: '11px', color: 'rgba(200,200,192,0.4)', letterSpacing: '0.2em', textTransform: 'uppercase', margin: '8px 0 0' }}>{item.label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── DIVISOR MURO 2 ── */}
-      <div style={{
-        padding: '28px clamp(24px, 6vw, 96px)',
-        borderTop: `1px solid ${s.silverLine}`,
-        borderBottom: `1px solid ${s.silverLine}`,
-        display: 'flex', justifyContent: 'flex-end',
-      }}>
-        <WallDivider />
+      {/* ── MURO 2 (espelhado) ── */}
+      <div style={{ borderBottom: `1px solid ${s.silverLine}`, paddingBottom: '24px', overflow: 'hidden' }}>
+        <StoneWall flip />
       </div>
 
       {/* ── PREÇO + CTA ── */}
@@ -192,14 +243,12 @@ export default function NeemiasPage() {
         flexDirection: 'column',
         alignItems: 'center',
         textAlign: 'center',
-        gap: '0',
       }}>
         <span style={{ ...label, marginBottom: '48px' }}>Investimento</span>
 
-        {/* Parcelado */}
         <p style={{ fontSize: '11px', color: 'rgba(200,200,192,0.4)', letterSpacing: '0.25em', textTransform: 'uppercase', margin: '0 0 8px' }}>Parcelado</p>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '32px' }}>
-          <span style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)', color: 'rgba(200,200,192,0.5)' }}>12x</span>
+          <span style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)', color: 'rgba(200,200,192,0.45)' }}>12x</span>
           <span style={{
             fontFamily: 'Georgia, serif',
             fontSize: 'clamp(3rem, 7vw, 5.5rem)',
@@ -210,10 +259,8 @@ export default function NeemiasPage() {
           }}>R$ 295</span>
         </div>
 
-        {/* Divider */}
         <div style={{ width: '48px', height: '1px', background: s.silverLine, margin: '0 0 32px' }} />
 
-        {/* À vista */}
         <p style={{ fontSize: '11px', color: 'rgba(200,200,192,0.4)', letterSpacing: '0.25em', textTransform: 'uppercase', margin: '0 0 8px' }}>À vista</p>
         <div style={{ marginBottom: '16px' }}>
           <span style={{
@@ -230,22 +277,9 @@ export default function NeemiasPage() {
           5 encontros individuais + acompanhamento por WhatsApp durante todo o processo.
         </p>
 
-        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="neemias-cta"
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: '12px',
-            padding: '16px 40px',
-            border: `1px solid ${s.silver}`,
-            color: s.silver,
-            fontSize: '11px',
-            letterSpacing: '0.22em',
-            textTransform: 'uppercase',
-            textDecoration: 'none',
-            fontFamily: 'var(--font-inter, Inter, sans-serif)',
-            fontWeight: 600,
-            transition: 'background 0.2s',
-          }}>
+        <CtaButton href={WA_LINK}>
           Tenho interesse na Mentoria Neemias <span style={{ letterSpacing: 0 }}>→</span>
-        </a>
+        </CtaButton>
       </section>
 
     </div>

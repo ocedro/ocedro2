@@ -77,12 +77,11 @@ p {
 }
 
 
-/* Mentoria Neemias — botão CTA dourado */
-.neemias-cta {
-  border: 1px solid #C8C8C0;
-  color: #C8C8C0;
-  background: transparent;
+/* Mentoria Neemias — botão CTA laranja */
+.neemias-cta-orange {
+  background: #E8612A;
+  color: #FFFFFF;
 }
-.neemias-cta:hover {
-  background: rgba(184, 150, 46, 0.12);
+.neemias-cta-orange:hover {
+  opacity: 0.88;
 }
