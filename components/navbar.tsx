@@ -62,16 +62,16 @@ export function Navbar() {
   const isDark     = isLab || isFineias || isNeemias;
 
   const navBg =
-    isLab     ? 'bg-[#006ede]/90 border-[#006ede]/40' :
+    isLab     ? 'bg-black/90 border-white/10' :
     isFineias ? 'bg-[#1e0c04]/90 border-[#c48f4b]/20' :
-    isNeemias ? 'bg-[#1a1a1a]/95 border-[#C8C8C0]/20' :
+    isNeemias ? 'bg-black/90 border-white/10' :
     'bg-cedro-white/88 border-cedro-clay/15';
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 py-4 backdrop-blur-xl border-b transition-all ${navBg}`}>
       <div className="max-w-[1200px] mx-auto px-5 md:px-8 flex items-center justify-between">
         <Link href="/" className="transition-opacity hover:opacity-90">
-          <Logo />
+          <Logo white={isDark} />
         </Link>
 
         {/* Desktop Links */}
