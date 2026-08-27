@@ -127,6 +127,173 @@ a{color:inherit;text-decoration:none}
 @media(max-width:480px){
   .hero{padding:44px 18px 56px}
 }
+
+/* ===== SCROLL REVEAL ===== */
+.sa{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.sa.on{opacity:1;transform:translateY(0)}
+
+/* ===== SECTION BASE ===== */
+.section{padding:clamp(60px,10vw,104px) 20px}
+.section-inner{max-width:780px;margin:0 auto}
+.eyebrow{
+  display:block;
+  font-family:var(--head);
+  font-size:11.5px;
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  color:var(--orange);
+  margin-bottom:16px;
+  font-weight:600;
+}
+.sec-title{
+  font-family:var(--head);
+  font-size:clamp(1.6rem,4.6vw,2.4rem);
+  font-weight:700;
+  text-transform:uppercase;
+  line-height:1.15;
+  letter-spacing:.01em;
+  margin-bottom:clamp(20px,4vw,32px);
+  color:var(--text);
+}
+
+/* ===== CARTA (por que eu decidi gravar) ===== */
+.letter{background:var(--black2)}
+.letter-grid{display:grid;grid-template-columns:180px 1fr;gap:clamp(28px,5vw,52px);align-items:start;max-width:820px;margin:0 auto}
+.letter-photo{
+  width:100%;aspect-ratio:3/4;border-radius:4px;
+  border:1px dashed var(--bd);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted2);font-size:11.5px;text-align:center;padding:16px;line-height:1.5;
+  background:linear-gradient(160deg,rgba(232,57,27,.08),rgba(255,107,53,.04));
+}
+.letter-text p{
+  font-size:clamp(1rem,2.4vw,1.1rem);
+  color:var(--muted);
+  line-height:1.85;
+  margin-bottom:20px;
+}
+.letter-text p:last-of-type{margin-bottom:0;color:var(--text);font-weight:500}
+.letter-sign{margin-top:26px;font-family:var(--head);letter-spacing:.08em;text-transform:uppercase;font-size:12.5px;color:var(--peach)}
+
+@media(max-width:720px){
+  .letter-grid{grid-template-columns:1fr}
+  .letter-photo{max-width:200px;margin:0 auto}
+}
+
+/* ===== MECANISMO ===== */
+.mechanism-intro{font-size:clamp(1rem,2.3vw,1.1rem);color:var(--muted);line-height:1.8;margin-bottom:clamp(32px,5vw,44px)}
+.angles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.angle{
+  background:var(--black2);
+  border:1px solid var(--bd);
+  border-top:2px solid var(--orange);
+  padding:26px 22px;
+}
+.angle-num{font-family:var(--head);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.angle h3{font-family:var(--head);font-size:16.5px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:12px;color:var(--text)}
+.angle p{font-size:14px;color:var(--muted);line-height:1.75}
+.mechanism-close{
+  margin-top:clamp(28px,5vw,40px);font-size:clamp(1rem,2.3vw,1.05rem);
+  color:var(--text);font-weight:500;line-height:1.8;
+  padding-top:24px;border-top:1px solid var(--bd);
+}
+
+@media(max-width:820px){.angles{grid-template-columns:1fr}}
+
+/* ===== CURRICULO ===== */
+.curr-item{
+  display:grid;grid-template-columns:56px 1fr;gap:18px;
+  padding:22px 0;border-bottom:1px solid var(--bd);
+}
+.curr-item:first-child{padding-top:0}
+.curr-num{font-family:var(--head);font-size:clamp(1.3rem,3vw,1.6rem);font-weight:600;color:transparent;-webkit-text-stroke:1px var(--orange)}
+.curr-item h3{font-family:var(--head);font-size:14.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--peach);margin-bottom:8px}
+.curr-item p{font-size:14px;color:var(--muted);line-height:1.75}
+.curr-stat{
+  margin-top:32px;text-align:center;padding:18px 20px;
+  background:linear-gradient(90deg,rgba(232,57,27,.14),rgba(255,107,53,.08));
+  border:1px solid rgba(255,107,53,.25);
+  font-family:var(--head);text-transform:uppercase;letter-spacing:.03em;font-size:13.5px;color:var(--text)
+}
+
+/* ===== INCLUSOS / BONUS ===== */
+.includes-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:clamp(36px,5vw,44px)}
+.includes-list li{display:flex;gap:14px;align-items:flex-start;font-size:14.5px;color:var(--muted);line-height:1.7}
+.includes-list li::before{
+  content:'✓';flex-shrink:0;width:21px;height:21px;border-radius:50%;
+  background:linear-gradient(135deg,var(--red),var(--orange));
+  color:#0a0605;font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.bonus-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.bonus-card{background:var(--black2);border:1px solid var(--bd);padding:24px 22px}
+.bonus-tag{
+  display:inline-block;font-family:var(--head);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:#0a0605;background:linear-gradient(90deg,var(--peach),var(--orange));
+  padding:5px 11px;margin-bottom:14px;
+}
+.bonus-card h3{font-size:16.5px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.4}
+.bonus-card p{font-size:14px;color:var(--muted);line-height:1.75}
+.bonus-card em{color:var(--peach);font-style:italic}
+
+@media(max-width:640px){.bonus-grid{grid-template-columns:1fr}}
+
+/* ===== PRA QUEM ===== */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--bd)}
+.who-col{padding:clamp(26px,4vw,34px)}
+.who-col.yes{border-right:1px solid var(--bd)}
+.who-label{font-family:var(--head);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+.who-col.yes .who-label{color:var(--peach)}
+.who-col.no .who-label{color:var(--muted)}
+.who-col p{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:14px}
+.who-col.yes p{color:rgba(240,237,230,.8)}
+.who-col p:last-child{margin-bottom:0}
+
+@media(max-width:720px){
+  .who-grid{grid-template-columns:1fr}
+  .who-col.yes{border-right:none;border-bottom:1px solid var(--bd)}
+}
+
+/* ===== OFERTA ===== */
+.offer{background:linear-gradient(180deg,var(--black2),var(--black));text-align:center}
+.offer-box{max-width:480px;margin:0 auto;border:1px solid rgba(255,107,53,.3);padding:clamp(36px,6vw,46px) clamp(22px,5vw,38px)}
+.offer-price{font-family:var(--head);font-weight:700;font-size:clamp(2rem,6.5vw,2.7rem);color:var(--text);margin-bottom:6px}
+.offer-price .grad{background:linear-gradient(90deg,var(--peach),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+.offer-alt{font-size:13.5px;color:var(--muted);margin-bottom:26px}
+.offer-guarantee{font-size:13px;color:var(--muted);margin:22px 0 26px;padding-top:20px;border-top:1px solid var(--bd)}
+
+/* ===== FAQ ===== */
+.faq-item{border-bottom:1px solid var(--bd)}
+.faq-item summary{
+  list-style:none;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:20px 2px;font-family:var(--head);font-size:14.5px;text-transform:uppercase;letter-spacing:.01em;color:var(--text);
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:20px;color:var(--orange);flex-shrink:0;transition:transform .25s ease}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{font-size:14px;color:var(--muted);line-height:1.8;padding:0 2px 20px}
+
+/* ===== FOOTER ===== */
+footer{background:#060606;border-top:1px solid var(--bd);padding:22px 20px;text-align:center;font-size:11px;color:var(--muted2);letter-spacing:.05em}
+
+/* ===== STICKY ===== */
+.sticky{
+  position:fixed;bottom:0;left:0;right:0;z-index:800;
+  background:rgba(10,10,10,.97);border-top:1px solid rgba(255,107,53,.22);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  padding:12px 20px calc(12px + env(safe-area-inset-bottom));
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  transform:translateY(100%);transition:transform .3s ease;
+}
+.sticky.up{transform:translateY(0)}
+.sticky-label{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.sticky-price{font-family:var(--head);font-size:16px;color:var(--text);font-weight:600}
+.sticky-btn{
+  background:linear-gradient(90deg,var(--red),var(--orange));color:#0a0605;
+  font-family:var(--head);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;
+  padding:12px 20px;white-space:nowrap;
+}
 </style>
 </head>
 <body>
@@ -141,6 +308,209 @@ a{color:inherit;text-decoration:none}
     <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="cta-primary">Quero a formação</a>
   </div>
 </section>
+
+<!-- ===== CARTA ===== -->
+<section class="section letter">
+  <div class="section-inner letter-grid sa">
+    <div class="letter-photo">Foto do Leandro<br>(a enviar)</div>
+    <div class="letter-text">
+      <span class="eyebrow">Por que eu decidi gravar isso</span>
+      <p>Decidi gravar essa formação porque entendo que preciso multiplicar o que aprendi ao longo da minha trajetória e do meu tempo de atendimento.</p>
+      <p>Eu não acredito que alguém vença a pornografia com um curso gravado, sozinho. Pode até acontecer, mas é a exceção. Não vou fazer o que eu não acredito.</p>
+      <p>A pergunta que fiquei martelando foi outra: qual a forma de ajudar mais gente do que eu consigo alcançar sozinho, em atendimento individual, sem fingir que um vídeo substitui alguém do lado da pessoa?</p>
+      <p>A resposta que cheguei foi formar profissionais que fazem o que eu faço. Gente que já está na trincheira, atendendo, aconselhando, multiplicando o que funciona pra quem precisa.</p>
+      <p>Foi por isso que resolvi gravar.</p>
+      <div class="letter-sign">— Leandro Carone</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MECANISMO ===== -->
+<section class="section">
+  <div class="section-inner sa">
+    <span class="eyebrow">O mecanismo</span>
+    <p class="mechanism-intro">Inimigo Íntimo ensina você a enxergar o comportamento por três ângulos que a maioria dos protocolos de aconselhamento nunca cruza.</p>
+    <div class="angles">
+      <div class="angle">
+        <div class="angle-num">01</div>
+        <h3>Ângulo biológico</h3>
+        <p>O que a exposição repetida faz no circuito de recompensa. Por que o cérebro pede mais estímulo pra sentir o mesmo prazer de antes. Por que "força de vontade" sozinha não desarma um caminho neural já cavado.</p>
+      </div>
+      <div class="angle">
+        <div class="angle-num">02</div>
+        <h3>Ângulo formativo</h3>
+        <p>Como o hábito se instala na estrutura da pessoa, não só no comportamento que aparece. Por que confrontar apenas o que se vê produz alívio de uma semana e recaída no mês seguinte.</p>
+      </div>
+      <div class="angle">
+        <div class="angle-num">03</div>
+        <h3>Ângulo espiritual e existencial</h3>
+        <p>Qual ídolo aquele comportamento está protegendo. Qual vazio ele anestesia. O que a pessoa está tentando resolver sozinha, sem saber, toda vez que abre o celular.</p>
+      </div>
+    </div>
+    <p class="mechanism-close">Cruzando os três ângulos, o diagnóstico deixa de ser genérico e passa a apontar pra a raiz específica daquele paciente.</p>
+  </div>
+</section>
+
+<!-- ===== CURRICULO ===== -->
+<section class="section" style="background:var(--black2)">
+  <div class="section-inner sa">
+    <span class="eyebrow">O que você aprende, módulo por módulo</span>
+    <div class="curriculum-list">
+      <div class="curr-item">
+        <div class="curr-num">00</div>
+        <div>
+          <h3>Abertura</h3>
+          <p>Como pensar o caso antes de tratar. O erro de entrada que a maioria dos profissionais comete na primeira sessão.</p>
+        </div>
+      </div>
+      <div class="curr-item">
+        <div class="curr-num">01</div>
+        <div>
+          <h3>Módulo 1 — Base biológica</h3>
+          <p>O que a dependência faz no cérebro, por que a tolerância aumenta, por que a abstinência dói fisicamente antes de doer emocionalmente, e um mapa de aplicação clínica pra você usar em consultório.</p>
+        </div>
+      </div>
+      <div class="curr-item">
+        <div class="curr-num">02</div>
+        <div>
+          <h3>Módulo 2 — Formação da estrutura interior</h3>
+          <p>Como o comportamento deixa de ser escolha isolada e vira padrão instalado. A virada que muda como você conduz a sessão inteira.</p>
+        </div>
+      </div>
+      <div class="curr-item">
+        <div class="curr-num">03</div>
+        <div>
+          <h3>Módulo 3 — Intervenção diferenciada</h3>
+          <p>O protocolo completo por perfil de raiz: sequência de confissão, a conversa com o cônjuge, o ciclo de recaída, o desafio de 40 dias.</p>
+        </div>
+      </div>
+      <div class="curr-item">
+        <div class="curr-num">04</div>
+        <div>
+          <h3>Módulo 4 — As armadilhas que mantêm o paciente preso</h3>
+          <p>As fases de defesa cognitiva que fazem alguém minimizar a própria recaída, e o segundo caso completo, com raiz oposta ao primeiro, pra fechar o método com os dois extremos na mão.</p>
+        </div>
+      </div>
+      <div class="curr-item" style="border-bottom:none">
+        <div class="curr-num">05</div>
+        <div>
+          <h3>Encerramento</h3>
+          <p>Conversa aberta com o Leandro sobre o que fica depois do curso.</p>
+        </div>
+      </div>
+    </div>
+    <div class="curr-stat">38 aulas · 4 módulos · conteúdo aplicável e direto</div>
+  </div>
+</section>
+
+<!-- ===== INCLUSOS / BONUS ===== -->
+<section class="section">
+  <div class="section-inner sa">
+    <span class="eyebrow">Tudo o que vem junto</span>
+    <ul class="includes-list">
+      <li>42 apostilas em PDF, uma por aula mais uma por módulo</li>
+      <li>Guia da Mulher, pra quem atende o cônjuge do paciente</li>
+      <li>Ferramentas práticas para você aplicar em seus atendimentos</li>
+    </ul>
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <span class="bonus-tag">Bônus 1</span>
+        <h3>Leitura comentada</h3>
+        <p>Leitura comentada do livro <em>Curando as Feridas do Vício Sexual</em>, de Mark R. Laaser.</p>
+      </div>
+      <div class="bonus-card">
+        <span class="bonus-tag">Bônus 2</span>
+        <h3>Laboratório de Casos</h3>
+        <p>Dez sessões mensais ao vivo no primeiro ano. Você submete um caso real (sem identificar o paciente), o Leandro seleciona e analisa ao vivo, com todo o grupo assistindo. Sessões gravadas e arquivadas pra você rever quando quiser.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRA QUEM ===== -->
+<section class="section" style="background:var(--black2)">
+  <div class="section-inner sa">
+    <div class="who-grid">
+      <div class="who-col yes">
+        <div class="who-label">Pra quem é</div>
+        <p>Você que atende ou cuida de pessoas presas no vício em pornografia e sente que precisa se capacitar mais.</p>
+        <p>Psicólogo. Pastor. Conselheiro. Terapeuta. E também aquele irmão sem título nenhum que já é procurado pela comunidade quando alguém precisa de ajuda com isso, e quer parar de responder com "bloqueie o conteúdo e ore mais" porque sabe que não segura.</p>
+      </div>
+      <div class="who-col no">
+        <div class="who-label">Pra quem não é</div>
+        <p>Você quer uma lista de técnicas pra aplicar sem entender por que funcionam. Esse curso entrega fundamento antes de ferramenta, e cobra tempo de estudo pra isso.</p>
+        <p>Você está preso em pornografia agora e busca algo pra se libertar sozinho. Essa formação foi construída pra formar quem ajuda, não quem está precisando de ajuda direta agora. Se você assistir mesmo assim, vai entender a fundo como o vício age no cérebro e na vida, e sai com ferramenta real que ajuda bastante. Só que resolver o seu caso não é o objetivo central do curso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OFERTA ===== -->
+<section class="section offer">
+  <div class="section-inner sa">
+    <div class="offer-box">
+      <div class="offer-price"><span class="grad">12x de R$ 49,70</span></div>
+      <div class="offer-alt">ou R$ 497 à vista</div>
+      <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="cta-primary">Quero a formação</a>
+      <div class="offer-guarantee">7 dias para assistir e pedir reembolso se decidir que não é para você.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" style="background:var(--black2)">
+  <div class="section-inner sa">
+    <span class="eyebrow">Perguntas frequentes</span>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Preciso ter formação clínica pra fazer o curso?</summary>
+        <p>O curso foi construído pro público que já atende gente nessa área, com ou sem diploma clínico formal: psicólogo, pastor, conselheiro, terapeuta.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quanto tempo leva pra terminar?</summary>
+        <p>São 12h25min de aula, distribuídas em 38 aulas ao longo de quatro módulos. Você define o ritmo, mas dá pra terminar em poucas semanas assistindo um pouco por dia.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Funciona pra quem atende só presencialmente, sem estrutura de clínica?</summary>
+        <p>Sim. A formação foi pensada pra você ter a capacidade de ajudar pessoas independente do local e da estrutura.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Eu mesmo luto com pornografia. O curso serve pra eu resolver isso primeiro?</summary>
+        <p>Essa formação foi pensada pra quem ajuda, não pra quem está precisando de ajuda agora. Ainda assim, se você assistir, vai entender a fundo como o vício trabalha no cérebro e na vida, e sai com ferramenta real que ajuda bastante. Isso é um efeito colateral bom, não o objetivo do curso.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Inimigo Íntimo. Todos os direitos reservados.
+</footer>
+
+<div class="sticky" id="sticky">
+  <div>
+    <div class="sticky-label">Inimigo Íntimo</div>
+    <div class="sticky-price">R$ 497 à vista</div>
+  </div>
+  <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="sticky-btn">Quero a formação</a>
+</div>
+
+<script>
+(function(){
+  var sticky=document.getElementById('sticky');
+  var shown=false;
+  window.addEventListener('scroll',function(){
+    var show=window.scrollY>window.innerHeight*0.8;
+    if(show&&!shown){sticky.classList.add('up');shown=true;}
+    if(!show&&shown){sticky.classList.remove('up');shown=false;}
+  },{passive:true});
+
+  var sas=document.querySelectorAll('.sa');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on');});
+  },{threshold:.08,rootMargin:'0px 0px -24px 0px'});
+  sas.forEach(function(el){io.observe(el);});
+})();
+</script>
 
 </body>
 </html>
