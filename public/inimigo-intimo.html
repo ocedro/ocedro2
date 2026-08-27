@@ -202,11 +202,16 @@ a{color:inherit;text-decoration:none}
 
 /* ===== CURRICULO ===== */
 .curr-item{
-  display:grid;grid-template-columns:56px 1fr;gap:18px;
+  display:grid;grid-template-columns:72px 1fr;gap:18px;align-items:start;
   padding:22px 0;border-bottom:1px solid var(--bd);
 }
 .curr-item:first-child{padding-top:0}
-.curr-num{font-family:var(--head);font-size:clamp(1.3rem,3vw,1.6rem);font-weight:600;color:transparent;-webkit-text-stroke:1px var(--orange)}
+.curr-num{
+  width:72px;height:90px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--head);font-size:1.5rem;font-weight:600;color:transparent;-webkit-text-stroke:1px var(--orange);
+  border:1px solid var(--bd);
+}
+.curr-cover{width:72px;height:90px;object-fit:cover;border-radius:3px;border:1px solid var(--bd)}
 .curr-item h3{font-family:var(--head);font-size:14.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--peach);margin-bottom:8px}
 .curr-item p{font-size:14px;color:var(--muted);line-height:1.75}
 .curr-stat{
@@ -364,28 +369,28 @@ footer{background:#060606;border-top:1px solid var(--bd);padding:22px 20px;text-
         </div>
       </div>
       <div class="curr-item">
-        <div class="curr-num">01</div>
+        <img class="curr-cover" src="/inimigo-intimo/modulo-1-biologico.jpg" alt="Capa do Módulo 1 — Biológico">
         <div>
           <h3>Módulo 1 — Base biológica</h3>
           <p>O que a dependência faz no cérebro, por que a tolerância aumenta, por que a abstinência dói fisicamente antes de doer emocionalmente, e um mapa de aplicação clínica pra você usar em consultório.</p>
         </div>
       </div>
       <div class="curr-item">
-        <div class="curr-num">02</div>
+        <img class="curr-cover" src="/inimigo-intimo/modulo-2-mente-coracao.jpg" alt="Capa do Módulo 2 — Mente e Coração">
         <div>
           <h3>Módulo 2 — Formação da estrutura interior</h3>
           <p>Como o comportamento deixa de ser escolha isolada e vira padrão instalado. A virada que muda como você conduz a sessão inteira.</p>
         </div>
       </div>
       <div class="curr-item">
-        <div class="curr-num">03</div>
+        <img class="curr-cover" src="/inimigo-intimo/modulo-3-intervencao.jpg" alt="Capa do Módulo 3 — Intervenção">
         <div>
           <h3>Módulo 3 — Intervenção diferenciada</h3>
           <p>O protocolo completo por perfil de raiz: sequência de confissão, a conversa com o cônjuge, o ciclo de recaída, o desafio de 40 dias.</p>
         </div>
       </div>
       <div class="curr-item">
-        <div class="curr-num">04</div>
+        <img class="curr-cover" src="/inimigo-intimo/modulo-4-profissional-cadeira.jpg" alt="Capa do Módulo 4 — Profissional na Cadeira">
         <div>
           <h3>Módulo 4 — As armadilhas que mantêm o paciente preso</h3>
           <p>As fases de defesa cognitiva que fazem alguém minimizar a própria recaída, e o segundo caso completo, com raiz oposta ao primeiro, pra fechar o método com os dois extremos na mão.</p>
