@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import Image from 'next/image';
 
 const WA_LINK = 'https://wa.me/5519983133780?text=Quero%20saber%20mais%20sobre%20a%20Mentoria%20Neemias';
 
@@ -122,32 +123,25 @@ export default function NeemiasPage() {
       {/* ── HERO ── */}
       <section style={{
         minHeight: '100svh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-end',
-        padding: 'clamp(120px, 14vh, 180px) clamp(24px, 6vw, 96px) clamp(56px, 8vh, 96px)',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
         position: 'relative',
         overflow: 'hidden',
       }}>
+        {/* Coluna esquerda — texto */}
         <div style={{
-          position: 'absolute', top: '50%', right: 'clamp(24px, 5vw, 80px)',
-          transform: 'translateY(-50%)',
-          fontFamily: 'Georgia, serif',
-          fontSize: 'clamp(160px, 22vw, 340px)',
-          fontWeight: 700,
-          color: 'rgba(200,200,192,0.025)',
-          lineHeight: 1,
-          userSelect: 'none',
-          pointerEvents: 'none',
-          letterSpacing: '-0.05em',
-        }}>N</div>
-
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: '780px' }}>
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
+          padding: 'clamp(120px, 14vh, 180px) clamp(32px, 5vw, 80px) clamp(56px, 8vh, 96px)',
+          position: 'relative',
+          zIndex: 1,
+        }}>
           <span style={{ ...label, marginBottom: '28px' }}>Mentoria Neemias</span>
 
           <h1 style={{
             fontFamily: 'Georgia, "Times New Roman", serif',
-            fontSize: 'clamp(2.6rem, 6.5vw, 5.2rem)',
+            fontSize: 'clamp(2rem, 4.5vw, 4.2rem)',
             fontWeight: 700,
             lineHeight: 1.08,
             letterSpacing: '-0.02em',
@@ -159,18 +153,38 @@ export default function NeemiasPage() {
           </h1>
 
           <p style={{
-            fontSize: 'clamp(0.95rem, 1.6vw, 1.1rem)',
+            fontSize: 'clamp(0.9rem, 1.4vw, 1rem)',
             color: 'rgba(200,200,192,0.6)',
             lineHeight: 1.75,
-            maxWidth: '520px',
+            maxWidth: '440px',
             margin: '0 0 48px',
           }}>
             Mentoria individual, diretamente comigo. Cinco encontros para entender quem você é, resolver o que está te prendendo, e sair com um plano concreto para a sua vida.
           </p>
 
           <CtaButton href={WA_LINK}>
-            Tenho interesse na Mentoria Neemias <span style={{ letterSpacing: 0 }}>→</span>
+            Tenho interesse <span style={{ letterSpacing: 0 }}>→</span>
           </CtaButton>
+        </div>
+
+        {/* Coluna direita — foto */}
+        <div style={{ position: 'relative', overflow: 'hidden' }}>
+          <Image
+            src="/leandro-neemias.jpg"
+            alt="Leandro Carone"
+            fill
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'center top',
+              filter: 'grayscale(100%) contrast(1.05)',
+            }}
+            priority
+          />
+          {/* Gradiente para fundir com o fundo */}
+          <div style={{
+            position: 'absolute', inset: 0,
+            background: 'linear-gradient(to right, #080808 0%, transparent 18%), linear-gradient(to top, #080808 0%, transparent 25%)',
+          }} />
         </div>
       </section>
 
