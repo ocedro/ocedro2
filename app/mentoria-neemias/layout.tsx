@@ -13,14 +13,7 @@ export const metadata: Metadata = {
     siteName: 'Clínica Cedro',
     title: 'Mentoria Neemias — Atendimento individual com Leandro Carone',
     description: 'Mentoria individual para homens cristãos. Cinco encontros, atenção total, sem turma, sem grupo.',
-    images: [
-      {
-        url: '/og-fineias.png',
-        width: 1200,
-        height: 630,
-        alt: 'Mentoria Neemias',
-      },
-    ],
+    images: [{ url: '/og-fineias.png', width: 1200, height: 630, alt: 'Mentoria Neemias' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -33,13 +26,13 @@ export const metadata: Metadata = {
 export default function NeemiasLayout({ children }: { children: React.ReactNode }) {
   return (
     <div style={{
-      '--color-cedro-red':       '#C08A3E',
-      '--color-cedro-red-hover': '#a8773a',
-      '--color-cedro-white':     '#DED6C0',
-      '--color-cedro-light':     '#ede8de',
-      '--color-cedro-black':     '#2E1810',
-      '--color-cedro-navy':      '#3d2015',
-      '--color-cedro-sage':      'rgba(222,214,192,0.6)',
+      '--color-cedro-red':       '#b8962e',
+      '--color-cedro-red-hover': '#9a7d25',
+      '--color-cedro-white':     '#e8e0cc',
+      '--color-cedro-light':     '#f0ebe0',
+      '--color-cedro-black':     '#0a0a0a',
+      '--color-cedro-navy':      '#111111',
+      '--color-cedro-sage':      'rgba(232,224,204,0.55)',
     } as React.CSSProperties}>
       {children}
     </div>
