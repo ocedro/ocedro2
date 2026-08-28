@@ -69,40 +69,49 @@ a{color:inherit;text-decoration:none}
 .hero-inner{
   position:relative;
   z-index:1;
-  max-width:680px;
+  max-width:640px;
   width:100%;
   display:flex;
   flex-direction:column;
-  align-items:flex-start;
-  text-align:left;
-  gap:clamp(24px,4vw,32px);
+  align-items:center;
+  text-align:center;
+  gap:clamp(22px,4vw,30px);
 }
 .hero-logo-top{
   width:clamp(110px,16vw,150px);
+  margin:0 auto;
 }
 .hero h1{
   font-family:var(--sans);
   font-weight:300;
-  font-size:clamp(2rem,6.4vw,3.4rem);
-  line-height:1.12;
+  font-size:clamp(2.1rem,6.8vw,3.5rem);
+  line-height:1.14;
   letter-spacing:-.01em;
   color:var(--text);
 }
-.hero h1 .w-bold{font-weight:700}
-.hero-box{
-  border:1px solid rgba(240,237,230,.16);
-  border-radius:18px;
-  padding:clamp(18px,3vw,24px) clamp(20px,3.5vw,26px);
-  background:rgba(240,237,230,.03);
+.hero h1 .em{
+  position:relative;
+  display:inline-block;
+  font-weight:700;
+  color:var(--orange);
 }
-.hero-box p{
+.hero h1 .em svg{
+  position:absolute;
+  left:2%;
+  bottom:-.14em;
+  width:96%;
+  height:auto;
+  overflow:visible;
+}
+.hero-sub{
   font-family:var(--sans);
   font-weight:300;
   font-size:clamp(15px,2.3vw,18px);
   line-height:1.6;
   color:var(--muted);
+  max-width:480px;
 }
-.hero-box p .w-bold{font-weight:700;color:var(--text)}
+.hero-sub .w-bold{font-weight:600;color:var(--text)}
 
 /* ===== CTA ===== */
 .cta-primary{
@@ -315,10 +324,8 @@ footer{background:#060606;border-top:1px solid var(--bd);padding:22px 20px;text-
   <div class="hero-noise"></div>
   <div class="hero-inner">
     <img class="hero-logo-top" src="/inimigo-intimo/inimigo-intimo.png" alt="Inimigo Íntimo — Você está combatendo o sintoma">
-    <h1>A formação mais completa para você que atende <span class="w-bold">pessoas presas no vício em pornografia.</span></h1>
-    <div class="hero-box">
-      <p>Tudo o que aprendi em mais de 6 mil horas de atendimentos, feito para <span class="w-bold">equipar e preparar psicólogos, pastores, conselheiros e curiosos.</span></p>
-    </div>
+    <h1><span class="em">A formação mais completa<svg viewBox="0 0 300 16" preserveAspectRatio="none"><path d="M4 10 Q150 2 296 8" stroke="var(--orange)" stroke-width="4" fill="none" stroke-linecap="round"/></svg></span> para você que atende pessoas presas no vício em pornografia.</h1>
+    <p class="hero-sub">Tudo o que aprendi em <span class="w-bold">mais de 6 mil horas de atendimentos</span>, feito para equipar e preparar psicólogos, pastores, conselheiros e curiosos.</p>
     <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="cta-primary">Quero a formação</a>
   </div>
 </section>
