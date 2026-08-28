@@ -69,80 +69,40 @@ a{color:inherit;text-decoration:none}
 .hero-inner{
   position:relative;
   z-index:1;
-  max-width:1080px;
+  max-width:680px;
   width:100%;
   display:flex;
   flex-direction:column;
-  align-items:center;
-  gap:clamp(28px,5vw,40px);
+  align-items:flex-start;
+  text-align:left;
+  gap:clamp(24px,4vw,32px);
 }
 .hero-logo-top{
-  width:min(130px,34vw);
-}
-.hero-row{
-  width:100%;
-  display:flex;
-  flex-direction:column-reverse;
-  align-items:center;
-  gap:clamp(28px,5vw,40px);
-}
-.hero-photo{
-  width:min(260px,58vw);
-  filter:drop-shadow(0 20px 50px rgba(0,0,0,.5));
-}
-.hero-copy{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:clamp(20px,3.5vw,30px);
-}
-
-@media(min-width:860px){
-  .hero-row{
-    flex-direction:row;
-    justify-content:space-between;
-    text-align:left;
-    gap:56px;
-  }
-  .hero-copy{
-    align-items:flex-start;
-    flex:1 1 auto;
-    max-width:560px;
-  }
-  .hero-photo{
-    width:min(320px,30vw);
-    flex-shrink:0;
-    align-self:flex-end;
-  }
+  width:clamp(110px,16vw,150px);
 }
 .hero h1{
   font-family:var(--sans);
-  font-weight:700;
-  font-size:clamp(1.65rem,4.6vw,2.7rem);
-  line-height:1.28;
-  letter-spacing:.005em;
+  font-weight:300;
+  font-size:clamp(2rem,6.4vw,3.4rem);
+  line-height:1.12;
+  letter-spacing:-.01em;
   color:var(--text);
 }
-.hero h1 .mark{
-  background:linear-gradient(90deg,var(--peach),var(--orange));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+.hero h1 .w-bold{font-weight:700}
+.hero-box{
+  border:1px solid rgba(240,237,230,.16);
+  border-radius:18px;
+  padding:clamp(18px,3vw,24px) clamp(20px,3.5vw,26px);
+  background:rgba(240,237,230,.03);
 }
-.hero h2{
+.hero-box p{
   font-family:var(--sans);
-  font-weight:500;
+  font-weight:300;
   font-size:clamp(15px,2.3vw,18px);
+  line-height:1.6;
   color:var(--muted);
-  max-width:600px;
-  line-height:1.7;
 }
-.hero h2 .mark{
-  background:linear-gradient(90deg,var(--peach),var(--orange));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
+.hero-box p .w-bold{font-weight:700;color:var(--text)}
 
 /* ===== CTA ===== */
 .cta-primary{
@@ -204,11 +164,10 @@ a{color:inherit;text-decoration:none}
 .letter-grid{display:grid;grid-template-columns:180px 1fr;gap:clamp(28px,5vw,52px);align-items:start;max-width:820px;margin:0 auto}
 .letter-photo{
   width:100%;aspect-ratio:3/4;border-radius:4px;
-  border:1px dashed var(--bd);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--muted2);font-size:11.5px;text-align:center;padding:16px;line-height:1.5;
-  background:linear-gradient(160deg,rgba(232,57,27,.08),rgba(255,107,53,.04));
+  overflow:hidden;
+  border:1px solid var(--bd);
 }
+.letter-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .letter-text p{
   font-size:clamp(1rem,2.4vw,1.1rem);
   color:var(--muted);
@@ -356,21 +315,18 @@ footer{background:#060606;border-top:1px solid var(--bd);padding:22px 20px;text-
   <div class="hero-noise"></div>
   <div class="hero-inner">
     <img class="hero-logo-top" src="/inimigo-intimo/inimigo-intimo.png" alt="Inimigo Íntimo — Você está combatendo o sintoma">
-    <div class="hero-row">
-      <div class="hero-copy">
-        <h1>A formação mais completa para você que atende pessoas presas no vício em pornografia.</h1>
-        <h2>Tudo o que aprendi em <span class="mark">mais de 6 mil horas de atendimentos</span>, feito para equipar e preparar psicólogos, pastores, conselheiros e curiosos.</h2>
-        <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="cta-primary">Quero a formação</a>
-      </div>
-      <img class="hero-photo" src="/inimigo-intimo/leandro-silhueta.png" alt="Leandro Carone">
+    <h1>A formação mais completa para você que atende <span class="w-bold">pessoas presas no vício em pornografia.</span></h1>
+    <div class="hero-box">
+      <p>Tudo o que aprendi em mais de 6 mil horas de atendimentos, feito para <span class="w-bold">equipar e preparar psicólogos, pastores, conselheiros e curiosos.</span></p>
     </div>
+    <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="cta-primary">Quero a formação</a>
   </div>
 </section>
 
 <!-- ===== CARTA ===== -->
 <section class="section letter">
   <div class="section-inner letter-grid sa">
-    <div class="letter-photo">Foto do Leandro<br>(a enviar)</div>
+    <div class="letter-photo"><img src="/inimigo-intimo/leandro-carta.jpg" alt="Leandro Carone"></div>
     <div class="letter-text">
       <span class="eyebrow">Por que eu decidi gravar isso</span>
       <p>Decidi gravar essa formação porque entendo que preciso multiplicar o que aprendi ao longo da minha trajetória e do meu tempo de atendimento.</p>
