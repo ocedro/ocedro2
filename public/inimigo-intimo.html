@@ -92,14 +92,20 @@ a{color:inherit;text-decoration:none}
   background-clip:text;
   color:transparent;
 }
-.hero-sub{
+.hero h2{
+  font-family:var(--sans);
+  font-weight:500;
   font-size:clamp(15px,2.3vw,18px);
   color:var(--muted);
   max-width:600px;
   line-height:1.7;
-  font-weight:400;
 }
-.hero-sub strong{color:var(--text);font-weight:600}
+.hero h2 .mark{
+  background:linear-gradient(90deg,var(--peach),var(--orange));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
 
 /* ===== CTA ===== */
 .cta-primary{
@@ -313,8 +319,8 @@ footer{background:#060606;border-top:1px solid var(--bd);padding:22px 20px;text-
   <div class="hero-noise"></div>
   <div class="hero-inner">
     <img class="hero-logo" src="/inimigo-intimo/inimigo-intimo.png" alt="Inimigo Íntimo — Você está combatendo o sintoma">
-    <h1>Eu ensino tudo o que sei e aplico com meus pacientes que lutam contra o vício em pornografia, construído em <span class="mark">mais de 6 mil horas de atendimento</span>.</h1>
-    <p class="hero-sub">Formação para psicólogos, pastores, conselheiros e curiosos que já perceberam: o paciente volta a cair não por falta de força de vontade. Volta a cair porque o diagnóstico que você fez nunca chegou na raiz.</p>
+    <h1>A formação para quem atende pessoas presas no vício em pornografia.</h1>
+    <h2>Tudo o que aprendi em <span class="mark">mais de 6 mil horas de atendimento</span> tratando vício em pornografia, agora numa formação pra psicólogos, pastores, conselheiros e curiosos.</h2>
     <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="cta-primary">Quero a formação</a>
   </div>
 </section>
@@ -367,13 +373,6 @@ footer{background:#060606;border-top:1px solid var(--bd);padding:22px 20px;text-
     <span class="eyebrow">O que você aprende, módulo por módulo</span>
     <div class="curriculum-list">
       <div class="curr-item">
-        <div class="curr-num">00</div>
-        <div>
-          <h3>Abertura</h3>
-          <p>Como pensar o caso antes de tratar. O erro de entrada que a maioria dos profissionais comete na primeira sessão.</p>
-        </div>
-      </div>
-      <div class="curr-item">
         <img class="curr-cover" src="/inimigo-intimo/modulo-1-biologico.jpg" alt="Capa do Módulo 1 — Biológico">
         <div>
           <h3>Módulo 1 — Base biológica</h3>
@@ -394,18 +393,11 @@ footer{background:#060606;border-top:1px solid var(--bd);padding:22px 20px;text-
           <p>O protocolo completo por perfil de raiz: sequência de confissão, a conversa com o cônjuge, o ciclo de recaída, o desafio de 40 dias.</p>
         </div>
       </div>
-      <div class="curr-item">
+      <div class="curr-item" style="border-bottom:none">
         <img class="curr-cover" src="/inimigo-intimo/modulo-4-profissional-cadeira.jpg" alt="Capa do Módulo 4 — Profissional na Cadeira">
         <div>
           <h3>Módulo 4 — As armadilhas que mantêm o paciente preso</h3>
           <p>As fases de defesa cognitiva que fazem alguém minimizar a própria recaída, e o segundo caso completo, com raiz oposta ao primeiro, pra fechar o método com os dois extremos na mão.</p>
-        </div>
-      </div>
-      <div class="curr-item" style="border-bottom:none">
-        <div class="curr-num">05</div>
-        <div>
-          <h3>Encerramento</h3>
-          <p>Conversa aberta com o Leandro sobre o que fica depois do curso.</p>
         </div>
       </div>
     </div>
