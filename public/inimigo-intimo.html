@@ -230,6 +230,7 @@ a{color:inherit;text-decoration:none}
 /* ===== INCLUSOS / BONUS ===== */
 .includes-list{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:clamp(36px,5vw,44px)}
 .includes-list li{display:flex;gap:14px;align-items:flex-start;font-size:14.5px;color:var(--muted);line-height:1.7}
+.includes-list li strong{color:var(--text);font-weight:600}
 .includes-list li::before{
   content:'✓';flex-shrink:0;width:21px;height:21px;border-radius:50%;
   background:linear-gradient(135deg,var(--red),var(--orange));
@@ -405,9 +406,9 @@ footer{background:#060606;border-top:1px solid var(--bd);padding:22px 20px;text-
   <div class="section-inner sa">
     <span class="eyebrow">Tudo o que vem junto</span>
     <ul class="includes-list">
-      <li>Um PDF de resumo por aula, mais uma apostila completa por módulo</li>
-      <li>Guia de Apoio à Esposa, pensado pra mulher que descobriu que o marido vê pornografia</li>
-      <li>Ferramentas práticas para você aplicar em seus atendimentos</li>
+      <li>Um PDF de resumo por aula, mais <strong>uma apostila completa por módulo</strong></li>
+      <li><strong>Guia de Apoio à Esposa</strong>, pensado pra mulher que descobriu que o marido vê pornografia</li>
+      <li><strong>Ferramentas práticas</strong> para você aplicar em seus atendimentos</li>
     </ul>
     <div class="bonus-grid">
       <div class="bonus-card">
