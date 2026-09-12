@@ -17,19 +17,19 @@ const menu: MenuItem[] = [
   { type: 'link', href: '/agende', label: 'Agende sua consulta' },
   {
     type: 'group',
-    label: 'Mentorias',
+    label: 'Formações',
     items: [
-      { href: '/fineias', label: 'Finéias', description: 'Para homens cristãos' },
-      { href: '/mentoria-neemias', label: 'Neemias', description: 'Mentoria individual' },
-      { href: '/igreja', label: 'Para igrejas', description: 'Palestras e workshops' },
+      { href: '/desafio-14-dias', label: 'Pare de lutar contra o pornô', description: 'Desafio de 14 dias para você quebrar o ciclo do vício' },
+      { href: '/inimigo-intimo', label: 'Inimigo Íntimo', description: 'Formação clínica para psicólogos, pastores e líderes no atendimento a pessoas presas no vício em pornografia.' },
     ],
   },
   {
     type: 'group',
-    label: 'Formações',
+    label: 'Mentorias',
     items: [
-      { href: '/desafio-14-dias', label: 'Desafio 14 Dias', description: 'Quebre o ciclo em 14 dias' },
-      { href: '/inimigo-intimo', label: 'Inimigo Íntimo', description: 'Curso clínico sobre pornografia' },
+      { href: '/fineias', label: 'Finéias', description: 'Grupos de formação de homens sólidos' },
+      { href: '/mentoria-neemias', label: 'Neemias', description: 'Mentoria individual para homens' },
+      { href: '/igreja', label: 'Para igrejas', description: 'Palestras, workshops e treinamento de conselheiros' },
     ],
   },
 ];
