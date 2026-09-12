@@ -15,14 +15,21 @@ const menu: MenuItem[] = [
   { type: 'link', href: '/', label: 'Home' },
   { type: 'link', href: '/leandro', label: 'Sobre o Leandro' },
   { type: 'link', href: '/agende', label: 'Agende sua consulta' },
-  { type: 'link', href: '/igreja', label: 'Para igrejas' },
   {
     type: 'group',
     label: 'Mentorias',
     items: [
-      { href: '/lab', label: 'CedroLAB', description: 'Mentoria para psicólogos' },
       { href: '/fineias', label: 'Finéias', description: 'Para homens cristãos' },
       { href: '/mentoria-neemias', label: 'Neemias', description: 'Mentoria individual' },
+      { href: '/igreja', label: 'Para igrejas', description: 'Palestras e workshops' },
+    ],
+  },
+  {
+    type: 'group',
+    label: 'Formações',
+    items: [
+      { href: '/desafio-14-dias', label: 'Desafio 14 Dias', description: 'Quebre o ciclo em 14 dias' },
+      { href: '/inimigo-intimo', label: 'Inimigo Íntimo', description: 'Curso clínico sobre pornografia' },
     ],
   },
 ];
