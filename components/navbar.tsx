@@ -13,7 +13,7 @@ type MenuItem =
 
 const menu: MenuItem[] = [
   { type: 'link', href: '/', label: 'Home' },
-  { type: 'link', href: '/leandro', label: 'Sobre o Leandro' },
+  { type: 'link', href: '/leandro', label: 'Conheça o Leandro' },
   { type: 'link', href: '/agende', label: 'Agende sua consulta' },
   {
     type: 'group',
