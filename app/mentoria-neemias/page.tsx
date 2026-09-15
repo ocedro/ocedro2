@@ -1,300 +1,550 @@
-import type { CSSProperties } from 'react';
+'use client';
+
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
-const WA_LINK = 'https://wa.me/5519983133780?text=Quero%20saber%20mais%20sobre%20a%20Mentoria%20Neemias';
+const WA_LINK = 'https://wa.me/5519983133780?text=Ol%C3%A1%2C%20Leandro.%20Quero%20conhecer%20a%20Mentoria%20Neemias%20e%20entender%20se%20faz%20sentido%20para%20o%20meu%20momento.';
 
-const s = {
-  silver:      '#C8C8C0',
-  silverFaint: 'rgba(200,200,192,0.08)',
-  silverLine:  'rgba(200,200,192,0.18)',
-  white:       '#FFFFFF',
-  bg:          '#080808',
-  bgAlt:       '#0e0e0e',
-  orange:      '#E8612A',
-  orangeText:  '#FFFFFF',
-} as const;
+const C = {
+  bg:      '#0B0B0A',
+  bgAlt:   '#111110',
+  text:    '#E8E3D8',
+  dim:     'rgba(232,227,216,0.5)',
+  dimmer:  'rgba(232,227,216,0.3)',
+  bronze:  '#9A7950',
+  bronzeD: 'rgba(154,121,80,0.15)',
+  bronzeL: 'rgba(154,121,80,0.35)',
+  white:   '#F0EBE2',
+  line:    'rgba(232,227,216,0.1)',
+};
 
-// Silhueta SVG de muro de pedras irregulares
-function StoneWall({ flip = false }: { flip?: boolean }) {
+const serif = '"Cormorant Garamond", "Playfair Display", Georgia, serif';
+const sans  = 'var(--font-inter, Inter, "Helvetica Neue", sans-serif)';
+
+function useFadeIn() {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        obs.disconnect();
+      }
+    }, { threshold: 0.12 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return ref;
+}
+
+function FadeIn({ children, delay = 0, style = {} }: { children: React.ReactNode; delay?: number; style?: React.CSSProperties }) {
+  const ref = useFadeIn();
   return (
-    <div style={{
-      width: '100%',
-      opacity: 0.55,
-      transform: flip ? 'scaleX(-1)' : 'none',
-      lineHeight: 0,
-    }}>
-      <svg
-        viewBox="0 0 900 64"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{ width: '100%', height: 'auto', display: 'block' }}
-        aria-hidden="true"
-      >
-        {/* Linha de pedras de baixo */}
-        <polygon points="0,64 0,42 18,38 18,64" fill="#C8C8C0" opacity="0.6"/>
-        <polygon points="18,64 18,38 52,34 60,64" fill="#C8C8C0" opacity="0.5"/>
-        <polygon points="60,64 52,34 98,36 104,64" fill="#C8C8C0" opacity="0.65"/>
-        <polygon points="104,64 98,36 130,32 148,64" fill="#C8C8C0" opacity="0.45"/>
-        <polygon points="148,64 130,32 178,30 190,64" fill="#C8C8C0" opacity="0.6"/>
-        <polygon points="190,64 178,30 224,34 238,64" fill="#C8C8C0" opacity="0.5"/>
-        <polygon points="238,64 224,34 264,32 280,64" fill="#C8C8C0" opacity="0.55"/>
-        <polygon points="280,64 264,32 316,36 330,64" fill="#C8C8C0" opacity="0.65"/>
-        <polygon points="330,64 316,36 358,30 372,64" fill="#C8C8C0" opacity="0.5"/>
-        <polygon points="372,64 358,30 404,34 420,64" fill="#C8C8C0" opacity="0.6"/>
-        <polygon points="420,64 404,34 448,32 465,64" fill="#C8C8C0" opacity="0.45"/>
-        <polygon points="465,64 448,32 495,36 512,64" fill="#C8C8C0" opacity="0.6"/>
-        <polygon points="512,64 495,36 540,30 556,64" fill="#C8C8C0" opacity="0.5"/>
-        <polygon points="556,64 540,30 588,34 604,64" fill="#C8C8C0" opacity="0.65"/>
-        <polygon points="604,64 588,34 634,32 650,64" fill="#C8C8C0" opacity="0.55"/>
-        <polygon points="650,64 634,32 682,36 698,64" fill="#C8C8C0" opacity="0.5"/>
-        <polygon points="698,64 682,36 726,30 744,64" fill="#C8C8C0" opacity="0.6"/>
-        <polygon points="744,64 726,30 772,34 790,64" fill="#C8C8C0" opacity="0.5"/>
-        <polygon points="790,64 772,34 820,32 836,64" fill="#C8C8C0" opacity="0.65"/>
-        <polygon points="836,64 820,32 868,36 884,64" fill="#C8C8C0" opacity="0.45"/>
-        <polygon points="884,64 868,36 900,38 900,64" fill="#C8C8C0" opacity="0.6"/>
-
-        {/* Linha de pedras de cima (escalonada) */}
-        <polygon points="10,42 10,22 40,18 55,38" fill="#C8C8C0" opacity="0.35"/>
-        <polygon points="40,38 40,18 82,14 95,36" fill="#C8C8C0" opacity="0.4"/>
-        <polygon points="82,36 82,14 124,16 136,34" fill="#C8C8C0" opacity="0.3"/>
-        <polygon points="124,34 124,16 164,12 178,32" fill="#C8C8C0" opacity="0.38"/>
-        <polygon points="164,32 164,12 210,16 222,30" fill="#C8C8C0" opacity="0.32"/>
-        <polygon points="210,30 210,16 252,12 264,30" fill="#C8C8C0" opacity="0.4"/>
-        <polygon points="252,30 252,12 296,14 308,32" fill="#C8C8C0" opacity="0.35"/>
-        <polygon points="296,32 296,14 340,10 354,30" fill="#C8C8C0" opacity="0.42"/>
-        <polygon points="340,30 340,10 382,14 396,30" fill="#C8C8C0" opacity="0.33"/>
-        <polygon points="382,30 382,14 426,10 440,28" fill="#C8C8C0" opacity="0.38"/>
-        <polygon points="426,28 426,10 468,14 482,30" fill="#C8C8C0" opacity="0.4"/>
-        <polygon points="468,30 468,14 512,10 524,28" fill="#C8C8C0" opacity="0.32"/>
-        <polygon points="512,28 512,10 554,14 568,30" fill="#C8C8C0" opacity="0.38"/>
-        <polygon points="554,30 554,14 598,10 612,28" fill="#C8C8C0" opacity="0.42"/>
-        <polygon points="598,28 598,10 640,14 654,30" fill="#C8C8C0" opacity="0.35"/>
-        <polygon points="640,30 640,14 684,10 698,28" fill="#C8C8C0" opacity="0.4"/>
-        <polygon points="684,28 684,10 726,14 740,30" fill="#C8C8C0" opacity="0.33"/>
-        <polygon points="726,30 726,14 770,10 784,30" fill="#C8C8C0" opacity="0.38"/>
-        <polygon points="770,30 770,10 814,14 828,28" fill="#C8C8C0" opacity="0.4"/>
-        <polygon points="814,28 814,10 856,12 870,28" fill="#C8C8C0" opacity="0.35"/>
-        <polygon points="856,28 856,12 900,16 900,30" fill="#C8C8C0" opacity="0.38"/>
-      </svg>
-    </div>
+    <div ref={ref} style={{
+      opacity: 0,
+      transform: 'translateY(24px)',
+      transition: `opacity 0.8s ease ${delay}ms, transform 0.8s ease ${delay}ms`,
+      ...style,
+    }}>{children}</div>
   );
 }
 
-function CtaButton({ href, children }: { href: string; children: React.ReactNode }) {
+function Bronze({ children, style = {} }: { children: React.ReactNode; style?: React.CSSProperties }) {
+  return <span style={{ color: C.bronze, ...style }}>{children}</span>;
+}
+
+function Section({ children, bg, style = {} }: { children: React.ReactNode; bg?: string; style?: React.CSSProperties }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="neemias-cta-orange"
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '12px',
-        padding: '16px 36px',
-        background: s.orange,
-        color: s.orangeText,
-        fontSize: '11px',
-        letterSpacing: '0.22em',
-        textTransform: 'uppercase',
-        textDecoration: 'none',
-        fontFamily: 'var(--font-inter, Inter, sans-serif)',
-        fontWeight: 700,
-        transition: 'opacity 0.2s',
-      }}
-    >
-      {children}
-    </a>
+    <section style={{
+      background: bg || C.bg,
+      padding: 'clamp(80px, 12vh, 140px) clamp(24px, 7vw, 120px)',
+      ...style,
+    }}>{children}</section>
   );
+}
+
+function Label({ children }: { children: React.ReactNode }) {
+  return (
+    <p style={{
+      fontFamily: sans,
+      fontSize: '11px',
+      letterSpacing: '0.28em',
+      textTransform: 'uppercase',
+      color: C.bronze,
+      marginBottom: '32px',
+    }}>{children}</p>
+  );
+}
+
+function H2({ children, style = {} }: { children: React.ReactNode; style?: React.CSSProperties }) {
+  return (
+    <h2 style={{
+      fontFamily: serif,
+      fontSize: 'clamp(2.2rem, 5vw, 4rem)',
+      fontWeight: 600,
+      lineHeight: 1.1,
+      letterSpacing: '-0.01em',
+      color: C.white,
+      margin: '0 0 32px',
+      ...style,
+    }}>{children}</h2>
+  );
+}
+
+function Body({ children, style = {} }: { children: React.ReactNode; style?: React.CSSProperties }) {
+  return (
+    <p style={{
+      fontFamily: sans,
+      fontSize: 'clamp(0.95rem, 1.5vw, 1.05rem)',
+      color: C.dim,
+      lineHeight: 1.8,
+      margin: '0 0 20px',
+      maxWidth: '58ch',
+      ...style,
+    }}>{children}</p>
+  );
+}
+
+function Cta({ href, children, secondary = false }: { href: string; children: React.ReactNode; secondary?: boolean }) {
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '10px',
+      padding: secondary ? '13px 28px' : '15px 36px',
+      fontFamily: sans,
+      fontSize: '11px',
+      fontWeight: 600,
+      letterSpacing: '0.2em',
+      textTransform: 'uppercase',
+      textDecoration: 'none',
+      background: secondary ? 'transparent' : C.bronze,
+      color: secondary ? C.bronze : C.bg,
+      border: `1px solid ${C.bronze}`,
+      transition: 'opacity 0.2s',
+    }}
+    onMouseEnter={e => (e.currentTarget as HTMLElement).style.opacity = '0.8'}
+    onMouseLeave={e => (e.currentTarget as HTMLElement).style.opacity = '1'}
+    >{children}</a>
+  );
+}
+
+function Divider() {
+  return <div style={{ width: '48px', height: '1px', background: C.bronze, margin: '48px 0', opacity: 0.6 }} />;
 }
 
 export default function NeemiasPage() {
-  const label: CSSProperties = {
-    fontFamily: 'var(--font-inter, Inter, sans-serif)',
-    fontSize: '10px',
-    letterSpacing: '0.42em',
-    textTransform: 'uppercase',
-    color: s.silver,
-    display: 'block',
-  };
+  const [mobileCtaVisible, setMobileCtaVisible] = useState(false);
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const obs = new IntersectionObserver(([e]) => {
+      setMobileCtaVisible(!e.isIntersecting);
+    }, { threshold: 0.1 });
+    if (heroRef.current) obs.observe(heroRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  const steps = [
+    { n: '01', title: 'Diagnóstico', desc: 'Onde você está e o que precisa ser reconstruído.' },
+    { n: '02', title: 'Identidade', desc: 'Quem você é, o que importa e quem precisa se tornar.' },
+    { n: '03', title: 'Estrutura', desc: 'Rotina, hábitos, limites, responsabilidades e organização.' },
+    { n: '04', title: 'Direção', desc: 'Decisões, prioridades e próximos passos.' },
+    { n: '05', title: 'Execução', desc: 'Transformar o plano em comportamento acompanhado.' },
+  ];
+
+  const entrega = [
+    '5 encontros individuais de 60 minutos',
+    'Acompanhamento direto durante 5 semanas',
+    'Contato pelo WhatsApp durante o processo',
+    'Diagnóstico individual',
+    'Plano pessoal escrito',
+    'Revisão e ajuste do plano',
+    'Direcionamento para execução',
+  ];
+
+  const paraQuem = [
+    'Você sabe que precisa mudar, mas continua adiando.',
+    'Existe uma área da sua vida que está fora de controle.',
+    'Você está cansado de consumir conteúdo sem conseguir aplicar.',
+    'Precisa tomar decisões importantes e não sabe por onde começar.',
+    'Falta estrutura para sustentar aquilo que acredita.',
+    'Quer alguém que não apenas escute, mas ajude a organizar, confrontar e direcionar.',
+    'Está disposto a executar o que for definido no processo.',
+  ];
+
+  const naoParaQuem = [
+    'Quer terceirizar a própria responsabilidade.',
+    'Não está disposto a executar.',
+    'Procura apenas motivação passageira.',
+    'Espera uma solução instantânea.',
+    'Procura psicoterapia.',
+  ];
+
+  const faq = [
+    { q: 'A Neemias é terapia?', a: 'Não. É uma mentoria individual focada em orientação, estrutura, direção e execução. Não substitui psicoterapia.' },
+    { q: 'Quantos encontros são?', a: 'Cinco encontros individuais de aproximadamente uma hora cada.' },
+    { q: 'Quanto tempo dura o processo?', a: 'Cinco semanas, com acompanhamento direto entre os encontros.' },
+    { q: 'É individual?', a: 'Sim. Não há outros participantes nos encontros. Cada sessão é construída a partir do seu histórico específico.' },
+    { q: 'Existe acompanhamento entre as sessões?', a: 'Sim. O acompanhamento é feito diretamente comigo pelo WhatsApp durante todo o processo.' },
+    { q: 'Os encontros são online?', a: 'Sim. Os cinco encontros acontecem online, em formato de videochamada individual.' },
+    { q: 'Preciso ser cristão?', a: 'A referência de Neemias é bíblica, mas a mentoria não exige filiação religiosa. O processo é voltado para qualquer homem que busca direção, estrutura e reconstrução.' },
+    { q: 'Como entro?', a: 'O primeiro passo é solicitar uma vaga pelo WhatsApp. Vamos conversar para entender se o processo faz sentido para o seu momento.' },
+  ];
 
   return (
-    <div style={{ background: s.bg, color: s.white, fontFamily: 'var(--font-inter, Inter, sans-serif)' }}>
+    <div style={{ background: C.bg, color: C.text, fontFamily: sans }}>
 
       {/* ── HERO ── */}
-      <section style={{
+      <section ref={heroRef} style={{
         minHeight: '100svh',
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
         position: 'relative',
         overflow: 'hidden',
       }}>
-        {/* Coluna esquerda — texto */}
+        {/* Foto */}
+        <div style={{ position: 'relative', overflow: 'hidden', gridColumn: 2, gridRow: 1 }}>
+          <Image src="/leandro-neemias.jpg" alt="Leandro Carone" fill
+            style={{ objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(100%) contrast(1.08) brightness(0.88)' }} priority />
+          <div style={{ position: 'absolute', inset: 0,
+            background: `linear-gradient(to right, ${C.bg} 0%, transparent 22%), linear-gradient(to top, ${C.bg} 0%, transparent 30%)` }} />
+        </div>
+
+        {/* Texto */}
         <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-end',
-          padding: 'clamp(120px, 14vh, 180px) clamp(32px, 5vw, 80px) clamp(56px, 8vh, 96px)',
-          position: 'relative',
-          zIndex: 1,
+          gridColumn: 1, gridRow: 1,
+          display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+          padding: 'clamp(120px,14vh,180px) clamp(32px,5vw,96px) clamp(64px,9vh,112px)',
+          position: 'relative', zIndex: 1,
         }}>
-          <span style={{ ...label, marginBottom: '28px' }}>Mentoria Neemias</span>
-
-          <h1 style={{
-            fontFamily: 'Georgia, "Times New Roman", serif',
-            fontSize: 'clamp(2rem, 4.5vw, 4.2rem)',
-            fontWeight: 700,
-            lineHeight: 1.08,
-            letterSpacing: '-0.02em',
-            color: s.white,
-            margin: '0 0 32px',
-          }}>
-            Você sabe que tem<br />um problema.<br />
-            <span style={{ color: s.silver }}>O que falta é um plano.</span>
-          </h1>
-
-          <p style={{
-            fontSize: 'clamp(0.9rem, 1.4vw, 1rem)',
-            color: 'rgba(200,200,192,0.6)',
-            lineHeight: 1.75,
-            maxWidth: '440px',
-            margin: '0 0 48px',
-          }}>
-            Mentoria individual, diretamente comigo. Cinco encontros para entender quem você é, resolver o que está te prendendo, e sair com um plano concreto para a sua vida.
-          </p>
-
-          <CtaButton href={WA_LINK}>
-            Tenho interesse <span style={{ letterSpacing: 0 }}>→</span>
-          </CtaButton>
-        </div>
-
-        {/* Coluna direita — foto */}
-        <div style={{ position: 'relative', overflow: 'hidden' }}>
-          <Image
-            src="/leandro-neemias.jpg"
-            alt="Leandro Carone"
-            fill
-            style={{
-              objectFit: 'cover',
-              objectPosition: 'center top',
-              filter: 'grayscale(100%) contrast(1.05)',
-            }}
-            priority
-          />
-          {/* Gradiente para fundir com o fundo */}
-          <div style={{
-            position: 'absolute', inset: 0,
-            background: 'linear-gradient(to right, #080808 0%, transparent 18%), linear-gradient(to top, #080808 0%, transparent 25%)',
-          }} />
-        </div>
-      </section>
-
-      {/* ── MURO 1 ── */}
-      <div style={{ borderTop: `1px solid ${s.silverLine}`, paddingTop: '24px', overflow: 'hidden' }}>
-        <StoneWall />
-      </div>
-
-      {/* ── DESCRIÇÃO ── */}
-      <section style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-        gap: 'clamp(48px, 6vw, 96px)',
-        padding: 'clamp(64px, 10vh, 120px) clamp(24px, 6vw, 96px)',
-        background: s.bgAlt,
-      }}>
-        <div>
-          <span style={{ ...label, marginBottom: '40px' }}>O processo</span>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            {[
-              'Cinco encontros individuais, uma hora cada. Ninguém mais na sala.',
-              'Entre os encontros, acompanhamento direto comigo durante cinco semanas.',
-              'Vício, identidade, estrutura. O que precisar. Saímos com um plano escrito, revisado e pronto para executar.',
-              'Não só teoria. Vou te ajudar a executar o que concluímos juntos nos encontros.',
-            ].map((p, i) => (
-              <p key={i} style={{
-                fontSize: 'clamp(0.9rem, 1.4vw, 1rem)',
-                color: i === 3 ? s.white : 'rgba(200,200,192,0.55)',
-                lineHeight: 1.78,
-                margin: 0,
-                fontWeight: i === 3 ? 500 : 400,
-              }}>{p}</p>
-            ))}
-          </div>
-        </div>
-
-        <div style={{ borderLeft: `1px solid ${s.silverLine}`, paddingLeft: 'clamp(32px, 4vw, 64px)' }}>
-          {[
-            { num: '5', label: 'encontros individuais' },
-            { num: '5', label: 'semanas de acompanhamento' },
-            { num: '0', label: 'outros na sala' },
-          ].map((item, i) => (
-            <div key={i} style={{
-              padding: '28px 0',
-              borderBottom: i < 2 ? `1px solid ${s.silverLine}` : 'none',
+          <FadeIn delay={100}>
+            <Image src="/neemias-logo.png" alt="N" width={56} height={56}
+              style={{ marginBottom: '40px', opacity: 0.9 }} />
+          </FadeIn>
+          <FadeIn delay={200}>
+            <p style={{ fontFamily: sans, fontSize: '11px', letterSpacing: '0.28em', textTransform: 'uppercase', color: C.bronze, marginBottom: '24px' }}>
+              Mentoria Individual
+            </p>
+          </FadeIn>
+          <FadeIn delay={300}>
+            <h1 style={{
+              fontFamily: serif,
+              fontSize: 'clamp(3rem, 6vw, 5.5rem)',
+              fontWeight: 600,
+              lineHeight: 1.04,
+              letterSpacing: '-0.02em',
+              color: C.white,
+              margin: '0 0 28px',
             }}>
-              <div style={{
-                fontFamily: 'Georgia, serif',
-                fontSize: 'clamp(3rem, 6vw, 5rem)',
-                fontWeight: 700,
-                color: s.silver,
-                lineHeight: 1,
-                letterSpacing: '-0.02em',
-              }}>{item.num}</div>
-              <p style={{ fontSize: '11px', color: 'rgba(200,200,192,0.4)', letterSpacing: '0.2em', textTransform: 'uppercase', margin: '8px 0 0' }}>{item.label}</p>
+              Você não precisa<br />de mais conteúdo.<br />
+              <Bronze>Precisa de direção.</Bronze>
+            </h1>
+          </FadeIn>
+          <FadeIn delay={400}>
+            <p style={{ fontFamily: sans, fontSize: 'clamp(0.9rem,1.4vw,1rem)', color: C.dim, lineHeight: 1.8, maxWidth: '44ch', marginBottom: '40px' }}>
+              Uma mentoria individual, diretamente comigo, para homens que sabem que precisam mudar, mas precisam transformar consciência em direção, estrutura e ação.
+            </p>
+          </FadeIn>
+          <FadeIn delay={500}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap', marginBottom: '28px' }}>
+              <Cta href={WA_LINK}>Solicitar uma vaga</Cta>
+              <a href="#processo" style={{ fontFamily: sans, fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: C.dim, textDecoration: 'none' }}>
+                Entender como funciona ↓
+              </a>
+            </div>
+            <p style={{ fontFamily: sans, fontSize: '11px', color: C.dimmer, letterSpacing: '0.05em' }}>
+              Poucas vagas por ciclo devido ao formato individual.
+            </p>
+          </FadeIn>
+        </div>
+
+        {/* Stats flutuantes */}
+        <div style={{
+          position: 'absolute', bottom: 'clamp(32px,5vh,64px)', right: 'clamp(24px,4vw,64px)',
+          display: 'flex', gap: '40px', zIndex: 2,
+        }}>
+          {[['5', 'encontros privados'], ['5', 'semanas de acompanhamento'], ['1', 'plano pessoal']].map(([n, l], i) => (
+            <div key={i} style={{ textAlign: 'center' }}>
+              <div style={{ fontFamily: serif, fontSize: 'clamp(1.8rem,3vw,2.8rem)', fontWeight: 600, color: C.bronze, lineHeight: 1 }}>{n}</div>
+              <div style={{ fontFamily: sans, fontSize: '10px', color: C.dimmer, letterSpacing: '0.1em', marginTop: '6px', textTransform: 'uppercase' }}>{l}</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── MURO 2 (espelhado) ── */}
-      <div style={{ borderBottom: `1px solid ${s.silverLine}`, paddingBottom: '24px', overflow: 'hidden' }}>
-        <StoneWall flip />
-      </div>
+      {/* ── O PROBLEMA ── */}
+      <Section bg={C.bgAlt}>
+        <FadeIn>
+          <div style={{ maxWidth: '640px' }}>
+            <Label>O problema</Label>
+            <H2>Você já sabe muita coisa.</H2>
+            <Body>Você sabe o que deveria fazer. Sabe o que precisa mudar. Talvez até saiba exatamente onde está o problema.</Body>
+            <Body>Mas saber não significa mudar.</Body>
+            <Body>Existe uma distância entre aquilo que você entende e aquilo que consegue viver. É nessa distância que a Neemias trabalha.</Body>
+            <Divider />
+            <p style={{ fontFamily: serif, fontSize: 'clamp(1.3rem,2.5vw,1.8rem)', color: C.white, fontStyle: 'italic', lineHeight: 1.4, maxWidth: '48ch' }}>
+              Consciência sem direção não produz reconstrução.
+            </p>
+          </div>
+        </FadeIn>
+      </Section>
 
-      {/* ── PREÇO + CTA ── */}
-      <section style={{
-        padding: 'clamp(80px, 12vh, 140px) clamp(24px, 6vw, 96px)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        textAlign: 'center',
-      }}>
-        <span style={{ ...label, marginBottom: '48px' }}>Investimento</span>
+      {/* ── METÁFORA NEEMIAS ── */}
+      <Section>
+        <FadeIn>
+          <div style={{ maxWidth: '720px' }}>
+            <Label>A referência</Label>
+            <H2>Toda reconstrução começa quando você decide olhar para as ruínas.</H2>
+            <Body>Neemias não recebeu uma cidade pronta. Recebeu uma cidade com seus muros destruídos.</Body>
+            <Body>Antes de reconstruir, precisou enxergar o estado real das coisas. Depois, estabelecer uma estratégia. Organizar. Trabalhar. Resistir à oposição. E permanecer até terminar.</Body>
+            <Body>A Neemias segue essa lógica.</Body>
+          </div>
+        </FadeIn>
 
-        <p style={{ fontSize: '11px', color: 'rgba(200,200,192,0.4)', letterSpacing: '0.25em', textTransform: 'uppercase', margin: '0 0 8px' }}>Parcelado</p>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '32px' }}>
-          <span style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1.1rem)', color: 'rgba(200,200,192,0.45)' }}>12x</span>
-          <span style={{
-            fontFamily: 'Georgia, serif',
-            fontSize: 'clamp(3rem, 7vw, 5.5rem)',
-            fontWeight: 700,
-            color: s.white,
-            lineHeight: 1,
-            letterSpacing: '-0.02em',
-          }}>R$ 295</span>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px,1fr))', gap: '1px', marginTop: '64px', background: C.line }}>
+          {[
+            { n: '01', t: 'Diagnosticar', d: 'Entender o que está realmente acontecendo.' },
+            { n: '02', t: 'Reconstruir', d: 'Identificar aquilo que precisa ser corrigido.' },
+            { n: '03', t: 'Estruturar', d: 'Transformar princípios em decisões, hábitos e limites.' },
+            { n: '04', t: 'Executar', d: 'Colocar o plano em prática e sustentar o processo.' },
+          ].map((s, i) => (
+            <FadeIn key={i} delay={i * 100}>
+              <div style={{ background: C.bg, padding: '40px 32px' }}>
+                <div style={{ fontFamily: sans, fontSize: '11px', color: C.bronze, marginBottom: '20px', letterSpacing: '0.15em' }}>{s.n}</div>
+                <div style={{ fontFamily: serif, fontSize: '1.4rem', fontWeight: 600, color: C.white, marginBottom: '12px' }}>{s.t}</div>
+                <div style={{ fontFamily: sans, fontSize: '0.9rem', color: C.dim, lineHeight: 1.7 }}>{s.d}</div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </Section>
+
+      {/* ── O PROCESSO ── */}
+      <Section id="processo" bg={C.bgAlt}>
+        <FadeIn>
+          <div style={{ maxWidth: '560px', marginBottom: '64px' }}>
+            <Label>O processo</Label>
+            <H2 style={{ marginBottom: '16px' }}>Cinco encontros.<br />Cinco semanas.<br />Um plano.</H2>
+            <Body>Encontros individuais de uma hora, diretamente comigo. Acompanhamento entre os encontros durante todo o processo.</Body>
+          </div>
+        </FadeIn>
+        <div style={{ maxWidth: '720px' }}>
+          {steps.map((s, i) => (
+            <FadeIn key={i} delay={i * 80}>
+              <div style={{
+                display: 'grid', gridTemplateColumns: '48px 1fr',
+                gap: '24px', alignItems: 'start',
+                padding: '28px 0',
+                borderBottom: `1px solid ${C.line}`,
+              }}>
+                <div style={{ fontFamily: sans, fontSize: '11px', color: C.bronze, letterSpacing: '0.12em', paddingTop: '4px' }}>{s.n}</div>
+                <div>
+                  <div style={{ fontFamily: serif, fontSize: 'clamp(1.1rem,2vw,1.35rem)', fontWeight: 600, color: C.white, marginBottom: '8px' }}>{s.title}</div>
+                  <div style={{ fontFamily: sans, fontSize: '0.9rem', color: C.dim, lineHeight: 1.7 }}>{s.desc}</div>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </Section>
+
+      {/* ── O QUE VOCÊ RECEBE ── */}
+      <Section>
+        <FadeIn>
+          <div style={{ maxWidth: '560px', marginBottom: '64px' }}>
+            <Label>O que você recebe</Label>
+            <H2>Você não termina a Neemias com mais anotações.<br /><Bronze>Termina com um plano.</Bronze></H2>
+          </div>
+        </FadeIn>
+
+        {/* Números grandes */}
+        <div style={{ display: 'flex', gap: 'clamp(32px,6vw,96px)', marginBottom: '72px', flexWrap: 'wrap' }}>
+          {[['5', 'encontros'], ['5', 'semanas'], ['0', 'outras pessoas\nna sala']].map(([n, l], i) => (
+            <FadeIn key={i} delay={i * 100}>
+              <div>
+                <div style={{ fontFamily: serif, fontSize: 'clamp(4rem,9vw,8rem)', fontWeight: 600, color: n === '0' ? C.bronze : C.white, lineHeight: 1, letterSpacing: '-0.03em' }}>{n}</div>
+                <div style={{ fontFamily: sans, fontSize: '11px', color: C.dim, letterSpacing: '0.15em', textTransform: 'uppercase', marginTop: '12px', whiteSpace: 'pre-line' }}>{l}</div>
+              </div>
+            </FadeIn>
+          ))}
         </div>
 
-        <div style={{ width: '48px', height: '1px', background: s.silverLine, margin: '0 0 32px' }} />
-
-        <p style={{ fontSize: '11px', color: 'rgba(200,200,192,0.4)', letterSpacing: '0.25em', textTransform: 'uppercase', margin: '0 0 8px' }}>À vista</p>
-        <div style={{ marginBottom: '16px' }}>
-          <span style={{
-            fontFamily: 'Georgia, serif',
-            fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
-            fontWeight: 600,
-            color: s.silver,
-            lineHeight: 1,
-            letterSpacing: '-0.01em',
-          }}>R$ 2.997</span>
+        {/* Lista */}
+        <div style={{ maxWidth: '480px' }}>
+          {entrega.map((e, i) => (
+            <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', padding: '14px 0', borderBottom: `1px solid ${C.line}` }}>
+              <div style={{ width: '6px', height: '6px', background: C.bronze, borderRadius: '50%', marginTop: '8px', flexShrink: 0 }} />
+              <span style={{ fontFamily: sans, fontSize: '0.95rem', color: C.dim, lineHeight: 1.6 }}>{e}</span>
+            </div>
+          ))}
         </div>
+      </Section>
 
-        <p style={{ fontSize: '13px', color: 'rgba(200,200,192,0.4)', margin: '0 0 56px', lineHeight: 1.6 }}>
-          5 encontros individuais + acompanhamento por WhatsApp durante todo o processo.
-        </p>
+      {/* ── PARA QUEM É ── */}
+      <Section bg={C.bgAlt}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))', gap: 'clamp(48px,6vw,96px)' }}>
+          <FadeIn>
+            <div>
+              <Label>Para quem é</Label>
+              <H2>A Neemias é para você se…</H2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                {paraQuem.map((p, i) => (
+                  <div key={i} style={{ padding: '16px 0', borderBottom: `1px solid ${C.line}` }}>
+                    <span style={{ fontFamily: sans, fontSize: '0.95rem', color: C.dim, lineHeight: 1.7 }}>{p}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+          <FadeIn delay={150}>
+            <div>
+              <Label>Para quem não é</Label>
+              <H2>A Neemias não é para todo mundo.</H2>
+              <Body>A Neemias não foi criada para quem procura motivação passageira, respostas prontas ou mais conteúdo para consumir.</Body>
+              <Body style={{ marginBottom: '32px' }}>Não é para quem:</Body>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '40px' }}>
+                {naoParaQuem.map((p, i) => (
+                  <div key={i} style={{ padding: '14px 0', borderBottom: `1px solid ${C.line}` }}>
+                    <span style={{ fontFamily: sans, fontSize: '0.95rem', color: C.dim, lineHeight: 1.7 }}>{p}</span>
+                  </div>
+                ))}
+              </div>
+              <p style={{ fontFamily: serif, fontSize: 'clamp(1.1rem,2vw,1.35rem)', color: C.white, fontStyle: 'italic', lineHeight: 1.5 }}>
+                Você não precisa de alguém para viver a sua vida por você. Precisa de direção para assumir novamente a responsabilidade por ela.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </Section>
 
-        <CtaButton href={WA_LINK}>
-          Tenho interesse na Mentoria Neemias <span style={{ letterSpacing: 0 }}>→</span>
-        </CtaButton>
+      {/* ── MENTORIA ≠ TERAPIA ── */}
+      <Section>
+        <FadeIn>
+          <div style={{ maxWidth: '600px' }}>
+            <Label>Uma distinção importante</Label>
+            <H2>Mentoria não é terapia.</H2>
+            <Body>A Neemias é um processo de orientação, estruturação e execução. Não substitui psicoterapia e não tem como objetivo realizar um processo psicoterapêutico.</Body>
+            <Body>O foco aqui é ajudar você a compreender sua situação, organizar prioridades, tomar decisões e construir um plano concreto de ação.</Body>
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* ── SOBRE LEANDRO ── */}
+      <Section bg={C.bgAlt} style={{ padding: 0 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))' }}>
+          {/* Foto */}
+          <div style={{ position: 'relative', minHeight: '560px', overflow: 'hidden' }}>
+            <Image src="/leandro-neemias.jpg" alt="Leandro Carone" fill
+              style={{ objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(100%) contrast(1.05)' }} />
+            <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to right, transparent 70%, ${C.bgAlt} 100%)` }} />
+          </div>
+          {/* Texto */}
+          <div style={{ padding: 'clamp(56px,8vh,96px) clamp(32px,5vw,80px)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <FadeIn>
+              <Label>Quem conduz o processo</Label>
+              <H2>Quem estará do outro lado da mesa.</H2>
+              <Body>Trabalho há anos com homens que sabem que precisam mudar, mas estão presos entre aquilo que entendem e aquilo que conseguem viver.</Body>
+              <Body>A Neemias nasceu desse processo. Não para entregar mais conteúdo. Mas para sentar com você, olhar para o problema com honestidade e construir um caminho possível.</Body>
+              <Divider />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {['Psicólogo clínico — CRP 06/161663', 'Especialização em Logoterapia e Análise Existencial', 'Diretor clínico da Clínica Cedro', 'Speaker em igrejas e empresas'].map((c, i) => (
+                  <div key={i} style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
+                    <div style={{ width: '4px', height: '4px', background: C.bronze, borderRadius: '50%', flexShrink: 0 }} />
+                    <span style={{ fontFamily: sans, fontSize: '0.9rem', color: C.dim }}>{c}</span>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── ESCASSEZ ── */}
+      <Section>
+        <FadeIn>
+          <div style={{ maxWidth: '560px' }}>
+            <Label>Disponibilidade</Label>
+            <H2>Um processo individual exige espaço.</H2>
+            <Body>Como todos os encontros são individuais e o acompanhamento é feito diretamente por mim, o número de participantes simultâneos é limitado. Não há como escalar sem comprometer a qualidade do acompanhamento.</Body>
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* ── INVESTIMENTO ── */}
+      <Section bg={C.bgAlt}>
+        <FadeIn>
+          <div style={{ maxWidth: '480px' }}>
+            <Label>Investimento</Label>
+            <div style={{ marginBottom: '48px' }}>
+              <div style={{ fontFamily: serif, fontSize: 'clamp(3.5rem,8vw,6rem)', fontWeight: 600, color: C.white, lineHeight: 1, letterSpacing: '-0.02em' }}>
+                R$ 2.997
+              </div>
+              <div style={{ fontFamily: sans, fontSize: '13px', color: C.dim, marginTop: '12px' }}>à vista</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', margin: '20px 0' }}>
+                <div style={{ flex: 1, height: '1px', background: C.line }} />
+                <span style={{ fontFamily: sans, fontSize: '11px', color: C.dimmer, letterSpacing: '0.15em' }}>OU</span>
+                <div style={{ flex: 1, height: '1px', background: C.line }} />
+              </div>
+              <div style={{ fontFamily: serif, fontSize: 'clamp(1.8rem,4vw,2.8rem)', fontWeight: 600, color: C.dim, lineHeight: 1 }}>
+                12× de R$ 295
+              </div>
+            </div>
+            <Body style={{ marginBottom: '40px' }}>Inclui 5 encontros individuais de 60 minutos + acompanhamento direto durante cinco semanas.</Body>
+            <Cta href={WA_LINK}>Solicitar uma vaga</Cta>
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* ── FAQ ── */}
+      <Section>
+        <FadeIn>
+          <div style={{ maxWidth: '640px' }}>
+            <Label>Perguntas frequentes</Label>
+            <H2>O que você precisa saber.</H2>
+            <div style={{ marginTop: '48px' }}>
+              {faq.map((f, i) => (
+                <div key={i} style={{ padding: '24px 0', borderBottom: `1px solid ${C.line}` }}>
+                  <div style={{ fontFamily: serif, fontSize: '1.15rem', fontWeight: 600, color: C.white, marginBottom: '10px' }}>{f.q}</div>
+                  <div style={{ fontFamily: sans, fontSize: '0.93rem', color: C.dim, lineHeight: 1.75 }}>{f.a}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* ── CTA FINAL ── */}
+      <section style={{ background: C.bg, padding: 'clamp(100px,15vh,160px) clamp(24px,7vw,120px)', textAlign: 'center' }}>
+        <FadeIn>
+          <Image src="/neemias-logo.png" alt="N" width={72} height={72} style={{ marginBottom: '48px', opacity: 0.7 }} />
+          <H2 style={{ maxWidth: '520px', margin: '0 auto 24px', textAlign: 'center' }}>Você já sabe o que precisa mudar.</H2>
+          <p style={{ fontFamily: serif, fontSize: 'clamp(1.2rem,2.5vw,1.6rem)', color: C.bronze, fontStyle: 'italic', marginBottom: '32px' }}>
+            Agora precisa decidir o que fará a respeito.
+          </p>
+          <Body style={{ textAlign: 'center', margin: '0 auto 48px', maxWidth: '44ch' }}>
+            Cinco encontros. Cinco semanas. Um plano para reconstruir o que precisa ser reconstruído.
+          </Body>
+          <Cta href={WA_LINK}>Solicitar uma vaga</Cta>
+        </FadeIn>
       </section>
+
+      {/* ── CTA FIXO MOBILE ── */}
+      <div style={{
+        position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 100,
+        background: C.bronze, padding: '16px 24px',
+        display: mobileCtaVisible ? 'block' : 'none',
+      }}
+      className="md:hidden">
+        <a href={WA_LINK} target="_blank" rel="noopener noreferrer" style={{
+          display: 'block', textAlign: 'center',
+          fontFamily: sans, fontSize: '11px', fontWeight: 700,
+          letterSpacing: '0.2em', textTransform: 'uppercase',
+          color: C.bg, textDecoration: 'none',
+        }}>Solicitar uma vaga</a>
+      </div>
 
     </div>
   );
