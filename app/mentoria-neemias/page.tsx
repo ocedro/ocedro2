@@ -222,7 +222,7 @@ export default function NeemiasPage() {
         }}>
           <FadeIn delay={100}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '40px' }}>
-              <Image src="/neemias-logo.png" alt="N" width={112} height={112}
+              <Image src="/neemias-logo.png" alt="N" width={168} height={168}
                 style={{ opacity: 0.9 }} />
               <div>
                 <div style={{ fontFamily: serif, fontSize: 'clamp(1.1rem,2vw,1.4rem)', fontWeight: 600, color: C.white, letterSpacing: '0.04em', lineHeight: 1.15 }}>Mentoria</div>
