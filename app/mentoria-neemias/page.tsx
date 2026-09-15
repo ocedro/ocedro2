@@ -426,47 +426,9 @@ export default function NeemiasPage() {
         </div>
       </Section>
 
-      {/* ── MENTORIA ≠ TERAPIA ── */}
-      <Section>
-        <FadeIn>
-          <div style={{ maxWidth: '600px' }}>
-            <Label>Uma distinção importante</Label>
-            <H2>Mentoria não é terapia.</H2>
-            <Body>A Neemias é um processo de orientação, estruturação e execução. Não substitui psicoterapia e não tem como objetivo realizar um processo psicoterapêutico.</Body>
-            <Body>O foco aqui é ajudar você a compreender sua situação, organizar prioridades, tomar decisões e construir um plano concreto de ação.</Body>
-          </div>
-        </FadeIn>
-      </Section>
 
-      {/* ── SOBRE LEANDRO ── */}
-      <Section bg={C.bgAlt} style={{ padding: 0 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px,1fr))' }}>
-          {/* Foto */}
-          <div style={{ position: 'relative', minHeight: '560px', overflow: 'hidden' }}>
-            <Image src="/leandro-neemias.jpg" alt="Leandro Carone" fill
-              style={{ objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(100%) contrast(1.05)' }} />
-            <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to right, transparent 70%, ${C.bgAlt} 100%)` }} />
-          </div>
-          {/* Texto */}
-          <div style={{ padding: 'clamp(56px,8vh,96px) clamp(32px,5vw,80px)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-            <FadeIn>
-              <Label>Quem conduz o processo</Label>
-              <H2>Quem estará do outro lado da mesa.</H2>
-              <Body>Trabalho há anos com homens que sabem que precisam mudar, mas estão presos entre aquilo que entendem e aquilo que conseguem viver.</Body>
-              <Body>A Neemias nasceu desse processo. Não para entregar mais conteúdo. Mas para sentar com você, olhar para o problema com honestidade e construir um caminho possível.</Body>
-              <Divider />
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {['Psicólogo clínico — CRP 06/161663', 'Especialização em Logoterapia e Análise Existencial', 'Diretor clínico da Clínica Cedro', 'Speaker em igrejas e empresas'].map((c, i) => (
-                  <div key={i} style={{ display: 'flex', gap: '14px', alignItems: 'center' }}>
-                    <div style={{ width: '4px', height: '4px', background: C.bronze, borderRadius: '50%', flexShrink: 0 }} />
-                    <span style={{ fontFamily: sans, fontSize: '0.9rem', color: C.dim }}>{c}</span>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </Section>
+
+
 
       {/* ── ESCASSEZ ── */}
       <Section>
