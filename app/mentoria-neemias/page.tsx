@@ -55,9 +55,9 @@ function Bronze({ children, style = {} }: { children: React.ReactNode; style?: R
   return <span style={{ color: C.bronze, ...style }}>{children}</span>;
 }
 
-function Section({ children, bg, style = {} }: { children: React.ReactNode; bg?: string; style?: React.CSSProperties }) {
+function Section({ children, bg, style = {}, id }: { children: React.ReactNode; bg?: string; style?: React.CSSProperties; id?: string }) {
   return (
-    <section style={{
+    <section id={id} style={{
       background: bg || C.bg,
       padding: 'clamp(80px, 12vh, 140px) clamp(24px, 7vw, 120px)',
       ...style,
@@ -517,7 +517,7 @@ export default function NeemiasPage() {
       </Section>
 
       {/* ── CTA FINAL ── */}
-      <section style={{ background: C.bg, padding: 'clamp(100px,15vh,160px) clamp(24px,7vw,120px)', textAlign: 'center' }}>
+      <section id={id} style={{ background: C.bg, padding: 'clamp(100px,15vh,160px) clamp(24px,7vw,120px)', textAlign: 'center' }}>
         <FadeIn>
           <Image src="/neemias-logo.png" alt="N" width={72} height={72} style={{ marginBottom: '48px', opacity: 0.7 }} />
           <H2 style={{ maxWidth: '520px', margin: '0 auto 24px', textAlign: 'center' }}>Você já sabe o que precisa mudar.</H2>
