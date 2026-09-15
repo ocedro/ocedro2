@@ -221,8 +221,14 @@ export default function NeemiasPage() {
           position: 'relative', zIndex: 1,
         }}>
           <FadeIn delay={100}>
-            <Image src="/neemias-logo.png" alt="N" width={56} height={56}
-              style={{ marginBottom: '40px', opacity: 0.9 }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '40px' }}>
+              <Image src="/neemias-logo.png" alt="N" width={112} height={112}
+                style={{ opacity: 0.9 }} />
+              <div>
+                <div style={{ fontFamily: serif, fontSize: 'clamp(1.1rem,2vw,1.4rem)', fontWeight: 600, color: C.white, letterSpacing: '0.04em', lineHeight: 1.15 }}>Mentoria</div>
+                <div style={{ fontFamily: serif, fontSize: 'clamp(1.1rem,2vw,1.4rem)', fontWeight: 600, color: C.bronze, letterSpacing: '0.04em', lineHeight: 1.15 }}>Neemias</div>
+              </div>
+            </div>
           </FadeIn>
           <FadeIn delay={200}>
             <p style={{ fontFamily: sans, fontSize: '11px', letterSpacing: '0.28em', textTransform: 'uppercase', color: C.bronze, marginBottom: '24px' }}>
