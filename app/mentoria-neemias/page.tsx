@@ -517,7 +517,7 @@ export default function NeemiasPage() {
       </Section>
 
       {/* ── CTA FINAL ── */}
-      <section id={id} style={{ background: C.bg, padding: 'clamp(100px,15vh,160px) clamp(24px,7vw,120px)', textAlign: 'center' }}>
+      <section style={{ background: C.bg, padding: 'clamp(100px,15vh,160px) clamp(24px,7vw,120px)', textAlign: 'center' }}>
         <FadeIn>
           <Image src="/neemias-logo.png" alt="N" width={72} height={72} style={{ marginBottom: '48px', opacity: 0.7 }} />
           <H2 style={{ maxWidth: '520px', margin: '0 auto 24px', textAlign: 'center' }}>Você já sabe o que precisa mudar.</H2>
