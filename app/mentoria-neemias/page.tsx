@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
-const WA_LINK = 'https://w.app/mentorianeemias';
+const WA_LINK = 'https://wa.me/5519974010520?text=Ol%C3%A1%2C%20Leandro.%20Conheci%20a%20Mentoria%20Neemias%20e%20me%20identifiquei%20com%20a%20proposta.%20Quero%20entender%20melhor%20como%20funciona%20o%20processo%20e%20saber%20se%20existe%20uma%20vaga%20dispon%C3%ADvel%20para%20o%20meu%20momento.';
 
 const C = {
   bg:      '#0B0B0A',
