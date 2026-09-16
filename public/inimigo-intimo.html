@@ -69,15 +69,16 @@ section{padding:clamp(72px,11vw,120px) 0}
   position:relative;
   min-height:100svh;
   display:flex;
-  align-items:flex-end;
+  align-items:flex-start;
   overflow:hidden;
 }
 .hero-bg{
   position:absolute;inset:0;
   background-image:url('/inimigo-intimo/hero-bg.jpg');
-  background-size:cover;
-  background-position:left center;
+  background-size:contain;
+  background-position:right center;
   background-repeat:no-repeat;
+  background-color:var(--bg);
   z-index:0;
 }
 .hero-bg::after{
@@ -121,39 +122,39 @@ section{padding:clamp(72px,11vw,120px) 0}
 }
 .hero-content{
   position:relative;z-index:1;
-  padding:clamp(110px,14vh,160px) clamp(40px,7vw,96px) clamp(64px,9vh,104px) clamp(48px,8vw,112px);
-  max-width:860px;
+  padding:clamp(80px,10vh,120px) clamp(28px,4vw,56px) clamp(48px,7vh,80px) clamp(28px,4vw,56px);
+  max-width:48%;
 }
-.hero-logo{width:clamp(130px,16vw,190px);margin-bottom:48px;opacity:0.92}
+.hero-logo{width:clamp(100px,11vw,145px);margin-bottom:28px;opacity:0.95}
 .hero h1{
   font-family:var(--serif);
-  font-size:clamp(2.4rem,5.5vw,5rem);
+  font-size:clamp(1.6rem,2.8vw,2.8rem);
   font-weight:600;
-  line-height:1.04;
-  letter-spacing:-0.015em;
+  line-height:1.1;
+  letter-spacing:-0.01em;
   color:var(--text);
-  margin-bottom:28px;
-  max-width:680px;
+  margin-bottom:16px;
+  max-width:480px;
 }
 .hero h1 em{font-style:italic;color:rgba(232,227,216,0.6)}
 .hero-sub{
   font-family:var(--sans);
-  font-size:clamp(0.9rem,1.6vw,1rem);
+  font-size:clamp(0.8rem,1.1vw,0.88rem);
   color:var(--muted);
-  line-height:1.85;
-  max-width:520px;
-  margin-bottom:44px;
+  line-height:1.8;
+  max-width:400px;
+  margin-bottom:28px;
 }
 .hero-stats{
   display:flex;
-  gap:clamp(24px,4vw,56px);
-  margin-bottom:40px;
-  padding-top:32px;
+  gap:clamp(16px,3vw,36px);
+  margin-bottom:28px;
+  padding-top:20px;
   border-top:1px solid var(--line);
 }
 .hero-stat-num{
   font-family:var(--serif);
-  font-size:clamp(1.6rem,3.2vw,2.4rem);
+  font-size:clamp(1.1rem,1.8vw,1.6rem);
   font-weight:600;
   color:var(--text);
   line-height:1;
