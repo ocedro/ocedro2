@@ -74,17 +74,20 @@ section{padding:clamp(72px,11vw,120px) 0}
 }
 .hero-bg{
   position:absolute;inset:0;
-  background:var(--bg);
+  background-image:url('/inimigo-intimo/hero-bg.jpg');
+  background-size:cover;
+  background-position:center right;
   z-index:0;
 }
-/* Mancha vermelha sutil à esquerda */
-.hero-glow{
-  position:absolute;
-  top:-10%;left:-5%;
-  width:55%;height:70%;
-  background:radial-gradient(ellipse at 30% 40%, rgba(193,52,26,0.13) 0%, transparent 65%);
-  pointer-events:none;z-index:0;
+.hero-bg::after{
+  content:'';
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to right, rgba(13,12,11,0.97) 0%, rgba(13,12,11,0.85) 38%, rgba(13,12,11,0.35) 65%, transparent 100%),
+    linear-gradient(to top, rgba(13,12,11,0.7) 0%, transparent 40%);
 }
+/* Sem glow extra, a imagem já traz */
+.hero-glow{display:none}
 /* Texto grande decorativo de fundo */
 .hero-watermark{
   position:absolute;
@@ -649,7 +652,6 @@ footer{
   <div class="hero-glow"></div>
   <div class="hero-line"></div>
   <div class="hero-vline"></div>
-  <div class="hero-watermark">II</div>
   <div class="hero-content">
     <img class="hero-logo sa" src="/inimigo-intimo/inimigo-intimo.png" alt="Inimigo Íntimo">
     <h1 class="sa">Você não precisa de mais uma técnica para combater a pornografia.<br><em>Precisa entender o que está por trás dela.</em></h1>
