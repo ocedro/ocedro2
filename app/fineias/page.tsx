@@ -243,7 +243,7 @@ export default function FineiasPage() {
               <p className="text-cedro-sage mb-4 leading-relaxed">A psicologia, a fé cristã e o sentido existencial não são três mundos separados. Quando você integra os três, a leitura do problema muda, e a intervenção também.</p>
               <p className="text-cedro-sage leading-relaxed">A Finéias é o resultado prático dessa integração.</p>
               <div className="mt-8 pt-8 border-t border-cedro-sage/10 flex flex-col gap-3">
-                {['Psicólogo clínico', 'Especialização em Logoterapia e Análise Existencial', 'Fundador e diretor clínico da Clínica Cedro', 'Speaker em igrejas e empresas'].map((c, i) => (
+                {['Psicólogo clínico', 'Especialização em Logoterapia e Análise Existencial', 'Fundador e diretor clínico da Clínica Cedro', 'Palestrante'].map((c, i) => (
                   <div key={i} className="flex gap-3 items-center">
                     <div className="w-1 h-1 rounded-full bg-cedro-red flex-shrink-0" />
                     <span className="text-sm text-cedro-sage">{c}</span>
