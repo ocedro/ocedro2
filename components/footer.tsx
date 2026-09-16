@@ -34,7 +34,7 @@ export function Footer() {
             <h4 className="font-sans text-sm font-bold text-cedro-navy uppercase tracking-widest mb-4">Mentorias</h4>
             <div className="flex flex-col gap-2">
               <Link href="/lab" className="text-sm text-cedro-ink/65 hover:text-cedro-red transition-colors">CedroLAB</Link>
-              <Link href="/fineias" className="text-sm text-cedro-ink/65 hover:text-cedro-red transition-colors">Sociedade Finéias</Link>
+              <Link href="/fineias" className="text-sm text-cedro-ink/65 hover:text-cedro-red transition-colors">Mentoria Finéias</Link>
             </div>
           </div>
 

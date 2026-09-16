@@ -58,7 +58,7 @@ export default function FineiasPage() {
               Seu problema não é só pornografia. É que você não tem um plano.
             </h1>
             <p className="text-lg text-cedro-sage mb-10">
-              A Sociedade Finéias é uma mentoria em grupo para homens cristãos que estão prontos para parar de improvisar, retomar o controle e construir um plano de uma vida que valha a pena ser vivida. 10 encontros. 12 homens. Sem gravação.
+              A Mentoria Finéias é uma mentoria em grupo para homens cristãos que estão prontos para parar de improvisar, retomar o controle e construir um plano de uma vida que valha a pena ser vivida. 10 encontros. 12 homens. Sem gravação.
             </p>
             <Button asChild withArrow>
               <a href="https://pay.hub.la/BHnADAMVdYRbdlqLMRU5" target="_blank" rel="noopener noreferrer">Quero sair desse ciclo</a>
@@ -90,7 +90,7 @@ export default function FineiasPage() {
             <div>
               <SectionLabel>A proposta</SectionLabel>
               <h2 className="mb-6 text-cedro-white">
-                A Sociedade Finéias não é grupo de apoio. Não é círculo de confissão. Não é lugar onde você repete toda semana que é viciado e vai embora igual.
+                A Mentoria Finéias não é grupo de apoio. Não é círculo de confissão. Não é lugar onde você repete toda semana que é viciado e vai embora igual.
               </h2>
               <p className="mb-4 text-cedro-sage">É uma mentoria onde você sai com um plano escrito na mão.</p>
               <p className="mb-4 text-cedro-sage">Um plano de identidade. De masculinidade. De como você vai conduzir sua vida de agora em diante. A pornografia entra nessa conversa, mas ela não é o centro. O centro é você entender quem você é, o que está destruindo isso, e como reconstruir com estrutura.</p>
