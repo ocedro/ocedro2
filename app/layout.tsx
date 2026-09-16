@@ -126,7 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 '@type': 'Person',
                 name: 'Leandro Carone',
                 jobTitle: 'Psicólogo Clínico',
-                identifier: 'CRP 06/161663',
+                
               },
               sameAs: [
                 'https://www.instagram.com/ocedro',

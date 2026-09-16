@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Leandro Carone — Psicólogo cristão e logoterapeuta',
-  description: 'Psicólogo clínico (CRP 06/161663), logoterapeuta, fundador da Clínica Cedro. Atendimento online integrando fé e psicologia.',
+  description: 'Psicólogo clínico, logoterapeuta, fundador da Clínica Cedro. Atendimento online integrando fé e psicologia.',
   alternates: {
     canonical: '/leandro',
   },
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: 'https://ocedro.com.br/leandro',
     siteName: 'Clínica Cedro',
     title: 'Leandro Carone — Psicólogo cristão e logoterapeuta',
-    description: 'Psicólogo clínico (CRP 06/161663), logoterapeuta, fundador da Clínica Cedro.',
+    description: 'Psicólogo clínico, logoterapeuta, fundador da Clínica Cedro.',
     images: [
       {
         url: '/og-leandro.png',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Leandro Carone — Psicólogo cristão e logoterapeuta',
-    description: 'Psicólogo clínico (CRP 06/161663), logoterapeuta.',
+    description: 'Psicólogo clínico, logoterapeuta.',
     images: ['/og-leandro.png'],
   },
 };
