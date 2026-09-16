@@ -61,7 +61,7 @@ export default function FineiasPage() {
               A Sociedade Finéias é uma mentoria em grupo para homens cristãos que estão prontos para parar de improvisar, retomar o controle e construir um plano de uma vida que valha a pena ser vivida. 10 encontros. 12 homens. Sem gravação.
             </p>
             <Button asChild withArrow>
-              <a href="https://form.respondi.app/Qr9kjWMI" target="_blank" rel="noopener noreferrer">Quero sair desse ciclo</a>
+              <a href="https://pay.hub.la/BHnADAMVdYRbdlqLMRU5" target="_blank" rel="noopener noreferrer">Quero sair desse ciclo</a>
             </Button>
           </div>
         </div>
@@ -122,7 +122,7 @@ export default function FineiasPage() {
         <div className="max-w-[1200px] mx-auto px-5 md:px-8">
           <p className="text-lg text-cedro-white mb-6">Já sabe que precisa disso? Não precisa ler mais nada.</p>
           <Button asChild withArrow>
-            <a href="https://form.respondi.app/Qr9kjWMI" target="_blank" rel="noopener noreferrer">Quero estar na próxima turma</a>
+            <a href="https://pay.hub.la/BHnADAMVdYRbdlqLMRU5" target="_blank" rel="noopener noreferrer">Quero estar na próxima turma</a>
           </Button>
         </div>
       </section>
@@ -291,7 +291,7 @@ export default function FineiasPage() {
           <p className="text-cedro-sage my-6 text-lg">As vagas são 12. O grupo precisa ser pequeno para funcionar, porque aliança de verdade não acontece em multidão.</p>
           <p className="text-cedro-sage mb-10">Você não precisa ter tudo resolvido para entrar. Precisa estar pronto para parar de improvisar.</p>
           <Button asChild withArrow>
-            <a href="https://form.respondi.app/Qr9kjWMI" target="_blank" rel="noopener noreferrer">Quero participar da próxima turma</a>
+            <a href="https://pay.hub.la/BHnADAMVdYRbdlqLMRU5" target="_blank" rel="noopener noreferrer">Quero participar da próxima turma</a>
           </Button>
         </div>
       </section>
