@@ -6,902 +6,531 @@
 <meta name="facebook-domain-verification" content="t7q5ma5wxffkr0u3awodjrt1v6ddvp" />
 <link rel="icon" type="image/x-icon" href="/favicon-14.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-14.png">
-<title>Pare de Lutar Contra o Porno — Desafio 14 Dias</title>
+<title>Desafio 14 Dias — Pare de Lutar Contra o Pornô</title>
+<meta name="description" content="Um protocolo prático de 14 dias para homens que querem entender seus gatilhos, interromper o ciclo da pornografia e começar a recuperar o governo sobre seus hábitos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700;1,800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  background:#0a0a0a;
-  color:#f0ede6;
-  font-family:'Barlow',sans-serif;
-  font-weight:400;
-  line-height:1.6;
-  overflow-x:hidden;
-}
+body{background:#0a0a0a;color:#f0ede6;font-family:'Barlow',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-
 :root{
-  --gold:#FF9000;
+  --gold:#E08B00;
   --gold2:#FFB347;
-  --red:#FF0000;
+  --red:#CC2200;
   --dark:#0a0a0a;
   --dark2:#111111;
-  --dark3:#1a1a1a;
+  --dark3:#161616;
   --text:#f0ede6;
-  --muted:rgba(240,237,230,0.55);
-  --muted2:rgba(240,237,230,0.3);
+  --muted:rgba(240,237,230,0.58);
+  --dim:rgba(240,237,230,0.3);
   --bd:rgba(240,237,230,0.08);
   --serif:'Barlow Condensed',sans-serif;
   --sans:'Barlow',sans-serif;
 }
 
-/* ===== OFFER STRIP ===== */
-.offer-strip{
-  background:linear-gradient(90deg,#1a0600,#2d0e00,#1a0600);
-  border-bottom:1px solid rgba(255,144,0,0.3);
-  padding:11px 20px;
-  text-align:center;
-  font-size:clamp(12px,3.5vw,14px);
-  letter-spacing:.04em;
-  color:rgba(240,237,230,0.85);
-  position:sticky;
-  top:0;
-  z-index:900;
-}
-.offer-strip strong{color:var(--gold);font-weight:700}
-.offer-strip s{opacity:.5;font-size:.9em}
+/* PROGRESS */
+#prog{position:fixed;top:0;left:0;height:2px;background:var(--gold);width:0%;z-index:1001;transition:width .1s linear}
 
-/* ===== HERO ===== */
-.hero{
-  background:var(--dark);
-  padding:clamp(36px,8vw,64px) 20px clamp(40px,8vw,60px);
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-.hero .hero-content-wrap{position:relative;z-index:2;}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,0,0,0.15);
-  border:1px solid rgba(255,0,0,0.4);
-  color:#FF1A1A;
-  font-size:clamp(11px,3vw,13px);
-  font-weight:600;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  padding:7px 16px;
-  margin-bottom:24px;
-}
-.hero-badge span{display:block;width:7px;height:7px;border-radius:50%;background:#FF1A1A;animation:blink 1.4s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
-
-.hero h1{
-  font-family:var(--serif);
-  font-size:clamp(2.6rem,10vw,5rem);
-  font-weight:900;
-  line-height:.95;
-  text-transform:uppercase;
-  letter-spacing:.02em;
-  margin-bottom:20px;
-  color:var(--text);
-}
-.hero h1 em{
-  font-style:italic;
-  color:var(--gold);
-  display:block;
-}
-.hero-anchor{
-  font-family:var(--serif);
-  font-size:clamp(1rem,4vw,1.25rem);
-  font-weight:600;
-  letter-spacing:.04em;
-  text-transform:uppercase;
-  color:var(--gold);
-  margin-bottom:20px;
-}
-.hero-sub{
-  font-size:clamp(1rem,4vw,1.15rem);
-  color:var(--muted);
-  max-width:560px;
-  margin:0 auto 28px;
-  line-height:1.7;
-}
-.hero-sub strong{color:var(--text)}
-
-/* ===== CTA BUTTON ===== */
-.btn-cta{
-  display:block;
-  width:100%;
-  max-width:480px;
-  margin:0 auto;
-  background:linear-gradient(135deg,var(--gold) 0%,#cc7000 100%);
-  color:#0a0a0a;
-  font-family:var(--serif);
-  font-size:clamp(1.1rem,4.5vw,1.4rem);
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  padding:clamp(16px,4vw,20px) 28px;
-  text-align:center;
-  border:none;
-  cursor:pointer;
-  -webkit-tap-highlight-color:transparent;
-  transition:filter .18s,transform .12s;
-  box-shadow:0 6px 32px rgba(255,144,0,0.35);
-  position:relative;
-  overflow:hidden;
-}
-.btn-cta::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(255,255,255,0.15) 0%,transparent 50%);
-}
+/* HERO */
+.hero{background:var(--dark);padding:clamp(48px,10vw,80px) 20px clamp(48px,8vw,72px);text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(224,139,0,0.09) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(224,139,0,0.3);color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:7px 16px;margin-bottom:28px}
+.hero h1{font-family:var(--serif);font-size:clamp(2.4rem,9vw,5rem);font-weight:900;line-height:.97;text-transform:uppercase;letter-spacing:.02em;margin-bottom:20px;color:var(--text)}
+.hero h1 em{font-style:italic;color:var(--gold);display:block}
+.hero-sub{font-size:clamp(.95rem,3.5vw,1.1rem);color:var(--muted);max-width:540px;margin:0 auto 32px;line-height:1.75}
+.btn-cta{display:block;width:100%;max-width:440px;margin:0 auto;background:var(--gold);color:#0a0a0a;font-family:var(--serif);font-size:clamp(1rem,4vw,1.3rem);font-weight:900;text-transform:uppercase;letter-spacing:.1em;padding:clamp(15px,4vw,19px) 28px;text-align:center;cursor:pointer;transition:filter .18s,transform .12s;box-shadow:0 4px 24px rgba(224,139,0,0.3)}
 .btn-cta:hover{filter:brightness(1.1)}
 .btn-cta:active{transform:scale(.97)}
-.btn-cta small{
-  display:block;
-  font-size:.65em;
-  font-weight:400;
-  letter-spacing:.04em;
-  opacity:.75;
-  margin-top:3px;
-  font-family:var(--sans);
-  text-transform:none;
-}
+.btn-cta small{display:block;font-size:.6em;font-weight:400;letter-spacing:.06em;opacity:.75;margin-top:4px;font-family:var(--sans);text-transform:none}
+.safe-note{margin-top:10px;font-size:12px;color:var(--dim);letter-spacing:.04em;text-align:center}
 
-.safe-note{
-  margin-top:10px;
-  font-size:12px;
-  color:var(--muted2);
-  letter-spacing:.04em;
-  text-align:center;
-}
+/* SECTIONS */
+.sec{padding:clamp(56px,10vw,88px) 20px}
+.inner{max-width:640px;margin:0 auto}
+.inner-wide{max-width:800px;margin:0 auto}
+.tag{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:.24em;color:var(--gold);margin-bottom:14px;font-weight:600}
+.h2{font-family:var(--serif);font-size:clamp(1.8rem,7vw,3rem);font-weight:900;text-transform:uppercase;line-height:.97;letter-spacing:.02em;margin-bottom:clamp(20px,4vw,32px);color:var(--text)}
+.h2 em{font-style:italic;color:var(--gold)}
+.body{font-size:clamp(.95rem,3.5vw,1.05rem);color:var(--muted);line-height:1.8;margin-bottom:20px}
+.body strong{color:var(--text)}
 
+/* CICLO */
+.ciclo-flow{display:flex;flex-direction:column;align-items:center;gap:0;margin:40px auto;max-width:360px}
+.ciclo-item{width:100%;text-align:center;padding:14px 20px;border:1px solid var(--bd);background:var(--dark2);position:relative}
+.ciclo-item.destaque{border-color:rgba(204,34,0,0.4);background:rgba(204,34,0,0.06)}
+.ciclo-item-label{font-family:var(--serif);font-size:clamp(.95rem,3.5vw,1.1rem);font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--text)}
+.ciclo-item.destaque .ciclo-item-label{color:#FF4422}
+.ciclo-item-sub{font-size:.8rem;color:var(--muted);margin-top:3px}
+.ciclo-arrow{width:1px;height:24px;background:var(--bd);margin:0 auto;position:relative}
+.ciclo-arrow::after{content:'▼';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);font-size:8px;color:var(--dim)}
 
-/* ===== SECTION BASE ===== */
-.sec{padding:clamp(48px,10vw,80px) 20px}
-.sec-inner{max-width:640px;margin:0 auto}
-.sec-inner-wide{max-width:780px;margin:0 auto}
+.ciclo-novo{display:flex;flex-direction:column;align-items:center;gap:0;margin:40px auto;max-width:360px}
+.ciclo-novo-item{width:100%;padding:14px 20px;border:1px solid rgba(224,139,0,0.2);background:rgba(224,139,0,0.04);text-align:center}
+.ciclo-novo-item-num{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.ciclo-novo-item-label{font-family:var(--serif);font-size:clamp(.95rem,3.5vw,1.1rem);font-weight:800;text-transform:uppercase;color:var(--text)}
+.ciclo-novo-arrow{width:1px;height:24px;background:rgba(224,139,0,0.25);margin:0 auto;position:relative}
+.ciclo-novo-arrow::after{content:'▼';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);font-size:8px;color:var(--gold);opacity:.5}
 
-.sec-tag{
-  display:inline-block;
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.22em;
-  color:var(--gold);
-  margin-bottom:12px;
-  font-weight:600;
-}
-.sec-title{
-  font-family:var(--serif);
-  font-size:clamp(2rem,7vw,3.2rem);
-  font-weight:900;
-  text-transform:uppercase;
-  line-height:.97;
-  letter-spacing:.02em;
-  margin-bottom:clamp(24px,5vw,36px);
-  color:var(--text);
-}
-.sec-title em{font-style:italic;color:var(--gold)}
+/* FASES */
+.fases-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bd);border:1px solid var(--bd);margin-top:36px}
+.fase-card{background:var(--dark2);padding:clamp(18px,3.5vw,28px) clamp(16px,3vw,24px)}
+.fase-num{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.fase-titulo{font-family:var(--serif);font-size:clamp(1rem,3.5vw,1.3rem);font-weight:800;text-transform:uppercase;color:var(--text);margin-bottom:6px}
+.fase-dias{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+.fase-desc{font-size:clamp(.82rem,3vw,.9rem);color:var(--muted);line-height:1.65}
 
-/* ===== PAIN ===== */
-.pain{background:var(--dark2)}
-.pain-text{
-  font-size:clamp(1rem,4vw,1.1rem);
-  color:var(--muted);
-  line-height:1.8;
-  margin-bottom:20px;
-}
-.pain-text strong{color:var(--text)}
+/* BA */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--bd);border:1px solid var(--bd);margin-top:36px}
+.ba-col{padding:clamp(18px,3.5vw,26px) clamp(14px,2.5vw,20px)}
+.ba-before{background:#110808}
+.ba-after{background:#080e08}
+.ba-head{font-family:var(--serif);font-size:.9rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.ba-head--b{color:#CC4422}
+.ba-head--a{color:#3eb55a}
+.ba-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ba-item{font-size:clamp(.8rem,3vw,.88rem);color:var(--muted);line-height:1.5;display:flex;align-items:flex-start;gap:8px}
+.ba-before .ba-item::before{content:'–';color:#CC4422;flex-shrink:0}
+.ba-after .ba-item::before{content:'→';color:#3eb55a;flex-shrink:0}
 
-.pain-list{list-style:none;display:flex;flex-direction:column;gap:0;margin:28px 0}
-.pain-li{
-  display:flex;align-items:flex-start;gap:14px;
-  padding:16px 0;
-  border-bottom:1px solid var(--bd);
-  font-size:clamp(.9rem,3.5vw,1rem);
-  color:rgba(240,237,230,0.8);
-  line-height:1.5;
-}
-.pain-li:first-child{border-top:1px solid var(--bd)}
-.pain-li-icon{
-  flex-shrink:0;
-  width:28px;height:28px;
-  background:rgba(255,0,0,0.15);
-  border:1px solid rgba(255,0,0,0.3);
-  color:#FF1A1A;
-  font-size:13px;font-weight:700;
-  display:flex;align-items:center;justify-content:center;
-  margin-top:1px;
-}
-
-/* ===== BEFORE/AFTER ===== */
-.ba-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:1px;
-  background:var(--bd);
-  border:1px solid var(--bd);
-  margin-top:clamp(28px,5vw,40px);
-}
-.ba-col{padding:clamp(20px,4vw,28px) clamp(16px,3vw,24px)}
-.ba-col--before{background:#140a0a}
-.ba-col--after{background:#0a1208}
-.ba-head{
-  font-family:var(--serif);
-  font-size:clamp(.85rem,3vw,1rem);
-  font-weight:900;
-  text-transform:uppercase;
-  letter-spacing:.14em;
-  margin-bottom:16px;
-  display:flex;align-items:center;gap:8px;
-}
-.ba-head--before{color:#FF1A1A}
-.ba-head--after{color:#2ecc71}
-.ba-items{list-style:none;display:flex;flex-direction:column;gap:10px}
-.ba-item{
-  font-size:clamp(.8rem,3vw,.9rem);
-  color:var(--muted);
-  line-height:1.45;
-  display:flex;align-items:flex-start;gap:8px;
-}
-.ba-item::before{
-  content:'•';
-  flex-shrink:0;
-  margin-top:1px;
-}
-.ba-col--before .ba-item::before{color:#FF1A1A}
-.ba-col--after .ba-item::before{color:#2ecc71}
-
-/* ===== QUOTE ===== */
-.quote-sec{
-  background:var(--dark3);
-  border-top:1px solid var(--bd);
-  border-bottom:1px solid var(--bd);
-  padding:clamp(40px,8vw,64px) 24px;
-  text-align:center;
-}
-.quote-text{
-  font-family:var(--serif);
-  font-size:clamp(1.5rem,5.5vw,2.2rem);
-  font-weight:700;
-  font-style:italic;
-  color:var(--text);
-  line-height:1.3;
-  max-width:620px;
-  margin:0 auto 16px;
-}
-.quote-text strong{color:var(--gold);font-style:normal}
-.quote-ref{
-  font-size:12px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  color:var(--muted2);
-}
-
-/* ===== INCLUDES ===== */
-.includes{background:var(--dark)}
-.includes-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:1px;
-  background:var(--bd);
-  border:1px solid var(--bd);
-  margin-top:clamp(24px,4vw,36px);
-}
-.inc-card{
-  background:var(--dark2);
-  padding:clamp(18px,3.5vw,24px) clamp(14px,2.5vw,20px);
-  transition:background .2s;
-}
-.inc-card:hover{background:var(--dark3)}
-.inc-num{
-  font-family:var(--serif);
-  font-size:2rem;
-  font-weight:900;
-  color:rgba(255,144,0,0.2);
-  line-height:1;
-  margin-bottom:8px;
-}
-.inc-title{
-  font-size:clamp(.85rem,3vw,.95rem);
-  font-weight:600;
-  color:var(--text);
-  margin-bottom:6px;
-}
-.inc-desc{
-  font-size:clamp(.78rem,2.8vw,.85rem);
-  color:var(--muted);
-  line-height:1.6;
-}
-
-/* ===== 14 DAYS ===== */
-.days-sec{background:var(--dark2)}
-.days-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:1px;
-  background:var(--bd);
-  border:1px solid var(--bd);
-  margin-top:clamp(24px,4vw,36px);
-}
-.day-card{
-  background:var(--dark);
-  padding:14px 16px;
-  transition:background .2s;
-}
-.day-card:hover{background:rgba(255,144,0,0.06)}
+/* 14 DIAS */
+.days-grid{display:flex;flex-direction:column;gap:1px;background:var(--bd);border:1px solid var(--bd);margin-top:36px}
+.day-card{background:var(--dark);padding:16px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;transition:background .2s}
+.day-card:hover{background:rgba(224,139,0,0.05)}
 .day-card:hover .day-n{color:var(--gold)}
-.day-n{
-  font-family:var(--serif);
-  font-size:1.3rem;
-  font-weight:900;
-  color:rgba(255,144,0,0.28);
-  line-height:1;
-  margin-bottom:4px;
-  transition:color .25s;
-}
-.day-name{
-  font-size:clamp(.85rem,3vw,.95rem);
-  color:var(--text);
-  line-height:1.35;
-  font-weight:600;
-  margin-bottom:6px;
-}
-.day-promise{
-  font-size:clamp(.78rem,3vw,.85rem);
-  color:rgba(240,237,230,0.5);
-  line-height:1.5;
-  font-weight:400;
-}
+.day-n{font-family:var(--serif);font-size:1.5rem;font-weight:900;color:rgba(224,139,0,0.22);line-height:1;transition:color .25s}
+.day-name{font-size:clamp(.85rem,3vw,.95rem);color:var(--text);font-weight:700;margin-bottom:5px}
+.day-promise{font-size:clamp(.78rem,3vw,.85rem);color:var(--dim);line-height:1.55}
+.fase-label{padding:10px 20px;background:var(--dark3);border-bottom:1px solid var(--bd)}
+.fase-label-text{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
 
-/* ===== FOR WHO ===== */
-.forwho-sec{background:var(--dark)}
+/* INCLUDES */
+.inc-list{display:flex;flex-direction:column;gap:1px;background:var(--bd);border:1px solid var(--bd);margin-top:36px}
+.inc-item{background:var(--dark2);padding:20px 24px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start}
+.inc-num{font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(224,139,0,0.2);line-height:1}
+.inc-title{font-size:clamp(.88rem,3vw,.97rem);font-weight:700;color:var(--text);margin-bottom:5px}
+.inc-desc{font-size:clamp(.8rem,3vw,.88rem);color:var(--muted);line-height:1.6}
+
+/* NAO E */
+.naoe-list{display:flex;flex-direction:column;gap:1px;background:var(--bd);border:1px solid var(--bd);margin-top:28px}
+.naoe-item{background:var(--dark2);padding:14px 20px;font-size:clamp(.85rem,3vw,.93rem);color:var(--muted);display:flex;gap:12px;align-items:flex-start;line-height:1.55}
+.naoe-x{color:var(--dim);flex-shrink:0;font-weight:600}
+
+/* FOR WHO */
 .forwho-list{list-style:none;display:flex;flex-direction:column;margin-top:28px}
-.forwho-item{
-  display:flex;align-items:flex-start;gap:14px;
-  padding:16px 0;
-  border-bottom:1px solid var(--bd);
-  font-size:clamp(.9rem,3.5vw,1rem);
-  color:rgba(240,237,230,0.82);
-  line-height:1.5;
-}
+.forwho-item{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--bd);font-size:clamp(.9rem,3.5vw,1rem);color:rgba(240,237,230,0.82);line-height:1.55}
 .forwho-item:first-child{border-top:1px solid var(--bd)}
-.forwho-arr{
-  flex-shrink:0;
-  color:var(--gold);
-  font-size:1.1rem;
-  margin-top:1px;
-  font-weight:700;
-}
+.forwho-arr{flex-shrink:0;color:var(--gold);font-weight:700}
 
-/* ===== TESTIMONIAL ===== */
-.testimonial-sec{
-  background:var(--dark2);
-  border-top:1px solid var(--bd);
-  border-bottom:1px solid var(--bd);
-  padding:clamp(48px,10vw,72px) 20px;
-}
-.testimonial-grid{
-  max-width:860px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:32px;
-  align-items:center;
-}
-.testimonial-inner{text-align:center}
-.testimonial-quote{
-  font-family:var(--serif);
-  font-size:clamp(1.4rem,5vw,2rem);
-  font-weight:700;
-  color:var(--gold);
-  line-height:1.1;
-  margin-bottom:28px;
-  opacity:.35;
-}
-.testimonial-text{
-  font-size:clamp(.95rem,3.5vw,1.05rem);
-  color:rgba(240,237,230,0.82);
-  line-height:1.8;
-  margin-bottom:24px;
-  font-style:italic;
-}
-.testimonial-author{
-  font-size:11px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  color:var(--gold);
-  font-weight:600;
-}
-.testimonial-divider{
-  width:40px;height:1px;
-  background:rgba(255,144,0,0.3);
-  margin:16px auto;
-}
-.testimonial-video video{
-  width:100%;
-  display:block;
-}
-@media(max-width:600px){
-  .testimonial-grid{grid-template-columns:1fr}
-}
+/* LEANDRO */
+.leandro-grid{display:grid;grid-template-columns:100px 1fr;gap:24px;align-items:start;margin-top:32px;border:1px solid var(--bd);padding:clamp(18px,3.5vw,28px)}
+.leandro-img{width:100px;height:130px;object-fit:cover;object-position:top;filter:grayscale(30%)}
+.leandro-name{font-family:var(--serif);font-size:clamp(1.1rem,4vw,1.4rem);font-weight:800;text-transform:uppercase;color:var(--text);margin-bottom:4px}
+.leandro-sub{font-size:.82rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+.leandro-text{font-size:clamp(.82rem,3vw,.9rem);color:var(--muted);line-height:1.7}
 
-/* ===== FINAL CTA ===== */
-.final-sec{
-  background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(255,144,0,0.07) 0%,transparent 60%),var(--dark);
-  border-top:1px solid var(--bd);
-  padding:clamp(52px,10vw,88px) 20px;
-  text-align:center;
-}
-.final-inner{max-width:520px;margin:0 auto}
-.final-price-row{
-  display:flex;align-items:baseline;justify-content:center;
-  gap:12px;margin-bottom:6px;flex-wrap:wrap;
-}
-.final-from{
-  font-size:14px;
-  color:var(--muted2);
-  text-decoration:line-through;
-}
-.final-price{
-  font-family:var(--serif);
-  font-size:clamp(3rem,10vw,4.5rem);
-  font-weight:900;
-  color:var(--text);
-  line-height:1;
-  letter-spacing:.02em;
-}
-.final-price sup{
-  font-family:var(--sans);
-  font-size:.9rem;
-  font-weight:400;
-  vertical-align:top;
-  margin-top:12px;
-  display:inline-block;
-}
-.final-tag{
-  font-size:11px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:28px;
-}
+/* TESTIMONIAL */
+.testimonial-sec{background:var(--dark2);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:clamp(48px,10vw,72px) 20px}
+.testimonial-grid{max-width:820px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
+.testimonial-text{font-size:clamp(.95rem,3.5vw,1.05rem);color:rgba(240,237,230,0.82);line-height:1.8;margin-bottom:20px;font-style:italic}
+.testimonial-author{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+@media(max-width:600px){.testimonial-grid{grid-template-columns:1fr}}
 
-.guarantee{
-  margin-top:24px;
-  font-size:clamp(.85rem,3.5vw,.9rem);
-  color:var(--muted);
-  line-height:1.6;
-  border:1px solid var(--bd);
-  padding:18px 20px;
-}
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--bd)}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 0;font-family:var(--serif);font-size:clamp(.95rem,3.5vw,1.1rem);font-weight:700;text-transform:uppercase;color:var(--text);user-select:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:1.4rem;color:var(--gold);flex-shrink:0;font-family:var(--sans);font-weight:300;transition:transform .25s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{font-size:clamp(.88rem,3.5vw,.97rem);color:var(--muted);line-height:1.8;padding-bottom:20px}
+
+/* FINAL */
+.final-sec{background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(224,139,0,0.07) 0%,transparent 60%),var(--dark);border-top:1px solid var(--bd);padding:clamp(56px,10vw,96px) 20px;text-align:center}
+.final-price-row{display:flex;align-items:baseline;justify-content:center;gap:12px;margin-bottom:6px;flex-wrap:wrap}
+.final-from{font-size:14px;color:var(--dim);text-decoration:line-through}
+.final-price{font-family:var(--serif);font-size:clamp(3rem,10vw,5rem);font-weight:900;color:var(--text);line-height:1;letter-spacing:.02em}
+.final-price sup{font-family:var(--sans);font-size:.85rem;font-weight:400;vertical-align:top;margin-top:14px;display:inline-block}
+.final-tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
+.inc-box{text-align:left;border:1px solid var(--bd);padding:20px 24px;margin:0 auto 28px;max-width:440px;background:rgba(255,255,255,0.02)}
+.inc-box li{display:flex;gap:12px;align-items:flex-start;font-size:clamp(.85rem,3.5vw,.95rem);color:rgba(240,237,230,0.82);line-height:1.55;padding:8px 0;border-bottom:1px solid var(--bd)}
+.inc-box li:last-child{border-bottom:none}
+.inc-box li span.arr{color:var(--gold);font-weight:700;flex-shrink:0}
+.guarantee{margin:0 auto 24px;max-width:440px;font-size:clamp(.85rem,3vw,.92rem);color:var(--muted);line-height:1.65;border:1px solid var(--bd);padding:18px 20px;text-align:left}
 .guarantee strong{color:var(--gold)}
 
-/* ===== FOOTER ===== */
-footer{
-  background:#060606;
-  border-top:1px solid var(--bd);
-  padding:20px;
-  text-align:center;
-  font-size:11px;
-  color:var(--muted2);
-  letter-spacing:.06em;
-}
-
-/* ===== STICKY BAR ===== */
-.sticky{
-  position:fixed;bottom:0;left:0;right:0;z-index:800;
-  background:rgba(10,10,10,0.97);
-  border-top:1px solid rgba(255,144,0,0.2);
-  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  padding:10px 20px calc(10px + env(safe-area-inset-bottom));
-  display:flex;align-items:center;justify-content:space-between;gap:12px;
-  transform:translateY(100%);
-  transition:transform .5s cubic-bezier(.22,1,.36,1);
-}
+/* STICKY */
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:800;background:rgba(10,10,10,0.97);border-top:1px solid rgba(224,139,0,0.2);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:10px 20px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(100%);transition:transform .5s cubic-bezier(.22,1,.36,1)}
 .sticky.up{transform:translateY(0)}
-.sticky-l{}
-.sticky-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
-.sticky-price{
-  font-family:var(--serif);
-  font-size:1.5rem;font-weight:900;
-  color:var(--text);line-height:1;
-}
-.sticky-btn{
-  flex-shrink:0;
-  background:linear-gradient(135deg,var(--gold),#cc7000);
-  color:#0a0a0a;
-  font-family:var(--serif);
-  font-size:.95rem;font-weight:900;
-  text-transform:uppercase;letter-spacing:.1em;
-  padding:13px 20px;
-  border:none;cursor:pointer;
-  -webkit-tap-highlight-color:transparent;
-  transition:filter .18s;
-  text-align:center;
-  white-space:nowrap;
-}
+.sticky-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:2px}
+.sticky-price{font-family:var(--serif);font-size:1.5rem;font-weight:900;color:var(--text);line-height:1}
+.sticky-btn{flex-shrink:0;background:var(--gold);color:#0a0a0a;font-family:var(--serif);font-size:.9rem;font-weight:900;text-transform:uppercase;letter-spacing:.1em;padding:13px 20px;border:none;cursor:pointer;transition:filter .18s;white-space:nowrap}
 .sticky-btn:hover{filter:brightness(1.1)}
 
-/* ===== SCROLL ANIMS ===== */
-.sa{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+/* SCROLL */
+.sa{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
 .sa.on{opacity:1;transform:none}
-.sa.fd{transform:none}
-[data-s]>.sa:nth-child(1){transition-delay:.04s}
-[data-s]>.sa:nth-child(2){transition-delay:.1s}
-[data-s]>.sa:nth-child(3){transition-delay:.16s}
-[data-s]>.sa:nth-child(4){transition-delay:.22s}
-[data-s]>.sa:nth-child(5){transition-delay:.28s}
-[data-s]>.sa:nth-child(6){transition-delay:.34s}
 
-/* ===== PROGRESS ===== */
-#prog{position:fixed;top:0;left:0;height:2px;background:var(--gold);width:0%;z-index:1001}
+/* DIVIDER */
+.divider-line{height:1px;background:var(--bd);margin:0}
 
-/* ===== MOBILE ===== */
-@media(max-width:480px){
+footer{background:#070707;border-top:1px solid var(--bd);padding:20px;text-align:center;font-size:11px;color:var(--dim);letter-spacing:.06em}
+
+@media(max-width:520px){
+  .fases-grid{grid-template-columns:1fr}
   .ba-grid{grid-template-columns:1fr}
-  .includes-grid{grid-template-columns:1fr}
-  .days-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:360px){
-  .days-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
-
 <div id="prog"></div>
-
-<!-- OFFER STRIP -->
-<div class="offer-strip">
-  Cada recaída custa bem mais que R$47,00. &nbsp;|&nbsp; <strong>Comece hoje mesmo.</strong>
-</div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content-wrap">
-    <div class="hero-badge"><span></span>Desafio 14 Dias</div>
-    <h1>
-      Cada recaída em pornografia<br>
-      <em>te custa muito.</em>
-    </h1>
-    <p class="hero-anchor">14 dias para provar que você pode vencer.</p>
-    <p class="hero-sub">
-      14 desafios para mudar sua <strong>mentalidade e sua postura</strong> diante desse vício.
-    </p>
-    <a href="https://pay.hub.la/yITACAqLwn6cTYQXyu3G" target="_blank" rel="noopener" class="btn-cta">
-      Começar o desafio
-      <small>De R$77,00 por apenas R$47,00</small>
-    </a>
-    <p class="safe-note">🔒 Compra 100% segura</p>
+  <div class="hero-badge">Desafio 14 Dias</div>
+  <h1 class="sa">Você não precisa<br>de outra promessa.<br><em>Precisa aprender<br>a quebrar o ciclo.</em></h1>
+  <p class="hero-sub sa">Um protocolo prático para homens que querem entender seus gatilhos, interromper o ciclo da pornografia e começar a recuperar o governo sobre seus hábitos.</p>
+  <a href="https://pay.hub.la/yITACAqLwn6cTYQXyu3G" target="_blank" rel="noopener" class="btn-cta sa">
+    Quero começar os 14 dias
+    <small>Acesso imediato · R$47 · 7 dias de garantia</small>
+  </a>
+</section>
+
+<div class="divider-line"></div>
+
+<!-- IDENTIFICAÇÃO -->
+<section class="sec" style="background:var(--dark2)">
+  <div class="inner">
+    <span class="tag sa">A realidade</span>
+    <h2 class="h2 sa">Você não precisa de outra<br><em>promessa de que "agora vai".</em></h2>
+    <p class="body sa">Você já tentou antes. Ficou alguns dias. Voltou. Prometeu de novo. E o ciclo seguiu.</p>
+    <p class="body sa">Não porque você não quer mudar. Mas porque prometeu mudar sem entender o que mantém o ciclo funcionando.</p>
+    <p class="body sa">A pornografia não começa quando você abre a tela. Começa antes, em um padrão de resposta que você aprendeu a repetir diante de gatilhos específicos, estado emocional, solidão, tédio, fracasso, pressão. E enquanto esse padrão não for identificado e interrompido, a força de vontade vai perder sozinha.</p>
+    <p class="body sa" style="color:var(--text)"><strong>O Desafio 14 Dias não é mais uma tentativa de resistir. É o começo de um processo diferente.</strong></p>
   </div>
 </section>
 
-<!-- PAIN -->
-<section class="pain sec">
-  <div class="sec-inner">
-    <span class="sec-tag sa">A realidade</span>
-    <h2 class="sec-title sa">Você já tentou parar.<br><em>E caiu de novo.</em></h2>
-    <p class="pain-text sa">Prometeu para você mesmo. Para Deus. Para ela. E nada funcionou.</p>
-    <p class="pain-text sa">O problema é que você está tentando vencer com as ferramentas erradas, repetindo o mesmo ciclo, esperando um resultado diferente.</p>
-    <ul class="pain-list" data-s>
-      <li class="pain-li sa"><div class="pain-li-icon">✗</div><span>Você se vê como fraco e sem controle da própria vida</span></li>
-      <li class="pain-li sa"><div class="pain-li-icon">✗</div><span>Cada recaída te enche de culpa e te afasta mais de Deus</span></li>
-      <li class="pain-li sa"><div class="pain-li-icon">✗</div><span>Você negocia com os próprios impulsos e sempre perde</span></li>
-      <li class="pain-li sa"><div class="pain-li-icon">✗</div><span>O vício consome seu foco, sua energia e seus relacionamentos</span></li>
-      <li class="pain-li sa"><div class="pain-li-icon">✗</div><span>Você se sente preso, envergonhado e sem saída</span></li>
-    </ul>
-
-    <!-- BEFORE/AFTER -->
-    <div class="ba-grid">
-      <div class="ba-col ba-col--before">
-        <div class="ba-head ba-head--before">✗ &nbsp;Antes</div>
-        <ul class="ba-items">
-          <li class="ba-item">Preso no ciclo de recaída</li>
-          <li class="ba-item">Afastado de Deus por vergonha</li>
-          <li class="ba-item">Nojo de si mesmo</li>
-          <li class="ba-item">Desgaste mental constante</li>
-          <li class="ba-item">Sem esperança de mudança real</li>
-        </ul>
-      </div>
-      <div class="ba-col ba-col--after">
-        <div class="ba-head ba-head--after">✓ &nbsp;Depois</div>
-        <ul class="ba-items">
-          <li class="ba-item">Entende o que está por trás do ciclo</li>
-          <li class="ba-item">Volta a se aproximar de Deus sem vergonha</li>
-          <li class="ba-item">Tem ferramentas concretas para reagir</li>
-          <li class="ba-item">Acredita que há saída</li>
-          <li class="ba-item">Sabe como se levantar quando cair</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- QUOTE -->
-<div class="quote-sec">
-  <p class="quote-text sa">Inicie a jornada de liberdade da pornografia com <strong>14 dias e 14 exercícios.</strong></p>
-  <p class="quote-ref sa">Princípio do Desafio</p>
-</div>
-
-<!-- MECANISMO -->
+<!-- CICLO DA QUEDA -->
 <section class="sec" style="background:var(--dark3);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)">
-  <div class="sec-inner">
-    <span class="sec-tag sa">Por que funciona</span>
-    <h2 class="sec-title sa">O que o vício em pornografia<br><em>causou no seu cérebro:</em></h2>
+  <div class="inner">
+    <span class="tag sa">O problema</span>
+    <h2 class="h2 sa">O ciclo da queda.</h2>
+    <p class="body sa">O problema não começa quando você abre a tela. Começa muito antes — e ele segue um padrão previsível.</p>
+    <div class="ciclo-flow sa">
+      <div class="ciclo-item"><div class="ciclo-item-label">Gatilho</div><div class="ciclo-item-sub">Tédio, pressão, solidão, fracasso</div></div>
+      <div class="ciclo-arrow"></div>
+      <div class="ciclo-item"><div class="ciclo-item-label">Negociação</div><div class="ciclo-item-sub">"Só essa vez"</div></div>
+      <div class="ciclo-arrow"></div>
+      <div class="ciclo-item destaque"><div class="ciclo-item-label">Queda</div></div>
+      <div class="ciclo-arrow"></div>
+      <div class="ciclo-item"><div class="ciclo-item-label">Alívio imediato</div></div>
+      <div class="ciclo-arrow"></div>
+      <div class="ciclo-item destaque"><div class="ciclo-item-label">Culpa</div></div>
+      <div class="ciclo-arrow"></div>
+      <div class="ciclo-item"><div class="ciclo-item-label">Promessa</div><div class="ciclo-item-sub">"Nunca mais"</div></div>
+      <div class="ciclo-arrow"></div>
+      <div class="ciclo-item destaque"><div class="ciclo-item-label">Repetição</div></div>
+    </div>
+    <p class="body sa" style="margin-top:32px">Você não precisa aprender apenas a resistir à pornografia. <strong>Precisa aprender a reconhecer e interromper o ciclo que leva até ela.</strong> A intervenção precisa acontecer antes da queda, não durante.</p>
 
-    <div style="display:flex;flex-direction:column;gap:24px" data-s>
-      <div class="sa" style="border-left:2px solid var(--gold);padding-left:20px">
-        <p style="font-family:var(--serif);font-size:clamp(1.1rem,4vw,1.3rem);font-weight:700;text-transform:uppercase;color:var(--text);margin-bottom:8px">O vício reprogramou seu cérebro.</p>
-        <p style="color:var(--muted);font-size:clamp(.9rem,3.5vw,1rem);line-height:1.75">Cada vez que você cede, o cérebro reforça o caminho. Força de vontade não apaga esse caminho. Estrutura e repetição reescrevem. É isso que os 14 dias fazem.</p>
+    <div style="margin-top:48px">
+      <p class="tag sa">O método</p>
+      <h3 class="sa" style="font-family:var(--serif);font-size:clamp(1.2rem,4.5vw,1.6rem);font-weight:800;text-transform:uppercase;color:var(--text);margin-bottom:8px">Um novo padrão de resposta.</h3>
+    </div>
+    <div class="ciclo-novo sa">
+      <div class="ciclo-novo-item"><div class="ciclo-novo-item-num">01</div><div class="ciclo-novo-item-label">Consciência</div></div>
+      <div class="ciclo-novo-arrow"></div>
+      <div class="ciclo-novo-item"><div class="ciclo-novo-item-num">02</div><div class="ciclo-novo-item-label">Interrupção</div></div>
+      <div class="ciclo-novo-arrow"></div>
+      <div class="ciclo-novo-item"><div class="ciclo-novo-item-num">03</div><div class="ciclo-novo-item-label">Governo</div></div>
+      <div class="ciclo-novo-arrow"></div>
+      <div class="ciclo-novo-item"><div class="ciclo-novo-item-num">04</div><div class="ciclo-novo-item-label">Reconstrução</div></div>
+      <div class="ciclo-novo-arrow"></div>
+      <div class="ciclo-novo-item"><div class="ciclo-novo-item-num">05</div><div class="ciclo-novo-item-label">Permanência</div></div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a href="https://pay.hub.la/yITACAqLwn6cTYQXyu3G" target="_blank" rel="noopener" class="btn-cta sa" style="display:inline-block;width:auto;padding:14px 36px">Quero começar os 14 dias</a>
+    </div>
+  </div>
+</section>
+
+<!-- FASES -->
+<section class="sec" style="background:var(--dark)">
+  <div class="inner-wide">
+    <span class="tag sa">O programa</span>
+    <h2 class="h2 sa">14 dias. 4 fases.<br><em>Um novo padrão de resposta.</em></h2>
+    <p class="body sa">Os 14 dias foram organizados em quatro fases progressivas. Cada fase pressupõe a anterior.</p>
+    <div class="fases-grid sa">
+      <div class="fase-card">
+        <div class="fase-num">Fase 01</div>
+        <div class="fase-titulo">Consciência</div>
+        <div class="fase-dias">Dias 1–4</div>
+        <div class="fase-desc">Identificar padrões, gatilhos e mecanismos que sustentam o comportamento. Entender o que está por trás de cada queda antes de tentar parar de cair.</div>
       </div>
-      <div class="sa" style="border-left:2px solid var(--gold);padding-left:20px">
-        <p style="font-family:var(--serif);font-size:clamp(1.1rem,4vw,1.3rem);font-weight:700;text-transform:uppercase;color:var(--text);margin-bottom:8px">Por trás de cada queda há um gatilho que você nunca aprendeu a governar.</p>
-        <p style="color:var(--muted);font-size:clamp(.9rem,3.5vw,1rem);line-height:1.75">Não é desejo aleatório. É um padrão. Tédio, ansiedade, solidão, fracasso. Cada homem tem o seu. O desafio te ensina a nomear o gatilho antes de ceder a ele.</p>
+      <div class="fase-card">
+        <div class="fase-num">Fase 02</div>
+        <div class="fase-titulo">Governo</div>
+        <div class="fase-dias">Dias 5–7</div>
+        <div class="fase-desc">Aprender a interromper automatismos, reorganizar o ambiente e lidar com o impulso sem fugir. Provar que é possível governar o desconforto.</div>
       </div>
-      <div class="sa" style="border-left:2px solid var(--gold);padding-left:20px">
-        <p style="font-family:var(--serif);font-size:clamp(1.1rem,4vw,1.3rem);font-weight:700;text-transform:uppercase;color:var(--text);margin-bottom:8px">Quem se vê como viciado age como viciado.</p>
-        <p style="color:var(--muted);font-size:clamp(.9rem,3.5vw,1rem);line-height:1.75">A mudança de comportamento não precede a mudança de identidade. Ela a segue. Antes de parar de cair, você para de se definir pela queda. Esse desafio muda o que você acredita sobre si mesmo.</p>
+      <div class="fase-card">
+        <div class="fase-num">Fase 03</div>
+        <div class="fase-titulo">Reconstrução</div>
+        <div class="fase-dias">Dias 8–11</div>
+        <div class="fase-desc">Trabalhar identidade, hábitos, responsabilidade, corpo, relacionamentos e vida real. O que sustenta o vício além do comportamento visível.</div>
+      </div>
+      <div class="fase-card">
+        <div class="fase-num">Fase 04</div>
+        <div class="fase-titulo">Permanência</div>
+        <div class="fase-dias">Dias 12–14</div>
+        <div class="fase-desc">Construir estratégias para continuar depois dos 14 dias e saber o que fazer diante de uma eventual queda. O 14º dia não é o fim do processo.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 14 DAYS -->
-<section class="days-sec sec">
-  <div class="sec-inner-wide">
-    <span class="sec-tag sa">O programa</span>
-    <h2 class="sec-title sa">14 Dias.<br><em>14 Batalhas.</em></h2>
-    <p class="sa" style="color:var(--muted);margin-bottom:4px;font-size:clamp(.9rem,3.5vw,1rem);line-height:1.7">Cada dia tem um tema, uma âncora bíblica e um exercício prático.</p>
-    <div class="days-grid" data-s style="grid-template-columns:1fr">
-      <div class="day-card sa"><div class="day-n">01</div><div class="day-name">Onde Você Está?</div><div class="day-promise">Você vai parar de fugir e entender o que está por trás de cada recaída.</div></div>
-      <div class="day-card sa"><div class="day-n">02</div><div class="day-name">Não Negocie Consigo Mesmo</div><div class="day-promise">Você vai recuperar o peso da sua própria palavra.</div></div>
-      <div class="day-card sa"><div class="day-n">03</div><div class="day-name">Você Não É Seus Impulsos</div><div class="day-promise">Você vai aprender que desejo não é ordem, e que ele passa.</div></div>
-      <div class="day-card sa"><div class="day-n">04</div><div class="day-name">O Que Você Está Calando?</div><div class="day-promise">Você vai identificar a emoção que aciona o vício antes de ela te dominar.</div></div>
-      <div class="day-card sa"><div class="day-n">05</div><div class="day-name">Governe o Desconforto</div><div class="day-promise">Você vai provar ao seu corpo que ele aguenta a pressão sem fuga.</div></div>
-      <div class="day-card sa"><div class="day-n">06</div><div class="day-name">Queime as Pontes</div><div class="day-promise">Você vai eliminar os acessos que estão te sabotando em silêncio.</div></div>
-      <div class="day-card sa"><div class="day-n">07</div><div class="day-name">Silêncio e Abstinência</div><div class="day-promise">Você vai passar pelo reset que o seu cérebro precisa para funcionar de novo.</div></div>
-      <div class="day-card sa"><div class="day-n">08</div><div class="day-name">Seja o Batman</div><div class="day-promise">Você vai começar a se enxergar pelo que Cristo diz sobre você, não pelo que o vício fez de você.</div></div>
-      <div class="day-card sa"><div class="day-n">09</div><div class="day-name">Seu Corpo Precisa de Ordem</div><div class="day-promise">Você vai usar o próprio corpo para reconstruir o que o vício destruiu no seu cérebro.</div></div>
-      <div class="day-card sa"><div class="day-n">10</div><div class="day-name">Resgatando a Virilidade</div><div class="day-promise">Você vai encarar o que está evitando na vida real, porque é isso que sustenta o vício.</div></div>
-      <div class="day-card sa"><div class="day-n">11</div><div class="day-name">Restaurando o Olhar</div><div class="day-promise">Você vai entender o que a pornografia fez com a forma como você enxerga pessoas, e começar a reverter isso.</div></div>
-      <div class="day-card sa"><div class="day-n">12</div><div class="day-name">Não Lute Sozinho</div><div class="day-promise">Você vai quebrar o silêncio que alimenta o ciclo da recaída.</div></div>
-      <div class="day-card sa"><div class="day-n">13</div><div class="day-name">Permaneça</div><div class="day-promise">Você vai treinar a única habilidade que sustenta tudo: ficar de pé mesmo quando quer fugir.</div></div>
-      <div class="day-card sa"><div class="day-n">14</div><div class="day-name">O Pacto do Homem Original</div><div class="day-promise">Você vai escrever suas regras inegociáveis e sair com uma identidade, não só com intenções.</div></div>
+<!-- 14 DIAS DETALHADO -->
+<section class="sec" style="background:var(--dark2);border-top:1px solid var(--bd)">
+  <div class="inner-wide">
+    <span class="tag sa">Dia a dia</span>
+    <h2 class="h2 sa">Os 14 dias.<br><em>Cada um com um propósito.</em></h2>
+    <p class="body sa">Cada dia tem um tema, um vídeo e um exercício prático para executar. Você avança um dia de cada vez.</p>
+    <div class="days-grid sa">
+      <div class="fase-label"><span class="fase-label-text">Fase 01 — Consciência · Dias 1–4</span></div>
+      <div class="day-card"><div class="day-n">01</div><div><div class="day-name">Onde Você Está?</div><div class="day-promise">Entender o que está por trás de cada queda antes de tentar parar de cair.</div></div></div>
+      <div class="day-card"><div class="day-n">02</div><div><div class="day-name">Não Negocie Consigo Mesmo</div><div class="day-promise">Recuperar o peso da sua própria palavra.</div></div></div>
+      <div class="day-card"><div class="day-n">03</div><div><div class="day-name">Você Não É Seus Impulsos</div><div class="day-promise">Aprender que desejo não é ordem — e que ele passa.</div></div></div>
+      <div class="day-card"><div class="day-n">04</div><div><div class="day-name">O Que Você Está Calando?</div><div class="day-promise">Identificar a emoção que aciona o ciclo antes de ela te dominar.</div></div></div>
+      <div class="fase-label"><span class="fase-label-text">Fase 02 — Governo · Dias 5–7</span></div>
+      <div class="day-card"><div class="day-n">05</div><div><div class="day-name">Governe o Desconforto</div><div class="day-promise">Provar ao seu corpo que ele aguenta a pressão sem fuga.</div></div></div>
+      <div class="day-card"><div class="day-n">06</div><div><div class="day-name">Queime as Pontes</div><div class="day-promise">Eliminar os acessos que estão te sabotando em silêncio.</div></div></div>
+      <div class="day-card"><div class="day-n">07</div><div><div class="day-name">Silêncio e Abstinência</div><div class="day-promise">Dar ao seu cérebro o silêncio que ele precisa para começar a se reorganizar.</div></div></div>
+      <div class="fase-label"><span class="fase-label-text">Fase 03 — Reconstrução · Dias 8–11</span></div>
+      <div class="day-card"><div class="day-n">08</div><div><div class="day-name">Reconstrua a Sua Identidade</div><div class="day-promise">Começar a se enxergar pelo que Cristo diz sobre você, não pela história de queda.</div></div></div>
+      <div class="day-card"><div class="day-n">09</div><div><div class="day-name">Seu Corpo Precisa de Ordem</div><div class="day-promise">Usar o próprio corpo para reorganizar o que o ciclo desordenou.</div></div></div>
+      <div class="day-card"><div class="day-n">10</div><div><div class="day-name">Responsabilidade</div><div class="day-promise">Encarar o que está evitando na vida real — porque é isso que alimenta a fuga.</div></div></div>
+      <div class="day-card"><div class="day-n">11</div><div><div class="day-name">Restaurando o Olhar</div><div class="day-promise">Entender o que a pornografia fez com a forma como você enxerga pessoas — e começar a reverter.</div></div></div>
+      <div class="fase-label"><span class="fase-label-text">Fase 04 — Permanência · Dias 12–14</span></div>
+      <div class="day-card"><div class="day-n">12</div><div><div class="day-name">Não Lute Sozinho</div><div class="day-promise">Quebrar o silêncio que alimenta o ciclo da recaída.</div></div></div>
+      <div class="day-card"><div class="day-n">13</div><div><div class="day-name">Permaneça</div><div class="day-promise">Treinar a única habilidade que sustenta tudo: ficar de pé mesmo quando quer fugir.</div></div></div>
+      <div class="day-card" style="border-top:1px solid rgba(224,139,0,0.2);background:rgba(224,139,0,0.04)"><div class="day-n" style="color:var(--gold)">14</div><div><div class="day-name">O Pacto</div><div class="day-promise">Escrever suas regras inegociáveis e sair com uma identidade, não apenas com intenções.</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- DO THE WORK -->
-<section class="sec" style="background:var(--dark3);border-top:1px solid var(--bd)">
-  <div class="sec-inner-wide">
-    <span class="sec-tag sa">Bônus incluído</span>
-    <h2 class="sec-title sa">14 desafios para reprogramar<br><em>seu cérebro.</em></h2>
-    <p class="sa" style="color:var(--muted);font-size:clamp(.95rem,3.5vw,1.05rem);line-height:1.75;margin-bottom:8px">14 Do The Work em PDF. Um por dia. Cada um com uma tarefa concreta para você executar e ganhar mais confiança.</p>
-
-    <div style="margin-top:32px;display:flex;flex-direction:column;gap:1px;background:var(--bd);border:1px solid var(--bd)" data-s>
-
-      <div class="sa" style="background:var(--dark);padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(255,144,0,0.25);line-height:1">01</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Localização</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Descubra o que está por trás de cada queda antes de tentar parar de cair.</p>
-        </div>
+<!-- ANTES/DEPOIS -->
+<section class="sec" style="background:var(--dark)">
+  <div class="inner">
+    <span class="tag sa">O que muda</span>
+    <h2 class="h2 sa">Você não vai se tornar<br>outro homem em 14 dias.<br><em>Mas pode começar a agir como um.</em></h2>
+    <div class="ba-grid sa">
+      <div class="ba-col ba-before">
+        <div class="ba-head ba-head--b">– &nbsp;Antes</div>
+        <ul class="ba-list">
+          <li class="ba-item">Reagindo automaticamente aos gatilhos</li>
+          <li class="ba-item">Negociando consigo mesmo e perdendo</li>
+          <li class="ba-item">Vivendo entre queda e culpa</li>
+          <li class="ba-item">Tentando resolver tudo com força de vontade</li>
+          <li class="ba-item">Sem plano claro para lidar com o impulso</li>
+        </ul>
       </div>
-
-      <div class="sa" style="background:var(--dark);padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(255,144,0,0.25);line-height:1">02</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Regra Simples</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Restaure a confiança na sua própria palavra com uma decisão pequena e cumprida.</p>
-        </div>
+      <div class="ba-col ba-after">
+        <div class="ba-head ba-head--a">→ &nbsp;Depois</div>
+        <ul class="ba-list">
+          <li class="ba-item">Reconhecendo seus principais gatilhos</li>
+          <li class="ba-item">Entendendo o ciclo da queda</li>
+          <li class="ba-item">Com ferramentas práticas para interromper o impulso</li>
+          <li class="ba-item">Sabendo reorganizar o ambiente</li>
+          <li class="ba-item">Com um plano para continuar depois dos 14 dias</li>
+        </ul>
       </div>
-
-      <div class="sa" style="background:var(--dark);padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(255,144,0,0.25);line-height:1">03</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Treino de Espera</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Prove para si mesmo que desejo sobe, incomoda e passa sem te dominar.</p>
-        </div>
-      </div>
-
-      <div class="sa" style="background:var(--dark);padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(255,144,0,0.25);line-height:1">04</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Mapeamento Emocional</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Identifique a emoção que aciona o vício e decida com antecedência o que fazer quando ela bater.</p>
-        </div>
-      </div>
-
-      <div class="sa" style="background:var(--dark);padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(255,144,0,0.25);line-height:1">05</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Desconforto Voluntário</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Ensine ao seu corpo que pressão não exige fuga.</p>
-        </div>
-      </div>
-
-      <div class="sa" style="background:var(--dark);padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(255,144,0,0.25);line-height:1">06</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Limpeza Digital Radical</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Elimine os acessos que tornam a recaída inevitável antes mesmo de você decidir.</p>
-        </div>
-      </div>
-
-      <div class="sa" style="background:var(--dark);padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(255,144,0,0.25);line-height:1">07</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Jejum</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Dê ao seu cérebro o silêncio que ele precisa para começar a se recalibrar.</p>
-        </div>
-      </div>
-
-      <div class="sa" style="background:var(--dark);padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(255,144,0,0.25);line-height:1">08</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Execução</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Retome o hábito de fazer o que precisa ser feito, sem esperar motivação.</p>
-        </div>
-      </div>
-
-      <div class="sa" style="background:var(--dark);padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(255,144,0,0.25);line-height:1">09</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Exercício</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Reponha quimicamente o que o vício destruiu usando o único recurso que você já tem.</p>
-        </div>
-      </div>
-
-      <div class="sa" style="background:var(--dark);padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(255,144,0,0.25);line-height:1">10</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Responsabilidade</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Enfrente o que está evitando, porque é aí que o vício vai buscar espaço.</p>
-        </div>
-      </div>
-
-      <div class="sa" style="background:var(--dark);padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(255,144,0,0.25);line-height:1">11</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Serviço</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Comece a reverter o que a pornografia fez com a forma como você enxerga as pessoas.</p>
-        </div>
-      </div>
-
-      <div class="sa" style="background:var(--dark);padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(255,144,0,0.25);line-height:1">12</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Conversa</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Quebre o silêncio que mantém o ciclo vivo.</p>
-        </div>
-      </div>
-
-      <div class="sa" style="background:var(--dark);padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:rgba(255,144,0,0.25);line-height:1">13</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Presença</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Desenvolva a capacidade de ficar com você mesmo sem precisar fugir.</p>
-        </div>
-      </div>
-
-      <div class="sa" style="background:linear-gradient(135deg,rgba(255,144,0,0.08),rgba(255,144,0,0.03));padding:18px 20px;display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;border-top:1px solid rgba(255,144,0,0.2)">
-        <div style="font-family:var(--serif);font-size:1.6rem;font-weight:900;color:var(--gold);line-height:1">14</div>
-        <div>
-          <p style="font-size:clamp(.85rem,3vw,.95rem);font-weight:700;color:var(--text);margin-bottom:4px">Pacto</p>
-          <p style="font-size:clamp(.78rem,3vw,.85rem);color:var(--muted);line-height:1.6">Saia com regras escritas e inegociáveis, não com intenções.</p>
-        </div>
-      </div>
-
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="https://pay.hub.la/yITACAqLwn6cTYQXyu3G" target="_blank" rel="noopener" class="btn-cta sa" style="display:inline-block;width:auto;padding:14px 36px">Quero começar os 14 dias</a>
     </div>
   </div>
 </section>
 
-<!-- FOR WHO -->
-<section class="forwho-sec sec">
-  <div class="sec-inner">
-    <span class="sec-tag sa">Para quem é</span>
-    <h2 class="sec-title sa">Para homens que<br><em>cansaram de cair.</em></h2>
+<!-- O QUE VOCÊ RECEBE -->
+<section class="sec" style="background:var(--dark2);border-top:1px solid var(--bd)">
+  <div class="inner">
+    <span class="tag sa">O que você recebe</span>
+    <h2 class="h2 sa">Protocolo completo.<br><em>Acesso imediato.</em></h2>
+    <div class="inc-list sa">
+      <div class="inc-item">
+        <div class="inc-num">14</div>
+        <div><div class="inc-title">Aulas em vídeo</div><div class="inc-desc">Uma por dia, direto ao ponto. Cada aula apresenta o tema e a estrutura do dia.</div></div>
+      </div>
+      <div class="inc-item">
+        <div class="inc-num">14</div>
+        <div><div class="inc-title">Exercícios guiados em PDF</div><div class="inc-desc">Um por dia. Aplicação prática do conteúdo com uma tarefa concreta para executar.</div></div>
+      </div>
+      <div class="inc-item">
+        <div class="inc-num">01</div>
+        <div><div class="inc-title">Mapeamento de gatilhos</div><div class="inc-desc">Ferramenta para identificar situações e padrões que antecedem as quedas.</div></div>
+      </div>
+      <div class="inc-item">
+        <div class="inc-num">01</div>
+        <div><div class="inc-title">Estratégias de interrupção</div><div class="inc-desc">Recursos práticos para lidar com o momento do impulso antes da queda.</div></div>
+      </div>
+      <div class="inc-item">
+        <div class="inc-num">01</div>
+        <div><div class="inc-title">Plano de continuidade</div><div class="inc-desc">Orientação para o que fazer no 15º dia — e o que fazer diante de uma eventual queda.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ISSO NÃO É -->
+<section class="sec" style="background:var(--dark);border-top:1px solid var(--bd)">
+  <div class="inner">
+    <span class="tag sa">Antes de entrar</span>
+    <h2 class="h2 sa">O que este desafio<br><em>não é.</em></h2>
+    <div class="naoe-list sa">
+      <div class="naoe-item"><span class="naoe-x">–</span><span>Uma promessa de cura instantânea ou abstinência definitiva</span></div>
+      <div class="naoe-item"><span class="naoe-x">–</span><span>Um teste de força de vontade</span></div>
+      <div class="naoe-item"><span class="naoe-x">–</span><span>Uma sequência de sermões sobre pecado</span></div>
+      <div class="naoe-item"><span class="naoe-x">–</span><span>Uma garantia de que você nunca mais sentirá tentação</span></div>
+      <div class="naoe-item"><span class="naoe-x">–</span><span>Substituto de psicoterapia ou tratamento profissional quando necessário</span></div>
+    </div>
+    <div style="margin-top:24px;border-left:2px solid var(--gold);padding-left:20px">
+      <p class="body sa" style="margin:0;color:var(--text)">É um protocolo prático para começar a entender e interromper o ciclo da pornografia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="sec" style="background:var(--dark2);border-top:1px solid var(--bd)">
+  <div class="inner">
+    <span class="tag sa">Para quem é</span>
+    <h2 class="h2 sa">Para homens que<br><em>cansaram de cair.</em></h2>
     <ul class="forwho-list sa">
-      <li class="forwho-item"><span class="forwho-arr">→</span><span>Você quer parar mas não consegue manter a decisão por mais de alguns dias</span></li>
-      <li class="forwho-item"><span class="forwho-arr">→</span><span>Você tem fé e quer um caminho que respeite essa base</span></li>
-      <li class="forwho-item"><span class="forwho-arr">→</span><span>Você está cansado de se ver como vítima dos seus próprios impulsos</span></li>
+      <li class="forwho-item"><span class="forwho-arr">→</span><span>Você quer parar, mas não consegue manter a decisão por mais de alguns dias</span></li>
+      <li class="forwho-item"><span class="forwho-arr">→</span><span>Você está cansado de prometer e voltar ao mesmo lugar</span></li>
+      <li class="forwho-item"><span class="forwho-arr">→</span><span>Você quer entender o que está por trás do ciclo, não só tentar resistir</span></li>
+      <li class="forwho-item"><span class="forwho-arr">→</span><span>Você tem fé cristã e quer um caminho que integre psicologia e espiritualidade</span></li>
+      <li class="forwho-item"><span class="forwho-arr">→</span><span>Você está disposto a executar os exercícios diários, não só assistir</span></li>
     </ul>
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
+<!-- LEANDRO -->
+<section class="sec" style="background:var(--dark3);border-top:1px solid var(--bd)">
+  <div class="inner">
+    <span class="tag sa">Quem está por trás do desafio</span>
+    <h2 class="h2 sa">Isso não nasceu<br><em>de um post de Instagram.</em></h2>
+    <p class="body sa">O Desafio 14 Dias foi construído a partir de experiência clínica real com homens que estavam dentro desse ciclo, e da compreensão de que o método importa tanto quanto a intenção.</p>
+    <div class="leandro-grid sa">
+      <img class="leandro-img" src="/leandro-lab.jpeg" alt="Leandro Carone">
+      <div>
+        <div class="leandro-name">Leandro Carone</div>
+        <div class="leandro-sub">Psicólogo</div>
+        <p class="leandro-text">Psicólogo clínico com especialização em Logoterapia e Análise Existencial. Fundador e diretor clínico da Clínica Cedro. Atua integrando psicologia, fé cristã e vida prática.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTO -->
 <section class="testimonial-sec">
   <div class="testimonial-grid">
-    <div class="testimonial-video sa">
-      <video controls playsinline preload="metadata" style="border:1px solid var(--bd)">
+    <div class="sa">
+      <video controls playsinline preload="metadata" style="border:1px solid var(--bd);width:100%;display:block">
         <source src="/testemunho-video.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="testimonial-inner sa">
-      <div class="testimonial-quote">"</div>
-      <p class="testimonial-text">Esses 14 dias foram um tempo maravilhoso. O curso me ajudou muito a entender o que está por trás dessa questão, e sinto que estou melhorando a cada dia. Sou cristão, então esse é um dos motivos pelos quais busco parar com essa prática. É um curso excelente e com um preço acessível, recomendo muito.</p>
-      <div class="testimonial-divider"></div>
+    <div class="sa">
+      <p class="testimonial-text">"Esses 14 dias foram um tempo maravilhoso. O curso me ajudou muito a entender o que está por trás dessa questão, e sinto que estou melhorando a cada dia. Sou cristão, então esse é um dos motivos pelos quais busco parar com essa prática. É um curso excelente e com um preço acessível, recomendo muito."</p>
       <p class="testimonial-author">Allef B.G — aluno do desafio</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" style="background:var(--dark2);border-top:1px solid var(--bd)">
+  <div class="inner">
+    <span class="tag sa">Perguntas frequentes</span>
+    <h2 class="h2 sa">O que você<br><em>precisa saber.</em></h2>
+    <div style="margin-top:32px" class="sa">
+      <details class="faq-item">
+        <summary>E se eu cair durante os 14 dias?</summary>
+        <p>Uma queda durante o processo não significa que tudo perdeu valor. O objetivo do desafio não é apenas contar dias sem pornografia, mas construir um padrão diferente de resposta aos gatilhos. Se você cair, o Dia 14 inclui exatamente o que fazer nessa situação.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Preciso ser cristão?</summary>
+        <p>O desafio foi construído dentro de uma visão cristã de masculinidade, identidade e responsabilidade. O conteúdo integra psicologia e fé. Se você não compartilha dessa base, parte do método pode não fazer sentido para você.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Isso substitui terapia?</summary>
+        <p>Não. O Desafio 14 Dias é um protocolo prático de autoconhecimento e mudança de comportamento. Não substitui psicoterapia individual quando essa for necessária.</p>
+      </details>
+      <details class="faq-item">
+        <summary>E se eu já tentei parar várias vezes?</summary>
+        <p>Esse é exatamente o perfil do desafio. A premissa é que tentar parar sem entender o ciclo raramente funciona. O método trabalha o que está por trás do comportamento, não apenas o comportamento em si.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Funciona para homens casados?</summary>
+        <p>Sim. O Dia 11 aborda especificamente o impacto nos relacionamentos e como restaurar a forma de enxergar as pessoas ao redor. O desafio é adequado tanto para solteiros quanto para casados.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quanto tempo tenho de acesso?</summary>
+        <p>1 ano a partir da data da compra.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quando posso começar?</summary>
+        <p>O acesso é imediato após a confirmação do pagamento. Você pode começar no mesmo dia.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como funciona a garantia?</summary>
+        <p>Você tem 7 dias a partir da compra. Entre, assista às primeiras aulas e faça os exercícios. Se perceber que o desafio não é adequado para você, solicite o reembolso dentro do prazo.</p>
+      </details>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
 <section class="final-sec" id="comprar">
-  <div class="final-inner">
-    <h2 class="sec-title sa" style="margin-bottom:16px">
-      14 dias para provar<br>
-      <em>que você pode vencer.</em>
-    </h2>
-    <p class="sa" style="color:var(--muted);font-size:clamp(.95rem,3.5vw,1.05rem);line-height:1.75;margin-bottom:28px">
-      São 14 dias com vídeo devocional diário e um PDF com desafio prático para executar.
-    </p>
-
-    <div class="sa" style="text-align:left;border:1px solid var(--bd);padding:20px 24px;margin-bottom:28px;background:rgba(255,255,255,0.02)">
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:12px">
-        <li style="display:flex;gap:12px;align-items:flex-start;font-size:clamp(.88rem,3.5vw,.97rem);color:rgba(240,237,230,0.82);line-height:1.5">
-          <span style="color:var(--gold);font-weight:700;flex-shrink:0">→</span>
-          <span>14 devocionais/aulas em vídeo — uma por dia, direto ao ponto</span>
-        </li>
-        <li style="display:flex;gap:12px;align-items:flex-start;font-size:clamp(.88rem,3.5vw,.97rem);color:rgba(240,237,230,0.82);line-height:1.5">
-          <span style="color:var(--gold);font-weight:700;flex-shrink:0">→</span>
-          <span>14 PDFs Do The Work — desafios práticos para reprogramar sua mente</span>
-        </li>
-        <li style="display:flex;gap:12px;align-items:flex-start;font-size:clamp(.88rem,3.5vw,.97rem);color:rgba(240,237,230,0.82);line-height:1.5">
-          <span style="color:var(--gold);font-weight:700;flex-shrink:0">→</span>
-          <span>Vídeo de introdução e vídeo de encerramento</span>
-        </li>
-        <li style="display:flex;gap:12px;align-items:flex-start;font-size:clamp(.88rem,3.5vw,.97rem);color:rgba(240,237,230,0.82);line-height:1.5">
-          <span style="color:var(--gold);font-weight:700;flex-shrink:0">→</span>
-          <span>Acesso por 1 ano</span>
-        </li>
-      </ul>
-    </div>
-
+  <div style="max-width:480px;margin:0 auto">
+    <h2 class="h2 sa" style="margin-bottom:16px">Comece hoje<br><em>o Desafio 14 Dias.</em></h2>
+    <p class="body sa" style="margin-bottom:28px">Você vai continuar tentando resistir da mesma forma — ou vai começar a entender o ciclo.</p>
+    <ul class="inc-box sa" style="list-style:none">
+      <li><span class="arr">→</span><span>14 aulas em vídeo — uma por dia</span></li>
+      <li><span class="arr">→</span><span>14 exercícios guiados em PDF</span></li>
+      <li><span class="arr">→</span><span>Mapeamento de gatilhos</span></li>
+      <li><span class="arr">→</span><span>Estratégias de interrupção do ciclo</span></li>
+      <li><span class="arr">→</span><span>Plano de continuidade após o 14º dia</span></li>
+      <li><span class="arr">→</span><span>Acesso por 1 ano</span></li>
+    </ul>
     <div class="sa">
       <div class="final-price-row">
         <span class="final-from">De R$ 77,00</span>
         <span class="final-price"><sup>R$&nbsp;</sup>47<sup>,00</sup></span>
       </div>
-      <p class="final-tag">Acesso imediato</p>
-
-      <p class="sa" style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(1rem,3.5vw,1.15rem);font-weight:600;letter-spacing:.03em;color:rgba(240,237,230,0.6);margin-bottom:20px;text-transform:uppercase">Você já adiou antes. Sabe como terminou.</p>
-
-      <div class="guarantee sa" style="margin-bottom:24px">
-        <strong>Garantia de 7 dias</strong><br>
-        Aplique o método. Se não sentir nenhuma mudança de perspectiva, peço seu dinheiro de volta.<br><br>
-        <em style="color:var(--gold)">Mas você não vai querer.</em>
+      <p class="final-tag">Acesso imediato após o pagamento</p>
+      <div class="guarantee sa">
+        <strong>Garantia de 7 dias.</strong><br>
+        Entre, assista às primeiras aulas e faça os exercícios. Se perceber que o desafio não é adequado para você, solicite o reembolso dentro do prazo.
       </div>
-
-      <a href="https://pay.hub.la/yITACAqLwn6cTYQXyu3G" target="_blank" rel="noopener" class="btn-cta">
-        Começar o desafio
+      <a href="https://pay.hub.la/yITACAqLwn6cTYQXyu3G" target="_blank" rel="noopener" class="btn-cta sa">
+        Quero começar os 14 dias
         <small>Clique e seja redirecionado ao checkout seguro</small>
       </a>
-      <p class="safe-note" style="margin-top:12px">🔒 Compra 100% segura · Acesso imediato após pagamento</p>
-      <p class="sa" style="margin-top:18px;font-size:.85rem;color:rgba(240,237,230,0.3);line-height:1.6;max-width:420px;margin-left:auto;margin-right:auto">O melhor momento para começar foi na última recaída.<br>O segundo melhor é agora.</p>
+      <p class="safe-note" style="margin-top:12px">Compra segura · Acesso imediato</p>
     </div>
-
-    <p class="sa" style="margin-top:36px;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-style:italic;color:rgba(240,237,230,0.2);letter-spacing:.04em">
-      Homens fracos negociam. Homens livres cumprem.
-    </p>
   </div>
 </section>
 
 <footer>
-  © 2025 Pare de Lutar Contra o Porno &nbsp;|&nbsp; <a href="#" style="color:inherit">Privacidade</a> &nbsp;|&nbsp; <a href="#" style="color:inherit">Termos</a>
+  © 2026 Pare de Lutar Contra o Pornô &nbsp;|&nbsp; Clínica Cedro
 </footer>
 
-<!-- STICKY -->
 <div class="sticky" id="sticky">
-  <div class="sticky-l">
+  <div>
     <div class="sticky-label">Desafio 14 Dias</div>
     <div class="sticky-price">R$ 47,00</div>
   </div>
-  <a href="https://pay.hub.la/yITACAqLwn6cTYQXyu3G" target="_blank" rel="noopener" class="sticky-btn">Entrar no desafio →</a>
+  <a href="https://pay.hub.la/yITACAqLwn6cTYQXyu3G" target="_blank" rel="noopener" class="sticky-btn">Começar os 14 dias →</a>
 </div>
 
 <script>
@@ -909,24 +538,21 @@ footer{
   var prog=document.getElementById('prog');
   var sticky=document.getElementById('sticky');
   var shown=false;
-
   window.addEventListener('scroll',function(){
     var h=document.body.scrollHeight-window.innerHeight;
     if(h>0)prog.style.width=(window.scrollY/h*100)+'%';
-    var show=window.scrollY>600;
-    if(show&&!shown){sticky.classList.add('up');shown=true;}
-    if(!show&&shown){sticky.classList.remove('up');shown=false;}
+    var show=window.scrollY>500;
+    if(show&&!shown){sticky.classList.add('up');shown=true}
+    if(!show&&shown){sticky.classList.remove('up');shown=false}
   },{passive:true});
-
   var sas=document.querySelectorAll('.sa');
   var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on');});
-  },{threshold:.08,rootMargin:'0px 0px -24px 0px'});
-  sas.forEach(function(el){io.observe(el);});
-
+    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on')});
+  },{threshold:.07,rootMargin:'0px 0px -20px 0px'});
+  sas.forEach(function(el){io.observe(el)});
   requestAnimationFrame(function(){
     document.querySelectorAll('.hero .sa').forEach(function(el){
-      setTimeout(function(){el.classList.add('on');},60);
+      setTimeout(function(){el.classList.add('on')},60)
     });
   });
 })();
