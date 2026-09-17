@@ -48,7 +48,7 @@ export default function LeandroPage() {
               <p style={{ fontFamily: '"Cormorant Garamond", Georgia, serif', fontStyle: 'italic', fontSize: 'clamp(1.2rem,2.5vw,1.7rem)', color: muted, marginBottom: '28px', lineHeight: 1.4 }}>
                 Psicólogo, logoterapeuta, supervisor clínico e fundador da Clínica Cedro.
               </p>
-              <a href="https://form.respondi.app/rdiSvqJY" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/5519974010520?text=Ol%C3%A1%2C%20Leandro.%20Tenho%20interesse%20em%20supervis%C3%A3o%20cl%C3%ADnica%20contigo." target="_blank" rel="noopener noreferrer"
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: red, fontFamily: 'sans-serif', textDecoration: 'none', marginBottom: '32px' }}>
                 Quero fazer supervisão com o Leandro →
               </a>
@@ -153,7 +153,7 @@ export default function LeandroPage() {
               <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer">Agendar sessão</a>
             </Button>
             <Button variant="outline" asChild withArrow className="border-white/35 text-white hover:border-white hover:text-white">
-              <a href="https://form.respondi.app/rdiSvqJY" target="_blank" rel="noopener noreferrer">Quero fazer supervisão com o Leandro</a>
+              <a href="https://wa.me/5519974010520?text=Ol%C3%A1%2C%20Leandro.%20Tenho%20interesse%20em%20supervis%C3%A3o%20cl%C3%ADnica%20contigo." target="_blank" rel="noopener noreferrer">Quero fazer supervisão com o Leandro</a>
             </Button>
           </div>
         </div>
