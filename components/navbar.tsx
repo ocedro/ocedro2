@@ -58,22 +58,24 @@ export function Navbar() {
     setOpenGroup(null);
   }, [pathname]);
 
-  const isFormacao = pathname?.startsWith('/desafio-14-dias') || pathname?.startsWith('/inimigo-intimo');
+  const isFormacao = pathname?.startsWith('/desafio-14-dias');
 
   const isLinkActive = (href: string) => pathname === href;
   const isGroupActive = (items: { href: string }[]) => items.some((i) => pathname === i.href);
 
-  const isLab      = pathname?.startsWith('/lab');
+  const isLab           = pathname?.startsWith('/lab');
+  const isInimigoIntimo = pathname?.startsWith('/inimigo-intimo');
   const isFineias  = pathname?.startsWith('/fineias');
   const isNeemias  = pathname?.startsWith('/mentoria-neemias');
   const isLeandro  = pathname?.startsWith('/leandro');
-  const isDark     = isLab || isFineias || isNeemias || isFormacao || isLeandro;
+  const isDark     = isLab || isFineias || isNeemias || isFormacao || isLeandro || isInimigoIntimo;
 
   const navBg =
     isLab     ? 'bg-black/90 border-white/10' :
     isFineias ? 'bg-[#1e0c04]/90 border-[#c48f4b]/20' :
     isNeemias ? 'bg-black/90 border-white/10' :
-    isLeandro ? 'bg-black/90 border-white/10' :
+    isLeandro       ? 'bg-black/90 border-white/10' :
+    isInimigoIntimo ? 'bg-black/90 border-white/10' :
     'bg-cedro-white/88 border-cedro-clay/15';
 
   const formacaoBg = 'bg-black/0 border-transparent hover:bg-black/90 hover:border-white/10';
