@@ -58,7 +58,7 @@ export function Navbar() {
     setOpenGroup(null);
   }, [pathname]);
 
-  if (pathname?.startsWith('/desafio-14-dias')) return null;
+  const isFormacao = pathname?.startsWith('/desafio-14-dias') || pathname?.startsWith('/inimigo-intimo');
 
   const isLinkActive = (href: string) => pathname === href;
   const isGroupActive = (items: { href: string }[]) => items.some((i) => pathname === i.href);
@@ -66,16 +66,22 @@ export function Navbar() {
   const isLab      = pathname?.startsWith('/lab');
   const isFineias  = pathname?.startsWith('/fineias');
   const isNeemias  = pathname?.startsWith('/mentoria-neemias');
-  const isDark     = isLab || isFineias || isNeemias;
+  const isLeandro  = pathname?.startsWith('/leandro');
+  const isDark     = isLab || isFineias || isNeemias || isFormacao || isLeandro;
 
   const navBg =
     isLab     ? 'bg-black/90 border-white/10' :
     isFineias ? 'bg-[#1e0c04]/90 border-[#c48f4b]/20' :
     isNeemias ? 'bg-black/90 border-white/10' :
+    isLeandro ? 'bg-black/90 border-white/10' :
     'bg-cedro-white/88 border-cedro-clay/15';
 
+  const formacaoBg = 'bg-black/0 border-transparent hover:bg-black/90 hover:border-white/10';
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 py-4 backdrop-blur-xl border-b transition-all ${navBg}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b transition-all duration-300 group ${isFormacao ? formacaoBg : `py-4 ${navBg}`}`}
+      style={isFormacao ? {} : {}}>
+      <div className={`transition-all duration-300 ${isFormacao ? 'py-2 opacity-0 group-hover:py-4 group-hover:opacity-100' : 'py-0'}`}>
       <div className="max-w-[1200px] mx-auto px-5 md:px-8 flex items-center justify-between">
         <Link href="/" className="transition-opacity hover:opacity-90">
           <Logo white={isDark} />
@@ -249,6 +255,7 @@ export function Navbar() {
         >
           Marcar consulta
         </a>
+      </div>
       </div>
     </nav>
   );
