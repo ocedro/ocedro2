@@ -85,31 +85,15 @@ section{padding:clamp(72px,11vw,120px) 0}
   content:'';
   position:absolute;inset:0;
   background:
-    linear-gradient(to right, rgba(13,12,11,0.97) 0%, rgba(13,12,11,0.85) 38%, rgba(13,12,11,0.35) 65%, transparent 100%),
+    linear-gradient(to right, rgba(13,12,11,0.97) 0%, rgba(13,12,11,0.9) 42%, rgba(13,12,11,0.35) 68%, transparent 100%),
     linear-gradient(to top, rgba(13,12,11,0.7) 0%, transparent 40%);
 }
-/* Sem glow extra, a imagem já traz */
 .hero-glow{display:none}
-/* Texto grande decorativo de fundo */
-.hero-watermark{
-  position:absolute;
-  right:-2%;bottom:-8%;
-  font-family:var(--serif);
-  font-size:clamp(18rem,30vw,36rem);
-  font-weight:600;
-  line-height:0.85;
-  color:rgba(232,227,216,0.025);
-  letter-spacing:-0.05em;
-  pointer-events:none;
-  user-select:none;
-  z-index:0;
-}
 .hero-line{
   position:absolute;top:0;left:0;right:0;height:1px;
   background:linear-gradient(90deg,transparent,rgba(193,52,26,0.3),transparent);
   z-index:2;
 }
-/* Linha vertical decorativa */
 .hero-vline{
   position:absolute;
   top:clamp(100px,14vh,160px);
@@ -122,35 +106,60 @@ section{padding:clamp(72px,11vw,120px) 0}
 }
 .hero-content{
   position:relative;z-index:1;
-  padding:clamp(20px,3vw,40px) clamp(28px,4vw,56px) clamp(32px,4vw,56px) clamp(64px,8vw,120px);
-  max-width:52%;
+  padding:clamp(20px,3vw,40px) clamp(28px,4vw,56px) clamp(40px,5vw,72px) clamp(64px,8vw,120px);
+  max-width:60%;
 }
-.hero-logo{width:clamp(120px,15vw,200px);margin-bottom:20px;opacity:1}
+.hero-logo{width:clamp(120px,15vw,200px);margin-bottom:28px}
 .hero h1{
   font-family:var(--serif);
-  font-size:clamp(1.6rem,2.8vw,2.8rem);
+  font-size:clamp(1.8rem,3.1vw,3.1rem);
   font-weight:600;
-  line-height:1.1;
+  line-height:1.08;
   letter-spacing:-0.01em;
   color:var(--text);
-  margin-bottom:16px;
-  max-width:480px;
+  margin-bottom:24px;
+  max-width:620px;
 }
-.hero h1 em{font-style:italic;color:rgba(232,227,216,0.6)}
+.hero h1 em{font-style:italic;color:rgba(232,227,216,0.82)}
+.hero-lead{
+  font-family:var(--sans);
+  font-size:clamp(0.92rem,1.25vw,1.05rem);
+  color:var(--text);
+  line-height:1.7;
+  max-width:540px;
+  margin-bottom:18px;
+}
+.hero-qs{
+  list-style:none;
+  display:flex;flex-direction:column;gap:10px;
+  max-width:540px;
+  margin-bottom:26px;
+  padding-left:18px;
+  border-left:1px solid rgba(193,52,26,0.7);
+}
+.hero-qs li{
+  font-family:var(--serif);
+  font-size:clamp(1.05rem,1.5vw,1.25rem);
+  font-style:italic;
+  line-height:1.4;
+  color:var(--muted);
+}
 .hero-sub{
   font-family:var(--sans);
-  font-size:clamp(0.8rem,1.1vw,0.88rem);
+  font-size:clamp(0.82rem,1.1vw,0.9rem);
   color:var(--muted);
   line-height:1.8;
-  max-width:400px;
-  margin-bottom:28px;
+  max-width:500px;
+  margin-bottom:26px;
 }
+.hero-sub strong{color:var(--text);font-weight:500}
 .hero-stats{
-  display:flex;
-  gap:clamp(16px,3vw,36px);
+  display:flex;flex-wrap:wrap;align-items:flex-end;
+  gap:18px clamp(18px,2.6vw,32px);
   margin-bottom:28px;
   padding-top:20px;
   border-top:1px solid var(--line);
+  max-width:540px;
 }
 .hero-stat-num{
   font-family:var(--serif);
@@ -159,6 +168,7 @@ section{padding:clamp(72px,11vw,120px) 0}
   color:var(--text);
   line-height:1;
 }
+.hero-stat-text{font-size:clamp(1rem,1.4vw,1.2rem);line-height:1.15}
 .hero-stat-label{
   font-family:var(--sans);
   font-size:10px;
@@ -169,7 +179,7 @@ section{padding:clamp(72px,11vw,120px) 0}
   margin-top:6px;
 }
 .cta{
-  display:inline-flex;align-items:center;gap:10px;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
   padding:15px 36px;
   background:var(--red);
   color:var(--text);
@@ -178,32 +188,40 @@ section{padding:clamp(72px,11vw,120px) 0}
   font-weight:600;
   letter-spacing:0.2em;
   text-transform:uppercase;
+  text-align:center;
+  line-height:1.5;
+  max-width:100%;
+  text-wrap:balance;
   transition:opacity .2s;
 }
 .cta:hover{opacity:0.85}
-.cta-ghost{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:15px 36px;
-  border:1px solid rgba(232,227,216,0.25);
-  color:var(--muted);
-  font-family:var(--sans);
-  font-size:11px;
-  font-weight:500;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  transition:border-color .2s,color .2s;
-}
-.cta-ghost:hover{border-color:rgba(232,227,216,0.5);color:var(--text)}
 .cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+
+/* Hero no mobile: imagem como faixa 16:9 no topo, texto em largura total abaixo */
+@media(max-width:820px){
+  .hero{display:block;min-height:auto}
+  .hero-bg{inset:auto;top:0;left:0;right:0;aspect-ratio:16/9;height:auto}
+  .hero-bg::after{
+    background:
+      linear-gradient(to bottom, rgba(13,12,11,0.45) 0%, transparent 30%, rgba(13,12,11,0.7) 80%, #0D0C0B 100%),
+      linear-gradient(to right, rgba(13,12,11,0.6) 0%, transparent 55%);
+  }
+  .hero-vline{display:none}
+  .hero-content{max-width:none;padding:22px clamp(22px,6vw,48px) 56px}
+  .hero-logo{width:clamp(120px,32vw,170px);margin-bottom:max(18px,calc(56.25vw - 150px))}
+  .hero h1{font-size:clamp(1.85rem,7.4vw,2.6rem);max-width:none}
+  .hero-lead,.hero-qs,.hero-sub,.hero-stats{max-width:none}
+  .hero .cta{width:100%}
+}
 
 /* ── PROBLEM SECTION ── */
 .problem-cycle{
-  display:flex;flex-wrap:wrap;gap:2px;
-  margin:40px 0;
+  display:flex;flex-wrap:wrap;gap:6px 2px;
+  margin:12px 0 36px;
 }
 .cycle-item{
   padding:10px 18px;
-  background:var(--bg2);
+  background:var(--bg);
   border:1px solid var(--line);
   font-family:var(--sans);
   font-size:13px;
@@ -216,14 +234,20 @@ section{padding:clamp(72px,11vw,120px) 0}
   font-size:11px;color:var(--dim);z-index:1;
 }
 .cycle-item:last-child::after{content:none}
+.problem-intro{
+  font-family:var(--sans);
+  font-size:clamp(0.95rem,1.8vw,1.05rem);
+  color:var(--muted);
+  margin:40px 0 0;
+}
 .problem-q{
   font-family:var(--serif);
-  font-size:clamp(1.4rem,3vw,2rem);
+  font-size:clamp(1.5rem,3.4vw,2.2rem);
   font-weight:500;
   font-style:italic;
   color:var(--text);
-  line-height:1.4;
-  margin:40px 0 24px;
+  line-height:1.35;
+  margin:18px 0 0;
   padding-left:24px;
   border-left:2px solid var(--red);
 }
@@ -240,33 +264,50 @@ section{padding:clamp(72px,11vw,120px) 0}
 }
 .conceito-text em{font-style:italic;color:var(--muted)}
 
-/* ── TRÊS ÂNGULOS ── */
+/* ── MECANISMO (destaque da página) ── */
+.mech{
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(193,52,26,0.17), transparent 70%),
+    var(--bg);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.mech-head{max-width:760px}
+.mech-intro{
+  font-family:var(--sans);
+  font-size:clamp(0.95rem,1.8vw,1.05rem);
+  color:var(--muted);
+  line-height:1.85;
+  max-width:620px;
+}
 .angles{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  border:1px solid var(--line);
-  margin:48px 0;
+  gap:18px;
+  margin:clamp(40px,6vw,64px) 0 clamp(36px,5vw,56px);
 }
 .angle{
-  padding:clamp(28px,4vw,40px) clamp(22px,3vw,32px);
-  border-right:1px solid var(--line);
+  background:var(--bg2);
+  border:1px solid var(--line);
+  border-top:2px solid var(--red);
+  padding:clamp(28px,3.5vw,40px) clamp(22px,2.6vw,30px) clamp(28px,3.5vw,36px);
 }
-.angle:last-child{border-right:none}
 .angle-num{
-  font-family:var(--sans);
-  font-size:10px;
+  font-family:var(--serif);
+  font-size:clamp(3.4rem,6vw,4.6rem);
   font-weight:600;
-  letter-spacing:0.25em;
-  color:var(--red);
-  margin-bottom:20px;
+  line-height:0.9;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(193,52,26,0.9);
+  margin-bottom:22px;
 }
 .angle h3{
   font-family:var(--serif);
-  font-size:clamp(1.1rem,2vw,1.45rem);
+  font-size:clamp(1.5rem,2.4vw,1.9rem);
   font-weight:600;
   color:var(--text);
+  line-height:1.15;
   margin-bottom:14px;
-  line-height:1.2;
 }
 .angle p{
   font-family:var(--sans);
@@ -276,17 +317,16 @@ section{padding:clamp(72px,11vw,120px) 0}
 }
 .angles-close{
   font-family:var(--serif);
-  font-size:clamp(1.1rem,2.2vw,1.4rem);
+  font-size:clamp(1.3rem,2.8vw,1.9rem);
   font-style:italic;
   color:var(--text);
-  line-height:1.6;
-  padding:32px 0;
+  line-height:1.5;
+  max-width:760px;
+  padding-top:clamp(28px,4vw,40px);
   border-top:1px solid var(--line);
 }
-@media(max-width:720px){
+@media(max-width:820px){
   .angles{grid-template-columns:1fr}
-  .angle{border-right:none;border-bottom:1px solid var(--line)}
-  .angle:last-child{border-bottom:none}
 }
 
 /* ── PRÁTICA ── */
@@ -322,32 +362,23 @@ section{padding:clamp(72px,11vw,120px) 0}
 .autoridade{background:var(--bg2)}
 .auto-grid{
   display:grid;
-  grid-template-columns:200px 1fr;
+  grid-template-columns:230px 1fr;
   gap:clamp(32px,5vw,64px);
   align-items:start;
 }
 .auto-photo{
-  width:200px;aspect-ratio:3/4;
+  width:230px;aspect-ratio:3/4;
   overflow:hidden;
   filter:grayscale(100%) contrast(1.05);
 }
 .auto-photo img{width:100%;height:100%;object-fit:cover}
-.auto-num{
+.auto-h2{
   font-family:var(--serif);
-  font-size:clamp(3rem,7vw,5rem);
+  font-size:clamp(1.7rem,3.6vw,2.6rem);
   font-weight:600;
+  line-height:1.12;
   color:var(--text);
-  line-height:1;
-  margin-bottom:8px;
-}
-.auto-num-label{
-  font-family:var(--sans);
-  font-size:10px;
-  font-weight:600;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:var(--dim);
-  margin-bottom:32px;
+  margin-bottom:26px;
 }
 .auto-text{
   font-family:var(--sans);
@@ -356,41 +387,74 @@ section{padding:clamp(72px,11vw,120px) 0}
   line-height:1.85;
   margin-bottom:18px;
 }
-.auto-creds{
-  margin-top:28px;
-  padding-top:28px;
+.auto-stat{
+  display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 16px;
+  margin-top:30px;
+  padding-top:26px;
   border-top:1px solid var(--line);
+}
+.auto-num{
+  font-family:var(--serif);
+  font-size:clamp(2.4rem,5vw,3.4rem);
+  font-weight:600;
+  color:var(--text);
+  line-height:1;
+}
+.auto-num-label{
+  font-family:var(--sans);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--dim);
+}
+.auto-creds{
+  margin-top:26px;
   display:flex;flex-direction:column;gap:10px;
 }
-.auto-cred{
-  display:flex;gap:14px;align-items:center;
-}
+.auto-name{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.auto-cred{display:flex;gap:14px;align-items:center}
 .auto-cred-dot{width:4px;height:4px;border-radius:50%;background:var(--red);flex-shrink:0}
 .auto-cred span{font-family:var(--sans);font-size:0.88rem;color:var(--dim)}
-@media(max-width:640px){
+@media(max-width:700px){
   .auto-grid{grid-template-columns:1fr}
-  .auto-photo{width:160px}
+  .auto-photo{width:170px}
 }
 
 /* ── MÓDULOS ── */
 .modulos{background:var(--bg3)}
 .modulo{
   display:grid;
-  grid-template-columns:120px 1fr;
-  gap:clamp(20px,4vw,40px);
-  padding:clamp(28px,4vw,40px) 0;
+  grid-template-columns:132px 1fr;
+  grid-template-areas:"cover main" "cover rows";
+  column-gap:clamp(20px,4vw,40px);
+  row-gap:18px;
+  align-content:start;
+  padding:clamp(32px,4vw,44px) 0;
   border-bottom:1px solid var(--line);
 }
 .modulo:first-child{padding-top:0}
-.modulo:last-child{border-bottom:none}
+.modulo:last-child{border-bottom:none;padding-bottom:0}
 .modulo-cover{
-  width:120px;height:160px;
+  grid-area:cover;
+  width:132px;height:176px;
   object-fit:cover;
   filter:grayscale(20%);
 }
+.modulo-main{grid-area:main}
+.modulo-num{
+  display:block;
+  font-family:var(--sans);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:8px;
+}
 .modulo-pergunta{
   font-family:var(--serif);
-  font-size:clamp(0.95rem,1.8vw,1.1rem);
+  font-size:clamp(1rem,1.9vw,1.15rem);
   font-style:italic;
   color:var(--muted);
   margin-bottom:14px;
@@ -398,29 +462,74 @@ section{padding:clamp(72px,11vw,120px) 0}
 }
 .modulo h3{
   font-family:var(--serif);
-  font-size:clamp(1.1rem,2.2vw,1.5rem);
+  font-size:clamp(1.25rem,2.4vw,1.6rem);
   font-weight:600;
   color:var(--text);
-  margin-bottom:12px;
+  line-height:1.2;
 }
-.modulo-desc{
+.modulo-rows{grid-area:rows;display:flex;flex-direction:column;gap:14px}
+.modulo-row{
+  display:grid;
+  grid-template-columns:116px 1fr;
+  gap:14px;
+  align-items:baseline;
+}
+.modulo-row dt{
+  font-family:var(--sans);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--dim);
+}
+.modulo-row dd{
   font-family:var(--sans);
   font-size:0.9rem;
   color:var(--muted);
-  line-height:1.8;
+  line-height:1.75;
 }
-@media(max-width:480px){
-  .modulo{grid-template-columns:88px 1fr;gap:16px}
+.modulo-row.key{
+  padding:12px 0 12px 16px;
+  border-left:2px solid var(--red);
+  background:linear-gradient(90deg,var(--red2),transparent 70%);
+}
+.modulo-row.key dd{
+  font-family:var(--serif);
+  font-size:clamp(1.3rem,2.6vw,1.6rem);
+  font-style:italic;
+  color:var(--text);
+  line-height:1.35;
+}
+.modulo.is-key .modulo-cover{outline:1px solid var(--red);outline-offset:4px}
+@media(max-width:560px){
+  .modulo{
+    grid-template-columns:88px 1fr;
+    grid-template-areas:"cover main" "rows rows";
+    column-gap:16px;
+  }
   .modulo-cover{width:88px;height:118px}
+  .modulo-row{grid-template-columns:1fr;gap:4px}
 }
 
 /* ── LAB ── */
+.tag-bonus{
+  display:inline-block;
+  font-family:var(--sans);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--text);
+  background:var(--red);
+  padding:5px 12px;
+  margin-bottom:22px;
+}
 .lab-inner{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:1px;
   background:var(--line);
-  border:1px solid var(--line);
+  border:1px solid var(--red);
 }
 .lab-col{background:var(--bg);padding:clamp(28px,4vw,40px)}
 .lab-num{
@@ -493,16 +602,15 @@ section{padding:clamp(72px,11vw,120px) 0}
 }
 .quem-col{padding:clamp(28px,4vw,40px)}
 .quem-col-yes{border-right:1px solid var(--line)}
-.quem-title{
-  font-family:var(--sans);
-  font-size:10px;
+.quem-h3{
+  font-family:var(--serif);
+  font-size:clamp(1.3rem,2.4vw,1.7rem);
   font-weight:600;
-  letter-spacing:0.25em;
-  text-transform:uppercase;
-  margin-bottom:24px;
+  line-height:1.2;
+  color:var(--text);
+  margin-bottom:22px;
 }
-.quem-col-yes .quem-title{color:var(--text)}
-.quem-col-no .quem-title{color:var(--dim)}
+.quem-col-no .quem-h3{color:rgba(232,227,216,0.75)}
 .quem-item{
   font-family:var(--sans);
   font-size:0.9rem;
@@ -511,13 +619,21 @@ section{padding:clamp(72px,11vw,120px) 0}
   padding:12px 0;
   border-bottom:1px solid var(--line);
 }
-.quem-item:last-child{border-bottom:none}
+.quem-item:last-of-type{border-bottom:none}
+.quem-col-yes .quem-item{color:var(--text)}
+.quem-p{
+  font-family:var(--sans);
+  font-size:0.9rem;
+  color:var(--muted);
+  line-height:1.8;
+  margin-bottom:14px;
+}
 .quem-nota{
   font-family:var(--serif);
-  font-size:1rem;
+  font-size:1.05rem;
   font-style:italic;
   color:var(--muted);
-  line-height:1.7;
+  line-height:1.65;
   margin-top:20px;
   padding-top:20px;
   border-top:1px solid var(--line);
@@ -529,6 +645,7 @@ section{padding:clamp(72px,11vw,120px) 0}
 
 /* ── OFERTA ── */
 .oferta{background:var(--bg3);text-align:center}
+.oferta .h2{max-width:780px;margin-left:auto;margin-right:auto}
 .oferta-box{
   max-width:480px;margin:0 auto;
   padding:clamp(40px,6vw,56px) clamp(24px,5vw,48px);
@@ -559,15 +676,31 @@ section{padding:clamp(72px,11vw,120px) 0}
   color:var(--muted);
   margin-bottom:36px;
 }
-.oferta-garantia{
-  font-family:var(--sans);
-  font-size:12px;
-  color:var(--dim);
-  margin-top:24px;
-  padding-top:24px;
-  border-top:1px solid var(--line);
-  line-height:1.7;
+.garantia{
+  max-width:480px;margin:20px auto 0;
+  padding:22px 24px;
+  border:1px solid var(--line);
+  text-align:left;
+  display:flex;gap:20px;align-items:center;
 }
+.garantia-num{
+  font-family:var(--serif);
+  font-size:clamp(2.4rem,6vw,3rem);
+  font-weight:600;
+  line-height:1;
+  color:var(--text);
+  flex-shrink:0;
+}
+.garantia-label{
+  font-family:var(--sans);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:6px;
+}
+.garantia p{font-family:var(--sans);font-size:0.85rem;color:var(--muted);line-height:1.7}
 
 /* ── FAQ ── */
 .faq{background:var(--bg2)}
@@ -656,8 +789,14 @@ footer{
   <div class="hero-vline"></div>
   <div class="hero-content">
     <img class="hero-logo sa" src="/inimigo-intimo/inimigo-intimo.png" alt="Inimigo Íntimo">
-    <h1 class="sa">Você não precisa de mais uma técnica para combater a pornografia.<br><em>Precisa entender o que está por trás dela.</em></h1>
-    <p class="hero-sub sa">Uma formação para psicólogos, terapeutas, pastores, líderes e curiosos que querem compreender e intervir no comportamento sexual problemático a partir de uma visão biológica, psicológica, espiritual e existencial.</p>
+    <h1 class="sa">Você sabe que “bloqueie o conteúdo e ore mais” <em>não é suficiente.</em></h1>
+    <p class="hero-lead sa">Mas, quando um homem chega até você preso à pornografia, você sabe exatamente o que está por trás daquele comportamento?</p>
+    <ul class="hero-qs sa">
+      <li>Sabe identificar o que mantém o ciclo?</li>
+      <li>Sabe diferenciar uma recaída de um padrão mais profundo?</li>
+      <li>Sabe conduzir a conversa sem reduzir tudo a força de vontade, culpa ou bloqueadores?</li>
+    </ul>
+    <p class="hero-sub sa">Inimigo Íntimo é uma formação para <strong>psicólogos, pastores, terapeutas e conselheiros</strong> que querem compreender o vício em pornografia para além do comportamento aparente e aprender a trabalhar com suas raízes.</p>
     <div class="hero-stats sa">
       <div>
         <div class="hero-stat-num">38</div>
@@ -671,19 +810,24 @@ footer{
         <div class="hero-stat-num">12h25</div>
         <div class="hero-stat-label">de formação</div>
       </div>
+      <div>
+        <div class="hero-stat-num hero-stat-text">Ferramentas</div>
+        <div class="hero-stat-label">aplicáveis</div>
+      </div>
     </div>
     <div class="cta-row sa">
-      <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="cta">Quero conhecer a formação</a>
+      <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="cta">Quero aprender a atender esses casos</a>
     </div>
   </div>
 </section>
 
-<!-- ══ O PROBLEMA ══ -->
+<!-- ══ O PROBLEMA: identificação do profissional ══ -->
 <section style="background:var(--bg2)">
   <div class="wrap sa">
     <span class="label">O problema</span>
-    <h2 class="h2">O comportamento não é o problema.<br><em>É a solução que a pessoa encontrou para outro problema.</em></h2>
-    <p class="body-text">Profissionais que trabalham com comportamento sexual problemático frequentemente reconhecem um padrão:</p>
+    <h2 class="h2">Pornografia raramente chega <em>sozinha.</em></h2>
+    <p class="body-text">Ela costuma aparecer junto de culpa, ansiedade, isolamento, conflitos conjugais, desorganização, padrões compulsivos, sofrimento espiritual e outras questões.</p>
+    <p class="body-text">Quem atende esses casos costuma reconhecer o ciclo:</p>
     <div class="problem-cycle">
       <div class="cycle-item">Promessa</div>
       <div class="cycle-item">Tentativa</div>
@@ -692,12 +836,13 @@ footer{
       <div class="cycle-item">Culpa</div>
       <div class="cycle-item">Nova promessa</div>
     </div>
-    <blockquote class="problem-q">Por que saber que faz mal não foi suficiente para mudar?</blockquote>
-    <p class="body-text">Abordar apenas o comportamento pode não ser suficiente para compreender a estrutura que o sustenta. A pornografia raramente é o ponto de partida. Ela responde a algo. Compreender o quê é o que diferencia uma intervenção de uma sessão de apoio.</p>
+    <p class="body-text">Quando o profissional olha apenas para o comportamento, pode conseguir alguns dias de abstinência sem necessariamente compreender por que aquela pessoa continua voltando para aquilo. Saber que faz mal não foi suficiente para mudar, e a pornografia raramente é o ponto de partida: ela responde a algo.</p>
+    <p class="problem-intro">O profissional precisa aprender a fazer uma pergunta diferente:</p>
+    <blockquote class="problem-q">O que esse comportamento está fazendo na vida dessa pessoa?</blockquote>
   </div>
 </section>
 
-<!-- ══ O CONCEITO ══ -->
+<!-- ══ O CONCEITO: por que olhar só para o comportamento é insuficiente ══ -->
 <section class="conceito">
   <div class="wrap sa">
     <span class="label">O conceito</span>
@@ -705,44 +850,138 @@ footer{
     <p class="conceito-text">Aquilo que aprisiona nem sempre começa parecendo um inimigo.</p>
     <p class="conceito-text"><em>Pode começar como alívio. Fuga. Prazer. Regulação emocional. Uma resposta rápida para uma dor que a pessoa sequer sabe nomear.</em></p>
     <p class="conceito-text">É exatamente essa proximidade que o torna difícil de identificar, difícil de confrontar e difícil de abandonar. Algo que serviu, em algum momento, passou a governar.</p>
-    <p class="conceito-text">O inimigo íntimo não está do lado de fora. Está dentro da estrutura da pessoa, ocupando uma função que precisa ser compreendida antes de ser confrontada.</p>
+    <p class="conceito-text">O inimigo íntimo vive dentro da estrutura da pessoa, ocupando uma função que precisa ser compreendida antes de ser confrontada.</p>
   </div>
 </section>
 
-<!-- ══ TRÊS ÂNGULOS ══ -->
-<section>
-  <div class="wrap">
-    <div class="sa">
-      <span class="label">O método</span>
-      <h2 class="h2">Três ângulos para enxergar o mesmo problema.</h2>
-      <p class="body-text">A maioria das abordagens trabalha com um único ângulo. O Inimigo Íntimo integra três perspectivas que precisam ser cruzadas para que o diagnóstico deixe de ser genérico.</p>
+<!-- ══ O MECANISMO (centro da página): os três ângulos ══ -->
+<section class="mech">
+  <div class="wrap-wide">
+    <div class="mech-head sa">
+      <span class="label">O mecanismo</span>
+      <h2 class="h2">Antes de qualquer lista de técnicas, <em>é preciso enxergar o caso por inteiro.</em></h2>
+      <p class="mech-intro">Muitas abordagens trabalham com um único ângulo. O Inimigo Íntimo integra três perspectivas que precisam ser cruzadas para que o diagnóstico deixe de ser genérico.</p>
     </div>
     <div class="angles sa">
       <div class="angle">
         <div class="angle-num">01</div>
-        <h3>Biologia</h3>
-        <p>Compreender os mecanismos envolvidos em recompensa, repetição e aprendizagem. O que a exposição repetida provoca nos sistemas neurais. Por que o comportamento se intensifica com o tempo mesmo sem que a pessoa tenha essa intenção.</p>
+        <h3>Biológico</h3>
+        <p>Como a exposição repetida pode afetar processos de recompensa, aprendizagem e formação de hábitos, e por que compreender esses mecanismos muda a forma de intervir.</p>
       </div>
       <div class="angle">
         <div class="angle-num">02</div>
-        <h3>Formação</h3>
-        <p>Como o comportamento se transforma em padrão e começa a ocupar uma função na estrutura da pessoa. A diferença entre um comportamento isolado e um padrão que encontrou seu lugar.</p>
+        <h3>Formativo</h3>
+        <p>Como o comportamento se transforma em padrão e passa a fazer parte da estrutura da pessoa. A diferença entre um comportamento isolado e um padrão que encontrou seu lugar.</p>
       </div>
       <div class="angle">
         <div class="angle-num">03</div>
-        <h3>Sentido</h3>
-        <p>Investigar o que aquele comportamento pode estar tentando anestesiar, compensar, evitar ou resolver dentro da experiência da pessoa. Onde a dimensão espiritual e existencial entra como perspectiva integrativa.</p>
+        <h3>Espiritual e existencial</h3>
+        <p>O que aquele comportamento pode estar tentando resolver, anestesiar, compensar ou substituir na vida daquela pessoa. A dimensão espiritual e existencial entra como perspectiva integrativa.</p>
       </div>
     </div>
-    <p class="angles-close sa">Quando você enxerga os três ângulos, deixa de olhar apenas para aquilo que a pessoa faz e começa a investigar por que esse comportamento ocupa determinado lugar na vida dela. O diagnóstico muda. A intervenção muda.</p>
+    <p class="angles-close sa">Quando esses três ângulos se encontram, você deixa de olhar apenas para “o homem que vê pornografia” e começa a compreender o homem que está diante de você.</p>
   </div>
 </section>
 
-<!-- ══ O QUE MUDA NA SUA PRÁTICA ══ -->
+<!-- ══ AUTORIDADE E HISTÓRIA DO LEANDRO ══ -->
+<section class="autoridade">
+  <div class="wrap-wide">
+    <div class="auto-grid sa">
+      <div>
+        <div class="auto-photo">
+          <img src="/inimigo-intimo/leandro-carta.jpg" alt="Leandro Carone">
+        </div>
+      </div>
+      <div>
+        <span class="label">Quem ensina</span>
+        <h2 class="auto-h2">Eu não acredito que um curso gravado vá “curar” a pornografia de alguém.</h2>
+        <p class="auto-text">Pode parecer estranho dizer isso em uma página de vendas, mas é exatamente por isso que eu gravei.</p>
+        <p class="auto-text">Depois de milhares de horas de atendimento, percebi que havia conhecimento, raciocínio clínico e ferramentas que poderiam ser multiplicados para profissionais que já estão na prática. Sessão a sessão, os padrões começaram a se repetir, e o método do Inimigo Íntimo nasceu dessa observação clínica.</p>
+        <p class="auto-text">A pergunta que me acompanhou foi como ajudar mais gente do que consigo alcançar em atendimento individual, sem fingir que um vídeo substitui alguém ao lado da pessoa. A resposta foi formar quem já está ajudando pessoas.</p>
+        <div class="auto-stat">
+          <div class="auto-num">6.000+</div>
+          <div class="auto-num-label">horas de atendimento</div>
+        </div>
+        <div class="auto-creds">
+          <div class="auto-name">Leandro Carone</div>
+          <div class="auto-cred"><div class="auto-cred-dot"></div><span>Especialização em Logoterapia e Análise Existencial</span></div>
+          <div class="auto-cred"><div class="auto-cred-dot"></div><span>Diretor clínico da Clínica Cedro</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ O QUE SERÁ APRENDIDO: MÓDULOS (aprende / por que importa / na prática) ══ -->
+<section class="modulos">
+  <div class="wrap">
+    <div class="sa">
+      <span class="label">Os quatro módulos</span>
+      <h2 class="h2">Cada módulo responde a uma pergunta.</h2>
+      <p class="body-text">A estrutura foi desenhada para construir progressivamente. O que o módulo 1 ensina sustenta o módulo 2. O que o módulo 2 revela é aplicado no módulo 3. O módulo 4 fecha com os casos mais complexos.</p>
+    </div>
+    <div class="sa">
+      <div class="modulo">
+        <img class="modulo-cover" src="/inimigo-intimo/modulo-1-biologico.jpg" alt="Módulo 1, Base biológica">
+        <div class="modulo-main">
+          <span class="modulo-num">Módulo 1</span>
+          <p class="modulo-pergunta">O que a repetição do comportamento pode provocar nos processos de recompensa e de aprendizagem?</p>
+          <h3>Base biológica</h3>
+        </div>
+        <dl class="modulo-rows">
+          <div class="modulo-row"><dt>Você aprende</dt><dd>Mecanismos de recompensa, tolerância e repetição: como a exposição repetida pode afetar processos de recompensa, aprendizagem e formação de hábitos.</dd></div>
+          <div class="modulo-row"><dt>Por que importa</dt><dd>Compreender esses mecanismos muda a forma de intervir.</dd></div>
+          <div class="modulo-row"><dt>Na prática</dt><dd>Um mapa de aplicação clínica para usar em consultório.</dd></div>
+        </dl>
+      </div>
+      <div class="modulo">
+        <img class="modulo-cover" src="/inimigo-intimo/modulo-2-mente-coracao.jpg" alt="Módulo 2, Formação da estrutura interior">
+        <div class="modulo-main">
+          <span class="modulo-num">Módulo 2</span>
+          <p class="modulo-pergunta">Como o comportamento deixa de ser escolha isolada e passa a ocupar uma função?</p>
+          <h3>Formação da estrutura interior</h3>
+        </div>
+        <dl class="modulo-rows">
+          <div class="modulo-row"><dt>Você aprende</dt><dd>Como o padrão se instala e o que ele passa a servir na estrutura da pessoa.</dd></div>
+          <div class="modulo-row"><dt>Por que importa</dt><dd>Abordar apenas o comportamento visível tende a produzir alívio de curto prazo.</dd></div>
+          <div class="modulo-row"><dt>Na prática</dt><dd>A virada que muda como você conduz a sessão inteira.</dd></div>
+        </dl>
+      </div>
+      <div class="modulo is-key">
+        <img class="modulo-cover" src="/inimigo-intimo/modulo-3-intervencao.jpg" alt="Módulo 3, Intervenção diferenciada">
+        <div class="modulo-main">
+          <span class="modulo-num">Módulo 3</span>
+          <p class="modulo-pergunta">Sabendo a raiz, como se intervém de forma diferenciada?</p>
+          <h3>Intervenção diferenciada</h3>
+        </div>
+        <dl class="modulo-rows">
+          <div class="modulo-row"><dt>Você aprende</dt><dd>O protocolo completo por perfil de raiz, com a dimensão espiritual e existencial integrada à intervenção clínica e pastoral.</dd></div>
+          <div class="modulo-row key"><dt>Por que importa</dt><dd>Você precisa saber o que fazer com aquilo que aprendeu.</dd></div>
+          <div class="modulo-row"><dt>Na prática</dt><dd>Sequência de confissão, a conversa sobre recaída e o ciclo de recaída, a abordagem conjugal e o desafio de 40 dias.</dd></div>
+        </dl>
+      </div>
+      <div class="modulo">
+        <img class="modulo-cover" src="/inimigo-intimo/modulo-4-profissional-cadeira.jpg" alt="Módulo 4, Estruturas de manutenção">
+        <div class="modulo-main">
+          <span class="modulo-num">Módulo 4</span>
+          <p class="modulo-pergunta">O que sustenta o comportamento quando a pessoa já sabe de tudo isso?</p>
+          <h3>As estruturas de manutenção</h3>
+        </div>
+        <dl class="modulo-rows">
+          <div class="modulo-row"><dt>Você aprende</dt><dd>As fases de defesa cognitiva que mantêm o padrão mesmo diante da consciência.</dd></div>
+          <div class="modulo-row"><dt>Por que importa</dt><dd>Reconhecer essas defesas muda a forma de ler uma recaída e de conduzir o caso.</dd></div>
+          <div class="modulo-row"><dt>Na prática</dt><dd>O segundo caso completo, com raiz oposta ao primeiro, fechando o método com os dois extremos do espectro.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ APLICAÇÃO PRÁTICA ══ -->
 <section style="background:var(--bg2)">
   <div class="wrap sa">
-    <span class="label">O que muda na sua prática</span>
-    <h2 class="h2">Não apenas o que você vai aprender.<br><em>O que você vai conseguir fazer.</em></h2>
+    <span class="label">Aplicação prática</span>
+    <h2 class="h2">O que você passa a conseguir <em>fazer no atendimento.</em></h2>
     <div class="practice-list">
       <div class="practice-item"><div class="practice-dot"></div><span>Identificar diferentes estruturas por trás do mesmo comportamento</span></div>
       <div class="practice-item"><div class="practice-dot"></div><span>Compreender o papel dos mecanismos de repetição e recompensa</span></div>
@@ -758,100 +997,31 @@ footer{
   </div>
 </section>
 
-<!-- ══ AUTORIDADE ══ -->
-<section class="autoridade">
-  <div class="wrap-wide">
-    <div class="auto-grid sa">
-      <div>
-        <div class="auto-photo">
-          <img src="/inimigo-intimo/leandro-carta.jpg" alt="Leandro Carone">
-        </div>
-      </div>
-      <div>
-        <span class="label">Quem desenvolveu a formação</span>
-        <div class="auto-num">6.000+</div>
-        <div class="auto-num-label">horas de atendimento</div>
-        <p class="auto-text">Mais de seis mil horas de atendimento clínico com pessoas que enfrentavam comportamento sexual problemático. Sessão a sessão, padrões começaram a se repetir. O método que estrutura o Inimigo Íntimo nasceu da observação clínica sistemática desses padrões.</p>
-        <p class="auto-text">A formação não entrega conteúdo reunido de fontes diversas. Entrega o que foi desenvolvido, testado e refinado dentro de atendimentos reais, condensado para ser aplicado por quem está no dia a dia da prática clínica ou pastoral.</p>
-        <div class="auto-creds">
-          <div class="auto-cred"><div class="auto-cred-dot"></div><span>Especialização em Logoterapia e Análise Existencial</span></div>
-          <div class="auto-cred"><div class="auto-cred-dot"></div><span>Diretor clínico da Clínica Cedro</span></div>
-          <div class="auto-cred"><div class="auto-cred-dot"></div><span>Leandro Carone</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ MÓDULOS ══ -->
-<section class="modulos">
-  <div class="wrap">
-    <div class="sa">
-      <span class="label">Os quatro módulos</span>
-      <h2 class="h2">Cada módulo responde a uma pergunta.</h2>
-      <p class="body-text">A estrutura foi desenhada para construir progressivamente. O que o módulo 1 ensina sustenta o módulo 2. O que o módulo 2 revela é aplicado no módulo 3. O módulo 4 fecha com os casos mais complexos.</p>
-    </div>
-    <div class="sa">
-      <div class="modulo">
-        <img class="modulo-cover" src="/inimigo-intimo/modulo-1-biologico.jpg" alt="Módulo 1">
-        <div>
-          <p class="modulo-pergunta">O que acontece no corpo e no sistema nervoso quando o comportamento se repete?</p>
-          <h3>Módulo 1 — Base biológica</h3>
-          <p class="modulo-desc">Mecanismos de recompensa, tolerância e repetição. O que a exposição sistemática provoca nos circuitos neurais e por que isso é relevante para a compreensão clínica. Mapa de aplicação para uso na prática.</p>
-        </div>
-      </div>
-      <div class="modulo">
-        <img class="modulo-cover" src="/inimigo-intimo/modulo-2-mente-coracao.jpg" alt="Módulo 2">
-        <div>
-          <p class="modulo-pergunta">Como o comportamento deixa de ser escolha isolada e passa a ocupar uma função?</p>
-          <h3>Módulo 2 — Formação da estrutura interior</h3>
-          <p class="modulo-desc">Como o padrão se instala, o que ele começa a servir e por que abordar apenas o comportamento visível produz alívio de curto prazo. A virada que muda como você conduz a sessão.</p>
-        </div>
-      </div>
-      <div class="modulo">
-        <img class="modulo-cover" src="/inimigo-intimo/modulo-3-intervencao.jpg" alt="Módulo 3">
-        <div>
-          <p class="modulo-pergunta">Sabendo a raiz, como se intervém de forma diferenciada?</p>
-          <h3>Módulo 3 — Intervenção diferenciada</h3>
-          <p class="modulo-desc">Protocolo por perfil de raiz. A conversa sobre recaída, a abordagem conjugal, o ciclo de 40 dias. A dimensão espiritual e existencial integrada à intervenção clínica e pastoral.</p>
-        </div>
-      </div>
-      <div class="modulo">
-        <img class="modulo-cover" src="/inimigo-intimo/modulo-4-profissional-cadeira.jpg" alt="Módulo 4">
-        <div>
-          <p class="modulo-pergunta">O que sustenta o comportamento quando a pessoa já sabe de tudo isso?</p>
-          <h3>Módulo 4 — As estruturas de manutenção</h3>
-          <p class="modulo-desc">As fases de defesa cognitiva que mantêm o padrão mesmo diante da consciência. O segundo caso completo, com raiz oposta ao primeiro, fechando o método com os dois extremos do espectro.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ LABORATÓRIO ══ -->
+<!-- ══ LABORATÓRIO DE CASOS (bônus de maior valor) ══ -->
 <section>
   <div class="wrap">
     <div class="sa" style="margin-bottom:40px">
+      <span class="tag-bonus">Bônus</span>
       <span class="label">Laboratório de casos</span>
-      <h2 class="h2">Você não vai apenas assistir aulas.<br><em>Vai aprender a pensar diante de casos reais.</em></h2>
-      <p class="body-text">Compreender um conceito e conseguir aplicá-lo em um caso real são duas coisas diferentes. O Laboratório de Casos existe para fechar essa distância.</p>
+      <h2 class="h2">A teoria ganha forma <em>quando você vê casos sendo raciocinados.</em></h2>
+      <p class="body-text">Compreender um conceito e conseguir aplicá-lo em um caso real são coisas diferentes. O Laboratório de Casos existe para fechar essa distância.</p>
     </div>
     <div class="lab-inner sa">
       <div class="lab-col">
         <div class="lab-num">10</div>
-        <div class="lab-label">Casos ao longo do primeiro ano</div>
-        <p class="lab-text">Casos submetidos por alunos, devidamente anonimizados, selecionados e analisados ao vivo. A análise mostra o raciocínio clínico em funcionamento: como identificar qual ângulo está em jogo, qual caminho investigar, qual intervenção faz sentido.</p>
+        <div class="lab-label">Casos reais ao longo do primeiro ano</div>
+        <p class="lab-text">Casos enviados por alunos, anonimizados, escolhidos a dedo e analisados ao vivo pelo Leandro. Você acompanha o raciocínio clínico aplicado a situações concretas: qual ângulo está em jogo, qual caminho investigar, qual intervenção faz sentido.</p>
       </div>
       <div class="lab-col">
         <div class="lab-num" style="color:var(--red);font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:20px">Como funciona</div>
-        <p class="lab-text" style="margin-bottom:16px">Você submete um caso real da sua prática, sem identificar o paciente. Os casos selecionados são discutidos ao vivo com o grupo. As sessões ficam gravadas e arquivadas para acesso posterior.</p>
-        <p class="lab-text">Não é supervisão. Não substitui formação clínica formal. É um espaço para observar como o método é aplicado a situações concretas — algo que nenhuma aula gravada consegue reproduzir completamente.</p>
+        <p class="lab-text" style="margin-bottom:16px">Você envia um caso real da sua prática, sem identificar o paciente. Os casos selecionados são discutidos ao vivo com todo o grupo, e as sessões ficam gravadas e arquivadas para você rever quando quiser.</p>
+        <p class="lab-text">O Laboratório de Casos é um espaço para observar como o método é aplicado a situações concretas. Ele não funciona como supervisão e não substitui formação clínica formal.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ ENTREGÁVEIS ══ -->
+<!-- ══ TUDO O QUE VEM JUNTO (inclui o bônus de leitura comentada) ══ -->
 <section class="entregaveis">
   <div class="wrap">
     <div class="sa">
@@ -882,7 +1052,7 @@ footer{
       <div class="entregavel">
         <div class="entregavel-label">Bônus</div>
         <div class="entregavel-title">Leitura comentada</div>
-        <div class="entregavel-desc">Leitura comentada ao vivo do livro <em>Curando as Feridas do Vício Sexual</em>, de Mark R. Laaser</div>
+        <div class="entregavel-desc">Leitura comentada ao vivo do livro <em>Curando as Feridas do Vício Sexual</em>, de Mark R. Laaser, com gravação</div>
       </div>
       <div class="entregavel">
         <div class="entregavel-label">Bônus</div>
@@ -893,54 +1063,65 @@ footer{
   </div>
 </section>
 
-<!-- ══ PARA QUEM ══ -->
+<!-- ══ PARA QUEM É / PARA QUEM NÃO É ══ -->
 <section>
   <div class="wrap">
-    <div class="sa">
-      <span class="label">Para quem é esta formação</span>
-      <h2 class="h2">Para profissionais e líderes que acompanham pessoas nessa área.</h2>
-    </div>
     <div class="quem-grid sa">
       <div class="quem-col quem-col-yes">
-        <div class="quem-title">É para você se</div>
-        <div class="quem-item">Você é psicólogo, terapeuta ou profissional de saúde mental que atende casos de comportamento sexual problemático</div>
-        <div class="quem-item">Você é pastor, conselheiro ou líder frequentemente procurado para ajudar pessoas com esse perfil</div>
-        <div class="quem-item">Você sente que sua abordagem atual tem limitações e quer compreender o problema com mais profundidade</div>
-        <div class="quem-item">Você quer integrar perspectivas biológica, psicológica e espiritual em vez de trabalhar com apenas uma delas</div>
-        <div class="quem-item">Você quer um método mais estruturado para diagnóstico e intervenção</div>
+        <h2 class="quem-h3">Para quem é o Inimigo Íntimo?</h2>
+        <div class="quem-item">Psicólogos</div>
+        <div class="quem-item">Terapeutas</div>
+        <div class="quem-item">Pastores</div>
+        <div class="quem-item">Conselheiros</div>
+        <div class="quem-item">Líderes cristãos que já são procurados por pessoas lutando contra pornografia</div>
+        <p class="quem-nota">A formação parte de quem você já é: alguém que acompanha pessoas. O objetivo é prepará-lo para quando esse problema chegar até você, mesmo sem experiência prévia com o tema, e dar um método mais estruturado de diagnóstico e intervenção a quem sente que a abordagem atual tem limites.</p>
       </div>
       <div class="quem-col quem-col-no">
-        <div class="quem-title">Não é para você se</div>
-        <div class="quem-item">Você procura uma fórmula para aplicar sem entender os fundamentos</div>
-        <div class="quem-item">Você está passando por isso pessoalmente e busca algo para se libertar sozinho — esta formação foi construída para quem ajuda, não para quem precisa de acompanhamento direto</div>
-        <div class="quem-item">Você espera uma abordagem que funcione para todos os casos da mesma forma</div>
-        <div class="quem-nota">Esta formação não substitui formação profissional, supervisão clínica ou acompanhamento individual quando estes forem necessários.</div>
+        <h2 class="quem-h3">Esta formação não atende quem procura uma fórmula pronta.</h2>
+        <p class="quem-p">Quem procura cinco passos para nunca mais cair, ou uma coleção de técnicas desconectadas, não vai encontrar isso aqui. A formação também não substitui psicoterapia, aconselhamento pastoral ou acompanhamento individual.</p>
+        <p class="quem-p">Ela foi feita para quem quer compreender antes de intervir: entender por que o comportamento se mantém, o que está por trás dele e como conduzir melhor o caso.</p>
+        <p class="quem-nota">Se você está preso à pornografia agora e busca algo para se libertar sozinho, esta formação foi construída para quem ajuda, e resolver o seu caso não é o objetivo central dela.</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ══ PROVA SOCIAL ══
+     A página atual não tem depoimentos reais, então esta seção não foi criada (nada de depoimento inventado).
+     Quando houver depoimentos reais, inserir aqui, organizados para responder:
+     1) o profissional passou a compreender melhor os casos?
+     2) passou a conduzir melhor os atendimentos?
+     3) o conteúdo trouxe aplicação prática?
+     4) o método ajudou a enxergar além do comportamento?
+-->
 
 <!-- ══ OFERTA ══ -->
 <section class="oferta">
   <div class="wrap">
     <div class="sa">
       <span class="label">Investimento</span>
-      <h2 class="h2" style="margin-bottom:40px">Acesso completo à formação.</h2>
+      <h2 class="h2" style="margin-bottom:40px">Uma formação que pode mudar a maneira como você compreende e conduz os casos que chegam até você.</h2>
       <div class="oferta-box">
         <div class="oferta-includes">
           <p style="font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--dim);margin-bottom:16px">Você recebe acesso a:</p>
-          <div class="oferta-include"><div class="oferta-include-dot"></div><span>38 aulas em 4 módulos — 12h25 de formação</span></div>
+          <div class="oferta-include"><div class="oferta-include-dot"></div><span>38 aulas em 4 módulos, 12h25 de formação</span></div>
           <div class="oferta-include"><div class="oferta-include-dot"></div><span>PDFs de resumo por aula e apostila completa por módulo</span></div>
           <div class="oferta-include"><div class="oferta-include-dot"></div><span>Ferramentas práticas para uso nos atendimentos</span></div>
           <div class="oferta-include"><div class="oferta-include-dot"></div><span>Guia de Apoio à Esposa</span></div>
+          <div class="oferta-include"><div class="oferta-include-dot"></div><span>Laboratório de Casos: 10 casos analisados ao vivo no primeiro ano</span></div>
           <div class="oferta-include"><div class="oferta-include-dot"></div><span>Leitura comentada ao vivo de <em>Curando as Feridas do Vício Sexual</em></span></div>
-          <div class="oferta-include"><div class="oferta-include-dot"></div><span>Laboratório de Casos — 10 casos analisados ao vivo no primeiro ano</span></div>
         </div>
         <div class="oferta-divider"></div>
         <div class="oferta-price">12× de R$ 49,70</div>
         <div class="oferta-alt">ou R$ 497 à vista</div>
-        <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="cta" style="width:100%;justify-content:center">Quero a formação</a>
-        <div class="oferta-garantia">7 dias para assistir. Se decidir que a formação não é para você, basta solicitar o reembolso dentro desse prazo.</div>
+        <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="cta" style="width:100%">Quero me capacitar</a>
+      </div>
+      <div class="garantia">
+        <div class="garantia-num">7</div>
+        <div>
+          <div class="garantia-label">Dias de garantia</div>
+          <p>Você tem 7 dias para assistir. Se decidir que a formação não é para você, pode pedir o reembolso dentro desse prazo.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -957,40 +1138,57 @@ footer{
         <p>Não. A formação foi construída para psicólogos, terapeutas, pastores, conselheiros e líderes que acompanham pessoas nessa área, com ou sem formação clínica formal. O conteúdo é acessível para quem já tem prática no aconselhamento, mesmo sem diploma universitário na área.</p>
       </details>
       <details class="faq-item">
+        <summary>Serve para pastores e conselheiros?</summary>
+        <p>Sim. Pastores e conselheiros estão entre os públicos principais da formação, que integra a dimensão espiritual e existencial à intervenção clínica e pastoral.</p>
+      </details>
+      <details class="faq-item">
+        <summary>É um curso para quem luta com pornografia ou para profissionais?</summary>
+        <p>A formação foi pensada para quem ajuda, e quem está preso à pornografia agora não é o público central. Quem assistir mesmo assim vai entender com profundidade como o comportamento se mantém e sai com ferramentas que ajudam. Isso é consequência, e o objetivo do curso permanece sendo formar quem acompanha outras pessoas.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Preciso ter experiência atendendo casos de pornografia?</summary>
+        <p>Não. A formação parte de quem já acompanha pessoas e prepara esse profissional para quando o problema chegar até ele, mesmo sem experiência prévia com o tema.</p>
+      </details>
+      <details class="faq-item">
+        <summary>A formação substitui terapia, aconselhamento ou supervisão clínica?</summary>
+        <p>Não. A formação estrutura fundamentos e apresenta um método. Ela não substitui psicoterapia, aconselhamento pastoral, acompanhamento individual ou supervisão clínica formal, que são outras dimensões da prática, com objetivos e dinâmica distintos.</p>
+      </details>
+      <details class="faq-item">
         <summary>O conteúdo é apenas sobre pornografia?</summary>
-        <p>O comportamento sexual problemático é o contexto central da formação, mas o método trabalha com estruturas que vão além do comportamento específico: biologia, formação de padrões, sentido existencial e intervenção diferenciada. Profissionais relatam que os fundamentos se aplicam a outros comportamentos compulsivos também.</p>
+        <p>A pornografia é o contexto central da formação. O método trabalha com estruturas que vão além do comportamento específico: biologia, formação de padrões, sentido existencial e intervenção diferenciada.</p>
       </details>
       <details class="faq-item">
         <summary>A formação é baseada em evidência científica?</summary>
-        <p>A formação integra literatura científica disponível sobre comportamento, neurociência e psicologia com perspectiva existencial e espiritual cristã. Não faz afirmações que ultrapassem o que a evidência atual sustenta. Onde há debate conceitual no campo, a formação apresenta a discussão com rigor.</p>
+        <!-- REVISAR: resposta mantida da versão anterior, menos a frase "Não faz afirmações que ultrapassem o que a evidência atual sustenta", que é uma promessa absoluta sobre o conteúdo. Confirmar com o Leandro. -->
+        <p>A formação integra literatura científica disponível sobre comportamento, neurociência e psicologia com perspectiva existencial e espiritual cristã. Onde há debate conceitual no campo, a formação apresenta a discussão com rigor.</p>
       </details>
       <details class="faq-item">
         <summary>A abordagem é cristã? Funciona para profissionais de outras tradições?</summary>
-        <p>A dimensão espiritual e existencial está presente de forma integrada, não como sobreposição religiosa. A formação foi construída para o contexto cristão, mas os fundamentos biológicos e psicológicos são independentes disso. Profissionais de outras tradições têm conseguido extrair valor dos módulos 1, 2 e parte do 3.</p>
+        <p>A dimensão espiritual e existencial está presente de forma integrada, sem funcionar como sobreposição religiosa. A formação foi construída para o contexto cristão, e os fundamentos biológicos e psicológicos são independentes disso.</p>
+      </details>
+      <details class="faq-item">
+        <summary>O que eu recebo?</summary>
+        <p>38 aulas em quatro módulos (12h25 de formação), um PDF de resumo por aula, uma apostila completa por módulo, ferramentas práticas para uso nos atendimentos e o Guia de Apoio à Esposa. Entram ainda dois bônus: a leitura comentada ao vivo do livro <em>Curando as Feridas do Vício Sexual</em> e o Laboratório de Casos.</p>
       </details>
       <details class="faq-item">
         <summary>Posso aplicar isso na minha prática a partir da formação?</summary>
         <p>Sim. A formação foi construída com aplicação prática como objetivo. Os módulos incluem ferramentas para uso nos atendimentos e o Laboratório de Casos mostra o método sendo aplicado a situações concretas. Isso não substitui supervisão clínica quando ela for necessária.</p>
       </details>
       <details class="faq-item">
-        <summary>A formação substitui supervisão clínica?</summary>
-        <p>Não. A formação estrutura fundamentos e apresenta um método. Supervisão clínica formal é outra dimensão da prática profissional, com objetivos e dinâmica distintos.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Quanto tempo tenho de acesso?</summary>
-        <p>[VALIDAR] — Confirmar com a equipe o período de acesso ao conteúdo.</p>
-      </details>
-      <details class="faq-item">
         <summary>Como funciona o Laboratório de Casos?</summary>
-        <p>Ao longo do primeiro ano, 10 casos submetidos por alunos são selecionados e analisados ao vivo pelo Leandro. Você pode submeter um caso real da sua prática, sem identificar o paciente. Os casos selecionados são discutidos com todo o grupo. As sessões ficam gravadas e acessíveis para rever quando quiser.</p>
+        <p>Ao longo do primeiro ano, 10 casos enviados por alunos são escolhidos a dedo e analisados ao vivo pelo Leandro. Você pode enviar um caso real da sua prática, sem identificar o paciente. Os casos selecionados são discutidos com todo o grupo, e as sessões ficam gravadas e acessíveis para você rever quando quiser.</p>
       </details>
       <details class="faq-item">
-        <summary>Existe certificado?</summary>
-        <p>[VALIDAR] — Confirmar se a formação emite certificado de conclusão.</p>
+        <summary>Quanto tempo leva para concluir a formação?</summary>
+        <p>São 12h25 de aula, distribuídas em 38 aulas ao longo de quatro módulos. Você define o ritmo, e dá para concluir em poucas semanas assistindo um pouco por dia.</p>
       </details>
+      <!-- FAQ PENDENTE, NÃO PUBLICAR SEM CONFIRMAR COM A EQUIPE:
+           1) "Como funciona o acesso e por quanto tempo tenho acesso ao conteúdo?" (período de acesso não confirmado)
+           2) "Existe certificado?" (emissão de certificado não confirmada)
+           Na versão anterior estes dois itens estavam visíveis na página com o texto "[VALIDAR]". -->
       <details class="faq-item">
         <summary>Como funciona a garantia?</summary>
-        <p>Você tem 7 dias a partir da compra para assistir e decidir se a formação é para você. Se solicitar o reembolso dentro desse prazo, ele é feito sem burocracia.</p>
+        <p>Você tem 7 dias para assistir e decidir se a formação é para você. Se decidir que não é, pode pedir o reembolso dentro desse prazo.</p>
       </details>
     </div>
   </div>
@@ -999,9 +1197,9 @@ footer{
 <!-- ══ CTA FINAL ══ -->
 <section class="cta-final" style="background:var(--bg3)">
   <div class="wrap sa">
-    <h2>Você já sabe que existe uma lacuna.<br><em>Esta formação foi construída para preenchê-la.</em></h2>
-    <p>38 aulas. 4 módulos. Um método desenvolvido a partir de mais de 6.000 horas de atendimento clínico, condensado para ser aplicado na sua prática.</p>
-    <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="cta">Quero a formação</a>
+    <h2>Se você atende homens presos à pornografia, <em>precisa aprender a compreender o homem por trás do comportamento.</em></h2>
+    <p>Esta formação foi criada para ensinar você a fazer isso: 38 aulas, 4 módulos e 12h25 de formação, a partir de mais de 6.000 horas de atendimento clínico.</p>
+    <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="cta">Quero me capacitar</a>
   </div>
 </section>
 
@@ -1014,7 +1212,7 @@ footer{
     <div class="sticky-label">Inimigo Íntimo</div>
     <div class="sticky-price">R$ 497 à vista</div>
   </div>
-  <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="sticky-btn">Quero a formação</a>
+  <a href="https://pay.hub.la/0nhGJcaCK0kAMVtOmILg" class="sticky-btn">Quero me capacitar</a>
 </div>
 
 <script>
@@ -1036,5 +1234,3 @@ footer{
 </script>
 </body>
 </html>
- 
-
