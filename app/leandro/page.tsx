@@ -150,7 +150,7 @@ export default function LeandroPage() {
           </h2>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'center' }}>
             <Button asChild withArrow>
-              <a href="https://form.respondi.app/tiN0kxRc" target="_blank" rel="noopener noreferrer">Agendar sessão</a>
+              <a href="https://wa.me/5519983133780" target="_blank" rel="noopener noreferrer">Agendar sessão</a>
             </Button>
             <Button variant="outline" asChild withArrow className="border-white/35 text-white hover:border-white hover:text-white">
               <a href="https://wa.me/5519974010520?text=Ol%C3%A1%2C%20Leandro.%20Tenho%20interesse%20em%20supervis%C3%A3o%20cl%C3%ADnica%20contigo." target="_blank" rel="noopener noreferrer">Quero fazer supervisão com o Leandro</a>

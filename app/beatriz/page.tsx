@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { SectionLabel } from '@/components/ui/section-label';
 
-const bookingUrl = 'https://form.respondi.app/tiN0kxRc';
+const bookingUrl = 'https://wa.me/5519983133780';
 
 const team = [
   { img: '/team/beatriz-carone.jpg', name: 'Beatriz Carone', role: 'Psicóloga' },

@@ -224,7 +224,7 @@ export default function LabPage() {
           </Button>
           <p className="mt-8 text-sm text-cedro-sage/60">
             Também oferecemos supervisão clínica para psicólogos.{' '}
-            <a href="https://form.respondi.app/rdiSvqJY" target="_blank" rel="noopener noreferrer" className="text-cedro-red underline hover:text-cedro-red-hover">
+            <a href="https://wa.me/5519974010520?text=Ol%C3%A1%2C%20Leandro.%20Tenho%20interesse%20em%20supervis%C3%A3o%20cl%C3%ADnica%20contigo." target="_blank" rel="noopener noreferrer" className="text-cedro-red underline hover:text-cedro-red-hover">
               Saiba mais sobre supervisão clínica
             </a>
           </p>
